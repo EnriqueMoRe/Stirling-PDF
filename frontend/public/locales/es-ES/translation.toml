@@ -2091,9 +2091,6 @@ text = "Posprocesa el PDF final eliminando artefactos de OCR y optimizando la ca
 title = "Forzar archivos firmados"
 text = "Permite el procesamiento OCR de PDFs firmados digitalmente. Las firmas digitales quedarán invalidadas después del procesamiento."
 
-[ocr.invalidateSignatures]
-warning = "Advertencia: Habilitar esta opción invalidará cualquier firma digital en el PDF. El documento ya no será legalmente válido como documento firmado."
-
 [ocr.error]
 failed = "La operación de OCR falló"
 
