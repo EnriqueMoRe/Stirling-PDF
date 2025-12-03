@@ -63,6 +63,8 @@ export type ToolRegistryEntry = {
 	versionStatus?: "alpha" | "beta";
 	// Whether this tool requires premium access
 	requiresPremium?: boolean;
+	// Whether this tool should be hidden from the UI
+	hidden?: boolean;
 }
 
 export type RegularToolRegistry = Record<RegularToolId, ToolRegistryEntry>;
