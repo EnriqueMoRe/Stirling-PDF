@@ -101,6 +101,11 @@
                     <input id="removeImagesAfter" name="removeImagesAfter" type="checkbox" value="true">
                     <label for="removeImagesAfter">Remove images from output PDF</label>
                   </div>
+                  <div class="form-check">
+                    <input id="invalidateDigitalSignatures" name="invalidateDigitalSignatures" type="checkbox" value="true">
+                    <label for="invalidateDigitalSignatures" th:text="#{ocr.invalidateSignatures}">Invalidate digital signatures</label>
+                    <small class="form-text text-warning" th:text="#{ocr.invalidateSignatures.warning}">Warning: Enabling this option will invalidate any digital signatures in the PDF. The document will no longer be legally valid as a signed document.</small>
+                  </div>
                 </div>
                 <br>
                 <button type="submit" id="submitBtn" class="btn btn-primary" th:text="#{ocr.submit}"></button>
