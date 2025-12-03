@@ -50,6 +50,26 @@ export const supportedLanguages = {
 // RTL languages (based on your existing language.direction property)
 export const rtlLanguages = ['ar-AR', 'fa-IR'];
 
+// Mapping from base language codes to preferred full language codes
+// For languages with multiple variants (e.g., Portuguese), we explicitly
+// define which variant to use as the default when only the base code is detected
+const baseLanguageToFullCode: Record<string, string> = {
+  // Explicitly define preferred defaults for multi-variant languages
+  'en': 'en-GB',
+  'pt': 'pt-BR',  // Portuguese defaults to Brazilian Portuguese
+  'zh': 'zh-CN',  // Chinese defaults to Simplified Chinese
+};
+
+// Auto-populate remaining mappings from supportedLanguages
+// This ensures all languages get a mapping, even single-variant ones
+for (const code of Object.keys(supportedLanguages)) {
+  const baseLang = code.split('-')[0].toLowerCase();
+  // Only add if not already explicitly defined above
+  if (!(baseLang in baseLanguageToFullCode)) {
+    baseLanguageToFullCode[baseLang] = code;
+  }
+}
+
 i18n
   .use(TomlBackend)
   .use(LanguageDetector)
@@ -81,8 +101,19 @@ i18n
       order: ['localStorage', 'navigator', 'htmlTag'],
       caches: ['localStorage'],
       convertDetectedLanguage: (lng: string) => {
-        // Map en and en-US to en-GB
-        if (lng === 'en' || lng === 'en-US') return 'en-GB';
+        // First, check if it's already a supported full language code
+        if (lng in supportedLanguages) {
+          return lng;
+        }
+        
+        // Try to map base language code (e.g., 'es' -> 'es-ES', 'de' -> 'de-DE')
+        const baseLang = lng.split('-')[0].toLowerCase();
+        const mappedLang = baseLanguageToFullCode[baseLang];
+        if (mappedLang) {
+          return mappedLang;
+        }
+        
+        // Return original if no mapping found (will fall back to en-GB)
         return lng;
       },
     },
@@ -140,14 +171,24 @@ const I18N_LANGUAGE_KEY = 'i18nextLng';
 /**
  * Normalizes a locale string to match our supported language codes
  * Handles both underscore and hyphen formats (e.g., 'de_DE' -> 'de-DE', 'sr_LATN_RS' -> 'sr-LATN-RS')
+ * Also maps base language codes to their full variants (e.g., 'es' -> 'es-ES')
  */
 function normalizeLocale(locale: string): string {
   // Replace all underscores with hyphens
   const normalized = locale.replaceAll('_', '-');
-  // Map en and en-US to en-GB
-  if (normalized === 'en' || normalized === 'en-US') {
-    return 'en-GB';
+  
+  // If it's already a supported language, return it
+  if (normalized in supportedLanguages) {
+    return normalized;
   }
+  
+  // Try to map base language code to full code
+  const baseLang = normalized.split('-')[0].toLowerCase();
+  const mappedLang = baseLanguageToFullCode[baseLang];
+  if (mappedLang) {
+    return mappedLang;
+  }
+  
   return normalized;
 }
 
