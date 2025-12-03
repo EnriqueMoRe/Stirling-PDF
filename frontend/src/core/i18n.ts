@@ -135,4 +135,45 @@ export function updateSupportedLanguages(configLanguages?: string[] | null) {
   }
 }
 
+const I18N_LANGUAGE_KEY = 'i18nextLng';
+
+/**
+ * Normalizes a locale string to match our supported language codes
+ * Handles both underscore and hyphen formats (e.g., 'de_DE' -> 'de-DE', 'sr_LATN_RS' -> 'sr-LATN-RS')
+ */
+function normalizeLocale(locale: string): string {
+  // Replace all underscores with hyphens
+  const normalized = locale.replaceAll('_', '-');
+  // Map en and en-US to en-GB
+  if (normalized === 'en' || normalized === 'en-US') {
+    return 'en-GB';
+  }
+  return normalized;
+}
+
+/**
+ * Applies the server's default locale setting
+ * Only changes the language if the user hasn't already set a preference in localStorage
+ */
+export function applyDefaultLocale(defaultLocale?: string | null) {
+  if (!defaultLocale) {
+    return;
+  }
+
+  // Check if user has already set a language preference
+  const userPreference = localStorage.getItem(I18N_LANGUAGE_KEY);
+  if (userPreference) {
+    // User has explicitly chosen a language, don't override it
+    return;
+  }
+
+  // Normalize the locale (handle underscore format like 'de_DE')
+  const normalizedLocale = normalizeLocale(defaultLocale);
+
+  // Only apply if it's a supported language
+  if (normalizedLocale in supportedLanguages) {
+    i18n.changeLanguage(normalizedLocale);
+  }
+}
+
 export default i18n;
