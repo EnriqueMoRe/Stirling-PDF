@@ -50,20 +50,25 @@ export const supportedLanguages = {
 // RTL languages (based on your existing language.direction property)
 export const rtlLanguages = ['ar-AR', 'fa-IR'];
 
-// Create mapping from base language codes to full language codes
-// This allows detection of 'es' to map to 'es-ES', 'de' to 'de-DE', etc.
-const baseLanguageToFullCode: Record<string, string> = {};
+// Mapping from base language codes to preferred full language codes
+// For languages with multiple variants (e.g., Portuguese), we explicitly
+// define which variant to use as the default when only the base code is detected
+const baseLanguageToFullCode: Record<string, string> = {
+  // Explicitly define preferred defaults for multi-variant languages
+  'en': 'en-GB',
+  'pt': 'pt-BR',  // Portuguese defaults to Brazilian Portuguese
+  'zh': 'zh-CN',  // Chinese defaults to Simplified Chinese
+};
+
+// Auto-populate remaining mappings from supportedLanguages
+// This ensures all languages get a mapping, even single-variant ones
 for (const code of Object.keys(supportedLanguages)) {
   const baseLang = code.split('-')[0].toLowerCase();
-  // If multiple variants exist (e.g., pt-BR and pt-PT), the first one wins
-  // This is fine since we just need a reasonable default
-  if (!baseLanguageToFullCode[baseLang]) {
+  // Only add if not already explicitly defined above
+  if (!(baseLang in baseLanguageToFullCode)) {
     baseLanguageToFullCode[baseLang] = code;
   }
 }
-
-// Special case: ensure 'en' maps to 'en-GB' (not any other en-* variant)
-baseLanguageToFullCode['en'] = 'en-GB';
 
 i18n
   .use(TomlBackend)
