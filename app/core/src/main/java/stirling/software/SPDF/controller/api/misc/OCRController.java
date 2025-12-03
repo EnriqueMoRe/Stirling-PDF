@@ -246,7 +246,7 @@ public class OCRController {
                 command.add("--force-ocr");
             }
         }
-        if (invalidateDigitalSignatures != null && invalidateDigitalSignatures) {
+        if (Boolean.TRUE.equals(invalidateDigitalSignatures)) {
             command.add("--invalidate-digital-signatures");
         }
 
