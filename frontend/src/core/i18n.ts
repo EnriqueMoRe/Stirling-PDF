@@ -139,11 +139,11 @@ const I18N_LANGUAGE_KEY = 'i18nextLng';
 
 /**
  * Normalizes a locale string to match our supported language codes
- * Handles both underscore and hyphen formats (e.g., 'de_DE' -> 'de-DE')
+ * Handles both underscore and hyphen formats (e.g., 'de_DE' -> 'de-DE', 'sr_LATN_RS' -> 'sr-LATN-RS')
  */
 function normalizeLocale(locale: string): string {
-  // Replace underscores with hyphens
-  const normalized = locale.replace('_', '-');
+  // Replace all underscores with hyphens
+  const normalized = locale.replaceAll('_', '-');
   // Map en and en-US to en-GB
   if (normalized === 'en' || normalized === 'en-US') {
     return 'en-GB';
