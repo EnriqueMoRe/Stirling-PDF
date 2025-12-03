@@ -36,6 +36,7 @@ export function useProprietaryToolRegistry(): ProprietaryToolRegistry {
       automationSettings: null,
       versionStatus: "alpha",
       requiresPremium: true,
+      hidden: true,
     },
   }), [t]);
 }

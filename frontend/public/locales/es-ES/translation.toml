@@ -1994,6 +1994,7 @@ header = "Escaneos de limpieza / OCR (Reconocimiento óptico de caracteres)"
 help = "Lea esta documentación sobre cómo usar esto para otros idiomas y/o no usarlo en Docker"
 credit = "Este servicio utiliza qpdf y Tesseract para OCR"
 submit = "Procesar PDF con OCR"
+invalidateSignatures = "Forzar archivos firmados"
 
 [ocr.selectText]
 1 = "Seleccionar los idiomas que se detectarán en el PDF (Los enumerados son los detectados actualmente):"
@@ -2085,6 +2086,13 @@ text = "Preprocesa la entrada eliminando ruido, mejorando el contraste y optimiz
 [ocr.tooltip.advanced.cleanFinal]
 title = "Limpiar Salida Final"
 text = "Posprocesa el PDF final eliminando artefactos de OCR y optimizando la capa de texto para una mejor legibilidad y un tamaño de archivo más pequeño."
+
+[ocr.tooltip.advanced.invalidateSignatures]
+title = "Forzar archivos firmados"
+text = "Permite el procesamiento OCR de PDFs firmados digitalmente. Las firmas digitales quedarán invalidadas después del procesamiento."
+
+[ocr.invalidateSignatures]
+warning = "Advertencia: Habilitar esta opción invalidará cualquier firma digital en el PDF. El documento ya no será legalmente válido como documento firmado."
 
 [ocr.error]
 failed = "La operación de OCR falló"
