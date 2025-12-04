@@ -74,19 +74,19 @@ export const ONBOARDING_STEPS: OnboardingStep[] = [
     id: 'welcome',
     type: 'modal-slide',
     slideId: 'welcome',
-    condition: () => true,
+    condition: () => false,
   },
   {
     id: 'desktop-install',
     type: 'modal-slide',
     slideId: 'desktop-install',
-    condition: (ctx) => !ctx.isDesktopApp,
+    condition: () => false,
   },
   {
     id: 'security-check',
     type: 'modal-slide',
     slideId: 'security-check',
-    condition: (ctx) => !ctx.loginEnabled && !ctx.isDesktopApp,
+    condition: () => false,
   },
   {
     id: 'admin-overview',
