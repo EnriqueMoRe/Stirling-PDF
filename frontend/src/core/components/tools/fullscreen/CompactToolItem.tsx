@@ -28,7 +28,7 @@ const CompactToolItem: React.FC<CompactToolItemProps> = ({ id, tool, isSelected,
     iconNode = React.cloneElement(element, {
       style: {
         ...(element.props.style || {}),
-        fontSize: '1.5rem',
+        fontSize: '1.25rem',
       },
     });
   } else {

@@ -92,6 +92,12 @@ export const useToolManagement = (): ToolManagementResult => {
     (Object.keys(baseRegistry) as ToolId[]).forEach(toolKey => {
       const baseTool = baseRegistry[toolKey];
       if (!baseTool) return;
+      
+      // Always hide tools marked as hidden
+      if (baseTool.hidden) {
+        return;
+      }
+      
       const availabilityInfo = toolAvailability[toolKey];
       const isAvailable = availabilityInfo ? availabilityInfo.available !== false : true;
 
