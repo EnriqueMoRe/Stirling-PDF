@@ -78,7 +78,7 @@ export const ONBOARDING_STEPS: OnboardingStep[] = [
     id: 'welcome',
     type: 'modal-slide',
     slideId: 'welcome',
-    condition: () => true,
+    condition: () => false,
   },
   {
     id: 'admin-overview',
@@ -90,7 +90,7 @@ export const ONBOARDING_STEPS: OnboardingStep[] = [
     id: 'desktop-install',
     type: 'modal-slide',
     slideId: 'desktop-install',
-    condition: (ctx) => !ctx.isDesktopApp && ctx.desktopSlideEnabled,
+    condition: () => false,
   },
   {
     id: 'security-check',

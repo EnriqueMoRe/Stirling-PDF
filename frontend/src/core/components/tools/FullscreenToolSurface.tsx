@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { ActionIcon, ScrollArea, Switch, useMantineColorScheme } from '@mantine/core';
+import { ActionIcon, ScrollArea, Switch, Text, useMantineColorScheme } from '@mantine/core';
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import { useTranslation } from 'react-i18next';
 import ToolSearch from '@app/components/tools/toolPicker/ToolSearch';
@@ -9,6 +9,7 @@ import { ToolId } from '@app/types/toolId';
 import { useFocusTrap } from '@app/hooks/useFocusTrap';
 import { useLogoPath } from '@app/hooks/useLogoPath';
 import { useLogoAssets } from '@app/hooks/useLogoAssets';
+import { useAppConfig } from '@app/contexts/AppConfigContext';
 import { Tooltip } from '@app/components/shared/Tooltip';
 import '@app/components/tools/ToolPanel.css';
 import { ToolPanelGeometry } from '@app/hooks/tools/useToolPanelGeometry';
@@ -48,6 +49,7 @@ const FullscreenToolSurface = ({
   const [isExiting, setIsExiting] = useState(false);
   const surfaceRef = useRef<HTMLDivElement>(null);
   const isRTL = typeof document !== 'undefined' && document.documentElement.dir === 'rtl';
+  const { config } = useAppConfig();
 
   // Enable focus trap when surface is active
   useFocusTrap(surfaceRef, !isExiting);
@@ -56,6 +58,9 @@ const FullscreenToolSurface = ({
   const brandIconSrc = useLogoPath();
   const { wordmark } = useLogoAssets();
   const brandTextSrc = colorScheme === "dark" ? wordmark.white : wordmark.black;
+  
+  // Use custom app name from config if available
+  const customAppName = config?.appNameNavbar;
 
   const handleExit = () => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -102,7 +107,13 @@ const FullscreenToolSurface = ({
         <header className="tool-panel__fullscreen-header">
           <div className="tool-panel__fullscreen-brand">
             <img src={brandIconSrc} alt="" className="tool-panel__fullscreen-brand-icon" />
-            <img src={brandTextSrc} alt={brandAltText} className="tool-panel__fullscreen-brand-text" />
+            {customAppName ? (
+              <Text fw={600} size="lg" className="tool-panel__fullscreen-brand-name">
+                {customAppName}
+              </Text>
+            ) : (
+              <img src={brandTextSrc} alt={brandAltText} className="tool-panel__fullscreen-brand-text" />
+            )}
           </div>
           <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
             <Tooltip content={toggleLabel} position="bottom" arrow={true} openOnFocus={false} containerStyle={{ zIndex: Z_INDEX_OVER_FULLSCREEN_SURFACE }}>

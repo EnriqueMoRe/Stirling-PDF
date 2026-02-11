@@ -2120,6 +2120,7 @@ header = "Cleanup Scans / OCR (Optical Character Recognition)"
 help = "Please read this documentation on how to use this for other languages and/or use not in docker"
 credit = "This service uses qpdf and Tesseract for OCR."
 submit = "Process PDF with OCR"
+invalidateSignatures = "Invalidate digital signatures"
 
 [ocr.selectText]
 1 = "Select languages that are to be detected within the PDF (Ones listed are the ones currently detected):"
@@ -2211,6 +2212,10 @@ text = "Preprocesses the input by removing noise, enhancing contrast, and optimi
 [ocr.tooltip.advanced.cleanFinal]
 title = "Clean Final Output"
 text = "Post-processes the final PDF by removing OCR artefacts and optimising the text layer for better readability and smaller file size."
+
+[ocr.tooltip.advanced.invalidateSignatures]
+title = "Invalidate Digital Signatures"
+text = "Allows OCR processing of digitally signed PDFs. The digital signatures will become invalid after processing."
 
 [ocr.error]
 failed = "OCR operation failed"

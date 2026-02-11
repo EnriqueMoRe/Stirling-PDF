@@ -371,6 +371,7 @@ export function useTranslatedToolCatalog(): TranslatedToolCatalog {
         supportsAutomate: false,
         automationSettings: null,
         maxFiles: 1,
+        hidden: true
       },
       validateSignature: {
         icon: <LocalIcon icon="verified-rounded" width="1.5rem" height="1.5rem" />,
@@ -782,7 +783,8 @@ export function useTranslatedToolCatalog(): TranslatedToolCatalog {
         subcategoryId: SubcategoryId.ADVANCED_FORMATTING,
         endpoints: ["scanner-effect"],
         synonyms: getSynonyms(t, "scannerEffect"),
-        automationSettings: null
+        automationSettings: null,
+        hidden: true
       },
 
       // Developer Tools
@@ -798,7 +800,8 @@ export function useTranslatedToolCatalog(): TranslatedToolCatalog {
         endpoints: ["show-javascript"],
         synonyms: getSynonyms(t, "showJS"),
         supportsAutomate: false,
-        automationSettings: null
+        automationSettings: null,
+        hidden: true
       },
       devApi: {
         icon: <LocalIcon icon="open-in-new-rounded" width="1.5rem" height="1.5rem" style={{ color: "#2F7BF6" }} />,
@@ -810,7 +813,8 @@ export function useTranslatedToolCatalog(): TranslatedToolCatalog {
         link: devApiLink,
         synonyms: getSynonyms(t, "devApi"),
         supportsAutomate: false,
-        automationSettings: null
+        automationSettings: null,
+        hidden: true
       },
       devFolderScanning: {
         icon: <LocalIcon icon="open-in-new-rounded" width="1.5rem" height="1.5rem" style={{ color: "#2F7BF6" }} />,
@@ -822,7 +826,8 @@ export function useTranslatedToolCatalog(): TranslatedToolCatalog {
         link: "https://docs.stirlingpdf.com/Configuration/Folder%20Scanning/",
         synonyms: getSynonyms(t, "devFolderScanning"),
         supportsAutomate: false,
-        automationSettings: null
+        automationSettings: null,
+        hidden: true
       },
       devSsoGuide: {
         icon: <LocalIcon icon="open-in-new-rounded" width="1.5rem" height="1.5rem" style={{ color: "#2F7BF6" }} />,
@@ -834,7 +839,8 @@ export function useTranslatedToolCatalog(): TranslatedToolCatalog {
         link: "https://docs.stirlingpdf.com/Configuration/Single%20Sign-On%20Configuration/",
         synonyms: getSynonyms(t, "devSsoGuide"),
         supportsAutomate: false,
-        automationSettings: null
+        automationSettings: null,
+        hidden: true
       },
       devAirgapped: {
         icon: <LocalIcon icon="open-in-new-rounded" width="1.5rem" height="1.5rem" style={{ color: "#2F7BF6" }} />,
@@ -846,7 +852,8 @@ export function useTranslatedToolCatalog(): TranslatedToolCatalog {
         link: "https://docs.stirlingpdf.com/Paid-Offerings/#activating-your-license",
         synonyms: getSynonyms(t, "devAirgapped"),
         supportsAutomate: false,
-        automationSettings: null
+        automationSettings: null,
+        hidden: true
       },
 
       // Recommended Tools
