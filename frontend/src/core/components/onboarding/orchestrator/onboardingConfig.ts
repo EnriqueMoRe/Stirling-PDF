@@ -5,21 +5,21 @@ export type OnboardingStepId =
   | 'security-check'
   | 'admin-overview'
   | 'tool-layout'
-  | 'tour'
+  | 'tour-overview'
   | 'server-license'
-  | 'analytics-choice';
+  | 'analytics-choice'
+  | 'mfa-setup';
 
 export type OnboardingStepType =
   | 'modal-slide'
-  | 'tool-prompt'
-  | 'tour'
-  | 'analytics-modal';
+  | 'tool-prompt';
 
 export interface OnboardingRuntimeState {
   selectedRole: 'admin' | 'user' | null;
   tourRequested: boolean;
-  tourType: 'admin' | 'tools';
+  tourType: 'admin' | 'tools' | 'whatsnew';
   isDesktopApp: boolean;
+  desktopSlideEnabled: boolean;
   analyticsNotConfigured: boolean;
   analyticsEnabled: boolean;
   licenseNotice: {
@@ -31,6 +31,7 @@ export interface OnboardingRuntimeState {
   requiresPasswordChange: boolean;
   firstLoginUsername: string;
   usingDefaultCredentials: boolean;
+  requiresMfaSetup: boolean;
 }
 
 export interface OnboardingConditionContext extends OnboardingRuntimeState {
@@ -42,13 +43,14 @@ export interface OnboardingStep {
   id: OnboardingStepId;
   type: OnboardingStepType;
   condition: (ctx: OnboardingConditionContext) => boolean;
-  slideId?: 'first-login' | 'welcome' | 'desktop-install' | 'security-check' | 'admin-overview' | 'server-license';
+  slideId?: 'first-login' | 'welcome' | 'desktop-install' | 'security-check' | 'admin-overview' | 'server-license' | 'tour-overview' | 'analytics-choice' | 'mfa-setup';
+  allowDismiss?: boolean;
 }
 
 export const DEFAULT_RUNTIME_STATE: OnboardingRuntimeState = {
   selectedRole: null,
   tourRequested: false,
-  tourType: 'tools',
+  tourType: 'whatsnew',
   isDesktopApp: false,
   analyticsNotConfigured: false,
   analyticsEnabled: false,
@@ -61,6 +63,8 @@ export const DEFAULT_RUNTIME_STATE: OnboardingRuntimeState = {
   requiresPasswordChange: false,
   firstLoginUsername: '',
   usingDefaultCredentials: false,
+  desktopSlideEnabled: true,
+  requiresMfaSetup: false,
 };
 
 export const ONBOARDING_STEPS: OnboardingStep[] = [
@@ -77,6 +81,12 @@ export const ONBOARDING_STEPS: OnboardingStep[] = [
     condition: () => false,
   },
   {
+    id: 'admin-overview',
+    type: 'modal-slide',
+    slideId: 'admin-overview',
+    condition: (ctx) => ctx.effectiveIsAdmin,
+  },
+  {
     id: 'desktop-install',
     type: 'modal-slide',
     slideId: 'desktop-install',
@@ -89,20 +99,15 @@ export const ONBOARDING_STEPS: OnboardingStep[] = [
     condition: () => false,
   },
   {
-    id: 'admin-overview',
-    type: 'modal-slide',
-    slideId: 'admin-overview',
-    condition: (ctx) => ctx.effectiveIsAdmin,
-  },
-  {
     id: 'tool-layout',
     type: 'tool-prompt',
-    condition: () => true,
+    condition: () => false,
   },
   {
-    id: 'tour',
-    type: 'tour',
-    condition: (ctx) => ctx.tourRequested || !ctx.effectiveIsAdmin,
+    id: 'tour-overview',
+    type: 'modal-slide',
+    slideId: 'tour-overview',
+    condition: (ctx) => !ctx.effectiveIsAdmin && ctx.tourType !== 'admin',
   },
   {
     id: 'server-license',
@@ -111,10 +116,11 @@ export const ONBOARDING_STEPS: OnboardingStep[] = [
     condition: (ctx) => ctx.effectiveIsAdmin && ctx.licenseNotice.requiresLicense,
   },
   {
-    id: 'analytics-choice',
-    type: 'analytics-modal',
-    condition: (ctx) => ctx.effectiveIsAdmin && ctx.analyticsNotConfigured,
-  },
+    id: 'mfa-setup',
+    type: 'modal-slide',
+    slideId: 'mfa-setup',
+    condition: (ctx) => ctx.requiresMfaSetup,
+  }
 ];
 
 export function getStepById(id: OnboardingStepId): OnboardingStep | undefined {

@@ -1,8 +1,11 @@
 unsavedChanges = "നിങ്ങളുടെ PDF-ിൽ സംരക്ഷിക്കാത്ത മാറ്റങ്ങൾ ഉണ്ട്."
+pendingRedactionsTitle = "പ്രയോഗിച്ചിട്ടില്ലാത്ത റെഡാക്ഷനുകൾ"
+pendingRedactions = "നിങ്ങൾ പ്രയോഗിച്ചിട്ടില്ലാത്ത റെഡാക്ഷനുകൾ ഉണ്ട്; അവ നഷ്ടപ്പെടും."
 areYouSure = "നിങ്ങൾക്ക് പോകണമെന്ന് തീർച്ചയാണോ?"
 unsavedChangesTitle = "സംരക്ഷിക്കാത്ത മാറ്റങ്ങൾ"
 keepWorking = "തുടർന്നു പ്രവർത്തിക്കുക"
 discardChanges = "മാറ്റങ്ങൾ ഉപേക്ഷിച്ച് പുറത്ത് പോകുക"
+discardRedactions = "റദ്ദാക്കി പുറത്ത് പോകുക"
 applyAndContinue = "സേവ് ചെയ്ത് പുറത്ത് പോകുക"
 exportAndContinue = "എക്സ്പോർട്ട് ചെയ്ത് തുടരുക"
 cancel = "റദ്ദാക്കുക"
@@ -131,7 +134,7 @@ unsupported = "പിന്തുണയില്ല"
 
 [toolPanel]
 placeholder = "തുടങ്ങാൻ ഒരു ടൂൾ തിരഞ്ഞെടുക്കുക"
-alpha = "ആൽഫ"
+alpha = "Alpha"
 premiumFeature = "പ്രീമിയം ഫീച്ചർ:"
 comingSoon = "വരുന്നു:"
 
@@ -216,6 +219,8 @@ pagesAndStarting = "പേജുകളും ആരംഭ നമ്പറും"
 positionAndPages = "സ്ഥാനം & പേജുകൾ"
 preview = "സ്ഥാനം തിരഞ്ഞെടുപ്പ്"
 previewDisclaimer = "പ്രിവ്യൂ ഏകദേശമാണ്. PDF ഫോണ്ട് മീട്രിക്‌സിന്റെ കാരണമായി അന്തിമ ഔട്ട്പുട്ട് വ്യത്യാസപ്പെട്ടേക്കാം."
+zeroPad = "Zero‑pad Width (Bates Stamping)"
+zeroPadTooltip = "Zero‑pad (Bates Stamp) page numbers to this width (e.g., 3 ⇒ 001). Set 0 to disable."
 
 [addPageNumbers.selectText]
 1 = "PDF ഫയൽ തിരഞ്ഞെടുക്കുക:"
@@ -303,6 +308,7 @@ selectOperation = "പ്രവർത്തനം തിരഞ്ഞെടുക
 addOperationButton = "പ്രവർത്തനം ചേർക്കുക"
 pipelineHeader = "പൈപ്പ്ലൈൻ:"
 saveButton = "ഡൗൺലോഡ് ചെയ്യുക"
+saveForFolderScanning = "ഫോൾഡർ സ്കാനിംഗിനായി സംരക്ഷിക്കുക"
 validateButton = "സ്ഥിരീകരിക്കുക"
 
 [enterpriseEdition]
@@ -340,6 +346,10 @@ advance = "വിപുലമായത്"
 edit = "കാണുക & തിരുത്തുക"
 popular = "ജനപ്രിയം"
 
+[footer]
+discord = "Discord"
+issues = "GitHub"
+
 [settings.preferences]
 title = "അഭിരുചികൾ"
 
@@ -360,6 +370,7 @@ advanced = "അഡ്വാൻസ്ഡ്"
 title = "സുരക്ഷയും ഓതന്റിക്കേഷനും"
 security = "സുരക്ഷ"
 connections = "കണക്ഷനുകൾ"
+telegram = "Telegram"
 
 [settings.licensingAnalytics]
 title = "ലൈസൻസിംഗും അനലിറ്റിക്സും"
@@ -374,7 +385,7 @@ privacy = "സ്വകാര്യത"
 
 [settings.developer]
 title = "ഡെവലപ്പർ"
-apiKeys = "API കീകൾ"
+apiKeys = "API Keys"
 
 [settings.tooltips]
 enableLoginFirst = "ആദ്യം ലോഗിൻ മോഡ് സജീവമാക്കുക"
@@ -430,10 +441,38 @@ fullscreen = "ഫുൾസ്ക്രീൻ"
 [settings.general.updates]
 title = "സോഫ്റ്റ്‌വെയർ അപ്‌ഡേറ്റുകൾ"
 description = "അപ്‌ഡേറ്റുകൾ പരിശോധിക്കുകയും പതിപ്പിന്റെ വിവരങ്ങൾ കാണുകയും ചെയ്യുക"
-currentVersion = "ഇപ്പോഴത്തെ പതിപ്പ്"
+currentBackendVersion = "Current Backend Version"
+currentFrontendVersion = "Current Frontend Version"
+versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 latestVersion = "പുതിയ പതിപ്പ്"
 checkForUpdates = "അപ്‌ഡേറ്റുകൾ പരിശോധിക്കുക"
 viewDetails = "വിശദാംശങ്ങൾ കാണുക"
+serverNeedsUpdate = "സെർവർ അഡ്മിനിസ്ട്രേറ്റർ അപ്ഡേറ്റ് ചെയ്യണം"
+
+[settings.general.versionInfo]
+title = "പതിപ്പ് വിവരം"
+description = "ഡെസ്ക്‌ടോപ്പിന്റെയും സെർവറിന്റെയും പതിപ്പ് വിവരങ്ങൾ"
+desktop = "ഡെസ്ക്‌ടോപ് പതിപ്പ്"
+server = "സെർവർ പതിപ്പ്"
+
+[settings.security]
+title = "സുരക്ഷ"
+description = "അക്കൗണ്ട് സുരക്ഷിതമായി നിലനിർത്താൻ പാസ്‌വേഡ് അപ്‌ഡേറ്റ് ചെയ്യുക."
+
+[settings.security.password]
+subtitle = "പാസ്‌വേഡ് മാറ്റുക. അപ്‌ഡേറ്റിനുശേഷം നിങ്ങൾ ലോഗ് ഔട്ട് ചെയ്യപ്പെടും."
+required = "എല്ലാ ഫീൽഡുകളും നിർബന്ധമാണ്."
+mismatch = "പുതിയ പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല."
+error = "പാസ്‌വേഡ് അപ്‌ഡേറ്റ് ചെയ്യാൻ കഴിഞ്ഞില്ല. നിങ്ങളുടെ നിലവിലെ പാസ്‌വേഡ് ശരിയാണ് എന്ന് ഉറപ്പാക്കി വീണ്ടും ശ്രമിക്കുക."
+success = "പാസ്‌വേഡ് വിജയകരമായി അപ്‌ഡേറ്റ് ചെയ്തു. ദയവായി വീണ്ടും സൈൻ ഇൻ ചെയ്യുക."
+ssoDisabled = "പാസ്‌വേഡ് മാറ്റങ്ങൾ നിങ്ങളുടെ ഐഡന്റിറ്റി പ്രൊവൈഡർ കൈകാര്യം ചെയ്യുന്നു."
+current = "ഇപ്പോൾ ഉള്ള പാസ്‌വേഡ്"
+currentPlaceholder = "നിലവിലെ പാസ്‌വേഡ് നൽകുക"
+new = "പുതിയ പാസ്‌വേഡ്"
+newPlaceholder = "പുതിയ പാസ്‌വേഡ് നൽകുക"
+confirm = "പുതിയ പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക"
+confirmPlaceholder = "നിങ്ങളുടെ പുതിയ പാസ്‌വേഡ് വീണ്ടും നൽകുക"
+update = "പാസ്‌വേഡ് അപ്‌ഡേറ്റ് ചെയ്യുക"
 
 [settings.hotkeys]
 title = "കീബോർഡ് ഷോർട്ട്‌കട്ടുകൾ"
@@ -488,11 +527,16 @@ low = "താഴ്ന്നത്"
 title = "വിവരങ്ങൾ മാറ്റുക"
 header = "നിങ്ങളുടെ അക്കൗണ്ട് വിവരങ്ങൾ അപ്‌ഡേറ്റ് ചെയ്യുക"
 changePassword = "നിങ്ങൾ സ്ഥിര ലോഗിൻ വിവരങ്ങളാണ് ഉപയോഗിക്കുന്നത്. ദയവായി ഒരു പുതിയ പാസ്‌വേഡ് നൽകുക"
+ssoManaged = "നിങ്ങളുടെ അക്കൗണ്ട് നിങ്ങളുടെ ഐഡന്റിറ്റി പ്രൊവൈഡർ കൈകാര്യം ചെയ്യുന്നു."
 newUsername = "പുതിയ ഉപയോക്തൃനാമം"
 oldPassword = "നിലവിലെ പാസ്‌വേഡ്"
 newPassword = "പുതിയ പാസ്‌വേഡ്"
 confirmNewPassword = "പുതിയ പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക"
 submit = "മാറ്റങ്ങൾ സമർപ്പിക്കുക"
+credsUpdated = "അക്കൗണ്ട് അപ്‌ഡേറ്റ് ചെയ്തു"
+description = "മാറ്റങ്ങൾ സംരക്ഷിച്ചു. ദയവായി വീണ്ടും ലോഗിൻ ചെയ്യുക."
+error = "യൂസർനെയിം അപ്‌ഡേറ്റ് ചെയ്യാൻ കഴിഞ്ഞില്ല. നിങ്ങളുടെ പാസ്‌വേഡ് ശരിയെന്ന് ഉറപ്പാക്കി വീണ്ടും ശ്രമിക്കുക."
+changeUsername = "നിങ്ങളുടെ യൂസർനെയിം അപ്‌ഡേറ്റ് ചെയ്യുക. അപ്‌ഡേറ്റിന് ശേഷം നിങ്ങൾ ലോഗ് ഔട്ട് ചെയ്യപ്പെടും."
 
 [account]
 title = "അക്കൗണ്ട് ക്രമീകരണങ്ങൾ"
@@ -500,6 +544,8 @@ accountSettings = "അക്കൗണ്ട് ക്രമീകരണങ്ങ
 adminSettings = "അഡ്മിൻ ക്രമീകരണങ്ങൾ - ഉപയോക്താക്കളെ കാണുക, ചേർക്കുക"
 userControlSettings = "ഉപയോക്തൃ നിയന്ത്രണ ക്രമീകരണങ്ങൾ"
 changeUsername = "ഉപയോക്തൃനാമം മാറ്റുക"
+changeUsernameDescription = "നിങ്ങളുടെ യൂസർനെയിം അപ്‌ഡേറ്റ് ചെയ്യുക. അപ്‌ഡേറ്റിന് ശേഷം നിങ്ങൾ ലോഗ് ഔട്ട് ചെയ്യപ്പെടും."
+newUsernamePlaceholder = "നിങ്ങളുടെ പുതിയ യൂസർനെയിം നൽകുക"
 newUsername = "പുതിയ ഉപയോക്തൃനാമം"
 password = "സ്ഥിരീകരണ പാസ്‌വേഡ്"
 oldPassword = "പഴയ പാസ്‌വേഡ്"
@@ -514,6 +560,30 @@ property = "പ്രോപ്പർട്ടി"
 webBrowserSettings = "വെബ് ബ്രൗസർ ക്രമീകരണം"
 syncToBrowser = "അക്കൗണ്ട് സമന്വയിപ്പിക്കുക -> ബ്രൗസർ"
 syncToAccount = "അക്കൗണ്ട് സമന്വയിപ്പിക്കുക <- ബ്രൗസർ"
+
+[account.mfa]
+title = "രണ്ടുഘട്ട സ്ഥിരീകരണം"
+setupFailed = "രണ്ടുഘട്ട ക്രമീകരണം ആരംഭിക്കാൻ കഴിഞ്ഞില്ല. വീണ്ടും ശ്രമിക്കുക."
+codeRequired = "തുടരാൻ സ്ഥിരീകരണ കോഡ് നൽകുക."
+enabled = "രണ്ടുഘട്ട സ്ഥിരീകരണം പ്രവർത്തനസജ്ജമാക്കി."
+enableFailed = "രണ്ടുഘട്ട സ്ഥിരീകരണം പ്രവർത്തനസജ്ജമാക്കാൻ കഴിഞ്ഞില്ല. കോഡ് പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക."
+disabled = "രണ്ടുഘട്ട സ്ഥിരീകരണം പ്രവർത്തനരഹിതമാക്കി."
+disableFailed = "രണ്ടുഘട്ട സ്ഥിരീകരണം പ്രവർത്തനരഹിതമാക്കാൻ കഴിഞ്ഞില്ല. കോഡ് പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക."
+description = "നിങ്ങളുടെ അക്കൗണ്ടിന് ഒരു അധിക സുരക്ഷാ പാളി ചേർക്കുക."
+enableButton = "രണ്ടുഘട്ട സ്ഥിരീകരണം പ്രവർത്തനസജ്ജമാക്കുക"
+disableButton = "രണ്ടുഘട്ട സ്ഥിരീകരണം പ്രവർത്തനരഹിതമാക്കുക"
+setupTitle = "രണ്ടുഘട്ട സ്ഥിരീകരണം ക്രമീകരിക്കുക"
+setupDescription = "നിങ്ങളുടെ ഓതന്റിക്കേറ്റർ ആപ്പിലൂടെ QR കോഡ് സ്കാൻ ചെയ്ത്, 6 അക്ക കോഡ് നൽകികൊണ്ട് സ്ഥിരീകരിക്കുക."
+manualKey = "മാനുവൽ ക്രമീകരണ കീ"
+secretWarning = "ഈ കീ സ്വകാര്യമായി സൂക്ഷിക്കുക. ഇതിലേക്കുള്ള ആക്സസ് ഉള്ളവർക്ക് സാധുവായ സ്ഥിരീകരണ കോഡുകൾ സൃഷ്ടിക്കാനാകും."
+codePlaceholder = "6 അക്ക കോഡ് നൽകുക"
+confirmEnable = "പ്രവർത്തനസജ്ജമാക്കുക"
+disableTitle = "രണ്ടുഘട്ട സ്ഥിരീകരണം പ്രവർത്തനരഹിതമാക്കുക"
+disableDescription = "രണ്ടുഘട്ട സ്ഥിരീകരണം പ്രവർത്തനരഹിതമാക്കാൻ സാധുവായ സ്ഥിരീകരണ കോഡ് നൽകുക."
+codeLabel = "സ്ഥിരീകരണ കോഡ്"
+confirmDisable = "പ്രവർത്തനരഹിതമാക്കുക"
+ssoDescription = "single sign-on അക്കൗണ്ടുകൾക്കായി രണ്ടുഘട്ട സ്ഥിരീകരണം നിങ്ങളുടെ ഐഡന്റിറ്റി പ്രൊവൈഡർ നിയന്ത്രിക്കുന്നു."
+ssoManaged = "നിങ്ങളുടെ ഐഡന്റിറ്റി പ്രൊവൈഡർ വഴി MFA ക്രമീകരിക്കുക."
 
 [adminUserSettings]
 title = "ഉപയോക്തൃ നിയന്ത്രണ ക്രമീകരണങ്ങൾ"
@@ -708,13 +778,18 @@ tags = "ഒപ്പ്,ഓട്ടോഗ്രാഫ്"
 title = "ഒപ്പിടുക"
 desc = "വരച്ചോ, ടെക്സ്റ്റ് ഉപയോഗിച്ചോ, ചിത്രം ഉപയോഗിച്ചോ PDF-ൽ ഒപ്പ് ചേർക്കുന്നു"
 
+[home.annotate]
+tags = "അനോട്ടേറ്റ്,ഹൈലൈറ്റ്,വരയ്ക്കുക"
+title = "അനോട്ടേറ്റ്"
+desc = "വ്യൂവറിൽ ഹൈലൈറ്റ് ചെയ്യുക, വരയ്ക്കുക, കുറിപ്പുകളും രൂപങ്ങളും ചേർക്കുക"
+
 [home.flatten]
 tags = "ലളിതമാക്കുക,നീക്കം ചെയ്യുക,ഇന്ററാക്ടീവ്"
 title = "പരത്തുക"
 desc = "ഒരു PDF-ൽ നിന്ന് എല്ലാ ഇന്ററാക്ടീവ് ഘടകങ്ങളും ഫോമുകളും നീക്കം ചെയ്യുക"
 
 [home.certSign]
-tags = "പ്രാമാണീകരണം,PEM,P12,ഔദ്യോഗികം,എൻക്രിപ്റ്റ്,സൈൻ,സർട്ടിഫിക്കറ്റ്,PKCS12,JKS,സെർവർ,മാനുവൽ,ഓട്ടോ"
+tags = "authenticate,PEM,P12,official,encrypt,sign,certificate,PKCS12,JKS,server,manual,auto"
 title = "സർട്ടിഫിക്കറ്റ് ഉപയോഗിച്ച് ഒപ്പിടുക"
 desc = "ഒരു സർട്ടിഫിക്കറ്റ്/കീ (PEM/P12) ഉപയോഗിച്ച് ഒരു PDF ഒപ്പിടുന്നു"
 
@@ -799,7 +874,7 @@ title = "ഒരൊറ്റ വലിയ പേജ്"
 desc = "എല്ലാ PDF പേജുകളും ഒരൊറ്റ വലിയ പേജിലേക്ക് ലയിപ്പിക്കുന്നു"
 
 [home.showJS]
-tags = "javascript,കോഡ്,സ്ക്രിപ്റ്റ്"
+tags = "javascript,code,script"
 title = "ജാവാസ്ക്രിപ്റ്റ് കാണിക്കുക"
 desc = "ഒരു PDF-ൽ കുത്തിവച്ച ഏതെങ്കിലും JS തിരയുകയും പ്രദർശിപ്പിക്കുകയും ചെയ്യുന്നു"
 
@@ -879,6 +954,7 @@ title = "സൈസ്/കൗണ്ട് ഓട്ടോ സ്പ്ലിറ�
 desc = "ഫയൽ വലുപ്പം അല്ലെങ്കിൽ പേജ് എണ്ണം പ്രകാരം PDF-കൾ സ്വയം വിഭജിക്കുക"
 
 [home.replaceColor]
+tags = "replace color,invert color,color replacement,swap colors,change color,invert,negative,color swap,find and replace color,convert color,color change"
 title = "നിറം മാറ്റുക / ഇൻവേർട്ട്"
 desc = "PDF ഡോക്യുമെന്റുകളിൽ നിറങ്ങൾ പകരംവെക്കുകയോ ഇൻവേർട്ട് ചെയ്യുകയോ ചെയ്യുക"
 
@@ -893,18 +969,22 @@ title = "ഓട്ടോമേറ്റഡ് ഫോൾഡർ സ്കാനി
 desc = "ഓട്ടോമേറ്റഡ് ഫോൾഡർ സ്കാനിംഗ് ഗൈഡിലേക്കുള്ള ലിങ്ക്"
 
 [home.devSsoGuide]
+tags = "SSO,single sign-on,authentication,SAML,OAuth,OIDC,login,enterprise,identity provider,IdP"
 title = "SSO ഗൈഡ്"
 desc = "SSO ഗൈഡിലേക്കുള്ള ലിങ്ക്"
 
 [home.devAirgapped]
+tags = "air-gapped,offline,isolated,no internet,disconnected,secure,network isolation,standalone"
 title = "Air-gapped സെറ്റപ്പ്"
 desc = "എയർ-ഗ്യാപ്ഡ് സെറ്റപ്പ് ഗൈഡിലേക്കുള്ള ലിങ്ക്"
 
 [home.addPassword]
+tags = "encrypt,password,lock,secure,protect,security,encryption,safeguard,confidential,private,restrict access"
 title = "പാസ്‌വേഡ് ചേർക്കുക"
 desc = "നിങ്ങളുടെ PDF പ്രമാണം ഒരു പാസ്‌വേഡ് ഉപയോഗിച്ച് എൻക്രിപ്റ്റ് ചെയ്യുക."
 
 [home.changePermissions]
+tags = "permissions,restrictions,rights,access control,allow,deny,printing,copying,editing,modify permissions,security settings,user rights"
 title = "അനുമതികൾ മാറ്റുക"
 desc = "ഡോക്യുമെന്റ് നിയന്ത്രണങ്ങളും അനുമതികളും മാറ്റുക"
 
@@ -914,15 +994,17 @@ title = "ഓട്ടോമേറ്റ്"
 desc = "PDF പ്രവർത്തനങ്ങൾ ബന്ധിപ്പിച്ച് മൾട്ടി-സ്റ്റെപ്പ് വർക്‌ഫ്ലോകൾ നിർമ്മിക്കുക. ആവർത്തിക്കുന്ന ജോലികൾക്ക് അനുയോജ്യം."
 
 [home.overlay-pdfs]
+tags = "overlay,combine,merge,layer,superimpose,overlay PDF,layer PDFs,combine PDFs,stack,overlay pages,background,foreground,composite"
 desc = "മറ്റൊരു PDF-ന് മുകളിൽ PDF-കൾ ഓവർലേ ചെയ്യുന്നു"
 title = "PDF-കൾ ഓവർലേ ചെയ്യുക"
 
 [home.pdfTextEditor]
+tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
 title = "PDF ടെക്സ്റ്റ് എഡിറ്റർ"
-desc = "PDFകളിലെ നിലവിലുള്ള ടെക്സ്റ്റും ചിത്രങ്ങളും തിരുത്തുക"
+desc = "ഗ്രൂപ്പുചെയ്ത ടെക്സ്റ്റ് എഡിറ്റിംഗിനോടും PDF വീണ്ടും സൃഷ്ടിക്കുന്നതോടും കൂടി Stirling PDF JSON എക്സ്പോർട്ടുകൾ റിവ്യൂ ചെയ്ത് എഡിറ്റ് ചെയ്യുക"
 
 [home.addText]
-tags = "ടെക്സ്റ്റ്,അനോട്ടേഷൻ,ലേബൽ"
+tags = "text,annotation,label"
 title = "ടെക്സ്റ്റ് ചേർക്കുക"
 desc = "നിങ്ങളുടെ PDF-ൽ എവിടെയിലും കസ്റ്റം ടെക്സ്റ്റ് ചേർക്കുക"
 
@@ -930,6 +1012,7 @@ desc = "നിങ്ങളുടെ PDF-ൽ എവിടെയിലും ക�
 addFiles = "ഫയലുകൾ ചേർക്കുക"
 uploadFromComputer = "കമ്പ്യൂട്ടറിൽ നിന്ന് അപ്ലോഡ് ചെയ്യുക"
 openFromComputer = "കമ്പ്യൂട്ടറിൽ നിന്ന് തുറക്കുക"
+mobileUpload = "മൊബൈൽ മുതൽ അപ്ലോഡ് ചെയ്യുക"
 
 [viewPdf]
 tags = "കാണുക,വായിക്കുക,വ്യാഖ്യാനിക്കുക,ടെക്സ്റ്റ്,ചിത്രം,ഹൈലൈറ്റ്,തിരുത്തുക"
@@ -1217,7 +1300,12 @@ downloadHtml = "PDFയ്ക്ക് പകരം HTML ഇടനില ഫയ�
 pdfaOptions = "PDF/A ഓപ്ഷനുകൾ"
 outputFormat = "ഔട്ട്പുട്ട് ഫോർമാറ്റ്"
 pdfaNote = "PDF/A-1b കൂടുതൽ അനുയോജ്യതയുള്ളത്, PDF/A-2b കൂടുതൽ ഫീച്ചറുകൾ പിന്തുണയ്ക്കുന്നു."
+pdfaFormat = "PDF/A ഫോർമാറ്റ്"
 pdfaDigitalSignatureWarning = "ഈ PDF-ൽ ഡിജിറ്റൽ ഒപ്പ് ഉണ്ട്. ഇത് അടുത്ത ഘട്ടത്തിൽ നീക്കം ചെയ്യപ്പെടും."
+strictMode = "Strict Mode"
+strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
+pdfxDigitalSignatureWarning = "PDF-യിൽ ഡിജിറ്റൽ ഒപ്പ് ഉണ്ട്. ഇത് അടുത്ത ഘട്ടത്തിൽ നീക്കം ചെയ്യും."
+pdfxDescription = "വിശ്വാസ്യതയുള്ള പ്രിന്റിംഗിനും ഗ്രാഫിക്സ് കൈമാറ്റത്തിനുമായി PDF/X ഒരു ISO സ്റ്റാൻഡേർഡ് PDF ഉപസമുച്ചയമാണ്."
 fileFormat = "ഫയൽ ഫോർമാറ്റ്"
 wordDoc = "വേഡ് ഡോക്യുമെന്റ്"
 wordDocExt = "വേഡ് ഡോക്യുമെന്റ് (.docx)"
@@ -1245,6 +1333,37 @@ cbzOptions = "CBZ ടു PDF ഓപ്ഷനുകൾ"
 optimizeForEbook = "ഇബുക്ക് റീഡറുകൾക്കായി PDF ഓപ്റ്റിമൈസ് ചെയ്യുക (Ghostscript ഉപയോഗിക്കുന്നു)"
 cbzOutputOptions = "PDF ടു CBZ ഓപ്ഷനുകൾ"
 cbzDpi = "ഇമേജ് റെൻഡറിംഗിനുള്ള DPI"
+cbrOptions = "CBR ഓപ്ഷനുകൾ"
+cbrOutputOptions = "PDF-നെ CBR ആക്കാനുള്ള ഓപ്ഷനുകൾ"
+cbrDpi = "ഇമേജ് റൻഡറിംഗിനുള്ള DPI"
+svgPdfOptions = "SVG to PDF Options"
+combineSvgs = "Combine SVGs into single PDF"
+combineSvgsDescription = "Combine all SVG files into one PDF with multiple pages, or create separate PDFs for each SVG"
+svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
+
+[convert.ebookOptions]
+ebookOptions = "eBook-നെ PDF ആക്കാനുള്ള ഓപ്ഷനുകൾ"
+ebookOptionsDesc = "eBook-കളെ PDF ആക്കുന്നതിനുള്ള ഓപ്ഷനുകൾ"
+embedAllFonts = "എല്ലാ ഫോണ്ടുകളും ഉൾസേർക്കുക"
+embedAllFontsDesc = "eBook ലെയുള്ള എല്ലാ ഫോണ്ടുകളും സൃഷ്ടിക്കുന്ന PDF-ലേക്ക് ഉൾപ്പെടുത്തുക"
+includeTableOfContents = "വിഷയ സൂചി ഉൾപ്പെടുത്തുക"
+includeTableOfContentsDesc = "ഫലം ലഭിക്കുന്ന PDF-ൽ സൃഷ്ടിച്ച വിഷയം സൂചിക ചേർക്കുക"
+includePageNumbers = "പേജ് നമ്പറുകൾ ഉൾപ്പെടുത്തുക"
+includePageNumbersDesc = "സൃഷ്ടിച്ച PDF-ൽ പേജ് നമ്പറുകൾ ചേർക്കുക"
+optimizeForEbookPdf = "eBook റീഡറുകൾക്കായി ഒപ്റ്റിമൈസ് ചെയ്യുക"
+optimizeForEbookPdfDesc = "eBook വായനയ്ക്ക് PDF ഒപ്റ്റിമൈസ് ചെയ്യുക (ചെറുതായ ഫയൽ വലിപ്പം, eInk ഉപകരണങ്ങളിൽ മെച്ചപ്പെട്ട റെൻഡറിംഗ്)"
+
+[convert.epubOptions]
+epubOptions = "PDF-നെ eBook ആക്കാനുള്ള ഓപ്ഷനുകൾ"
+epubOptionsDesc = "PDF-നെ EPUB/AZW3 ആയി മാറ്റുന്നതിനുള്ള ഓപ്ഷനുകൾ"
+detectChapters = "അധ്യായങ്ങൾ കണ്ടെത്തുക"
+detectChaptersDesc = "അധ്യായങ്ങളായി തോന്നുന്ന തലക്കെട്ടുകൾ കണ്ടെത്തി EPUB പേജ് ബ്രേക്കുകൾ ചേർക്കുക"
+targetDevice = "ലക്ഷ്യ ഉപകരണം"
+targetDeviceDesc = "റീഡർ ഉപകരണത്തിന് ഒപ്റ്റിമൈസ് ചെയ്ത ഔട്ട്പുട്ട് പ്രൊഫൈൽ തിരഞ്ഞെടുക്കുക"
+outputFormat = "ഔട്ട്പുട്ട് ഫോർമാറ്റ്"
+outputFormatDesc = "eBook-ന്റെ ഔട്ട്പുട്ട് ഫോർമാറ്റ് തിരഞ്ഞെടുക്കുക"
+tabletPhone = "ടാബ്ലെറ്റ്/ഫോൺ (ചിത്രങ്ങളോടെ)"
+kindleEink = "Kindle e-Ink (ടെക്സ്റ്റ് ഒപ്റ്റിമൈസ്ഡ്)"
 
 [imageToPdf]
 tags = "പരിവർത്തനം,img,jpg,ചിത്രം,ഫോട്ടോ"
@@ -1322,6 +1441,7 @@ applySignatures = "ചിത്രങ്ങൾ പ്രയോഗിക്കു
 name = "ചിത്രം"
 placeholder = "ഒരു ചിത്രം അപ്‌ലോഡ് ചെയ്യുക"
 label = "ചിത്ര ഫയൽ"
+hint = "Supports PNG, JPEG, GIF, BMP, TIFF, and SVG files. SVG files will be converted to PNG for embedding."
 
 [addImage.steps]
 configure = "ചിത്രം ക്രമീകരിക്കുക"
@@ -1361,6 +1481,11 @@ header = "അറ്റാച്ച്മെന്റുകൾ ചേർക്ക
 add = "അറ്റാച്ച്മെന്റ് ചേർക്കുക"
 remove = "അറ്റാച്ച്മെന്റ് നീക്കം ചെയ്യുക"
 embed = "അറ്റാച്ച്മെന്റ് എംബെഡ് ചെയ്യുക"
+convertToPdfA3b = "PDF/A-3b ആയി മാറ്റുക"
+convertToPdfA3bDescription = "എംബെഡുചെയ്ത അറ്റാച്ച്മെന്റുകളോടുകൂടിയ ആർക്കൈവൽ PDF സൃഷ്ടിക്കുന്നു"
+convertToPdfA3bTooltip = "PDF/A-3b ദീർഘകാല സംരക്ഷണം ഉറപ്പാക്കുന്ന ഒരു ആർക്കൈവൽ ഫോർമാറ്റാണ്. ഇത് ഇച്ഛാനുസൃത ഫയൽ ഫോർമാറ്റുകൾ അറ്റാച്ച്മെന്റുകളായി ഉൾചേർക്കാൻ അനുവദിക്കുന്നു. പരിവർത്തനത്തിന് Ghostscript ആവശ്യമാണ്, വലിയ ഫയലുകൾക്ക് കൂടുതൽ സമയം വേണ്ടിവരാം."
+convertToPdfA3bTooltipHeader = "PDF/A-3b പരിവർത്തനത്തെക്കുറിച്ച്"
+convertToPdfA3bTooltipTitle = "ഇത് ചെയ്യുന്നത്"
 submit = "അറ്റാച്ച്മെന്റുകൾ ചേർക്കുക"
 
 [watermark]
@@ -2113,6 +2238,16 @@ tip = "നിലവിൽ ഒരേസമയം ഒന്നിലധികം �
 outputFormat = "ഔട്ട്‌പുട്ട് ഫോർമാറ്റ്"
 pdfWithDigitalSignature = "PDF-ൽ ഒരു ഡിജിറ്റൽ ഒപ്പ് അടങ്ങിയിരിക്കുന്നു. അടുത്ത ഘട്ടത്തിൽ ഇത് നീക്കം ചെയ്യപ്പെടും."
 
+[pdfToPDFX]
+tags = "പ്രിന്റ്,സ്റ്റാൻഡേർഡ്,കൺവർഷൻ,പ്രൊഡക്ഷൻ,പ്രീപ്രസ്,ആർക്കൈവ്"
+title = "PDF-നെ PDF/X-ലേക്ക്"
+header = "PDF-നെ PDF/X-ലേക്ക്"
+credit = "PDF/X കൺവേഴ്ഷനായി ഈ സേവനം Ghostscript ഉപയോഗിക്കുന്നു"
+submit = "മാറ്റുക"
+tip = "ഇപ്പോൾ ഒരേസമയം ഒന്നിലധികം ഇൻപുട്ടുകൾക്ക് പ്രവർത്തിക്കില്ല"
+outputFormat = "ഔട്ട്‌പുട്ട് ഫോർമാറ്റ്"
+pdfWithDigitalSignature = "PDF-യിൽ ഡിജിറ്റൽ ഒപ്പ് ഉണ്ട്. ഇത് അടുത്ത ഘട്ടത്തിൽ നീക്കം ചെയ്യും."
+
 [PDFToWord]
 tags = "doc,docx,odt,വേഡ്,രൂപാന്തരം,ഫോർമാറ്റ്,പരിവർത്തനം,ഓഫീസ്,മൈക്രോസോഫ്റ്റ്,ഡോക്ഫയൽ"
 title = "PDF വേഡിലേക്ക്"
@@ -2306,6 +2441,10 @@ saved = "സേവ് ചെയ്തത്"
 label = "ഒപ്പിന്റെ ചിത്രം അപ്‌ലോഡ് ചെയ്യുക"
 placeholder = "ഇമേജ് ഫയൽ തിരഞ്ഞെടുക്കുക"
 hint = "നിങ്ങളുടെ ഒപ്പിന്റെ PNG അല്ലെങ്കിൽ JPG ചിത്രം അപ്‌ലോഡ് ചെയ്യുക"
+removeBackground = "വെള്ള ബാക്ക്ഗ്രൗണ്ട് നീക്കംചെയ്യുക (ട്രാൻസ്‌പാരന്റ് ആക്കുക)"
+processing = "ഇമേജ് പ്രോസസ്സ് ചെയ്യുന്നു..."
+backgroundRemovalFailedTitle = "ബാക്ക്ഗ്രൗണ്ട് നീക്കം ചെയ്യൽ പരാജയപ്പെട്ടു"
+backgroundRemovalFailedMessage = "ചിത്രത്തിൽ നിന്ന് ബാക്ക്ഗ്രൗണ്ട് നീക്കംചെയ്യാൻ കഴിഞ്ഞില്ല. പകരം യഥാർത്ഥ ചിത്രം ഉപയോഗിക്കുന്നു."
 
 [sign.instructions]
 title = "ഒപ്പ് എങ്ങനെ ചേർക്കാം"
@@ -2350,6 +2489,11 @@ note = "ഫ്ലാറ്റൻ ചെയ്യുന്നത് PDF-ിൽ �
 [flatten.options.flattenOnlyForms]
 label = "ഫോമുകൾ മാത്രം ഫ്ലാറ്റൻ ചെയ്യുക"
 desc = "ഫോം ഫീൽഡുകൾ മാത്രം ഫ്ലാറ്റൻ ചെയ്ത്, മറ്റു ഇന്ററാക്ടീവ് ഘടകങ്ങൾ അവികൃതമായി വിടുക"
+
+[flatten.renderDpi]
+label = "റെൻഡറിംഗ് DPI (ഐച്ഛികം, ശുപാർശ 150 DPI)"
+help = "സിസ്റ്റം ഡീഫോൾട്ട് ഉപയോഗിക്കാൻ ഒഴിവാക്കുക. ഉയർന്ന DPI ഔട്ട്പുട്ട് കൂടുതൽ മൂർച്ചയാക്കും, പക്ഷേ പ്രോസസിംഗ് സമയംയും ഫയൽ വലിപ്പവും വർധിപ്പിക്കും."
+placeholder = "ഉദാ. 150"
 
 [flatten.results]
 title = "ഫ്ലാറ്റൻ ഫലങ്ങൾ"
@@ -2502,6 +2646,7 @@ label = "ഓറിജിനൽ PDF"
 
 [compare.edited]
 label = "എഡിറ്റുചെയ്ത PDF"
+placeholder = "Select the edited PDF"
 
 [compare.swap]
 confirmTitle = "താരതമ്യം വീണ്ടും നടത്തണോ?"
@@ -2747,7 +2892,7 @@ submit = "സമർപ്പിക്കുക"
 failed = "മൾട്ടി-പേജ് ലേഔട്ട് സൃഷ്ടിക്കുമ്പോൾ പിശക് സംഭവിച്ചു."
 
 [bookletImposition]
-tags = "ബുക്ക്‌ലെറ്റ്,ഇംപോസിഷൻ,പ്രിന്റിംഗ്,ബൈൻഡിംഗ്,മടക്കൽ,സിഗ്നേച്ചർ"
+tags = "booklet,imposition,printing,binding,folding,signature"
 title = "ബുക്ക്ലെറ്റ് ഇംപോസിഷൻ"
 header = "ബുക്ക്ലെറ്റ് ഇംപോസിഷൻ"
 submit = "ബുക്ക്ലെറ്റ് സൃഷ്ടിക്കുക"
@@ -2846,7 +2991,7 @@ scaleFactor = "ഒരു പേജിന്റെ സൂം നില (ക്ര
 submit = "സമർപ്പിക്കുക"
 
 [adjustPageScale]
-tags = "വലിപ്പമാറ്റം,ഭേദഗതി,പരിമാണം,അനുസൃതമാക്കൽ"
+tags = "resize,modify,dimension,adapt"
 title = "പേജ് സ്കെയിൽ ക്രമപ്പെടുത്തുക"
 header = "പേജ് സ്കെയിൽ ക്രമപ്പെടുത്തുക"
 submit = "പേജ് സ്കെയിൽ ക്രമപ്പെടുത്തുക"
@@ -2857,8 +3002,8 @@ label = "സ്കെയിൽ ഫാക്ടർ"
 [adjustPageScale.pageSize]
 label = "ടാർഗറ്റ് പേജ് വലിപ്പം"
 keep = "അസൽ വലിപ്പം നിലനിർത്തുക"
-letter = "ലറ്റർ"
-legal = "ലീഗൽ"
+letter = "Letter"
+legal = "Legal"
 
 [adjustPageScale.error]
 failed = "പേജ് സ്കെയിൽ ക്രമപ്പെടുത്തുന്നതിനിടെ പിശക് സംഭവിച്ചു."
@@ -2925,6 +3070,7 @@ header = "PDF ക്രോപ്പ് ചെയ്യുക"
 submit = "സമർപ്പിക്കുക"
 noFileSelected = "ക്രോപ്പ് ആരംഭിക്കാൻ ഒരു PDF ഫയൽ തിരഞ്ഞെടുക്കുക"
 reset = "പൂർണ്ണ PDF ലേക്ക് റീസെറ്റ് ചെയ്യുക"
+autoCrop = "ശൂന്യസ്ഥലം സ്വയം ക്രോപ്പ് ചെയ്യുക"
 
 [crop.preview]
 title = "ക്രോപ്പ് ഏരിയ തിരഞ്ഞെടുപ്പ്"
@@ -3036,6 +3182,105 @@ title = "PDF-നെക്കുറിച്ചുള്ള വിവരങ്ങ
 header = "PDF-നെക്കുറിച്ചുള്ള വിവരങ്ങൾ നേടുക"
 submit = "വിവരങ്ങൾ നേടുക"
 downloadJson = "JSON ഡൗൺലോഡ് ചെയ്യുക"
+processing = "വിവരങ്ങൾ പുറത്തെടുക്കുന്നു..."
+results = "ഫലങ്ങൾ"
+noResults = "ഒരു റിപ്പോർട്ട് സൃഷ്ടിക്കാൻ ഉപകരണം പ്രവർത്തിപ്പിക്കുക."
+downloads = "ഡൗൺലോഡുകൾ"
+noneDetected = "ഒന്നും കണ്ടെത്തിയില്ല"
+indexTitle = "സൂചിക"
+
+[getPdfInfo.report]
+entryLabel = "പൂർണ്ണ വിവര സംഗ്രഹം"
+shortTitle = "PDF വിവരം"
+
+[getPdfInfo.sections]
+metadata = "മെറ്റാഡാറ്റ"
+formFields = "ഫോം ഫീൽഡുകൾ"
+basicInfo = "അടിസ്ഥാന വിവരം"
+documentInfo = "പ്രമാണ വിവരം"
+compliance = "അനുസരണം"
+encryption = "എൻക്രിപ്ഷൻ"
+permissions = "അനുമതികൾ"
+other = "മറ്റ്"
+perPageInfo = "ഓരോ പേജിലെ വിവരം"
+tableOfContents = "വിഷയസൂചിക"
+
+[getPdfInfo.compliance]
+notDetected = "കണ്ടെത്തിയില്ല"
+passed = "പാസായി"
+failed = "പരാജയപ്പെട്ടു"
+compliant = "അനുസൃതമാണ്"
+nonCompliant = "അനുസൃതമല്ല"
+none = "സ്റ്റാൻഡേർഡുകളൊന്നും കണ്ടെത്തിയില്ല"
+passedCount = "പാസായി"
+failedCount = "പരാജയപ്പെട്ടു"
+noVerification = "സ്ഥിരീകരണം നടത്തിയിട്ടില്ല"
+noVerificationDesc = "ഈ ഡോക്യുമെന്റിന് PDF സ്റ്റാൻഡേർഡുകളുടെ അനുസൃതത പരിശോധിച്ചിട്ടില്ല."
+
+[getPdfInfo.other]
+attachments = "അറ്റാച്ച്മെന്റുകൾ"
+embeddedFiles = "എംബെഡ് ചെയ്ത ഫയലുകൾ"
+javaScript = "JavaScript"
+layers = "ലെയറുകൾ"
+structureTree = "StructureTree"
+xmp = "XMPMetadata"
+
+[getPdfInfo.perPage]
+size = "വലുപ്പം"
+annotations = "അനോട്ടേഷനുകൾ"
+images = "ചിത്രങ്ങൾ"
+links = "ലിങ്കുകൾ"
+fonts = "ഫോണ്ടുകൾ"
+xobjects = "XObject എണ്ണങ്ങൾ"
+multimedia = "മൾട്ടിമീഡിയ"
+
+[getPdfInfo.summary]
+pages = "പേജുകൾ"
+fileSize = "ഫയൽ വലുപ്പം"
+pdfVersion = "PDF പതിപ്പ്"
+language = "ഭാഷ"
+title = "PDF സംഗ്രഹം"
+author = "രചയിതാവ്"
+created = "സൃഷ്ടിച്ചത്"
+modified = "തിരുത്തിയത്"
+permsAll = "എല്ലാ അനുമതികളും അനുവദിച്ചിട്ടുണ്ട്"
+permsRestricted = "{{count}} നിയന്ത്രണങ്ങൾ"
+permsMixed = "ചില അനുമതികൾ നിയന്ത്രിച്ചിരിക്കുന്നു"
+hasCompliance = "അനുസരണ മാനദണ്ഡങ്ങൾ ഉണ്ട്"
+noCompliance = "അനുസരണ മാനദണ്ഡങ്ങളില്ല"
+compliancePassed = "{{standards}} അനുസൃതം"
+complianceChecked = "സ്റ്റാൻഡേർഡുകൾ പരിശോധിച്ചു ({{failed}} പരാജയപ്പെട്ടു)"
+basic = "അടിസ്ഥാന വിവരം"
+documentInfo = "പ്രമാണ വിവരം"
+securityTitle = "സുരക്ഷാ നില"
+technical = "സാങ്കേതിക"
+overviewTitle = "PDF അവലോകനം"
+
+[getPdfInfo.summary.security]
+encrypted = "എൻക്രിപ്റ്റ് ചെയ്ത PDF - പാസ്‌വേഡ് സംരക്ഷണം ഉണ്ട്"
+unencrypted = "എൻക്രിപ്റ്റ് ചെയ്യാത്ത PDF - പാസ്‌വേഡ് സംരക്ഷണമില്ല"
+
+[getPdfInfo.summary.tech]
+images = "ചിത്രങ്ങൾ"
+fonts = "ഫോണ്ടുകൾ"
+formFields = "ഫോം ഫീൽഡുകൾ"
+embeddedFiles = "എംബെഡ് ചെയ്ത ഫയലുകൾ"
+javaScript = "JavaScript"
+layers = "ലെയറുകൾ"
+bookmarks = "ബുക്ക്‌മാർക്കുകൾ"
+multimedia = "മൾട്ടിമീഡിയ"
+
+[getPdfInfo.summary.overview]
+untitled = "ഒരു ശീർഷകമില്ലാത്ത പ്രമാണം"
+unknown = "അജ്ഞാത രചയിതാവ്"
+text = "ഇത് {{author}} സൃഷ്ടിച്ച, {{title}} എന്ന ശീർഷകമുള്ള {{pages}}-പേജ് PDF ആണ് (PDF പതിപ്പ് {{version}})."
+
+[getPdfInfo.error]
+partial = "ചില ഫയലുകൾ പ്രോസസ്സ് ചെയ്യാൻ കഴിഞ്ഞില്ല."
+unexpected = "പുറത്തെടുക്കുന്നതിനിടെ അപ്രതീക്ഷിത പിശക്."
+
+[getPdfInfo.status]
+complete = "പുറത്തെടുക്കൽ പൂർത്തിയായി"
 
 [extractPage]
 tags = "വേർതിരിച്ചെടുക്കുക"
@@ -3070,6 +3315,7 @@ title = "റിഡാക്ഷൻ രീതി"
 mode = "മോഡ്"
 automatic = "ഓട്ടോമാറ്റിക്"
 automaticDesc = "തിരച്ചിൽ പദങ്ങളുടെ അടിസ്ഥാനത്തിൽ ടെക്സ്റ്റ് റിഡാക്റ്റ് ചെയ്യുക"
+automaticDisabledTooltip = "ഒരുമിച്ചു ഒന്നിലധികം ഫയലുകൾ റെഡാക്റ്റ് ചെയ്യാൻ ഫയൽ മാനേജറിൽ ഫയലുകൾ തിരഞ്ഞെടുക്കുക"
 manual = "മാനുവൽ"
 manualDesc = "നിശ്ചിത മേഖലകൾ റിഡാക്റ്റ് ചെയ്യാൻ ക്ലിക്ക് ചെയ്ത് ഡ്രാഗ് ചെയ്യുക"
 manualComingSoon = "മാനുവൽ റിഡാക്ഷൻ ഉടൻ വരുന്നു"
@@ -3140,8 +3386,35 @@ text = "പൂർണ്ണ വാക്കുകൾ മാത്രം മാച
 title = "PDF-Image ആയി മാറ്റുക"
 text = "റിഡാക്ഷൻ കഴിഞ്ഞ് PDF-നെ ഇമേജ്-അധിഷ്ടിത PDF ആയി മാറ്റുന്നു. റിഡാക്ഷൻ ബോക്സുകളുടെ പിന്നിലെ ടെക്സ്റ്റ് പൂർണമായും നീക്കംചെയ്ത് തിരിച്ചുപിടിക്കാനാവാത്തതാക്കുന്നു."
 
+[redact.tooltip.manual.header]
+title = "മാനുവൽ റെഡാക്ഷൻ നിയന്ത്രണങ്ങൾ"
+
+[redact.tooltip.manual.markText]
+title = "ടെക്സ്റ്റ് മാർക്ക് ടൂൾ"
+text = "റെഡാക്ഷൻ ചെയ്യാൻ PDF-ൽ നേരിട്ട് ടെക്സ്റ്റ് തിരഞ്ഞെടുക്കുക. റെഡാക്റ്റ് ചെയ്യേണ്ട പ്രത്യേക ടെക്സ്റ്റ് ഹൈലൈറ്റ് ചെയ്യാൻ ക്ലിക്ക് ചെയ്ത് വലിക്കുക."
+
+[redact.tooltip.manual.markArea]
+title = "ഏരിയ മാർക്ക് ടൂൾ"
+text = "റെഡാക്ഷൻ ചെയ്യേണ്ട മേഖലകൾ അടയാളപ്പെടുത്താൻ PDF-ൽ ചതുരാകൃതിയിലുള്ള പ്രദേശങ്ങൾ വരയ്ക്കുക. ചിത്രങ്ങൾ, ഒപ്പുകൾ, അല്ലെങ്കിൽ അനിയമിത ആകൃതികൾ മറയ്ക്കാൻ ഇത് ഉപകാരപ്രദമാണ്."
+
+[redact.tooltip.manual.apply]
+title = "റെഡാക്ഷനുകൾ പ്രയോഗിക്കുക"
+text = "ഉള്ളടക്കം അടയാളപ്പെടുത്തിയതിന് ശേഷം, 'Apply' ക്ലിക്ക് ചെയ്ത് എല്ലാ അടയാളപ്പെടുത്തിയ ഭാഗങ്ങളും സ്ഥിരമായി റെഡാക്റ്റ് ചെയ്യുക. പെൻഡിംഗ് എണ്ണം എത്ര റെഡാക്ഷനുകൾ പ്രയോഗിക്കാൻ തയ്യാറാണെന്ന് കാണിക്കും."
+bullet1 = "പ്രയോഗിക്കുന്നതിന് മുമ്പ് ആവശ്യമുള്ളത്ര മേഖലയെ അടയാളപ്പെടുത്തുക"
+bullet2 = "എല്ലാ പെൻഡിംഗ് റെഡാക്ഷനുകളും ഒരേസമയം പ്രയോഗിക്കും"
+bullet3 = "പ്രയോഗിച്ചതിന് ശേഷം റെഡാക്ഷനുകൾ പിൻവലിക്കാൻ സാധിക്കില്ല"
+
 [redact.manual]
+title = "റെഡാക്ഷൻ ഉപകരണങ്ങൾ"
+instructions = "റെഡാക്ഷനായി ഉള്ളടക്കം അടയാളപ്പെടുത്താൻ PDF-ൽ ടെക്സ്റ്റ് തിരഞ്ഞെടുക്കുകയോ പ്രദേശങ്ങൾ വരയ്ക്കുകയോ ചെയ്യുക."
+markText = "ടെക്സ്റ്റ് മാർക്ക് ചെയ്യുക"
+markArea = "ഏരിയ മാർക്ക് ചെയ്യുക"
+pendingLabel = "പെൻഡിംഗ്:"
+applyWarning = "⚠️ സ്ഥിരമായി പ്രയോഗിക്കുന്നു; പിന്‍വലിക്കാൻ കഴിയില്ല, അടിഞ്ഞിരിക്കുന്ന ഡാറ്റ ഇല്ലാതാകും"
+apply = "പ്രയോഗിക്കുക"
+noMarks = "റെഡാക്ഷൻ മാർക്കുകളൊന്നുമില്ല. മുകളിലുള്ള ഉപകരണങ്ങൾ ഉപയോഗിച്ച് റെഡാക്ഷനായി ഉള്ളടക്കം അടയാളപ്പെടുത്തുക."
 header = "മാനുവൽ റിഡാക്ഷൻ"
+controlsTitle = "മാനുവൽ റെഡാക്ഷൻ നിയന്ത്രണങ്ങൾ"
 textBasedRedaction = "ടെക്സ്റ്റ്-അധിഷ്ടിത റിഡാക്ഷൻ"
 pageBasedRedaction = "പേജ്-അധിഷ്ടിത റിഡാക്ഷൻ"
 convertPDFToImageLabel = "PDF-നെ PDF-Image ആയി മാറ്റുക (ബോക്സിന് പിന്നിലെ ടെക്സ്റ്റ് നീക്കാൻ ഉപയോഗിക്കുന്നു)"
@@ -3257,6 +3530,19 @@ placeholder = "തിരശ്ചീന വിഭജനങ്ങളുടെ എ
 label = "ലംബ വിഭജനങ്ങൾ"
 placeholder = "ലംബ വിഭജനങ്ങളുടെ എണ്ണം നൽകുക"
 
+[split-by-sections.splitMode]
+label = "സ്പ്ലിറ്റ് മോഡ്"
+description = "പേജുകൾ എങ്ങനെ വിഭജിക്കണമെന്ന് തിരഞ്ഞെടുക്കുക"
+splitAll = "എല്ലാ പേജുകളും വിഭജിക്കുക"
+splitAllExceptFirst = "ആദ്യത്തെ ഒഴികെ എല്ലാം വിഭജിക്കുക"
+splitAllExceptLast = "അവസാനത്തെ ഒഴികെ എല്ലാം വിഭജിക്കുക"
+splitAllExceptFirstAndLast = "ആദ്യം, അവസാനം ഒഴികെ എല്ലാം വിഭജിക്കുക"
+custom = "ഇഷ്ടാനുസൃത പേജുകൾ"
+
+[split-by-sections.customPages]
+label = "ഇഷ്ടാനുസൃത പേജ് നമ്പറുകൾ"
+placeholder = "ഉദാ. 2,4,6"
+
 [AddStampRequest]
 tags = "സ്റ്റാമ്പ്, ചിത്രം ചേർക്കുക, ചിത്രം മധ്യത്തിലാക്കുക, വാട്ടർമാർക്ക്, PDF, ഉൾപ്പെടുത്തുക, ഇഷ്ടാനുസൃതമാക്കുക"
 header = "PDF സ്റ്റാമ്പ് ചെയ്യുക"
@@ -3281,6 +3567,44 @@ imageSize = "ഇമേജ് വലിപ്പം"
 margin = "മാർജിൻ"
 positionAndFormatting = "സ്ഥാനം & ഫോർമാറ്റിംഗ്"
 quickPosition = "സ്റ്റാമ്പ് വയ്ക്കാൻ പേജിലെ ഒരു സ്ഥാനം തിരഞ്ഞെടുക്കുക."
+preview = "Preview:"
+useTemplate = "Use Template"
+selectTemplate = "Select a template..."
+stampTextDescription = "Use dynamic variables below. Use @@ for literal @. Use \\n for new lines."
+dynamicVariables = "Dynamic Variables"
+clickToExpand = "Click to expand"
+variablesHelp = "Click on any variable to insert it into your stamp text. Use @@ for literal @."
+dateTimeVars = "Date & Time"
+dateDesc = "Current date"
+timeDesc = "Current time"
+datetimeDesc = "Date and time combined"
+customDateDesc = "Custom format"
+yearMonthDayDesc = "Individual date parts"
+pageVars = "Page Information"
+pageNumberDesc = "Current page number"
+totalPagesDesc = "Total number of pages"
+fileVars = "File Information"
+filenameDesc = "Filename without extension"
+filenameFullDesc = "Filename with extension"
+metadataVars = "Document Metadata"
+metadataDesc = "From PDF document properties"
+otherVars = "Other"
+uuidDesc = "Short unique identifier (8 chars)"
+examples = "Examples"
+multiLine = "multi-line"
+
+[AddStampRequest.template]
+pageNumberFooter = "Page Number Footer"
+dateHeader = "Date Header"
+europeanDate = "European Date"
+timestamp = "Timestamp"
+draftWatermark = "Draft Watermark"
+custom = "Custom"
+page-numbers = "Page Numbers"
+draft = "Draft Watermark"
+doc-info = "Document Info"
+legal-footer = "Legal Footer"
+european-date = "European Date (DD/MM/YYYY)"
 
 [AddStampRequest.error]
 failed = "PDF-ലേക്ക് സ്റ്റാമ്പ് ചേർക്കുന്നതിനിടെ പിശക് സംഭവിച്ചു."
@@ -3396,7 +3720,7 @@ certHint = "കസ്റ്റം ട്രസ്റ്റ് സോഴ്‌സ
 title = "സ്ഥിരീകരണ സെറ്റിങ്ങുകൾ"
 
 [replaceColor]
-tags = "നിറം പകരുക,പേജ് പ്രവർത്തനങ്ങൾ,ബാക്ക്‌എൻഡ്,സെർവർ-സൈഡ്"
+tags = "Replace Colour,Page operations,Back end,server side"
 
 [replaceColor.labels]
 settings = "സെറ്റിങ്ങുകൾ"
@@ -3503,6 +3827,13 @@ passwordChangedSuccess = "പാസ്‌വേഡ് വിജയകരമാ�
 credentialsUpdated = "നിങ്ങളുടെ ക്രെഡൻഷ്യലുകൾ അപ്ഡേറ്റ് ചെയ്തു. ദയവായി വീണ്ടും സൈൻ ഇൻ ചെയ്യുക."
 defaultCredentials = "ഡീഫോൾട്ട് ലോഗിൻ ക്രെഡൻഷ്യലുകൾ"
 changePasswordWarning = "ആദ്യമായി ലോഗിൻ ചെയ്തതിന് ശേഷം ദയവായി നിങ്ങളുടെ പാസ്‌വേഡ് മാറ്റുക"
+mfaRequired = "രണ്ടുഘട്ട കോഡ് ആവശ്യമാണ്"
+mfaCode = "സ്ഥിരീകരണ കോഡ്"
+enterMfaCode = "6 അക്ക കോഡ് നൽകുക"
+mfaPromptTitle = "രണ്ടുഘട്ട സ്ഥിരീകരണം"
+mfaPromptBody = "തുടരാൻ നിങ്ങളുടെ ഓതന്റിക്കേറ്റർ ആപ്പിൽ നിന്നുള്ള സ്ഥിരീകരണ കോഡ് നൽകുക."
+verifyingMfa = "പരിശോധിക്കുന്നു..."
+verifyMfa = "കോഡ് പരിശോധിക്കുക"
 
 [login.slides.overview]
 alt = "Stirling PDF അവലോകനം"
@@ -3618,6 +3949,19 @@ filesize = "ഫയൽ വലിപ്പം"
 [compress.grayscale]
 label = "കംപ്രഷനായി ഗ്രേസ്‌കെയിൽ പ്രയോഗിക്കുക"
 
+[compress.linearize]
+label = "വേഗത്തിലുള്ള വെബ് കാണുന്നതിനായി PDF ലിനിയറൈസ് ചെയ്യുക"
+
+[compress.lineArt]
+label = "ചിത്രങ്ങളെ ലൈൻ ആർട്ടാക്കി മാറ്റുക"
+description = "പരമാവധി വലുപ്പ കുറയ്ക്കുന്നതിനായി പേജുകൾ ഹൈ-കോൺട്രാസ്റ്റ് കറുപ്പ്-വെളുപ്പാക്കി മാറ്റാൻ ImageMagick ഉപയോഗിക്കുന്നു."
+unavailable = "ImageMagick ഈ സെർവറിൽ ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല അല്ലെങ്കിൽ പ്രവർത്തനക്ഷമമല്ല"
+detailLevel = "വിശദത നില"
+edgeEmphasis = "എഡ്ജ് ഊന്നൽ"
+edgeLow = "മൃദുവായി"
+edgeMedium = "സമതുലിതം"
+edgeHigh = "ശക്തമായി"
+
 [compress.tooltip.header]
 title = "കംപ്രസ് സെറ്റിങ്ങുകളുടെ അവലോകനം"
 
@@ -3635,6 +3979,10 @@ bullet2 = "ഉയർന്ന മൂല്യങ്ങൾ ഫയൽ വലിപ
 title = "ഗ്രേസ്കെയിൽ"
 text = "എല്ലാ ഇമേജുകളും ബ്ലാക്ക്-ആൻഡ്-വൈറ്റാക്കി മാറ്റാൻ ഈ ഓപ്ഷൻ തിരഞ്ഞെടുക്കുക; പ്രത്യേകിച്ച് സ്കാൻ ചെയ്ത PDFകൾക്കും ഇമേജ് കൂടുതലുള്ള ഡോക്യുമെന്റുകൾക്കും ഫയൽ വലിപ്പം ഗണ്യമായി കുറയ്ക്കാം."
 
+[compress.tooltip.lineArt]
+title = "ലൈൻ ആർട്ട്"
+text = "ImageMagick ഉപയോഗിച്ച് പേജുകൾ ഹൈ-കോൺട്രാസ്റ്റ് കറുപ്പ്-വെളുപ്പാക്കി മാറ്റുക. എത്ര ഉള്ളടക്കം കറുപ്പാകണമെന്നത് നിയന്ത്രിക്കാൻ വിശദത നില ഉപയോഗിക്കുക, അറ്റങ്ങൾ കണ്ടെത്തുന്നതിന്റെ ശക്തി നിയന്ത്രിക്കാൻ എഡ്ജ് ഊന്നൽ ഉപയോഗിക്കുക."
+
 [compress.error]
 failed = "PDF കംപ്രസ് ചെയ്യുന്നതിനിടെ പിശക് സംഭവിച്ചു."
 
@@ -3646,6 +3994,11 @@ failed = "PDF കംപ്രസ് ചെയ്യുന്നതിനിട�
 [compress.selectText.1]
 _value = "കംപ്രഷൻ ക്രമീകരണങ്ങൾ"
 1 = "1-3 PDF കംപ്രഷൻ,</br> 4-6 ലൈറ്റ് ഇമേജ് കംപ്രഷൻ,</br> 7-9 തീവ്രമായ ഇമേജ് കംപ്രഷൻ ചിത്രത്തിന്റെ ഗുണനിലവാരം ഗണ്യമായി കുറയ്ക്കും"
+
+[compress.compressionLevel]
+range1to3 = "കുറഞ്ഞ മൂല്യങ്ങൾ ഗുണനിലവാരം നിലനിർത്തും, പക്ഷേ വലിയ ഫയലുകൾ ലഭിക്കും"
+range4to6 = "ഇടത്തരം കമ്പ്രഷൻ, മിതമായ ഗുണനിലവാര കുറവ്"
+range7to9 = "ഉയർന്ന മൂല്യങ്ങൾ ഫയൽ വലിപ്പം ഗണ്യമായി കുറയ്ക്കും, പക്ഷേ ചിത്രത്തിന്റെ വ്യക്തത കുറയാം"
 
 [decrypt]
 passwordPrompt = "ഈ ഫയൽ പാസ്‌വേഡ് ഉപയോഗിച്ച് സംരക്ഷിച്ചിരിക്കുന്നു. ദയവായി പാസ്‌വേഡ് നൽകുക:"
@@ -3790,7 +4143,7 @@ version = "നിലവിലെ റിലീസ്"
 title = "API ഡോക്യുമെന്റേഷൻ"
 header = "API ഡോക്യുമെന്റേഷൻ"
 desc = "Stirling PDF API എൻഡ്പോയിന്റുകൾ കാണുകയും പരിശോധിക്കുകയും ചെയ്യുക"
-tags = "api,ഡോക്യുമെന്റേഷൻ,swagger,എൻഡ്പോയിന്റുകൾ,വികസനം"
+tags = "api,documentation,swagger,endpoints,development"
 
 [cookieBanner.popUp]
 title = "ഞങ്ങൾ കുക്കികൾ എങ്ങനെ ഉപയോഗിക്കുന്നു"
@@ -3886,22 +4239,97 @@ deleteSelected = "തിരഞ്ഞെടുത്ത പേജുകൾ ഇല
 closePdf = "PDF അടയ്ക്കുക"
 exportAll = "PDF എക്സ്പോർട്ട് ചെയ്യുക"
 downloadSelected = "തിരഞ്ഞെടുത്ത ഫയലുകൾ ഡൗൺലോഡ് ചെയ്യുക"
-downloadAll = "എല്ലാം ഡൗൺലോഡ് ചെയ്യുക"
-saveAll = "എല്ലാം സേവ് ചെയ്യുക"
+annotations = "അനോട്ടേഷനുകൾ"
+exportSelected = "തിരഞ്ഞെടുത്ത പേജുകൾ എക്സ്പോർട്ട് ചെയ്യുക"
+saveChanges = "മാറ്റങ്ങൾ സംരക്ഷിക്കുക"
 toggleTheme = "തീം മാറ്റുക"
-toggleBookmarks = "ബുക്ക്‌മാർക്കുകൾ ടോഗിൾ ചെയ്യുക"
 language = "ഭാഷ"
+toggleAnnotations = "അനോട്ടേഷൻ ദൃശ്യമാനം മാറ്റുക"
 search = "PDF തിരയുക"
 panMode = "പാൻ മോഡ്"
+applyRedactionsFirst = "ആദ്യം റെഡാക്ഷനുകൾ പ്രയോഗിക്കുക"
 rotateLeft = "ഇടത്തേക്ക് തിരിക്കുക"
 rotateRight = "വലത്തേക്ക് തിരിക്കുക"
 toggleSidebar = "സൈഡ്ബാർ മാറ്റുക"
-exportSelected = "തിരഞ്ഞെടുത്ത പേജുകൾ എക്സ്പോർട്ട് ചെയ്യുക"
-toggleAnnotations = "അനോട്ടേഷൻ ദൃശ്യമാനം മാറ്റുക"
-annotationMode = "അനോട്ടേഷൻ മോഡ് മാറ്റുക"
+toggleBookmarks = "ബുക്ക്‌മാർക്കുകൾ ടോഗിൾ ചെയ്യുക"
 print = "PDF അച്ചടിക്കുക"
 draw = "വരയ്ക്കുക"
+redact = "റെഡാക്റ്റ് ചെയ്യുക"
+exitRedaction = "റെഡാക്ഷൻ മോഡിൽ നിന്ന് പുറത്ത് പോകുക"
 save = "സംരക്ഷിക്കുക"
+downloadAll = "എല്ലാം ഡൗൺലോഡ് ചെയ്യുക"
+saveAll = "എല്ലാം സേവ് ചെയ്യുക"
+
+[textAlign]
+left = "ഇടത്"
+center = "മധ്യം"
+right = "വലത്"
+
+[annotation]
+title = "അനോട്ടേറ്റ്"
+desc = "ഹൈലൈറ്റ്, പേന, ടെക്സ്റ്റ്, കുറിപ്പുകൾ എന്നിവ ഉപയോഗിക്കുക. മാറ്റങ്ങൾ തത്സമയം നിലനിൽക്കും—ഫ്ലാറ്റൻ ചെയ്യേണ്ടതില്ല."
+highlight = "ഹൈലൈറ്റ്"
+pen = "പേന"
+text = "ടെക്സ്റ്റ് ബോക്സ്"
+note = "കുറിപ്പ്"
+rectangle = "ആയതം"
+ellipse = "എലിപ്സ്"
+select = "തിരഞ്ഞെടുക്കുക"
+exit = "അനോട്ടേഷൻ മോഡിൽ നിന്ന് പുറത്ത് പോകുക"
+strokeWidth = "കനം"
+opacity = "അപാകത"
+strokeOpacity = "സ്ട്രോക്കിന്റെ അപാകത"
+fillOpacity = "ഫിൽ അപാകത"
+fontSize = "ഫോണ്ട് വലുപ്പം"
+chooseColor = "നിറം തിരഞ്ഞെടുക്കുക"
+color = "നിറം"
+strokeColor = "സ്ട്രോക്ക് നിറം"
+fillColor = "ഫിൽ നിറം"
+underline = "അടിവര"
+strikeout = "സ്ട്രൈക്കൗട്ട്"
+squiggly = "സ്ക്വിഗ്ലി"
+inkHighlighter = "ഫ്രീഹാൻഡ് ഹൈലൈറ്റർ"
+freehandHighlighter = "ഫ്രീഹാൻഡ് ഹൈലൈറ്റർ"
+square = "ചതുരം"
+circle = "വൃത്തം"
+polygon = "ബഹുഭുജം"
+line = "രേഖ"
+stamp = "ചിത്രം ചേർക്കുക"
+textMarkup = "ടെക്സ്റ്റ് മാർക്കപ്പ്"
+drawing = "വരയ്ക്കൽ"
+shapes = "ആകൃതികൾ"
+notesStamps = "കുറിപ്പുകളും സ്റ്റാമ്പുകളും"
+settings = "സെറ്റിങ്ങുകൾ"
+borderOn = "ബോർഡർ: ഓൺ"
+borderOff = "ബോർഡർ: ഓഫ്"
+editInk = "പേന എഡിറ്റ് ചെയ്യുക"
+editLine = "രേഖ എഡിറ്റ് ചെയ്യുക"
+editNote = "കുറിപ്പ് എഡിറ്റ് ചെയ്യുക"
+editText = "ടെക്സ്റ്റ് ബോക്സ് എഡിറ്റ് ചെയ്യുക"
+editTextMarkup = "ടെക്സ്റ്റ് മാർക്കപ്പ് എഡിറ്റ് ചെയ്യുക"
+editSelected = "അനോട്ടേഷൻ എഡിറ്റ് ചെയ്യുക"
+editSquare = "ചതുരം എഡിറ്റ് ചെയ്യുക"
+editCircle = "വൃത്തം എഡിറ്റ് ചെയ്യുക"
+editPolygon = "ബഹുഭുജം എഡിറ്റ് ചെയ്യുക"
+unsupportedType = "ഈ അനോട്ടേഷൻ തരം പൂർണ്ണമായി എഡിറ്റിംഗിനായി പിന്തുണയ്ക്കുന്നില്ല."
+textAlignment = "ടെക്സ്റ്റ് അലൈന്മെന്റ്"
+noteIcon = "കുറിപ്പ് ഐക്കൺ"
+imagePreview = "പ്രിവ്യൂ"
+contents = "ടെക്സ്റ്റ്"
+backgroundColor = "ബാക്ക്ഗ്രൗണ്ട് നിറം"
+clearBackground = "ബാക്ക്ഗ്രൗണ്ട് നീക്കംചെയ്യുക"
+noBackground = "ബാക്ക്ഗ്രൗണ്ട് ഇല്ല"
+stampSettings = "സ്റ്റാമ്പ് സജ്ജീകരണങ്ങൾ"
+savingCopy = "ഡൗൺലോഡിനായി തയ്യാറാക്കുന്നു..."
+saveFailed = "കോപ്പി സംരക്ഷിക്കാൻ കഴിഞ്ഞില്ല"
+saveReady = "ഡൗൺലോഡ് തയ്യാറാണ്"
+selectAndMove = "തിരഞ്ഞെടുക്കി എഡിറ്റ് ചെയ്യുക"
+editSelectDescription = "നിറം, അപാകത, ടെക്സ്റ്റ്, വലുപ്പം എന്നിവ എഡിറ്റ് ചെയ്യാൻ നിലവിലുള്ള അനോട്ടേഷൻ ക്ലിക്ക് ചെയ്യുക."
+editStampHint = "ചിത്രം മാറ്റാൻ, ഈ സ്റ്റാമ്പ് ഇല്ലാതാക്കി പുതിയത് ചേർക്കുക."
+editSwitchToSelect = "ഈ അനോട്ടേഷൻ എഡിറ്റ് ചെയ്യാൻ Select & Edit-ലേക്ക് മാറുക."
+undo = "അൺഡു"
+redo = "റീഡു"
+applyChanges = "മാറ്റങ്ങൾ പ്രയോഗിക്കുക"
 saveChanges = "മാറ്റങ്ങൾ സംരക്ഷിക്കുക"
 
 [search]
@@ -3953,12 +4381,20 @@ settings = "സെറ്റിങ്ങുകൾ"
 adminSettings = "അഡ്മിൻ സെറ്റിങ്ങുകൾ"
 allTools = "All Tools"
 reader = "റീഡർ"
+tours = "ടൂറുകൾ"
+showMeAround = "എനിക്ക് കാണിച്ചു തരൂ"
+
+[quickAccess.toursTooltip]
+admin = "ഇവിടെ വാക്ക്‌ത്രൂസ് കാണുക: Tools ടൂർ, പുതിയ V2 ലേഔട്ട് ടൂർ, Admin ടൂർ."
+user = "ഇവിടെ വാക്ക്‌ത്രൂസ് കാണുക: Tools ടൂർ, പുതിയ V2 ലേഔട്ട് ടൂർ."
 
 [quickAccess.helpMenu]
 toolsTour = "ടൂളുകളുടെ പരിചയം"
 toolsTourDesc = "ഉപകരണങ്ങൾ എന്ത് ചെയ്യുമെന്നു പഠിക്കുക"
 adminTour = "അഡ്മിൻ പരിചയം"
 adminTourDesc = "അഡ്മിൻ സജ്ജീകരണങ്ങളും സവിശേഷതകളും അന്വേഷിക്കുക"
+whatsNewTour = "V2-ലെ പുതുമകൾ കാണുക"
+whatsNewTourDesc = "അപ്ഡേറ്റ് ചെയ്ത ലേഔട്ട് ടൂർ ചെയ്യുക"
 
 [admin]
 error = "പിശക്"
@@ -3977,6 +4413,8 @@ fetchError = "സജ്ജീകരണങ്ങൾ ലോഡുചെയ്യ�
 saveError = "സജ്ജീകരണങ്ങൾ സംരക്ഷിക്കൽ പരാജയപ്പെട്ടു"
 saved = "സജ്ജീകരണങ്ങൾ വിജയകരമായി സംരക്ഷിച്ചു"
 saveSuccess = "സജ്ജീകരണങ്ങൾ വിജയകരമായി സംരക്ഷിച്ചു"
+success = "സജ്ജീകരണങ്ങൾ വിജയകരമായി സംരക്ഷിച്ചു"
+error = "സജ്ജീകരണങ്ങൾ സംരക്ഷിക്കാൻ പരാജയപ്പെട്ടു"
 save = "മാറ്റങ്ങൾ സംരക്ഷിക്കുക"
 discard = "തള്ളുക"
 restartRequired = "റീസ്റ്റാർട്ട് ആവശ്യമാണ്"
@@ -3996,6 +4434,10 @@ hint = "നിങ്ങൾക്ക് സേവ് ചെയ്യാത്ത 
 title = "ലോഗിൻ മോഡ് ആവശ്യമാണ്"
 message = "അഡ്മിൻ സജ്ജീകരണങ്ങൾ മാറ്റാൻ ലോഗിൻ മോഡ് പ്രവർത്തനക്ഷമമാകണം. നിങ്ങളുടെ എൻവയോൺമെന്റിൽ SECURITY_ENABLELOGIN=true എന്ന രീതിയിൽ, അല്ലെങ്കിൽ settings.yml-ൽ security.enableLogin: true ആയി ക്രമീകരിച്ച് സെർവർ റീസ്റ്റാർട്ട് ചെയ്യുക."
 readOnly = "താഴെയുള്ള സജ്ജീകരണങ്ങളിൽ ഉദാഹരണ മൂല്യങ്ങൾ ബോധ്യത്തിന്നായി കാണിച്ചിരിക്കുന്നു. യഥാർത്ഥ കോൺഫിഗറേഷൻ കാണാനും തിരുത്താനും ലോഗിൻ മോഡ് പ്രവർത്തനക്ഷമമാക്കുക."
+
+[admin.settings.enterpriseRequired]
+title = "എന്റർപ്രൈസ് ലൈസൻസ് ആവശ്യമാണ്"
+message = "{{featureName}} ഉപയോഗിക്കാൻ ഒരു എന്റർപ്രൈസ് ലൈസൻസ് ആവശ്യമാണ്. നിങ്ങൾ റഫറൻസിന് ഡെമോ ഡാറ്റയാണ് കാണുന്നത്."
 
 [admin.settings.restart]
 title = "റീസ്റ്റാർട്ട് ആവശ്യമാണ്"
@@ -4081,9 +4523,17 @@ description = "പൈപ്പ്‌ലൈൻ പ്രോസസിംഗിന�
 [admin.settings.general.customPaths.pipeline]
 label = "പൈപ്പ്‌ലൈൻ ഡയറക്ടറികൾ"
 
+[admin.settings.general.customPaths.pipeline.pipelineDir]
+label = "Pipeline Directory"
+description = "Base directory for pipeline resources (leave empty for default: /pipeline)"
+
 [admin.settings.general.customPaths.pipeline.watchedFoldersDir]
 label = "വാച്ച് ചെയ്യുന്ന ഫോൾഡറുകളുടെ ഡയറക്ടറി"
 description = "പൈപ്പ്‌ലൈൻ ഇൻകമിംഗ് PDFകൾക്കായി നിരീക്ഷിക്കുന്ന ഡയറക്ടറി (ഡീഫാൾട്ട് ഉപയോഗിക്കാൻ ശൂന്യം വിടുക: /pipeline/watchedFolders)"
+
+[admin.settings.general.customPaths.pipeline.watchedFoldersDirs]
+label = "Watched Folders Directories"
+description = "Directories where pipeline monitors for incoming PDFs (one per line or comma-separated; leave empty for default: /pipeline/watchedFolders)"
 
 [admin.settings.general.customPaths.pipeline.finishedFoldersDir]
 label = "ഫിനിഷ്ഡ് ഫോൾഡറുകളുടെ ഡയറക്ടറി"
@@ -4099,6 +4549,13 @@ description = "HTML-നെ PDF ആക്കുന്നതിനുള്ള Wea
 [admin.settings.general.customPaths.operations.unoconvert]
 label = "Unoconvert എക്സിക്യൂട്ടബിൾ"
 description = "ഡോക്യുമെന്റ് കൺവർഷനുകൾക്കായുള്ള LibreOffice unoconvert-ന്റെ പാത (ഡീഫാൾട്ട് ഉപയോഗിക്കാൻ ശൂന്യം വിടുക: /opt/venv/bin/unoconvert)"
+
+[admin.settings.general.frontendUrl]
+label = "ഫ്രണ്ട്‌എൻഡ് URL"
+description = "ഫ്രണ്ട്‌എൻഡിന്‍റെ ബെയ്‌സ് URL (ഉദാ., https://pdf.example.com). ഇമെയിൽ ക്ഷണ ലിങ്കുകൾക്കും മൊബൈൽ QR കോഡ് അപ്‌ലോഡുകൾക്കും ഉപയോഗിക്കുന്നു. ബാക്ക്‌എൻഡ് URL ഉപയോഗിക്കാനായി ശൂന്യമാക്കുക."
+
+[admin.settings.badge]
+clickToUpgrade = "പ്ലാൻ വിശദാംശങ്ങൾ കാണാൻ ക്ലിക്ക് ചെയ്യുക"
 
 [admin.settings.security]
 title = "സുരക്ഷ"
@@ -4128,6 +4585,13 @@ description = "അക്കൗണ്ട് ലോക്കാകുന്നത�
 [admin.settings.security.loginResetTimeMinutes]
 label = "ലോഗിൻ റീസെറ്റ് സമയം (മിനിറ്റ്)"
 description = "പരാജയപ്പെട്ട ലോഗിൻ ശ്രമങ്ങൾ റീസെറ്റ് ചെയ്യുന്നതിന് മുമ്പുള്ള സമയം"
+
+[admin.settings.security.xFrameOptions]
+label = "X-Frame-Options"
+description = "Controls whether the application can be embedded in iframes"
+deny = "Deny (Prevents all framing)"
+sameorigin = "Same Origin (Allow framing from same domain)"
+disabled = "Disabled (No X-Frame-Options header)"
 
 [admin.settings.security.csrfDisabled]
 label = "CSRF സംരക്ഷണം അപ്രാപ്തമാക്കുക"
@@ -4236,6 +4700,19 @@ connect = "കണക്റ്റ് ചെയ്യുക"
 disconnect = "ഡിസ്കണക്റ്റ് ചെയ്യുക"
 disconnected = "പ്രൊവൈഡർ വിജയകരമായി ഡിസ്കണക്റ്റ് ചെയ്തു"
 disconnectError = "പ്രൊവൈഡറെ ഡിസ്കണക്റ്റ് ചെയ്യാൻ പരാജയപ്പെട്ടു"
+mobileScannerConvertToPdf = "ചിത്രങ്ങളെ PDF ആക്കുക"
+mobileScannerConvertToPdfDesc = "അപ്‌ലോഡ് ചെയ്ത ചിത്രങ്ങളെ സ്വയമേവ PDF ഫോർമാറ്റിലേക്ക് മാറ്റുക. പ്രവർത്തനരഹിതമാക്കിയാൽ, ചിത്രങ്ങൾ അതേപടി നിലനിർത്തും."
+mobileScannerImageResolution = "ഇമേജ് റെസല്യൂഷൻ"
+mobileScannerImageResolutionDesc = "അപ്‌ലോഡ് ചെയ്ത ചിത്രങ്ങളുടെ റെസല്യൂഷൻ. \"Reduced\" ഫയൽ വലുപ്പം കുറയ്ക്കാൻ ചിത്രങ്ങളെ പരമാവധി 1200px ആയി സ്കെയിൽ ചെയ്യും."
+imageResolutionFull = "ഫുൾ (യഥാർത്ഥ വലുപ്പം)"
+imageResolutionReduced = "റിഡ്യൂസ്ഡ് (പരമാവധി 1200px)"
+mobileScannerPageFormat = "പേജ് ഫോർമാറ്റ്"
+mobileScannerPageFormatDesc = "മാറ്റിയ ചിത്രങ്ങൾക്ക് PDF പേജ് വലുപ്പം. \"Keep\" യഥാർത്ഥ ചിത്രത്തിന്റെ അളവുകൾ ഉപയോഗിക്കും."
+pageFormatKeep = "കീപ് (യഥാർത്ഥ അളവുകൾ)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "ഫിറ്റ് ചെയ്യാൻ നീട്ടുക"
+mobileScannerStretchToFitDesc = "ചിത്രങ്ങളെ മുഴുവൻ പേജ് നിറയ്ക്കാൻ നീട്ടുക. പ്രവർത്തനരഹിതമാക്കിയാൽ, ചിത്രങ്ങൾ ആസ്‌പെക്ട് അനുപാതം നിലനിർത്തി നടുവിലേക്ക് നിരത്തും."
 
 [admin.settings.connections.ssoAutoLogin]
 label = "SSO ഓട്ടോ ലോഗിൻ"
@@ -4254,7 +4731,7 @@ label = "പ്രൊവൈഡർ"
 description = "ഓതന്റിക്കേഷനായി ഉപയോഗിക്കുന്ന OAuth2 പ്രൊവൈഡർ"
 
 [admin.settings.connections.oauth2.issuer]
-label = "ഇഷ്യൂവർ URL"
+label = "Issuer URL"
 description = "OAuth2 പ്രൊവൈഡറിന്റെ issuer URL"
 
 [admin.settings.connections.oauth2.clientId]
@@ -4278,7 +4755,7 @@ label = "രജിസ്‌ട്രേഷൻ തടയുക"
 description = "OAuth2 വഴി പുതിയ ഉപയോക്തൃ രജിസ്‌ട്രേഷൻ തടയുക"
 
 [admin.settings.connections.oauth2.scopes]
-label = "OAuth2 സ്കോപ്പുകൾ"
+label = "OAuth2 Scopes"
 description = "OAuth2 സ്കോപ്പുകളുടെ കോമ ഉപയോഗിച്ച് വേർതിരിച്ച പട്ടിക (ഉദാ., openid, profile, email)"
 
 [admin.settings.connections.saml2]
@@ -4304,10 +4781,168 @@ description = "ആദ്യ SAML2 ലോഗിനിൽ ഉപയോക്തൃ
 label = "രജിസ്‌ട്രേഷൻ തടയുക"
 description = "SAML2 വഴി പുതിയ ഉപയോക്തൃ രജിസ്‌ട്രേഷൻ തടയുക"
 
+[admin.settings.connections.mobileScanner]
+label = "മൊബൈൽ ഫോൺ അപ്‌ലോഡ്"
+enable = "QR കോഡ് അപ്‌ലോഡ് പ്രവർത്തനക്ഷമമാക്കുക"
+description = "QR കോഡ് സ്കാൻ ചെയ്ത് ഉപയോക്താക്കൾക്ക് മൊബൈൽ ഉപകരണങ്ങളിൽ നിന്ന് ഫയലുകൾ അപ്‌ലോഡ് ചെയ്യാൻ അനുവദിക്കുക"
+note = "കുറിപ്പ്: Frontend URL കോൺഫിഗർ ചെയ്തിരിക്കണം. "
+link = "സിസ്റ്റം സജ്ജീകരണങ്ങളിൽ കോൺഫിഗർ ചെയ്യുക"
+mobileScannerConvertToPdf = "ചിത്രങ്ങളെ PDF ആക്കുക"
+mobileScannerConvertToPdfDesc = "അപ്‌ലോഡ് ചെയ്ത ചിത്രങ്ങളെ സ്വയമേവ PDF ഫോർമാറ്റിലേക്ക് മാറ്റുക. പ്രവർത്തനരഹിതമാക്കിയാൽ, ചിത്രങ്ങൾ അതേപടി നിലനിർത്തും."
+mobileScannerImageResolution = "ഇമേജ് റെസല്യൂഷൻ"
+mobileScannerImageResolutionDesc = "അപ്‌ലോഡ് ചെയ്ത ചിത്രങ്ങളുടെ റെസല്യൂഷൻ. \"Reduced\" ഫയൽ വലുപ്പം കുറയ്ക്കാൻ ചിത്രങ്ങളെ പരമാവധി 1200px ആയി സ്കെയിൽ ചെയ്യും."
+imageResolutionFull = "ഫുൾ (യഥാർത്ഥ വലുപ്പം)"
+imageResolutionReduced = "റിഡ്യൂസ്ഡ് (പരമാവധി 1200px)"
+mobileScannerPageFormat = "പേജ് ഫോർമാറ്റ്"
+mobileScannerPageFormatDesc = "മാറ്റിയ ചിത്രങ്ങൾക്ക് PDF പേജ് വലുപ്പം. \"Keep\" യഥാർത്ഥ ചിത്രത്തിന്റെ അളവുകൾ ഉപയോഗിക്കും."
+pageFormatKeep = "കീപ് (യഥാർത്ഥ അളവുകൾ)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "ഫിറ്റ് ചെയ്യാൻ നീട്ടുക"
+mobileScannerStretchToFitDesc = "ചിത്രങ്ങളെ മുഴുവൻ പേജ് നിറയ്ക്കാൻ നീട്ടുക. പ്രവർത്തനരഹിതമാക്കിയാൽ, ചിത്രങ്ങൾ ആസ്‌പെക്ട് അനുപാതം നിലനിർത്തി നടുവിലേക്ക് നിരത്തും."
+
+[admin.settings.telegram]
+title = "Telegram ബോട്ട്"
+description = "Telegram ബോട്ടിന്റെ കണക്റ്റിവിറ്റി, ആക്സസ് നിയന്ത്രണങ്ങൾ, ഫീഡ്ബാക്ക് പെരുമാറ്റം എന്നിവ കോൺഫിഗർ ചെയ്യുക."
+
+[admin.settings.telegram.enabled]
+label = "Telegram ബോട്ട് പ്രവർത്തനക്ഷമമാക്കുക"
+description = "കോൺഫിഗർ ചെയ്ത Telegram ബോട്ടിലൂടെ ഉപയോക്താക്കൾക്ക് Stirling PDF ഉപയോഗിക്കാൻ അനുവദിക്കുക."
+
+[admin.settings.telegram.botUsername]
+label = "ബോട്ട് യൂസർനെയിം"
+description = "നിങ്ങളുടെ Telegram ബോട്ടിന്റെ പൊതു യൂസർനെയിം."
+
+[admin.settings.telegram.botToken]
+label = "ബോട്ട് ടോക്കൺ"
+description = "നിങ്ങളുടെ Telegram ബോട്ടിനായി BotFather നൽകുന്ന API ടോക്കൺ."
+
+[admin.settings.telegram.pipelineInboxFolder]
+label = "ഇൻബോക്സ് ഫോൾഡർ"
+description = "പൈപ്പ്‌ലൈനിൻറെ ഡയറക്ടറിയിൽ Telegram ഫയലുകൾ സംഭരിക്കുന്ന ഫോൾഡർ."
+
+[admin.settings.telegram.customFolderSuffix]
+label = "ഇഷ്ടാനുസൃത ഫോൾഡർ സഫിക്സ് ഉപയോഗിക്കുക"
+description = "ഓരോ ചാറ്റിനുമുള്ള അപ്‌ലോഡുകൾ വേർതിരിക്കാൻ, വരുന്ന ഫയൽ ഫോൾഡറുകൾക്ക് ചാറ്റ് ID ചേർക്കുക."
+
+[admin.settings.telegram.accessControl]
+title = "പ്രവേശന നിയന്ത്രണം"
+description = "ഏത് ഉപയോക്താക്കളോ ചാനലുകളോ ബോട്ടുമായി ഇടപഴകാമെന്ന് നിയന്ത്രിക്കുക."
+
+[admin.settings.telegram.enableAllowUserIDs]
+label = "നിർദ്ദിഷ്ട User IDകൾ അനുവദിക്കുക"
+description = "ഇത് പ്രവർത്തനക്ഷമമാക്കിയാൽ, പട്ടികപ്പെടുത്തിയ User IDകൾക്ക് മാത്രം ബോട്ട് ഉപയോഗിക്കാം."
+
+[admin.settings.telegram.allowUserIDs]
+label = "അനുവദിച്ച User IDകൾ"
+description = "ബോട്ടുമായി ഇടപഴകാൻ അനുവദിച്ച Telegram User IDകൾ നൽകുക."
+placeholder = "User ID ചേർക്കുക, Enter അമർത്തുക"
+
+[admin.settings.telegram.enableAllowChannelIDs]
+label = "നിർദ്ദിഷ്ട Channel IDകൾ അനുവദിക്കുക"
+description = "ഇത് പ്രവർത്തനക്ഷമമാക്കിയാൽ, പട്ടികപ്പെടുത്തിയ Channel IDകൾക്ക് മാത്രം ബോട്ട് ഉപയോഗിക്കാം."
+
+[admin.settings.telegram.allowChannelIDs]
+label = "അനുവദിച്ച Channel IDകൾ"
+description = "ബോട്ടുമായി ഇടപഴകാൻ അനുവദിച്ച Telegram Channel IDകൾ നൽകുക."
+placeholder = "Channel ID ചേർക്കുക, Enter അമർത്തുക"
+
+[admin.settings.telegram.processing]
+title = "പ്രോസസ്സിംഗ്"
+description = "Telegram അപ്‌ലോഡുകൾക്കുള്ള പോളിംഗ് ഇൻറർവാലുകളും പ്രോസസ്സിംഗ് ടൈംഔട്ടുകളും നിയന്ത്രിക്കുക."
+
+[admin.settings.telegram.processingTimeoutSeconds]
+label = "പ്രോസസ്സിംഗ് ടൈംഔട്ട് (സെക്കൻഡ്‌)"
+description = "പിശക് റിപ്പോർട്ട് ചെയ്യുന്നതിന് മുമ്പ് പ്രോസസ്സിംഗ് ജോബിനായി കാത്തിരിക്കുന്ന പരമാവധി സമയം."
+
+[admin.settings.telegram.pollingIntervalMillis]
+label = "പോളിംഗ് ഇൻറർവാൽ (ms)"
+description = "പുതിയ Telegram അപ്‌ഡേറ്റുകൾ പരിശോധിക്കുന്നതിനിടയിലെ ഇടവേള."
+
+[admin.settings.telegram.feedback]
+title = "ഫീഡ്ബാക്ക് സന്ദേശങ്ങൾ"
+description = "ബോട്ട് ഉപയോക്താക്കൾക്കും ചാനലുകൾക്കും എപ്പോൾ ഫീഡ്ബാക്ക് അയയ്‌ക്കണമെന്ന് തിരഞ്ഞെടുക്കുക."
+
+[admin.settings.telegram.feedback.general.enabled]
+label = "ഫീഡ്ബാക്ക് പ്രവർത്തനക്ഷമമാക്കുക"
+description = "ബോട്ട് ഫീഡ്ബാക്ക് സന്ദേശങ്ങൾ അയയ്ക്കണമോ എന്നത് നിയന്ത്രിക്കുക."
+
+[admin.settings.telegram.feedback.channel]
+title = "ചാനൽ ഫീഡ്ബാക്ക് ചട്ടങ്ങൾ"
+
+[admin.settings.telegram.feedback.channel.noValidDocument]
+label = "\"No valid document\" കാണിക്കുക (ചാനൽ)"
+description = "ചാനൽ അപ്‌ലോഡുകളിൽ \"No valid document\" പ്രതികരണം പ്രദർശിപ്പിക്കാതിരിക്കുക."
+
+[admin.settings.telegram.feedback.channel.errorProcessing]
+label = "പ്രോസസ്സിംഗ് പിശകുകൾ കാണിക്കുക (ചാനൽ)"
+description = "പ്രോസസ്സിംഗ് പിശക് സന്ദേശങ്ങൾ ചാനലുകൾക്ക് അയയ്ക്കുക."
+
+[admin.settings.telegram.feedback.channel.errorMessage]
+label = "പിശക് സന്ദേശങ്ങൾ കാണിക്കുക (ചാനൽ)"
+description = "ചാനലുകൾക്ക് വിശദമായ പിശക് സന്ദേശങ്ങൾ കാണിക്കുക."
+
+[admin.settings.telegram.feedback.user]
+title = "ഉപയോക്തൃ ഫീഡ്ബാക്ക് ചട്ടങ്ങൾ"
+
+[admin.settings.telegram.feedback.user.noValidDocument]
+label = "\"No valid document\" കാണിക്കുക (ഉപയോക്താവ്)"
+description = "ഉപയോക്തൃ അപ്‌ലോഡുകളിൽ \"No valid document\" പ്രതികരണം പ്രദർശിപ്പിക്കാതിരിക്കുക."
+
+[admin.settings.telegram.feedback.user.errorProcessing]
+label = "പ്രോസസ്സിംഗ് പിശകുകൾ കാണിക്കുക (ഉപയോക്താവ്)"
+description = "പ്രോസസ്സിംഗ് പിശക് സന്ദേശങ്ങൾ ഉപയോക്താക്കൾക്ക് അയയ്ക്കുക."
+
+[admin.settings.telegram.feedback.user.errorMessage]
+label = "പിശക് സന്ദേശങ്ങൾ കാണിക്കുക (ഉപയോക്താവ്)"
+description = "ഉപയോക്താക്കൾക്ക് വിശദമായ പിശക് സന്ദേശങ്ങൾ കാണിക്കുക."
+
 [admin.settings.database]
 title = "ഡാറ്റാബേസ്"
 description = "എന്റർപ്രൈസ് വിന്യാസങ്ങൾക്ക് കസ്റ്റം ഡാറ്റാബേസുമായി ബന്ധപ്പെട്ട സജ്ജീകരണങ്ങൾ ക്രമീകരിക്കുക."
 configuration = "ഡാറ്റാബേസ് കോൺഫിഗറേഷൻ"
+backupTitle = "ബാക്കപ്പ് & പുനഃസ്ഥാപിക്കൽ"
+backupDescription = "അഡ്മിൻ കൺസോളിൽ നിന്ന് നേരിട്ട് H2 ബാക്കപ്പുകൾ കൈകാര്യം ചെയ്യുക."
+loadError = "ഡാറ്റാബേസ് ബാക്കപ്പുകൾ ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു"
+backupCreated = "ബാക്കപ്പ് വിജയകരമായി സൃഷ്ടിച്ചു"
+backupFailed = "ബാക്കപ്പ് സൃഷ്ടിക്കുന്നത് പരാജയപ്പെട്ടു"
+deleteTitle = "ബാക്കപ്പ് ഇല്ലാതാക്കുക"
+deleteConfirm = "ഈ ബാക്കപ്പ് ഇല്ലാതാക്കണോ? ഇത് തിരിച്ചെടുക്കാൻ കഴിയില്ല."
+deleteSuccess = "ബാക്കപ്പ് ഇല്ലാതാക്കി"
+deleteFailed = "ബാക്കപ്പ് ഇല്ലാതാക്കുന്നത് പരാജയപ്പെട്ടു"
+deleteConfirmAction = "ബാക്കപ്പ് ഇല്ലാതാക്കുക"
+downloadFailed = "ബാക്കപ്പ് ഡൗൺലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു"
+version = "H2 പതിപ്പ്"
+embedded = "എംബെഡഡ് H2"
+external = "ബാഹ്യ DB"
+h2Only = "എംബെഡഡ് H2 ഡാറ്റാബേസിനാണ് മാത്രമേ ബാക്കപ്പുകൾ ലഭ്യമാകൂ."
+h2Hint = "ബാക്കപ്പ്, പുനഃസ്ഥാപനം സജീവമാക്കാൻ ഡാറ്റാബേസ് തരം H2 ആക്കി, കസ്റ്റം ഡാറ്റാബേസ് അപ്രാപ്തമാക്കുക."
+manageBackups = "ബാക്കപ്പുകൾ കൈകാര്യം ചെയ്യുക"
+refresh = "റിഫ്രെഷ്"
+createBackup = "ബാക്കപ്പ് സൃഷ്ടിക്കുക"
+uploadTitle = "അപ്‌ലോഡ് & ഇംപോർട്ട്"
+chooseFile = ".sql ബാക്കപ്പ് ഫയൽ തിരഞ്ഞെടുക്കുക"
+importFromUpload = "അപ്‌ലോഡ് ഇംപോർട്ട് ചെയ്യുക"
+confirmImportTitle = "ഡാറ്റാബേസ് ഇംപോർട്ട് സ്ഥിരീകരിക്കുക"
+overwriteWarning = "മുന്നറിയിപ്പ്: ഇത് നിലവിലെ ഡാറ്റാബേസിനെ ഓവർറൈറ്റ് ചെയ്യും."
+overwriteWarningBody = "അപ്‌ലോഡ് ചെയ്ത ബാക്കപ്പ് നിലവിലുള്ള എല്ലാ ഡാറ്റയും മാറ്റിസ്ഥാപിക്കും. ഈ നടപടി തിരിച്ചെടുക്കാൻ കഴിയില്ല."
+confirmCodeLabel = "തുടരാൻ സ്ഥിരീകരണ കോഡ് നൽകുക"
+enterCode = "മുകളിൽ കാണിച്ചിരിക്കുന്ന കോഡ് നൽകുക"
+confirmImport = "ഇംപോർട്ട് സ്ഥിരീകരിക്കുക"
+codeMismatch = "സ്ഥിരീകരണ കോഡ് പൊരുത്തപ്പെടുന്നില്ല"
+codeMismatchBody = "തുടരാൻ കാണിച്ചതുപോലെ കൃത്യമായി കോഡ് നൽകുക."
+selectFile = "ഇംപോർട്ട് ചെയ്യാൻ ഒരു .sql ഫയൽ തിരഞ്ഞെടുക്കുക"
+importSuccess = "ബാക്കപ്പ് വിജയകരമായി ഇംപോർട്ട് ചെയ്തു"
+importFailed = "ബാക്കപ്പ് ഇംപോർട്ട് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു"
+noBackups = "ഇന്നുവരെ ബാക്കപ്പുകളൊന്നും കണ്ടെത്തിയില്ല."
+unavailable = "നിലവിലെ ഡാറ്റാബേസ് കോൺഫിഗറേഷനിൽ ബാക്കപ്പ് പട്ടിക ലഭ്യമല്ല."
+fileName = "ഫയൽ"
+created = "സൃഷ്‌ടിച്ചത്"
+size = "വലിപ്പം"
+actions = "നടപടികൾ"
+download = "ഡൗൺലോഡ്"
+import = "ഇംപോർട്ട്"
+delete = "ഇല്ലാതാക്കുക"
 
 [admin.settings.database.enableCustom]
 label = "കസ്റ്റം ഡാറ്റാബേസ് പ്രാപ്തമാക്കുക"
@@ -4385,6 +5020,26 @@ description = "ഇമേജ് പ്രോസസ്സിംഗിനുള്�
 [admin.settings.advanced.tessdataDir]
 label = "Tessdata ഡയറക്ടറി"
 description = "OCR ഭാഷാ ഫയലുകൾക്കായുള്ള tessdata ഡയറക്ടറിയുടെ പാത"
+downloadMissingTitle = "ഭാഷ ഒന്നും തിരഞ്ഞെടുക്കപ്പെട്ടിട്ടില്ല"
+downloadMissingBody = "ഡൗൺലോഡ് ചെയ്യാൻ കുറഞ്ഞത് ഒരു ഭാഷയെങ്കിലും തിരഞ്ഞെടുക്കുക."
+downloadSuccessTitle = "ഭാഷകൾ ഡൗൺലോഡ് ചെയ്തു"
+downloadSuccessBody = "തിരഞ്ഞെടുക്കപ്പെട്ട tessdata ഭാഷകൾ സംരക്ഷിച്ചു."
+downloadErrorTitle = "ഡൗൺലോഡ് പരാജയപ്പെട്ടു"
+loadingLanguages = "ഇൻസ്റ്റാൾ ചെയ്ത tessdata ഭാഷകൾ ലോഡ് ചെയ്യുന്നു..."
+installedLanguages = "ഇൻസ്റ്റാൾ ചെയ്ത tessdata ഭാഷകൾ"
+noLanguages = "ക്രമീകരിച്ച ഡയറക്ടറിയിൽ tessdata ഭാഷകളൊന്നും കണ്ടെത്തിയില്ല."
+downloadLabel = "കൂടുതൽ tessdata ഭാഷകൾ ഡൗൺലോഡ് ചെയ്യുക"
+downloadPlaceholder = "ഭാഷകൾ തിരഞ്ഞെടുക്കുക"
+downloadNothingFound = "കൂടുതൽ ഭാഷകളൊന്നും കണ്ടെത്തിയില്ല"
+permissionNotice = "tessdata പാത എഴുതാനാവില്ല. ഡൗൺലോഡുകൾ ബ്രൗസറിൽ തുറക്കും; ദയവായി .traineddata ഫയലുകൾ കൈകൊണ്ട് tessdata ഫോൾഡറിൽ സേവ് ചെയ്യുക."
+manualLinks = "മാനുവൽ ഡൗൺലോഡുകൾ: ലിങ്കുകൾ ക്ലിക്ക് ചെയ്ത് ഫയലുകൾ tessdata ഫോൾഡറിൽ ഇടുക."
+downloadButton = "തിരഞ്ഞെടുത്ത ഭാഷകൾ ഡൗൺലോഡ് ചെയ്യുക"
+downloadInvalidTitle = "അസാധുവായ തിരഞ്ഞെടുപ്പ്"
+downloadInvalidBody = "തിരഞ്ഞെടുത്ത ചില ഭാഷകൾ ഡൗൺലോഡ് ചെയ്യാൻ ലഭ്യമല്ല. ദയവായി റിഫ്രെഷ് ചെയ്ത് പട്ടികയിൽ നിന്ന് തിരഞ്ഞെടുക്കുക."
+downloadErrorNetwork = "നെറ്റ്‌വർക്ക് പിശക് കാരണം ഡൗൺലോഡ് പരാജയപ്പെട്ടു. നിങ്ങളുടെ കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക."
+downloadErrorServer = "tessdata ഭാഷകൾ ഡൗൺലോഡ് ചെയ്യുമ്പോൾ സർവറിൽ പിശക് സംഭവിച്ചു. ദയവായി പിന്നീട് വീണ്ടും ശ്രമിക്കുക."
+downloadErrorPermission = "tessdata ഡയറക്ടറിയിൽ എഴുത്തിനാവില്ല: {{message}}. ദയവായി എഴുതാനാവുന്ന ഒരു ഡയറക്ടറി തിരഞ്ഞെടുക്കുക (ഉദാ: അപ്ലിക്കേഷൻ ഡാറ്റ ഫോൾഡറിനടിയിൽ) അല്ലെങ്കിൽ അനുമതികൾ ക്രമപ്പെടുത്തുക."
+downloadErrorGeneric = "ഡൗൺലോഡ് പരാജയപ്പെട്ടു: {{message}}. ദയവായി പിന്നീട് വീണ്ടും ശ്രമിക്കുക."
 
 [admin.settings.advanced.disableSanitize]
 label = "HTML സാനിറ്റൈസേഷൻ അപ്രാപ്തമാക്കുക"
@@ -4484,6 +5139,10 @@ description = "ഓട്ടോ-ജനറേറ്റ് ചെയ്ത പാ�
 [admin.settings.mail.frontendUrl]
 label = "ഫ്രണ്ട്‌എൻഡ് URL"
 description = "ഫ്രണ്ട്‌എൻഡിനുള്ള ബേസ് URL (ഉദാ. https://pdf.example.com). ഇമെയിലുകളിലെ ക്ഷണ ലിങ്കുകൾ സൃഷ്ടിക്കാൻ ഉപയോഗിക്കുന്നു. ബാക്ക്എൻഡ് URL ഉപയോഗിക്കാനായി ശൂന്യം വിടുക."
+
+[admin.settings.mail.frontendUrlNote]
+note = "കുറിപ്പ്: Frontend URL കോൺഫിഗർ ചെയ്തിരിക്കണം. "
+link = "സിസ്റ്റം സജ്ജീകരണങ്ങളിൽ കോൺഫിഗർ ചെയ്യുക"
 
 [admin.settings.legal]
 title = "ലീഗൽ ഡോക്യുമെന്റുകൾ"
@@ -4669,6 +5328,9 @@ googleDriveShort = "ഡ്രൈവ്"
 myFiles = "എന്റെ ഫയലുകൾ"
 noRecentFiles = "സമീപകാല ഫയലുകൾ ഒന്നും കണ്ടെത്തിയില്ല"
 googleDriveNotAvailable = "Google Drive ഇന്റഗ്രേഷൻ ലഭ്യമല്ല"
+mobileUpload = "മൊബൈൽ അപ്‌ലോഡ്"
+mobileShort = "മൊബൈൽ"
+mobileUploadNotAvailable = "മൊബൈൽ അപ്‌ലോഡ് പ്രവർത്തനക്ഷമമാക്കിയിട്ടില്ല"
 downloadSelected = "തിരഞ്ഞെടുത്തത് ഡൗൺലോഡ് ചെയ്യുക"
 saveSelected = "തിരഞ്ഞെടുത്തത് സേവ് ചെയ്യുക"
 openFiles = "ഫയലുകൾ തുറക്കുക"
@@ -4881,6 +5543,7 @@ desc = "PDF പ്രവർത്തനങ്ങളെ പരമ്പരയാ�
 invalidStep = "അസാധുവായ ഘട്ടം"
 reviewTitle = "ഓട്ടോമേഷന്‍ ഫലങ്ങൾ"
 copyToSaved = "സംരക്ഷിച്ചതിലേക്ക് പകർത്തുക"
+exportForFolderScanning = "ഫോൾഡർ സ്കാനിംഗിനായി എക്സ്പോർട്ട് ചെയ്യുക"
 
 [automate.files]
 placeholder = "ഈ ഓട്ടോമേഷൻ ഉപയോഗിച്ച് പ്രോസസ് ചെയ്യേണ്ട ഫയലുകൾ തിരഞ്ഞെടുക്കുക"
@@ -4902,6 +5565,7 @@ createTitle = "ഓട്ടോമേഷൻ സൃഷ്ടിക്കുക"
 editTitle = "ഓട്ടോമേഷൻ എഡിറ്റ് ചെയ്യുക"
 intro = "ഓട്ടോമേഷനുകൾ ടൂളുകൾ ഒന്നിന് പിന്നാലെ മറ്റൊന്ന് എന്ന രീതിയിൽ പ്രവർത്തിപ്പിക്കുന്നു. ആരംഭിക്കാൻ, നിങ്ങൾക്ക് വേണ്ട ക്രമത്തിൽ ടൂളുകൾ ചേർക്കുക."
 save = "ഓട്ടോമേഷൻ സംരക്ഷിക്കുക"
+exportForFolderScanning = "ഫോൾഡർ സ്കാനിംഗിനായി എക്സ്പോർട്ട് ചെയ്യുക"
 
 [automate.creation.name]
 label = "ഓട്ടോമേഷൻ പേര്"
@@ -4984,6 +5648,7 @@ loading = "ലോഡുചെയ്യുന്നു..."
 back = "തിരികെ"
 continue = "തുടരുക"
 error = "പിശക്"
+save = "സംരക്ഷിക്കുക"
 
 [config.overview]
 title = "ആപ്ലിക്കേഷൻ ക്രമീകരണം"
@@ -5045,6 +5710,15 @@ warning = "⚠️ മുന്നറിയിപ്പ്: ഈ പ്രവർ�
 impact = "ഇപ്പോൾ ഈ കീകൾ ഉപയോഗിക്കുന്ന ഏതെങ്കിലും ആപ്ലിക്കേഷനുകളുടെയോ സേവനങ്ങളുടെയോ പ്രവർത്തനം നിങ്ങൾ പുതിയ കീകൾ അപ്‌ഡേറ്റ് ചെയ്യുന്നതുവരെ നിർത്തിപ്പോകും."
 confirmPrompt = "തുടരാൻ നിങ്ങൾക്ക് ഉറപ്പാണോ?"
 confirmCta = "കീകൾ റിഫ്രെഷ് ചെയ്യുക"
+
+[config.apiKeys.alert]
+apiKeyErrorTitle = "API കീ പിശക്"
+failedToCreateApiKey = "API കീ സൃഷ്ടിക്കാൻ പരാജയപ്പെട്ടു."
+failedToRetrieveApiKey = "പ്രതികരണത്തിൽ നിന്ന് API കീ ലഭ്യമാക്കാൻ പരാജയപ്പെട്ടു."
+failedToFetchApiKey = "API കീ കൊണ്ടുവരാൻ പരാജയപ്പെട്ടു."
+apiKeyRefreshed = "API കീ പുതുക്കി"
+apiKeyRefreshedBody = "നിങ്ങളുടെ API കീ വിജയകരമായി പുതുക്കി."
+failedToRefreshApiKey = "API കീ പുതുക്കാൻ പരാജയപ്പെട്ടു."
 
 [AddAttachmentsRequest]
 attachments = "അറ്റാച്ച്മെന്റുകൾ തിരഞ്ഞെടുക്കുക"
@@ -5150,6 +5824,16 @@ finish = "പൂർത്തിയാക്കുക"
 startTour = "ടൂർ ആരംഭിക്കുക"
 startTourDescription = "Stirling PDF 的 പ്രധാന സവിശേഷതകളുടെ മാർഗ്ഗനിർദ്ദേശ ടൂർ"
 
+[onboarding.whatsNew]
+quickAccess = "Reader, Automate, നിങ്ങളുടെ ഫയലുകൾ, എല്ലാ ടൂറുകളും എന്നിവയ്ക്ക് ഇടയിൽ മാറാൻ <strong>Quick Access</strong> റെയിലിൽ നിന്ന് ആരംഭിക്കുക."
+leftPanel = "ഇടത്തേയുള്ള <strong>Tools</strong> പാനൽ നിങ്ങൾക്ക് ചെയ്യാവുന്ന എല്ലാം പട്ടികപ്പെടുത്തുന്നു. വിഭാഗങ്ങൾ ബ്രൗസ് ചെയ്യുകയോ ഒരു ടൂൾ പെട്ടെന്ന് കണ്ടെത്താൻ തിരയുകയോ ചെയ്യുക."
+fileUpload = "<strong>Files</strong> ബട്ടൺ ഉപയോഗിച്ച് അപ്‌ലോഡ് ചെയ്യുക അല്ലെങ്കിൽ അടുത്തിടെ ഉപയോഗിച്ച PDF തിരഞ്ഞെടുക്കുക. വർക്‌സ്‌പേസ് കാണാൻ ഒരു സാമ്പിൾ ഞങ്ങൾ ലോഡ് ചെയ്യും."
+rightRail = "<strong>Right Rail</strong> ഫയലുകൾ തിരഞ്ഞെടുക്കാൻ, തീം അല്ലെങ്കിൽ ഭാഷ മാറ്റാൻ, ഫലങ്ങൾ ഡൗൺലോഡ് ചെയ്യാൻ ഉള്ള ക്വിക് ആക്ഷനുകൾ സൂക്ഷിക്കുന്നു."
+topBar = "മുകളിലെ ബാർ <strong>Viewer</strong>, <strong>Page Editor</strong>, <strong>Active Files</strong> എന്നിവയ്ക്ക് ഇടയിൽ മാറാൻ അനുവദിക്കുന്നു."
+pageEditorView = "പേജുകൾ പുനഃക്രമീകരിക്കാൻ, ഭ്രമിപ്പിക്കാൻ, അല്ലെങ്കിൽ ഇല്ലാതാക്കാൻ Page Editor-ിലേക്ക് മാറുക."
+activeFilesView = "തുറന്നിട്ടിരിക്കുന്ന എല്ലാം കാണാനും എന്തിൽ പ്രവർത്തിക്കണമെന്നത് തിരഞ്ഞെടുക്കാനും Active Files ഉപയോഗിക്കുക."
+wrapUp = "V2യിലെ പുതുമകൾ ഇത്രയാണ്. ഇത്, Tools ടൂർ, അല്ലെങ്കിൽ Admin ടൂർ വീണ്ടും കാണാൻ ഏതുസമയവും <strong>Tours</strong> മെനു തുറക്കുക."
+
 [onboarding.welcomeModal]
 title = "Stirling PDFലേക്ക് സ്വാഗതം!"
 description = "പ്രധാന സവിശേഷതകളും തുടങ്ങുന്നത് എങ്ങനെയെന്നതും അറിയാൻ 1 മിനിട്ടിലെ ഒരു ദ്രുത ടൂർ വേണമോ?"
@@ -5169,6 +5853,10 @@ skipForNow = "ഇപ്പോൾ ഒഴിവാക്കുക"
 download = "ഡൗൺലോഡ് →"
 showMeAround = "ടൂർ കാണിക്കുക"
 skipTheTour = "ടൂർ ഒഴിവാക്കുക"
+
+[onboarding.tourOverview]
+title = "ടൂർ അവലോകനം"
+body = "Stirling PDF V2 ഡസൻകണക്കിന് ഉപകരണങ്ങളും പുതുക്കിയ ലേഔട്ടും ഉൾപ്പെടുത്തി എത്തുന്നു. എന്താണ് മാറിയതെന്നും നിങ്ങൾക്ക് ആവശ്യമായ സവിശേഷതകൾ എവിടെയാണെന്നും വേഗത്തിൽ കാണാം."
 
 [onboarding.serverLicense]
 skip = "ഇപ്പോൾ ഒഴിവാക്കുക"
@@ -5252,9 +5940,11 @@ username = "യൂസർനെയിം (ഇമെയിൽ)"
 usernamePlaceholder = "user@example.com"
 password = "പാസ്‌വേഡ്"
 passwordPlaceholder = "പാസ്‌വേഡ് നൽകുക"
+passwordRequired = "പാസ്‌വേഡ് ആവശ്യമാണ്"
 role = "റോൾ"
 team = "ടീം (ഐച്ഛികം)"
 teamPlaceholder = "ഒരു ടീം തിരഞ്ഞെടുക്കുക"
+authType = "പ്രാമാണീകരണ തരം"
 forcePasswordChange = "ആദ്യ ലോഗിനിൽ പാസ്‌വേഡ് മാറ്റം നിർബന്ധമാക്കുക"
 cancel = "റദ്ദാക്കുക"
 submit = "അംഗത്തെ ചേർക്കുക"
@@ -5262,6 +5952,13 @@ usernameRequired = "യൂസർനെയിമും പാസ്‌വേഡ�
 passwordTooShort = "പാസ്‌വേഡ് കുറഞ്ഞത് 6 അക്ഷരങ്ങളെങ്കിലും വേണം"
 success = "ഉപയോക്താവ് വിജയകരമായി സൃഷ്ടിച്ചു"
 error = "ഉപയോക്താവിനെ സൃഷ്ടിക്കൽ പരാജയപ്പെട്ടു"
+forceMFA = "അടുത്ത ലോഗിനിൽ MFA ക്രമീകരണം നിർബന്ധിതമാക്കുക"
+
+[workspace.people.authType]
+password = "പാസ്‌വേഡ്"
+oauth = "OAuth2"
+saml = "SAML2"
+ssoDescription = "ഉപയോക്താവ് SSO പ്രൊവൈഡറിലൂടെ പ്രാമാണീകരണം നടത്തും"
 
 [workspace.people.editMember]
 title = "അംഗത്തെ എഡിറ്റ് ചെയ്യുക"
@@ -5281,6 +5978,31 @@ error = "ഉപയോക്താവിന്റെ നില അപ്‌ഡേ
 [workspace.people.delete]
 success = "ഉപയോക്താവിനെ വിജയകരമായി ഇല്ലാതാക്കി"
 error = "ഉപയോക്താവിനെ ഇല്ലാതാക്കൽ പരാജയപ്പെട്ടു"
+
+[workspace.people.changePassword]
+action = "പാസ്‌വേഡ് മാറ്റുക"
+title = "പാസ്‌വേഡ് മാറ്റുക"
+subtitle = "ഇതിനായുള്ള പാസ്‌വേഡ് പുതുക്കുക"
+newPassword = "പുതിയ പാസ്‌വേഡ്"
+confirmPassword = "പാസ്‌വേഡ് ശരിവെക്കുക"
+placeholder = "ഒരു പുതിയ പാസ്‌വേഡ് നൽകുക"
+confirmPlaceholder = "പുതിയ പാസ്‌വേഡ് വീണ്ടും നൽകുക"
+passwordRequired = "ദയവായി ഒരു പുതിയ പാസ്‌വേഡ് നൽകുക"
+passwordMismatch = "പാസ്‌വേഡുകൾ പൊരുത്തപ്പെടുന്നില്ല"
+generateRandom = "സുരക്ഷിത പാസ്‌വേഡ് സൃഷ്ടിക്കുക"
+generatedPreview = "സൃഷ്ടിച്ച പാസ്‌വേഡ്:"
+copyTooltip = "ക്ലിപ്പ്ബോർഡിലേയ്ക്ക് പകർത്തുക"
+copiedToClipboard = "പാസ്‌വേഡ് ക്ലിപ്പ്ബോർഡിലേയ്ക്ക് പകർത്തി"
+copyFailed = "പാസ്‌വേഡ് പകർത്തൽ പരാജയപ്പെട്ടു"
+sendEmail = "ഈ മാറ്റത്തെക്കുറിച്ച് ഉപയോക്താവിന് ഇമെയിൽ അയയ്ക്കുക"
+includePassword = "പുതിയ പാസ്‌വേഡ് ഇമെയിലിൽ ഉൾപ്പെടുത്തുക"
+forcePasswordChange = "അടുത്ത ലോഗിനിൽ ഉപയോക്താവിനെ പാസ്‌വേഡ് മാറ്റാൻ നിർബന്ധിക്കുക"
+emailUnavailable = "ഈ ഉപയോക്താവിന്റെ ഇമെയിൽ ഒരു സാധുവായ ഇമെയിൽ വിലാസമല്ല. അറിയിപ്പുകൾ പ്രവർത്തനരഹിതമാണ്."
+smtpDisabled = "ഇമെയിൽ അറിയിപ്പുകൾക്കായി ക്രമീകരണങ്ങളിൽ SMTP സജീവമാക്കണം."
+notifyOnly = "പാസ്‌വേഡ് ഇല്ലാതെ ഒരു ഇമെയിൽ അയയ്ക്കപ്പെടും; അഡ്മിൻ അത് മാറ്റിയതായി ഉപയോക്താവിനെ അറിയിക്കും."
+submit = "പാസ്‌വേഡ് പുതുക്കുക"
+success = "പാസ്‌വേഡ് വിജയകരമായി പുതുക്കി"
+error = "പാസ്‌വേഡ് പുതുക്കൽ പരാജയപ്പെട്ടു"
 
 [workspace.people.emailInvite]
 tab = "ഇമെയിൽ ക്ഷണം"
@@ -5339,6 +6061,11 @@ fromLicense = "ലൈസൻസിൽ നിന്ന്"
 slotsAvailable = "{{count}} ഉപയോക്തൃ സ്ലോട്ട്(കൾ) ലഭ്യമാണ്"
 noSlotsAvailable = "സ്ലോട്ടുകൾ ലഭ്യമല്ല"
 currentUsage = "ഇപ്പോൾ {{max}} ൽ {{current}} ഉപയോക്തൃ ലൈസൻസുകൾ ഉപയോഗിക്കുന്നു"
+
+[workspace.people.mfa]
+adminDisableSuccess = "ഉപയോക്താവിനായി MFA വിജയകരമായി പ്രവർത്തനരഹിതമാക്കി"
+adminDisableError = "ഉപയോക്താവിനായി MFA പ്രവർത്തനരഹിതമാക്കൽ പരാജയപ്പെട്ടു"
+disableByAdmin = "MFA പ്രവർത്തനരഹിതമാക്കുക"
 
 [workspace.teams]
 title = "ടീങ്ങൾ"
@@ -5458,6 +6185,28 @@ contactSales = "വിൽപ്പന ടീമിനെ ബന്ധപ്പ�
 contactToUpgrade = "നിങ്ങളുടെ പ്ലാൻ അപ്‌ഗ്രേഡ് ചെയ്യുകയോ ഇഷ്ടാനുസൃതമാക്കുകയോ ചെയ്യാൻ ഞങ്ങളെ ബന്ധപ്പെടുക"
 maxUsers = "പരമാവധി ഉപയോക്താക്കൾ"
 upTo = "വരെ"
+getLicense = "സർവർ ലൈസൻസ് നേടുക"
+upgradeToEnterprise = "Enterprise-ലേക്ക് അപ്‌ഗ്രേഡ് ചെയ്യുക"
+selectPeriod = "ബില്ലിംഗ് കാലയളവ് തിരഞ്ഞെടുക്കുക"
+monthlyBilling = "പ്രതിമാസ ബില്ലിംഗ്"
+yearlyBilling = "പ്രതിവർഷ ബില്ലിംഗ്"
+checkoutOpened = "ചെക്കൗട്ട് തുറന്നു"
+checkoutInstructions = "Stripe ടാബിൽ നിങ്ങളുടെ വാങ്ങൽ പൂർത്തിയാക്കുക. പെയ്മെന്റിന് ശേഷം, ലൈസൻസ് സജീവമാക്കാൻ ഇവിടെ തിരിച്ചെത്തി പേജ് റിഫ്രെഷ് ചെയ്യുക. നിങ്ങള്‍ക്ക് ലൈസൻസ് കീ അടങ്ങുന്ന ഒരു ഇമെയിലും ലഭിക്കും."
+activateLicense = "നിങ്ങളുടെ ലൈസൻസ് സജീവമാക്കുക"
+
+[plan.static.licenseActivation]
+checkoutOpened = "പുതിയ ടാബിൽ ചെക്കൗട്ട് തുറന്നു"
+instructions = "Stripe ടാബിൽ നിങ്ങളുടെ വാങ്ങൽ പൂർത്തിയാക്കുക. പെയ്മെന്റ് പൂർത്തിയായാൽ, നിങ്ങളുടെ ലൈസൻസ് കീ അടങ്ങുന്ന ഒരു ഇമെയിൽ നിങ്ങൾക്ക് ലഭിക്കും."
+enterKey = "നിങ്ങളുടെ പ്ലാൻ സജീവമാക്കാൻ താഴെ നിങ്ങളുടെ ലൈസൻസ് കീ നൽകുക:"
+keyDescription = "ഇമെയിലിൽ നിന്ന് ലൈസൻസ് കീ പേസ്റ്റ് ചെയ്യുക"
+activate = "ലൈസൻസ് സജീവമാക്കുക"
+doLater = "ഇത് പിന്നീട് ചെയ്യും"
+success = "ലൈസൻസ് സജീവമായി!"
+successMessage = "നിങ്ങളുടെ ലൈസൻസ് വിജയകരമായി സജീവപ്പെടുത്തി. നിങ്ങൾക്ക് ഇപ്പോൾ ഈ ജാലകം അടയ്ക്കാം."
+
+[plan.static.billingPortal]
+title = "ഇമെയിൽ സ്ഥിരീകരണം ആവശ്യമാണ്"
+message = "Stripe ബില്ലിംഗ് പോർട്ടലിൽ നിങ്ങളുടെ ഇമെയിൽ വിലാസം സ്ഥിരീകരിക്കണം. ലോഗിൻ ലിങ്കിനായി ഇമെയിൽ പരിശോധിക്കുക."
 
 [plan.period]
 month = "മാസം"
@@ -5661,6 +6410,8 @@ notAvailable = "ഓഡിറ്റ് സിസ്റ്റം ലഭ്യമ�
 notAvailableMessage = "ഓഡിറ്റ് സിസ്റ്റം കോൺഫിഗർ ചെയ്തിട്ടില്ല അല്ലെങ്കിൽ ലഭ്യമല്ല."
 disabled = "ഓഡിറ്റ് ലോഗിംഗ് പ്രവർത്തനരഹിതമാണ്"
 disabledMessage = "സിസ്റ്റം ഇവന്റുകൾ ട്രാക്ക് ചെയ്യാൻ നിങ്ങളുടെ ആപ്ലിക്കേഷൻ ക്രമീകരണത്തിൽ ഓഡിറ്റ് ലോഗിംഗ് പ്രവർത്തനക്ഷമമാക്കുക."
+enterpriseRequired = "എന്റർപ്രൈസ് ലൈസൻസ് ആവശ്യമാണ്"
+enterpriseRequiredMessage = "ഓഡിറ്റ് ലോഗിംഗ് സിസ്റ്റം ഒരു എന്റർപ്രൈസ് സവിശേഷതയാണ്. ഓഡിറ്റ് ലോഗുകളും അനലിറ്റിക്സും ആക്സസ് ചെയ്യാൻ ദയവായി എന്റർപ്രൈസ് ലൈസൻസിലേക്ക് അപ്‌ഗ്രേഡ് ചെയ്യുക."
 
 [audit.error]
 title = "ഓഡിറ്റ് സിസ്റ്റം ലോഡ് ചെയ്യുന്നതിൽ പിശക്"
@@ -5758,6 +6509,7 @@ endpoint = "എൻഡ്‌പോയിന്റ്"
 visits = "സന്ദർശനങ്ങൾ"
 percentage = "ശതമാനം"
 noData = "ഡാറ്റ ലഭ്യമല്ല"
+unknownEndpoint = "അപരിചിതമായ എൻഡ്പോയിന്റ്"
 
 [backendHealth]
 checking = "ബാക്ക്എൻഡിന്റെ നില പരിശോധിക്കുന്നു..."
@@ -5815,11 +6567,13 @@ subtitle = "നിങ്ങളുടെ Stirling അക്കൗണ്ടില�
 [setup.selfhosted]
 title = "സെർവറിൽ സൈൻ ഇൻ ചെയ്യുക"
 subtitle = "നിങ്ങളുടെ സെർവർ ക്രെഡൻഷ്യലുകൾ നൽകുക"
+link = "അല്ലെങ്കിൽ സ്വയം-ഹോസ്റ്റുചെയ്ത അക്കൗണ്ടുമായി ബന്ധിപ്പിക്കുക"
 
 [setup.server]
 title = "സെർവറിലേക്ക് കണക്റ്റുചെയ്യുക"
 subtitle = "നിങ്ങളുടെ സെൽഫ്-ഹോസ്റ്റഡ് സെർവർ URL നൽകുക"
 testing = "കണക്ഷൻ പരിശോധിക്കുന്നു..."
+useLast = "Last used server: {{serverUrl}}"
 
 [setup.server.type]
 saas = "Stirling PDF SaaS"
@@ -5831,8 +6585,17 @@ description = "നിങ്ങളുടെ സെൽഫ്-ഹോസ്റ്റ
 
 [setup.server.error]
 emptyUrl = "ദയവായി ഒരു സെർവർ URL നൽകുക"
+invalidUrl = "അസാധുവായ URL ഫോർമാറ്റ്. https://your-server.com പോലുള്ള സാധുവായ URL നൽകുക"
 unreachable = "സെർവറുമായി ബന്ധപ്പെടാൻ കഴിഞ്ഞില്ല"
 testFailed = "കണക്ഷൻ ടെസ്റ്റ് പരാജയപ്പെട്ടു"
+configFetch = "സർവർ കോൺഫിഗറേഷൻ ലഭ്യമാക്കൽ പരാജയപ്പെട്ടു. ദയവായി URL പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക."
+
+[setup.server.error.securityDisabled]
+title = "ലോഗിൻ സജീവമാക്കിയിട്ടില്ല"
+body = "ഈ സർവറിൽ ലോഗിൻ സജീവമാക്കിയിട്ടില്ല. ഈ സർവറുമായി ബന്ധപ്പെടാൻ, ഓതന്റിക്കേഷൻ സജീവമാക്കണം:"
+step1 = "നിങ്ങളുടെ പരിസ്ഥിതിയിൽ DOCKER_ENABLE_SECURITY=true ആയി ക്രമീകരിക്കുക"
+step2 = "അല്ലെങ്കിൽ settings.yml ൽ security.enableLogin=true ആയി ക്രമീകരിക്കുക"
+step3 = "സർവർ പുനരാരംഭിക്കുക"
 
 [setup.login]
 title = "സൈൻ ഇൻ"
@@ -5841,6 +6604,7 @@ connectingTo = "കണക്റ്റ് ചെയ്യുന്നു:"
 submit = "ലോഗിൻ"
 signInWith = "ഇതുപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക"
 oauthPending = "ഓതന്റിക്കേഷനായി ബ്രൗസർ തുറക്കുന്നു..."
+sso = "Single Sign-On"
 orContinueWith = "അല്ലെങ്കിൽ ഇമെയിലോടെ തുടരുക"
 serverRequirement = "ശ്രദ്ധിക്കുക: സെർവറിൽ ലോഗിൻ പ്രവർത്തനക്ഷമമാക്കിയിരിക്കണം."
 showInstructions = "എങ്ങനെ പ്രവർത്തനക്ഷമമാക്കാം?"
@@ -5899,12 +6663,15 @@ singleLine = "സിംഗിൾ ലൈൻ"
 [pdfTextEditor.badges]
 unsaved = "എഡിറ്റ് ചെയ്തു"
 modified = "എഡിറ്റ് ചെയ്തു"
-earlyAccess = "എർലി ആക്‌സസ്"
+earlyAccess = "Early Access"
 
 [pdfTextEditor.actions]
 reset = "മാറ്റങ്ങൾ റീസെറ്റ് ചെയ്യുക"
 downloadJson = "JSON ഡൗൺലോഡ് ചെയ്യുക"
 generatePdf = "PDF സൃഷ്ടിക്കുക"
+saveChanges = "മാറ്റങ്ങൾ സംരക്ഷിക്കുക"
+applyChanges = "മാറ്റങ്ങൾ പ്രയോഗിക്കുക"
+downloadCopy = "കോപ്പി ഡൗൺലോഡ് ചെയ്യുക"
 
 [pdfTextEditor.options.autoScaleText]
 title = "ബോക്‌സിൽ ഒതുങ്ങാൻ ടെക്സ്റ്റ് സ്വയം സ്കെയിൽ ചെയ്യുക"
@@ -5922,6 +6689,24 @@ descriptionInline = "ടിപ്പ്: ടെക്സ്റ്റ് ബോ�
 [pdfTextEditor.options.forceSingleElement]
 title = "തിരുത്തിയ ടെക്സ്റ്റ് ഒരു സിംഗിൾ PDF ഘടകത്തിൽ ലോക്ക് ചെയ്യുക"
 description = "ഇത് ഓണാക്കിയാൽ, ഓവർലാപ്പിംഗ് ഗ്ലിഫ്‌സ് അല്ലെങ്കിൽ മിശ്ര ഫോണ്ടുകൾ ഒഴിവാക്കാൻ തിരുത്തിയ ഓരോ ടെക്സ്റ്റ് ബോക്‌സും ഒറ്റ PDF ടെക്സ്റ്റ് ഘടകമായി എക്സ്പോർട്ട് ചെയ്യും."
+
+[pdfTextEditor.options.advanced]
+title = "അഡ്വാൻസ്ഡ് സജ്ജീകരണങ്ങൾ"
+
+[pdfTextEditor.tooltip.header]
+title = "പ്രിവ്യൂ പരിമിതങ്ങൾ"
+
+[pdfTextEditor.tooltip.textFocus]
+title = "ടെക്സ്റ്റും ചിത്രവും കേന്ദ്രീകരിക്കുന്നത്"
+text = "ഈ വർക്‌സ്‌പേസ് ടെക്സ്റ്റ് എഡിറ്റിംഗിലും എംബെഡുചെയ്ത ചിത്രങ്ങളുടെ സ്ഥാനമാറ്റത്തിലും ശ്രദ്ധ കേന്ദ്രീകരിക്കുന്നു. സങ്കീർണ്ണമായ പേജ് ആർട്ട്‌വർക്ക്, ഫോം വിഡ്ജറ്റുകൾ, ലെയേർഡ് ഗ്രാഫിക്സ് എന്നിവ എക്സ്പോർട്ടിനായി നിലനിർത്തും, പക്ഷേ ഇവിടെ പൂർണ്ണമായി എഡിറ്റ് ചെയ്യാനാകില്ല."
+
+[pdfTextEditor.tooltip.previewVariance]
+title = "പ്രിവ്യൂ വ്യത്യാസങ്ങൾ"
+text = "ചില ദൃശ്യങ്ങൾ (ടേബിൾ ബോർഡറുകൾ, ആകൃതികൾ, അല്ലെങ്കിൽ അനോട്ടേഷൻ രൂപങ്ങൾ പോലുള്ളവ) പ്രിവ്യൂവിൽ കൃത്യമായി പ്രദർശിപ്പിക്കണമെന്നില്ല. എക്സ്പോർട്ട് ചെയ്ത PDF ഓരിജിനൽ ഡ്രോയിംഗ് കമാൻഡുകൾ കഴിയുന്നിടത്തോളം നിലനിർത്തും."
+
+[pdfTextEditor.tooltip.alpha]
+title = "ആൽഫാ വ്യൂവർ"
+text = "ഈ ആൽഫാ വ്യൂവർ ഇനിയും വികസനത്തിലാണു—ചില ഫോണ്ടുകൾ, നിറങ്ങൾ, പാരദർശ്യത ഇഫക്ടുകൾ, ലേഔട്ട് വിശദാംശങ്ങൾ എന്നിവ നേരിയ മാറ്റങ്ങൾ കാണിക്കാം. പങ്കിടുന്നതിന് മുമ്പ് സൃഷ്ടിച്ച PDF വീണ്ടും പരിശോധിക്കുക."
 
 [pdfTextEditor.manual]
 mergeTooltip = "തിരഞ്ഞെടുത്ത ബോക്‌സുകൾ ലയിപ്പിക്കുക"
@@ -5942,6 +6727,8 @@ alpha = "ഈ ആൽഫ വീവർ ഇനിയും വികസനത്ത�
 [pdfTextEditor.empty]
 title = "പ്രമാണം ലോഡ് ചെയ്തിട്ടില്ല"
 subtitle = "ടെക്സ്റ്റ് എഡിറ്റ് ആരംഭിക്കാൻ PDF അല്ലെങ്കിൽ JSON ഫയൽ ലോഡ് ചെയ്യുക."
+dropzone = "ഒരു PDF അല്ലെങ്കിൽ JSON ഫയൽ ഇവിടെ വലിച്ചിടുക, അല്ലെങ്കിൽ ബ്രൗസ് ചെയ്യാൻ ക്ലിക്ക് ചെയ്യുക"
+dropzoneWithFiles = "Files ടാബിൽ നിന്ന് ഒരു ഫയൽ തിരഞ്ഞെടുക്കുക, അല്ലെങ്കിൽ ഒരു PDF അല്ലെങ്കിൽ JSON ഫയൽ ഇവിടെ വലിച്ചിടുക, അല്ലെങ്കിൽ ബ്രൗസ് ചെയ്യാൻ ക്ലിക്ക് ചെയ്യുക"
 
 [pdfTextEditor.welcomeBanner]
 title = "PDF Text Editor-ലേക്ക് സ്വാഗതം (Early Access)"
@@ -6042,3 +6829,58 @@ title = "ടെക്സ്റ്റ് ചേർക്കൽ ഫലങ്ങൾ
 
 [addText.error]
 failed = "PDF-യിൽ ടെക്സ്റ്റ് ചേർക്കുമ്പോൾ പിശക് സംഭവിച്ചു."
+
+[mobileUpload]
+title = "മൊബൈലിൽ നിന്ന് അപ്‌ലോഡ് ചെയ്യുക"
+description = "സ്കാൻ ചെയ്ത് ചിത്രങ്ങൾ അപ്‌ലോഡ് ചെയ്യുക. ചിത്രങ്ങൾ സ്വയമേവ PDF-യായി മാറും."
+descriptionNoConvert = "നിങ്ങളുടെ മൊബൈൽ ഉപകരണത്തിൽ നിന്ന് ചിത്രങ്ങൾ അപ്‌ലോഡ് ചെയ്യാൻ സ്കാൻ ചെയ്യുക."
+error = "കണക്ഷൻ പിശക്"
+pollingError = "ഫയലുകൾ പരിശോധിക്കുമ്പോൾ പിശക്"
+sessionId = "സെഷൻ ID"
+sessionCreateError = "സെഷൻ സൃഷ്ടിക്കാൻ പരാജയപ്പെട്ടു"
+expiryWarning = "സെഷൻ ഉടൻ കാലഹരണം പ്രാപിക്കും"
+expiryWarningMessage = "ഈ QR കോഡ് {{seconds}} സെക്കൻഡിൽ കാലഹരണം പ്രാപിക്കും. പുതിയ കോഡ് സ്വയമേവ സൃഷ്ടിക്കും."
+filesReceived = "{{count}} ഫയൽ(കൾ) ലഭിച്ചു"
+connected = "മൊബൈൽ ഉപകരണം കണക്റ്റുചെയ്തു"
+instructions = "നിങ്ങളുടെ ഫോണിന്റെ ക്യാമറ ഉപയോഗിച്ച് സ്കാൻ ചെയ്യുക. ചിത്രങ്ങൾ സ്വയം PDF-യായി മാറും."
+instructionsNoConvert = "ഫയലുകൾ അപ്‌ലോഡ് ചെയ്യാൻ ഫോണിന്റെ ക്യാമറ ഉപയോഗിച്ച് സ്കാൻ ചെയ്യുക."
+
+[mobileScanner]
+title = "മൊബൈൽ സ്‌കാനർ"
+noSession = "അസാധുവായ സെഷൻ"
+noSessionMessage = "ഈ പേജ് ആക്സസ് ചെയ്യാൻ സാധുവായ QR കോഡ് സ്കാൻ ചെയ്യുക."
+validating = "സെഷൻ ശരിവെയ്ക്കുന്നു..."
+sessionInvalid = "സെഷൻ പിശക്"
+sessionExpired = "ഈ സെഷന്റെ കാലാവധി കഴിഞ്ഞു. ദയവായി റിഫ്രെഷ് ചെയ്ത് വീണ്ടും ശ്രമിക്കുക."
+sessionNotFound = "സെഷൻ കണ്ടെത്തിയില്ല. ദയവായി റിഫ്രെഷ് ചെയ്ത് വീണ്ടും ശ്രമിക്കുക."
+sessionValidationError = "സെഷൻ സ്ഥിരീകരിക്കാൻ കഴിഞ്ഞില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക."
+uploadSuccess = "അപ്‌ലോഡ് വിജയകരം!"
+uploadSuccessMessage = "നിങ്ങളുടെ ചിത്രങ്ങൾ മാറ്റി."
+httpsRequired = "ക്യാമറ ആക്‌സസിന് HTTPS അല്ലെങ്കിൽ localhost ആവശ്യമാണ്. ദയവായി HTTPS ഉപയോഗിക്കുകയോ localhost വഴി പ്രവേശിക്കുകയോ ചെയ്യുക."
+uploadFailed = "അപ്‌ലോഡ് പരാജയപ്പെട്ടു. വീണ്ടും ശ്രമിക്കുക."
+uploading = "അപ്‌ലോഡ് ചെയ്യുന്നു..."
+connected = "കണക്റ്റുചെയ്തു"
+connecting = "കണക്റ്റുചെയ്യുന്നു..."
+chooseMethod = "അപ്‌ലോഡ് രീതി തിരഞ്ഞെടുക്കുക"
+chooseMethodDescription = "ഡോക്യുമെന്റുകൾ എങ്ങനെ സ്‌കാൻ ചെയ്ത് അപ്‌ലോഡ് ചെയ്യണമെന്ന് തിരഞ്ഞെടുക്കുക"
+camera = "ക്യാമറ"
+cameraDescription = "സ്വയമേവ എഡ്ജ് കണ്ടെത്തലോടുകൂടി നിങ്ങളുടെ ഉപകരണത്തിന്റെ ക്യാമറ ഉപയോഗിച്ച് ഡോക്യുമെന്റുകൾ സ്‌കാൻ ചെയ്യുക"
+fileUpload = "ഫയൽ അപ്‌ലോഡ്"
+fileDescription = "നിങ്ങളുടെ ഉപകരണത്തിൽ നിന്ന് നിലവിലുള്ള ഫോട്ടോകൾ അല്ലെങ്കിൽ ഡോക്യുമെന്റുകൾ അപ്‌ലോഡ് ചെയ്യുക"
+cameraAccessDenied = "ക്യാമറ ആക്‌സസ് നിരസിച്ചു. ദയവായി ക്യാമറ ആക്‌സസ് പ്രവർത്തനക്ഷമമാക്കുക."
+back = "മടങ്ങുക"
+settings = "സജ്ജീകരണങ്ങൾ"
+edgeDetection = "എഡ്ജ് കണ്ടെത്തൽ"
+flashlight = "ഫ്ലാഷ്‌ലൈറ്റ്"
+flash = "ഫ്ലാഷ്"
+processing = "പ്രോസസ്സിംഗ്..."
+capture = "ഫോട്ടോ പകർത്തുക"
+selectFilesPrompt = "അപ്‌ലോഡ് ചെയ്യാൻ ഫയലുകൾ തിരഞ്ഞെടുക്കുക"
+selectImage = "ചിത്രം തിരഞ്ഞെടുക്കുക"
+preview = "പ്രിവ്യൂ"
+retake = "വീണ്ടും എടുക്കുക"
+addToBatch = "ബാച്ചിലേക്ക് ചേർക്കുക"
+upload = "അപ്‌ലോഡ്"
+batchImages = "ബാച്ച്"
+clearBatch = "ക്ലിയർ"
+uploadAll = "എല്ലാം അപ്‌ലോഡ് ചെയ്യുക"

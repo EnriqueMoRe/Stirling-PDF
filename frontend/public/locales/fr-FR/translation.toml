@@ -1,8 +1,11 @@
 unsavedChanges = "Vous avez des modifications non enregistrées sur votre PDF. Que souhaitez-vous faire ?"
+pendingRedactionsTitle = "Caviardages non appliqués"
+pendingRedactions = "Vous avez des caviardages non appliqués qui seront perdus."
 areYouSure = "Voulez-vous vraiment quitter ?"
 unsavedChangesTitle = "Modifications non enregistrées"
 keepWorking = "Continuer à travailler"
 discardChanges = "Ignorer les modifications"
+discardRedactions = "Ignorer et quitter"
 applyAndContinue = "Appliquer et continuer"
 exportAndContinue = "Exporter et continuer"
 cancel = "Annuler"
@@ -216,6 +219,8 @@ pagesAndStarting = "Pages et numéro de départ"
 positionAndPages = "Position et pages"
 preview = "Sélection de la position"
 previewDisclaimer = "L’aperçu est approximatif. Le résultat final peut varier en raison des métriques de police du PDF."
+zeroPad = "Zero‑pad Width (Bates Stamping)"
+zeroPadTooltip = "Zero‑pad (Bates Stamp) page numbers to this width (e.g., 3 ⇒ 001). Set 0 to disable."
 
 [addPageNumbers.selectText]
 1 = "Sélectionnez le fichier PDF"
@@ -303,6 +308,7 @@ selectOperation = "Sélectionner une opération"
 addOperationButton = "Ajouter une opération"
 pipelineHeader = "Pipeline :"
 saveButton = "Télécharger"
+saveForFolderScanning = "Enregistrer pour l'analyse de dossier"
 validateButton = "Valider"
 
 [enterpriseEdition]
@@ -340,6 +346,10 @@ advance = "Mode avancé"
 edit = "Voir et modifier"
 popular = "Populaire"
 
+[footer]
+discord = "Discord"
+issues = "GitHub"
+
 [settings.preferences]
 title = "Préférences"
 
@@ -352,7 +362,7 @@ teams = "Équipes"
 title = "Configuration"
 systemSettings = "Paramètres système"
 features = "Fonctionnalités"
-endpoints = "Points de terminaison"
+endpoints = "Endpoints"
 database = "Base de données"
 advanced = "Avancé"
 
@@ -360,6 +370,7 @@ advanced = "Avancé"
 title = "Sécurité et authentification"
 security = "Sécurité"
 connections = "Connexions"
+telegram = "Telegram"
 
 [settings.licensingAnalytics]
 title = "Licences et analyses"
@@ -430,10 +441,38 @@ fullscreen = "Plein écran"
 [settings.general.updates]
 title = "Mises à jour logicielles"
 description = "Rechercher des mises à jour et voir les informations de version"
-currentVersion = "Version actuelle"
+currentBackendVersion = "Current Backend Version"
+currentFrontendVersion = "Current Frontend Version"
+versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 latestVersion = "Dernière version"
 checkForUpdates = "Rechercher des mises à jour"
 viewDetails = "Voir les détails"
+serverNeedsUpdate = "Le serveur doit être mis à jour par l’administrateur"
+
+[settings.general.versionInfo]
+title = "Informations de version"
+description = "Détails des versions Desktop et serveur"
+desktop = "Version Desktop"
+server = "Version du serveur"
+
+[settings.security]
+title = "Sécurité"
+description = "Mettez à jour votre mot de passe pour sécuriser votre compte."
+
+[settings.security.password]
+subtitle = "Changez votre mot de passe. Vous serez déconnecté après la mise à jour."
+required = "Tous les champs sont obligatoires."
+mismatch = "Les nouveaux mots de passe ne correspondent pas."
+error = "Impossible de mettre à jour le mot de passe. Veuillez vérifier votre mot de passe actuel et réessayer."
+success = "Mot de passe mis à jour avec succès. Veuillez vous reconnecter."
+ssoDisabled = "Les modifications de mot de passe sont gérées par votre fournisseur d’identité."
+current = "Mot de passe actuel"
+currentPlaceholder = "Saisissez votre mot de passe actuel"
+new = "Nouveau mot de passe"
+newPlaceholder = "Saisissez un nouveau mot de passe"
+confirm = "Confirmez le nouveau mot de passe"
+confirmPlaceholder = "Saisissez de nouveau votre nouveau mot de passe"
+update = "Mettre à jour le mot de passe"
 
 [settings.hotkeys]
 title = "Raccourcis clavier"
@@ -488,11 +527,16 @@ low = "Faible"
 title = "Modifiez vos identifiants"
 header = "Mettez à jour vos identifiants de connexion"
 changePassword = "Vous utilisez les identifiants de connexion par défaut. Veuillez saisir un nouveau mot de passe"
+ssoManaged = "Votre compte est géré par votre fournisseur d’identité."
 newUsername = "Nouveau nom d'utilisateur"
 oldPassword = "Mot de passe actuel"
 newPassword = "Nouveau mot de passe"
 confirmNewPassword = "Confirmer le nouveau mot de passe"
 submit = "Soumettre les modifications"
+credsUpdated = "Compte mis à jour"
+description = "Modifications enregistrées. Veuillez vous reconnecter."
+error = "Impossible de mettre à jour le nom d’utilisateur. Veuillez vérifier votre mot de passe et réessayer."
+changeUsername = "Mettre à jour votre nom d’utilisateur. Vous serez déconnecté après la mise à jour."
 
 [account]
 title = "Paramètres du compte"
@@ -500,6 +544,8 @@ accountSettings = "Paramètres du compte"
 adminSettings = "Paramètres d'administration – Voir et ajouter des utilisateurs"
 userControlSettings = "Contrôle des paramètres des utilisateurs"
 changeUsername = "Modifier le nom d'utilisateur"
+changeUsernameDescription = "Mettre à jour votre nom d’utilisateur. Vous serez déconnecté après la mise à jour."
+newUsernamePlaceholder = "Saisissez votre nouveau nom d’utilisateur"
 newUsername = "Nouveau nom d'utilisateur"
 password = "Mot de passe de confirmation"
 oldPassword = "Ancien mot de passe"
@@ -514,6 +560,30 @@ property = "Propriété"
 webBrowserSettings = "Paramètres du navigateur"
 syncToBrowser = "Synchroniser : Compte → Navigateur"
 syncToAccount = "Synchroniser : Compte ← Navigateur"
+
+[account.mfa]
+title = "Authentification à deux facteurs"
+setupFailed = "Impossible de démarrer la configuration de l'authentification à deux facteurs. Veuillez réessayer."
+codeRequired = "Saisissez le code d'authentification pour continuer."
+enabled = "Authentification à deux facteurs activée."
+enableFailed = "Impossible d'activer l'authentification à deux facteurs. Vérifiez le code et réessayez."
+disabled = "Authentification à deux facteurs désactivée."
+disableFailed = "Impossible de désactiver l'authentification à deux facteurs. Vérifiez le code et réessayez."
+description = "Ajoutez une couche de sécurité supplémentaire à votre compte."
+enableButton = "Activer l'authentification à deux facteurs"
+disableButton = "Désactiver l'authentification à deux facteurs"
+setupTitle = "Configurer l'authentification à deux facteurs"
+setupDescription = "Scannez le code QR avec votre application d'authentification, puis saisissez le code à 6 chiffres pour confirmer."
+manualKey = "Clé de configuration manuelle"
+secretWarning = "Conservez cette clé privée. Toute personne y ayant accès peut générer des codes d'authentification valides."
+codePlaceholder = "Saisir le code à 6 chiffres"
+confirmEnable = "Activer"
+disableTitle = "Désactiver l'authentification à deux facteurs"
+disableDescription = "Saisissez un code d'authentification valide pour désactiver l'authentification à deux facteurs."
+codeLabel = "Code d'authentification"
+confirmDisable = "Désactiver"
+ssoDescription = "L'authentification à deux facteurs est gérée par votre fournisseur d'identité pour les comptes à authentification unique."
+ssoManaged = "Configurez la MFA via votre fournisseur d'identité."
 
 [adminUserSettings]
 title = "Administration des paramètres des utilisateurs"
@@ -708,6 +778,11 @@ tags = "signature,autographe"
 title = "Signer"
 desc = "Ajoutez une signature au PDF avec un dessin, du texte ou une image."
 
+[home.annotate]
+tags = "annoter,surligner,dessiner"
+title = "Annoter"
+desc = "Surlignez, dessinez, ajoutez des notes et des formes dans la visionneuse"
+
 [home.flatten]
 tags = "simplifier,retirer,interactif"
 title = "Rendre inerte"
@@ -879,6 +954,7 @@ title = "Scinder auto taille/pages"
 desc = "Séparer un PDF unique en plusieurs documents en fonction de la taille, du nombre de pages ou du nombre de documents."
 
 [home.replaceColor]
+tags = "replace color,invert color,color replacement,swap colors,change color,invert,negative,color swap,find and replace color,convert color,color change"
 title = "Remplacer & inverser couleurs"
 desc = "Remplacer ou inverser les couleurs dans les documents PDF"
 
@@ -893,18 +969,22 @@ title = "Scan auto de dossiers"
 desc = "Lien vers le guide d’analyse de dossier automatisée"
 
 [home.devSsoGuide]
+tags = "SSO,single sign-on,authentication,SAML,OAuth,OIDC,login,enterprise,identity provider,IdP"
 title = "Guide SSO"
 desc = "Lien vers le guide SSO"
 
 [home.devAirgapped]
+tags = "air-gapped,offline,isolated,no internet,disconnected,secure,network isolation,standalone"
 title = "Installation isolée"
 desc = "Lien vers le guide d’installation isolée (air-gapped)"
 
 [home.addPassword]
+tags = "encrypt,password,lock,secure,protect,security,encryption,safeguard,confidential,private,restrict access"
 title = "Ajouter un mot de passe"
 desc = "Chiffrez votre PDF avec un mot de passe."
 
 [home.changePermissions]
+tags = "permissions,restrictions,rights,access control,allow,deny,printing,copying,editing,modify permissions,security settings,user rights"
 title = "Modifier les permissions"
 desc = "Modifier les restrictions et permissions du document"
 
@@ -914,12 +994,14 @@ title = "Automatiser"
 desc = "Créez des workflows multi-étapes en enchaînant des actions PDF. Idéal pour les tâches récurrentes."
 
 [home.overlay-pdfs]
+tags = "overlay,combine,merge,layer,superimpose,overlay PDF,layer PDFs,combine PDFs,stack,overlay pages,background,foreground,composite"
 desc = "Superposer un PDF sur un autre"
 title = "Superposer des PDF"
 
 [home.pdfTextEditor]
+tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
 title = "Éditeur de texte PDF"
-desc = "Modifier le texte et les images existants dans les PDF"
+desc = "Afficher et modifier les exports JSON de Stirling PDF avec édition de texte groupée et régénération du PDF"
 
 [home.addText]
 tags = "texte,annotation,étiquette"
@@ -930,6 +1012,7 @@ desc = "Ajouter du texte personnalisé n’importe où dans votre PDF"
 addFiles = "Ajouter des fichiers"
 uploadFromComputer = "Téléverser depuis l’ordinateur"
 openFromComputer = "Ouvrir depuis l’ordinateur"
+mobileUpload = "Téléverser depuis un mobile"
 
 [viewPdf]
 tags = "visualiser,lire,annoter,texte,image"
@@ -1217,7 +1300,12 @@ downloadHtml = "Télécharger le fichier HTML intermédiaire au lieu du PDF"
 pdfaOptions = "Options PDF/A"
 outputFormat = "Format de sortie"
 pdfaNote = "PDF/A-1b est plus compatible, PDF/A-2b prend en charge davantage de fonctionnalités."
+pdfaFormat = "Format PDF/A"
 pdfaDigitalSignatureWarning = "Le PDF contient une signature numérique. Elle sera supprimée dans l'étape suivante."
+strictMode = "Strict Mode"
+strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
+pdfxDigitalSignatureWarning = "Le PDF contient une signature numérique. Elle sera supprimée à l'étape suivante."
+pdfxDescription = "PDF/X est un sous-ensemble PDF conforme à l'ISO pour une impression fiable et un échange graphique."
 fileFormat = "Format de fichier"
 wordDoc = "Document Word"
 wordDocExt = "Document Word (.docx)"
@@ -1245,6 +1333,37 @@ cbzOptions = "Options CBZ vers PDF"
 optimizeForEbook = "Optimiser le PDF pour les liseuses (utilise Ghostscript)"
 cbzOutputOptions = "Options PDF vers CBZ"
 cbzDpi = "DPI pour le rendu des images"
+cbrOptions = "Options CBR"
+cbrOutputOptions = "Options PDF vers CBR"
+cbrDpi = "DPI pour le rendu des images"
+svgPdfOptions = "SVG to PDF Options"
+combineSvgs = "Combine SVGs into single PDF"
+combineSvgsDescription = "Combine all SVG files into one PDF with multiple pages, or create separate PDFs for each SVG"
+svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
+
+[convert.ebookOptions]
+ebookOptions = "Options eBook vers PDF"
+ebookOptionsDesc = "Options de conversion des eBooks en PDF"
+embedAllFonts = "Incorporer toutes les polices"
+embedAllFontsDesc = "Incorporer toutes les polices de l’eBook dans le PDF généré"
+includeTableOfContents = "Inclure la table des matières"
+includeTableOfContentsDesc = "Ajouter une table des matières générée au PDF résultant"
+includePageNumbers = "Inclure les numéros de page"
+includePageNumbersDesc = "Ajouter des numéros de page au PDF généré"
+optimizeForEbookPdf = "Optimiser pour les liseuses"
+optimizeForEbookPdfDesc = "Optimiser le PDF pour la lecture d’eBook (taille de fichier réduite, meilleur rendu sur appareils eInk)"
+
+[convert.epubOptions]
+epubOptions = "Options PDF vers eBook"
+epubOptionsDesc = "Options de conversion de PDF vers EPUB/AZW3"
+detectChapters = "Détecter les chapitres"
+detectChaptersDesc = "Détecter les titres ressemblant à des chapitres et insérer des sauts de page EPUB"
+targetDevice = "Appareil cible"
+targetDeviceDesc = "Choisissez un profil de sortie optimisé pour l’appareil de lecture"
+outputFormat = "Format de sortie"
+outputFormatDesc = "Choisissez le format de sortie de l’eBook"
+tabletPhone = "Tablette/Téléphone (avec images)"
+kindleEink = "Kindle e-Ink (texte optimisé)"
 
 [imageToPdf]
 tags = "pdf,conversion,img,jpg,image,photo"
@@ -1322,6 +1441,7 @@ applySignatures = "Appliquer les images"
 name = "Image"
 placeholder = "Téléverser une image"
 label = "Fichier image"
+hint = "Supports PNG, JPEG, GIF, BMP, TIFF, and SVG files. SVG files will be converted to PNG for embedding."
 
 [addImage.steps]
 configure = "Configurer l’image"
@@ -1361,6 +1481,11 @@ header = "Ajouter des pièces jointes"
 add = "Ajouter une pièce jointe"
 remove = "Supprimer la pièce jointe"
 embed = "Intégrer la pièce jointe"
+convertToPdfA3b = "Convertir en PDF/A-3b"
+convertToPdfA3bDescription = "Crée un PDF d’archivage avec pièces jointes intégrées"
+convertToPdfA3bTooltip = "PDF/A-3b est un format d’archivage garantissant une conservation à long terme. Il permet d’intégrer des formats de fichiers arbitraires en tant que pièces jointes. La conversion nécessite Ghostscript et peut être plus longue pour les gros fichiers."
+convertToPdfA3bTooltipHeader = "À propos de la conversion PDF/A-3b"
+convertToPdfA3bTooltipTitle = "Ce que cela fait"
 submit = "Ajouter des pièces jointes"
 
 [watermark]
@@ -2113,6 +2238,16 @@ tip = "Ne fonctionne actuellement pas pour plusieurs entrées à la fois"
 outputFormat = "Format de sortie"
 pdfWithDigitalSignature = "Le PDF contient une signature numérique. Elle sera supprimée dans l'étape suivante."
 
+[pdfToPDFX]
+tags = "impression,standard,conversion,production,prépresse,archive"
+title = "PDF vers PDF/X"
+header = "PDF vers PDF/X"
+credit = "Ce service utilise Ghostscript pour la conversion PDF/X"
+submit = "Convertir"
+tip = "Ne fonctionne actuellement pas avec plusieurs entrées à la fois"
+outputFormat = "Format de sortie"
+pdfWithDigitalSignature = "Le PDF contient une signature numérique. Elle sera supprimée à l'étape suivante."
+
 [PDFToWord]
 tags = "doc, docx, odt, word, transformation, format, conversion, office, microsoft, docfile"
 title = "PDF en Word"
@@ -2306,6 +2441,10 @@ saved = "Enregistrées"
 label = "Téléverser une image de signature"
 placeholder = "Sélectionner un fichier image"
 hint = "Téléversez une image PNG ou JPG de votre signature"
+removeBackground = "Supprimer le fond blanc (le rendre transparent)"
+processing = "Traitement de l’image..."
+backgroundRemovalFailedTitle = "Échec de la suppression du fond"
+backgroundRemovalFailedMessage = "Impossible de supprimer le fond de l’image. Utilisation de l’image originale à la place."
 
 [sign.instructions]
 title = "Comment ajouter une signature"
@@ -2350,6 +2489,11 @@ note = "L’aplatissement supprime les éléments interactifs du PDF, les rendan
 [flatten.options.flattenOnlyForms]
 label = "Aplatir uniquement les formulaires"
 desc = "Aplatir uniquement les champs de formulaire, en laissant les autres éléments interactifs intacts"
+
+[flatten.renderDpi]
+label = "DPI de rendu (optionnel, 150 DPI recommandé)"
+help = "Laissez vide pour utiliser la valeur par défaut du système. Un DPI plus élevé améliore la netteté mais augmente le temps de traitement et la taille du fichier."
+placeholder = "ex. 150"
 
 [flatten.results]
 title = "Résultats de l’aplatissement"
@@ -2502,6 +2646,7 @@ label = "PDF original"
 
 [compare.edited]
 label = "PDF modifié"
+placeholder = "Select the edited PDF"
 
 [compare.swap]
 confirmTitle = "Relancer la comparaison ?"
@@ -2925,6 +3070,7 @@ header = "Redimensionner"
 submit = "Envoyer"
 noFileSelected = "Sélectionnez un fichier PDF pour commencer le recadrage"
 reset = "Réinitialiser au PDF complet"
+autoCrop = "Recadrer automatiquement les marges blanches"
 
 [crop.preview]
 title = "Sélection de la zone de recadrage"
@@ -3036,6 +3182,105 @@ title = "Récupérer les informations"
 header = "Récupérer les informations"
 submit = "Récupérer les informations"
 downloadJson = "Télécharger le JSON"
+processing = "Extraction des informations..."
+results = "Résultats"
+noResults = "Exécutez l'outil pour générer un rapport."
+downloads = "Téléchargements"
+noneDetected = "Aucun détecté"
+indexTitle = "Index"
+
+[getPdfInfo.report]
+entryLabel = "Résumé complet des informations"
+shortTitle = "Informations PDF"
+
+[getPdfInfo.sections]
+metadata = "Métadonnées"
+formFields = "Champs de formulaire"
+basicInfo = "Informations de base"
+documentInfo = "Informations sur le document"
+compliance = "Conformité"
+encryption = "Chiffrement"
+permissions = "Autorisations"
+other = "Autre"
+perPageInfo = "Informations par page"
+tableOfContents = "Table des matières"
+
+[getPdfInfo.compliance]
+notDetected = "Non détecté"
+passed = "Réussi"
+failed = "Échec"
+compliant = "Conforme"
+nonCompliant = "Non conforme"
+none = "Aucune norme détectée"
+passedCount = "réussis"
+failedCount = "échoués"
+noVerification = "Aucune vérification effectuée"
+noVerificationDesc = "La conformité aux normes PDF n'a pas été vérifiée pour ce document."
+
+[getPdfInfo.other]
+attachments = "Pièces jointes"
+embeddedFiles = "Fichiers intégrés"
+javaScript = "JavaScript"
+layers = "Calques"
+structureTree = "StructureTree"
+xmp = "XMPMetadata"
+
+[getPdfInfo.perPage]
+size = "Taille"
+annotations = "Annotations"
+images = "Images"
+links = "Liens"
+fonts = "Polices"
+xobjects = "Nombre d'objets XObject"
+multimedia = "Multimédia"
+
+[getPdfInfo.summary]
+pages = "Pages"
+fileSize = "Taille du fichier"
+pdfVersion = "Version PDF"
+language = "Langue"
+title = "Résumé PDF"
+author = "Auteur"
+created = "Créé"
+modified = "Modifié"
+permsAll = "Toutes les autorisations accordées"
+permsRestricted = "{{count}} restrictions"
+permsMixed = "Certaines autorisations sont restreintes"
+hasCompliance = "Respecte des normes de conformité"
+noCompliance = "Aucune norme de conformité"
+compliancePassed = "Conforme à {{standards}}"
+complianceChecked = "Normes vérifiées ({{failed}} échoués)"
+basic = "Informations de base"
+documentInfo = "Informations sur le document"
+securityTitle = "État de sécurité"
+technical = "Technique"
+overviewTitle = "Aperçu du PDF"
+
+[getPdfInfo.summary.security]
+encrypted = "PDF chiffré - Protection par mot de passe présente"
+unencrypted = "PDF non chiffré - Aucune protection par mot de passe"
+
+[getPdfInfo.summary.tech]
+images = "Images"
+fonts = "Polices"
+formFields = "Champs de formulaire"
+embeddedFiles = "Fichiers intégrés"
+javaScript = "JavaScript"
+layers = "Calques"
+bookmarks = "Signets"
+multimedia = "Multimédia"
+
+[getPdfInfo.summary.overview]
+untitled = "un document sans titre"
+unknown = "Auteur inconnu"
+text = "Ceci est un PDF de {{pages}} pages intitulé {{title}} créé par {{author}} (version PDF {{version}})."
+
+[getPdfInfo.error]
+partial = "Certains fichiers n'ont pas pu être traités."
+unexpected = "Erreur inattendue lors de l'extraction."
+
+[getPdfInfo.status]
+complete = "Extraction terminée"
 
 [extractPage]
 tags = "extraire,extract"
@@ -3070,6 +3315,7 @@ title = "Méthode d’occultation"
 mode = "Mode"
 automatic = "Automatique"
 automaticDesc = "Occulter le texte selon des termes de recherche"
+automaticDisabledTooltip = "Sélectionnez des fichiers dans le gestionnaire de fichiers pour caviarder plusieurs fichiers à la fois"
 manual = "Manuel"
 manualDesc = "Cliquez et faites glisser pour occulter des zones spécifiques"
 manualComingSoon = "Occultation manuelle bientôt disponible"
@@ -3140,8 +3386,35 @@ text = "Ne fait correspondre que les mots complets, pas les correspondances part
 title = "Convertir en PDF-image"
 text = "Convertit le PDF en PDF-image après occultation. Cela garantit que le texte derrière les boîtes est entièrement supprimé et irrécupérable."
 
+[redact.tooltip.manual.header]
+title = "Contrôles de caviardage manuel"
+
+[redact.tooltip.manual.markText]
+title = "Outil de marquage de texte"
+text = "Sélectionnez le texte directement sur le PDF pour le marquer en vue du caviardage. Cliquez et faites glisser pour surligner le texte spécifique à caviarder."
+
+[redact.tooltip.manual.markArea]
+title = "Outil de marquage de zone"
+text = "Dessinez des zones rectangulaires sur le PDF pour marquer des régions à caviarder. Utile pour caviarder des images, des signatures ou des formes irrégulières."
+
+[redact.tooltip.manual.apply]
+title = "Appliquer les caviardages"
+text = "Après avoir marqué le contenu, cliquez sur « Appliquer » pour caviarder définitivement toutes les zones marquées. Le compteur en attente indique le nombre de caviardages prêts à être appliqués."
+bullet1 = "Marquez autant de zones que nécessaire avant d’appliquer"
+bullet2 = "Tous les caviardages en attente sont appliqués en une fois"
+bullet3 = "Les caviardages ne peuvent pas être annulés après application"
+
 [redact.manual]
+title = "Outils de caviardage"
+instructions = "Sélectionnez du texte ou dessinez des zones sur le PDF pour marquer le contenu à caviarder."
+markText = "Marquer du texte"
+markArea = "Marquer une zone"
+pendingLabel = "En attente :"
+applyWarning = "⚠️ Application permanente, irréversible, et les données sous-jacentes seront supprimées"
+apply = "Appliquer"
+noMarks = "Aucun marquage de caviardage. Utilisez les outils ci-dessus pour marquer le contenu à caviarder."
 header = "Occultation manuelle"
+controlsTitle = "Contrôles de caviardage manuel"
 textBasedRedaction = "Occultation basée sur le texte"
 pageBasedRedaction = "Occultation par page"
 convertPDFToImageLabel = "Convertir le PDF en PDF-image (permet de supprimer le texte derrière la boîte)"
@@ -3257,6 +3530,19 @@ placeholder = "Saisir le nombre de divisions horizontales"
 label = "Divisions verticales"
 placeholder = "Entrer le nombre de divisions verticales"
 
+[split-by-sections.splitMode]
+label = "Mode de fractionnement"
+description = "Choisissez comment fractionner les pages"
+splitAll = "Fractionner toutes les pages"
+splitAllExceptFirst = "Tout fractionner sauf la première"
+splitAllExceptLast = "Tout fractionner sauf la dernière"
+splitAllExceptFirstAndLast = "Tout fractionner sauf la première et la dernière"
+custom = "Pages personnalisées"
+
+[split-by-sections.customPages]
+label = "Numéros de pages personnalisés"
+placeholder = "ex. 2,4,6"
+
 [AddStampRequest]
 tags = "Tampon,Ajouter,Stamp,Add image,center image,Watermark,PDF,Embed,Customize"
 header = "Tampon PDF"
@@ -3281,6 +3567,44 @@ imageSize = "Taille de l’image"
 margin = "Marge"
 positionAndFormatting = "Position et mise en forme"
 quickPosition = "Sélectionnez une position sur la page pour placer le tampon."
+preview = "Preview:"
+useTemplate = "Use Template"
+selectTemplate = "Select a template..."
+stampTextDescription = "Use dynamic variables below. Use @@ for literal @. Use \\n for new lines."
+dynamicVariables = "Dynamic Variables"
+clickToExpand = "Click to expand"
+variablesHelp = "Click on any variable to insert it into your stamp text. Use @@ for literal @."
+dateTimeVars = "Date & Time"
+dateDesc = "Current date"
+timeDesc = "Current time"
+datetimeDesc = "Date and time combined"
+customDateDesc = "Custom format"
+yearMonthDayDesc = "Individual date parts"
+pageVars = "Page Information"
+pageNumberDesc = "Current page number"
+totalPagesDesc = "Total number of pages"
+fileVars = "File Information"
+filenameDesc = "Filename without extension"
+filenameFullDesc = "Filename with extension"
+metadataVars = "Document Metadata"
+metadataDesc = "From PDF document properties"
+otherVars = "Other"
+uuidDesc = "Short unique identifier (8 chars)"
+examples = "Examples"
+multiLine = "multi-line"
+
+[AddStampRequest.template]
+pageNumberFooter = "Page Number Footer"
+dateHeader = "Date Header"
+europeanDate = "European Date"
+timestamp = "Timestamp"
+draftWatermark = "Draft Watermark"
+custom = "Custom"
+page-numbers = "Page Numbers"
+draft = "Draft Watermark"
+doc-info = "Document Info"
+legal-footer = "Legal Footer"
+european-date = "European Date (DD/MM/YYYY)"
 
 [AddStampRequest.error]
 failed = "Une erreur s’est produite lors de l’ajout du tampon au PDF."
@@ -3503,6 +3827,13 @@ passwordChangedSuccess = "Mot de passe modifié avec succès ! Veuillez vous co
 credentialsUpdated = "Vos identifiants ont été mis à jour. Veuillez vous reconnecter."
 defaultCredentials = "Identifiants de connexion par défaut"
 changePasswordWarning = "Veuillez changer votre mot de passe après votre première connexion"
+mfaRequired = "Code à deux facteurs requis"
+mfaCode = "Code d'authentification"
+enterMfaCode = "Saisir le code à 6 chiffres"
+mfaPromptTitle = "Authentification à deux facteurs"
+mfaPromptBody = "Saisissez le code d'authentification provenant de votre application d'authentification pour continuer."
+verifyingMfa = "Vérification..."
+verifyMfa = "Vérifier le code"
 
 [login.slides.overview]
 alt = "Aperçu de Stirling PDF"
@@ -3618,6 +3949,19 @@ filesize = "Taille du Fichier"
 [compress.grayscale]
 label = "Appliquer l'échelle de gris pour la compression"
 
+[compress.linearize]
+label = "Linéariser le PDF pour une lecture web rapide"
+
+[compress.lineArt]
+label = "Convertir les images en dessin au trait"
+description = "Utilise ImageMagick pour réduire les pages en noir et blanc à fort contraste afin de maximiser la réduction de taille."
+unavailable = "ImageMagick n’est pas installé ou activé sur ce serveur"
+detailLevel = "Niveau de détail"
+edgeEmphasis = "Accentuation des contours"
+edgeLow = "Douce"
+edgeMedium = "Équilibrée"
+edgeHigh = "Forte"
+
 [compress.tooltip.header]
 title = "Aperçu des paramètres de compression"
 
@@ -3635,6 +3979,10 @@ bullet2 = "Des valeurs élevées réduisent la taille du fichier"
 title = "Niveaux de gris"
 text = "Sélectionnez cette option pour convertir toutes les images en noir et blanc, ce qui peut réduire significativement la taille, en particulier pour les PDF scannés ou riches en images."
 
+[compress.tooltip.lineArt]
+title = "Dessin au trait"
+text = "Convertit les pages en noir et blanc à fort contraste à l’aide d’ImageMagick. Utilisez le niveau de détail pour contrôler la quantité de contenu qui devient noir, et l’accentuation des contours pour contrôler l’agressivité de la détection des contours."
+
 [compress.error]
 failed = "Une erreur est survenue lors de la compression du PDF."
 
@@ -3646,6 +3994,11 @@ failed = "Une erreur est survenue lors de la compression du PDF."
 [compress.selectText.1]
 _value = "Paramètres de compression"
 1 = "1-3 compression PDF,</br> 4-6 compression d'image légère,</br> 7-9 compression d'image intense qui réduira considérablement la qualité de l'image"
+
+[compress.compressionLevel]
+range1to3 = "Des valeurs faibles préservent la qualité mais donnent des fichiers plus volumineux"
+range4to6 = "Compression moyenne avec réduction modérée de la qualité"
+range7to9 = "Des valeurs élevées réduisent fortement la taille du fichier mais peuvent diminuer la netteté des images"
 
 [decrypt]
 passwordPrompt = "Ce fichier est protégé par un mot de passe. Veuillez saisir le mot de passe :"
@@ -3886,22 +4239,97 @@ deleteSelected = "Supprimer les pages sélectionnées"
 closePdf = "Fermer le PDF"
 exportAll = "Exporter le PDF"
 downloadSelected = "Télécharger les fichiers sélectionnés"
-downloadAll = "Tout télécharger"
-saveAll = "Tout enregistrer"
+annotations = "Annotations"
+exportSelected = "Exporter les pages sélectionnées"
+saveChanges = "Enregistrer les modifications"
 toggleTheme = "Changer de thème"
-toggleBookmarks = "Afficher/Masquer les signets"
 language = "Langue"
+toggleAnnotations = "Afficher/masquer les annotations"
 search = "Rechercher dans le PDF"
 panMode = "Mode panoramique"
+applyRedactionsFirst = "Appliquez d’abord les caviardages"
 rotateLeft = "Pivoter à gauche"
 rotateRight = "Pivoter à droite"
 toggleSidebar = "Afficher/masquer la barre latérale"
-exportSelected = "Exporter les pages sélectionnées"
-toggleAnnotations = "Afficher/masquer les annotations"
-annotationMode = "Basculer en mode annotation"
+toggleBookmarks = "Afficher/Masquer les signets"
 print = "Imprimer le PDF"
 draw = "Dessiner"
+redact = "Caviarder"
+exitRedaction = "Quitter le mode de caviardage"
 save = "Enregistrer"
+downloadAll = "Tout télécharger"
+saveAll = "Tout enregistrer"
+
+[textAlign]
+left = "Gauche"
+center = "Centre"
+right = "Droite"
+
+[annotation]
+title = "Annoter"
+desc = "Utilisez surlignage, stylo, texte et notes. Les modifications restent actives—aucun aplatissement requis."
+highlight = "Surligner"
+pen = "Stylo"
+text = "Zone de texte"
+note = "Note"
+rectangle = "Rectangle"
+ellipse = "Ellipse"
+select = "Sélectionner"
+exit = "Quitter le mode d’annotation"
+strokeWidth = "Épaisseur"
+opacity = "Opacité"
+strokeOpacity = "Opacité du trait"
+fillOpacity = "Opacité de remplissage"
+fontSize = "Taille de police"
+chooseColor = "Choisir une couleur"
+color = "Couleur"
+strokeColor = "Couleur du trait"
+fillColor = "Couleur de remplissage"
+underline = "Souligner"
+strikeout = "Barré"
+squiggly = "Ondulé"
+inkHighlighter = "Surligneur à main levée"
+freehandHighlighter = "Surligneur à main levée"
+square = "Carré"
+circle = "Cercle"
+polygon = "Polygone"
+line = "Ligne"
+stamp = "Ajouter une image"
+textMarkup = "Marquage de texte"
+drawing = "Dessin"
+shapes = "Formes"
+notesStamps = "Notes et tampons"
+settings = "Paramètres"
+borderOn = "Bordure : activée"
+borderOff = "Bordure : désactivée"
+editInk = "Modifier le stylo"
+editLine = "Modifier la ligne"
+editNote = "Modifier la note"
+editText = "Modifier la zone de texte"
+editTextMarkup = "Modifier le marquage de texte"
+editSelected = "Modifier l’annotation"
+editSquare = "Modifier le carré"
+editCircle = "Modifier le cercle"
+editPolygon = "Modifier le polygone"
+unsupportedType = "Ce type d’annotation n’est pas entièrement pris en charge pour l’édition."
+textAlignment = "Alignement du texte"
+noteIcon = "Icône de note"
+imagePreview = "Aperçu"
+contents = "Texte"
+backgroundColor = "Couleur d’arrière-plan"
+clearBackground = "Supprimer l’arrière-plan"
+noBackground = "Sans arrière-plan"
+stampSettings = "Paramètres du tampon"
+savingCopy = "Préparation du téléchargement..."
+saveFailed = "Impossible d’enregistrer une copie"
+saveReady = "Téléchargement prêt"
+selectAndMove = "Sélectionner et modifier"
+editSelectDescription = "Cliquez une annotation existante pour en modifier la couleur, l’opacité, le texte ou la taille."
+editStampHint = "Pour changer l’image, supprimez ce tampon et ajoutez-en un nouveau."
+editSwitchToSelect = "Basculez sur Sélectionner et modifier pour modifier cette annotation."
+undo = "Annuler"
+redo = "Rétablir"
+applyChanges = "Appliquer les modifications"
 saveChanges = "Enregistrer les modifications"
 
 [search]
@@ -3953,12 +4381,20 @@ settings = "Réglages"
 adminSettings = "Réglages admin"
 allTools = "Outils"
 reader = "Lecteur"
+tours = "Visites guidées"
+showMeAround = "Faites-moi visiter"
+
+[quickAccess.toursTooltip]
+admin = "Visionnez des parcours ici : parcours des outils, parcours de la nouvelle interface V2 et parcours Admin."
+user = "Visionnez des parcours ici : parcours des outils et parcours de la nouvelle interface V2."
 
 [quickAccess.helpMenu]
 toolsTour = "Visite des outils"
 toolsTourDesc = "Découvrez ce que les outils peuvent faire"
 adminTour = "Visite administrateur"
 adminTourDesc = "Découvrez les paramètres et fonctionnalités d’administration"
+whatsNewTour = "Voir les nouveautés de la V2"
+whatsNewTourDesc = "Découvrir la nouvelle interface"
 
 [admin]
 error = "Erreur"
@@ -3977,6 +4413,8 @@ fetchError = "Échec du chargement des paramètres"
 saveError = "Échec de l’enregistrement des paramètres"
 saved = "Paramètres enregistrés avec succès"
 saveSuccess = "Paramètres enregistrés avec succès"
+success = "Paramètres enregistrés avec succès"
+error = "Échec de l’enregistrement des paramètres"
 save = "Enregistrer les modifications"
 discard = "Ignorer"
 restartRequired = "Redémarrage requis"
@@ -3996,6 +4434,10 @@ hint = "Vous avez des modifications non enregistrées"
 title = "Mode de connexion requis"
 message = "Le mode de connexion doit être activé pour modifier les paramètres d’administration. Veuillez définir SECURITY_ENABLELOGIN=true dans votre environnement ou security.enableLogin: true dans settings.yml, puis redémarrer le serveur."
 readOnly = "Les paramètres ci-dessous affichent des valeurs d’exemple à titre de référence. Activez le mode de connexion pour afficher et modifier la configuration réelle."
+
+[admin.settings.enterpriseRequired]
+title = "Licence Entreprise requise"
+message = "Une licence Entreprise est requise pour accéder à {{featureName}}. Vous consultez des données de démonstration à titre de référence."
 
 [admin.settings.restart]
 title = "Redémarrage requis"
@@ -4081,9 +4523,17 @@ description = "Configurer des chemins de système de fichiers personnalisés pou
 [admin.settings.general.customPaths.pipeline]
 label = "Répertoires du pipeline"
 
+[admin.settings.general.customPaths.pipeline.pipelineDir]
+label = "Pipeline Directory"
+description = "Base directory for pipeline resources (leave empty for default: /pipeline)"
+
 [admin.settings.general.customPaths.pipeline.watchedFoldersDir]
 label = "Répertoire des dossiers surveillés"
 description = "Répertoire où le pipeline surveille les PDF entrants (laisser vide pour la valeur par défaut : /pipeline/watchedFolders)"
+
+[admin.settings.general.customPaths.pipeline.watchedFoldersDirs]
+label = "Watched Folders Directories"
+description = "Directories where pipeline monitors for incoming PDFs (one per line or comma-separated; leave empty for default: /pipeline/watchedFolders)"
 
 [admin.settings.general.customPaths.pipeline.finishedFoldersDir]
 label = "Répertoire des dossiers terminés"
@@ -4099,6 +4549,13 @@ description = "Chemin vers l’exécutable WeasyPrint pour la conversion HTML ve
 [admin.settings.general.customPaths.operations.unoconvert]
 label = "Exécutable Unoconvert"
 description = "Chemin vers LibreOffice unoconvert pour les conversions de documents (laisser vide pour la valeur par défaut : /opt/venv/bin/unoconvert)"
+
+[admin.settings.general.frontendUrl]
+label = "URL du frontend"
+description = "URL de base du frontend (ex., https://pdf.example.com). Utilisée pour les liens d’invitation par e-mail et les téléversements mobiles via QR code. Laissez vide pour utiliser l’URL du backend."
+
+[admin.settings.badge]
+clickToUpgrade = "Cliquez pour voir les détails de l’abonnement"
 
 [admin.settings.security]
 title = "Sécurité"
@@ -4128,6 +4585,13 @@ description = "Nombre maximal de tentatives de connexion échouées avant le ver
 [admin.settings.security.loginResetTimeMinutes]
 label = "Délai de réinitialisation (minutes)"
 description = "Délai avant la réinitialisation du compteur de tentatives de connexion échouées"
+
+[admin.settings.security.xFrameOptions]
+label = "X-Frame-Options"
+description = "Controls whether the application can be embedded in iframes"
+deny = "Deny (Prevents all framing)"
+sameorigin = "Same Origin (Allow framing from same domain)"
+disabled = "Disabled (No X-Frame-Options header)"
 
 [admin.settings.security.csrfDisabled]
 label = "Désactiver la protection CSRF"
@@ -4176,7 +4640,7 @@ description = "Suivre les actions des utilisateurs et les événements système 
 
 [admin.settings.security.audit.level]
 label = "Niveau d’audit"
-description = "0=DÉSACTIVÉ, 1=BASIQUE, 2=STANDARD, 3=VERBEUX"
+description = "0=OFF, 1=BASIC, 2=STANDARD, 3=VERBOSE"
 
 [admin.settings.security.audit.retentionDays]
 label = "Rétention des journaux (jours)"
@@ -4236,6 +4700,19 @@ connect = "Connecter"
 disconnect = "Déconnecter"
 disconnected = "Fournisseur déconnecté avec succès"
 disconnectError = "Échec de la déconnexion du fournisseur"
+mobileScannerConvertToPdf = "Convertir les images en PDF"
+mobileScannerConvertToPdfDesc = "Convertir automatiquement les images téléversées en PDF. Si désactivé, les images sont conservées telles quelles."
+mobileScannerImageResolution = "Résolution d’image"
+mobileScannerImageResolutionDesc = "Résolution des images téléversées. « Réduite » redimensionne les images jusqu’à 1200px max pour réduire la taille du fichier."
+imageResolutionFull = "Pleine (taille d’origine)"
+imageResolutionReduced = "Réduite (Max 1200px)"
+mobileScannerPageFormat = "Format de page"
+mobileScannerPageFormatDesc = "Taille de page PDF pour les images converties. « Conserver » utilise les dimensions d’origine de l’image."
+pageFormatKeep = "Conserver (dimensions d’origine)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "Étirer pour remplir"
+mobileScannerStretchToFitDesc = "Étirer les images pour remplir toute la page. Si désactivé, les images sont centrées avec ratio préservé."
 
 [admin.settings.connections.ssoAutoLogin]
 label = "Connexion automatique SSO"
@@ -4304,10 +4781,168 @@ description = "Créer automatiquement des comptes utilisateurs lors de la premi�
 label = "Bloquer l’inscription"
 description = "Empêcher l’inscription de nouveaux utilisateurs via SAML2"
 
+[admin.settings.connections.mobileScanner]
+label = "Téléversement depuis mobile"
+enable = "Activer le téléversement par QR code"
+description = "Permettre aux utilisateurs de téléverser des fichiers depuis des appareils mobiles en scannant un QR code"
+note = "Remarque : nécessite la configuration de l’URL du frontend. "
+link = "Configurer dans les paramètres du système"
+mobileScannerConvertToPdf = "Convertir les images en PDF"
+mobileScannerConvertToPdfDesc = "Convertir automatiquement les images téléversées en PDF. Si désactivé, les images sont conservées telles quelles."
+mobileScannerImageResolution = "Résolution d’image"
+mobileScannerImageResolutionDesc = "Résolution des images téléversées. « Réduite » redimensionne les images jusqu’à 1200px max pour réduire la taille du fichier."
+imageResolutionFull = "Pleine (taille d’origine)"
+imageResolutionReduced = "Réduite (Max 1200px)"
+mobileScannerPageFormat = "Format de page"
+mobileScannerPageFormatDesc = "Taille de page PDF pour les images converties. « Conserver » utilise les dimensions d’origine de l’image."
+pageFormatKeep = "Conserver (dimensions d’origine)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "Étirer pour remplir"
+mobileScannerStretchToFitDesc = "Étirer les images pour remplir toute la page. Si désactivé, les images sont centrées avec ratio préservé."
+
+[admin.settings.telegram]
+title = "Bot Telegram"
+description = "Configurer la connectivité du bot Telegram, les contrôles d’accès et le comportement des retours."
+
+[admin.settings.telegram.enabled]
+label = "Activer le bot Telegram"
+description = "Permettre aux utilisateurs d’interagir avec Stirling PDF via votre bot Telegram configuré."
+
+[admin.settings.telegram.botUsername]
+label = "Nom d’utilisateur du bot"
+description = "Le nom d’utilisateur public de votre bot Telegram."
+
+[admin.settings.telegram.botToken]
+label = "Jeton du bot"
+description = "Jeton API fourni par BotFather pour votre bot Telegram."
+
+[admin.settings.telegram.pipelineInboxFolder]
+label = "Dossier de réception"
+description = "Dossier sous le répertoire pipeline où sont stockés les fichiers Telegram entrants."
+
+[admin.settings.telegram.customFolderSuffix]
+label = "Utiliser un suffixe de dossier personnalisé"
+description = "Ajouter l’ID du chat aux dossiers des fichiers entrants pour isoler les téléversements par chat."
+
+[admin.settings.telegram.accessControl]
+title = "Contrôle d’accès"
+description = "Restreindre quels utilisateurs ou canaux peuvent interagir avec le bot."
+
+[admin.settings.telegram.enableAllowUserIDs]
+label = "Autoriser des ID utilisateur spécifiques"
+description = "Lorsque activé, seuls les ID utilisateur listés peuvent utiliser le bot."
+
+[admin.settings.telegram.allowUserIDs]
+label = "ID utilisateur autorisés"
+description = "Saisissez les ID utilisateur Telegram autorisés à interagir avec le bot."
+placeholder = "Ajoutez un ID utilisateur et appuyez sur Entrée"
+
+[admin.settings.telegram.enableAllowChannelIDs]
+label = "Autoriser des ID de canal spécifiques"
+description = "Lorsque activé, seuls les ID de canal listés peuvent utiliser le bot."
+
+[admin.settings.telegram.allowChannelIDs]
+label = "ID de canal autorisés"
+description = "Saisissez les ID de canal Telegram autorisés à interagir avec le bot."
+placeholder = "Ajoutez un ID de canal et appuyez sur Entrée"
+
+[admin.settings.telegram.processing]
+title = "Traitement"
+description = "Contrôler les intervalles d’interrogation et les délais de traitement pour les téléversements Telegram."
+
+[admin.settings.telegram.processingTimeoutSeconds]
+label = "Délai de traitement (secondes)"
+description = "Temps d’attente maximal d’un job de traitement avant de signaler une erreur."
+
+[admin.settings.telegram.pollingIntervalMillis]
+label = "Intervalle d’interrogation (ms)"
+description = "Intervalle entre les vérifications des nouvelles mises à jour Telegram."
+
+[admin.settings.telegram.feedback]
+title = "Messages de retour"
+description = "Choisissez quand le bot doit envoyer des retours aux utilisateurs et aux canaux."
+
+[admin.settings.telegram.feedback.general.enabled]
+label = "Activer les retours"
+description = "Contrôler si le bot envoie des messages de retour ou non."
+
+[admin.settings.telegram.feedback.channel]
+title = "Règles de retour (canaux)"
+
+[admin.settings.telegram.feedback.channel.noValidDocument]
+label = "Afficher « Aucun document valide » (Canal)"
+description = "Supprimer la réponse « aucun document valide » pour les téléversements de canal."
+
+[admin.settings.telegram.feedback.channel.errorProcessing]
+label = "Afficher les erreurs de traitement (Canal)"
+description = "Envoyer les messages d’erreur de traitement aux canaux."
+
+[admin.settings.telegram.feedback.channel.errorMessage]
+label = "Afficher les messages d’erreur (Canal)"
+description = "Afficher des messages d’erreur détaillés pour les canaux."
+
+[admin.settings.telegram.feedback.user]
+title = "Règles de retour (utilisateurs)"
+
+[admin.settings.telegram.feedback.user.noValidDocument]
+label = "Afficher « Aucun document valide » (Utilisateur)"
+description = "Supprimer la réponse « aucun document valide » pour les téléversements utilisateur."
+
+[admin.settings.telegram.feedback.user.errorProcessing]
+label = "Afficher les erreurs de traitement (Utilisateur)"
+description = "Envoyer les messages d’erreur de traitement aux utilisateurs."
+
+[admin.settings.telegram.feedback.user.errorMessage]
+label = "Afficher les messages d’erreur (Utilisateur)"
+description = "Afficher des messages d’erreur détaillés pour les utilisateurs."
+
 [admin.settings.database]
 title = "Base de données"
 description = "Configurer des paramètres de connexion à une base de données personnalisée pour les déploiements d’entreprise."
 configuration = "Configuration de la base de données"
+backupTitle = "Sauvegardes & restauration"
+backupDescription = "Gérez les sauvegardes H2 directement depuis la console d'administration."
+loadError = "Échec du chargement des sauvegardes de la base de données"
+backupCreated = "Sauvegarde créée avec succès"
+backupFailed = "Échec de la création de la sauvegarde"
+deleteTitle = "Supprimer la sauvegarde"
+deleteConfirm = "Supprimer cette sauvegarde ? Cette action est irréversible."
+deleteSuccess = "Sauvegarde supprimée"
+deleteFailed = "Échec de la suppression de la sauvegarde"
+deleteConfirmAction = "Supprimer la sauvegarde"
+downloadFailed = "Échec du téléchargement de la sauvegarde"
+version = "Version H2"
+embedded = "H2 intégré"
+external = "Base de données externe"
+h2Only = "Les sauvegardes ne sont disponibles que pour la base de données H2 intégrée."
+h2Hint = "Définissez le type de base de données sur H2 et désactivez la base de données personnalisée pour activer la sauvegarde et la restauration."
+manageBackups = "Gérer les sauvegardes"
+refresh = "Actualiser"
+createBackup = "Créer une sauvegarde"
+uploadTitle = "Téléversement & import"
+chooseFile = "Choisir un fichier de sauvegarde .sql"
+importFromUpload = "Importer le téléversement"
+confirmImportTitle = "Confirmer l’importation de la base de données"
+overwriteWarning = "Avertissement : ceci écrasera la base de données actuelle."
+overwriteWarningBody = "Toutes les données existantes seront remplacées par la sauvegarde téléversée. Cette action est irréversible."
+confirmCodeLabel = "Saisissez le code de confirmation pour continuer"
+enterCode = "Saisissez le code affiché ci-dessus"
+confirmImport = "Confirmer l’importation"
+codeMismatch = "Le code de confirmation ne correspond pas"
+codeMismatchBody = "Veuillez saisir le code exactement tel qu’affiché pour continuer."
+selectFile = "Veuillez sélectionner un fichier .sql à importer"
+importSuccess = "Sauvegarde importée avec succès"
+importFailed = "Échec de l’importation de la sauvegarde"
+noBackups = "Aucune sauvegarde trouvée pour le moment."
+unavailable = "La liste des sauvegardes est indisponible pour la configuration actuelle de la base de données."
+fileName = "Fichier"
+created = "Créé"
+size = "Taille"
+actions = "Actions"
+download = "Télécharger"
+import = "Importer"
+delete = "Supprimer"
 
 [admin.settings.database.enableCustom]
 label = "Activer la base de données personnalisée"
@@ -4385,6 +5020,26 @@ description = "DPI maximum pour le traitement d’images (0 = illimité)"
 [admin.settings.advanced.tessdataDir]
 label = "Répertoire tessdata"
 description = "Chemin vers le répertoire tessdata pour les fichiers de langue OCR"
+downloadMissingTitle = "Aucune langue sélectionnée"
+downloadMissingBody = "Veuillez sélectionner au moins une langue à télécharger."
+downloadSuccessTitle = "Langues téléchargées"
+downloadSuccessBody = "Les langues tessdata sélectionnées ont été enregistrées."
+downloadErrorTitle = "Échec du téléchargement"
+loadingLanguages = "Chargement des langues tessdata installées..."
+installedLanguages = "Langues tessdata installées"
+noLanguages = "Aucune langue tessdata trouvée dans le répertoire configuré."
+downloadLabel = "Télécharger des langues tessdata supplémentaires"
+downloadPlaceholder = "Sélectionner des langues"
+downloadNothingFound = "Aucune langue supplémentaire trouvée"
+permissionNotice = "Le chemin tessdata n’est pas accessible en écriture. Les téléchargements seront ouverts dans le navigateur ; veuillez enregistrer manuellement les fichiers .traineddata dans le dossier tessdata."
+manualLinks = "Téléchargements manuels : cliquez sur les liens et placez les fichiers dans le dossier tessdata."
+downloadButton = "Télécharger les langues sélectionnées"
+downloadInvalidTitle = "Sélection invalide"
+downloadInvalidBody = "Certaines des langues sélectionnées ne sont pas disponibles au téléchargement. Veuillez actualiser et choisir dans la liste."
+downloadErrorNetwork = "Échec du téléchargement en raison d’une erreur réseau. Veuillez vérifier votre connexion et réessayer."
+downloadErrorServer = "Le serveur a rencontré une erreur lors du téléchargement des langues tessdata. Veuillez réessayer plus tard."
+downloadErrorPermission = "Le répertoire tessdata n’est pas accessible en écriture : {{message}}. Veuillez choisir un répertoire accessible en écriture (par exemple dans le dossier de données de l’application) ou ajuster les autorisations."
+downloadErrorGeneric = "Échec du téléchargement : {{message}}. Veuillez réessayer plus tard."
 
 [admin.settings.advanced.disableSanitize]
 label = "Désactiver la sanitisation HTML"
@@ -4485,6 +5140,10 @@ description = "Permettre aux administrateurs d’inviter des utilisateurs par e-
 label = "URL du frontend"
 description = "URL de base du frontend (ex. https://pdf.example.com). Utilisée pour générer les liens d’invitation dans les e-mails. Laisser vide pour utiliser l’URL du backend."
 
+[admin.settings.mail.frontendUrlNote]
+note = "Remarque : nécessite la configuration de l’URL du frontend. "
+link = "Configurer dans les paramètres du système"
+
 [admin.settings.legal]
 title = "Documents juridiques"
 description = "Configurer les liens vers les documents et politiques juridiques."
@@ -4514,7 +5173,7 @@ label = "Mentions légales"
 description = "URL ou nom de fichier de l’impressum (obligatoire dans certaines juridictions)"
 
 [admin.settings.premium]
-title = "Premium et Entreprise"
+title = "Premium & Enterprise"
 description = "Configurer votre clé de licence Premium ou Enterprise."
 license = "Configuration de la licence"
 noInput = "Veuillez fournir une clé de licence ou un fichier"
@@ -4550,7 +5209,7 @@ successMessage = "Fichier de licence téléversé et activé avec succès. Aucun
 title = "Licence active"
 file = "Source: Fichier de licence ({{path}})"
 key = "Source: Clé de licence"
-type = "Type: {{type}}"
+type = "Type : {{type}}"
 noInput = "Veuillez fournir une clé de licence ou téléverser un fichier de certificat"
 success = "Succès"
 
@@ -4669,6 +5328,9 @@ googleDriveShort = "Drive"
 myFiles = "Mes fichiers"
 noRecentFiles = "Aucun fichier récent trouvé"
 googleDriveNotAvailable = "Intégration Google Drive non disponible"
+mobileUpload = "Téléversement mobile"
+mobileShort = "Mobile"
+mobileUploadNotAvailable = "Téléversement mobile non activé"
 downloadSelected = "Télécharger la sélection"
 saveSelected = "Enregistrer la sélection"
 openFiles = "Ouvrir des fichiers"
@@ -4881,6 +5543,7 @@ desc = "Créez des workflows multi-étapes en enchaînant des actions PDF. Idéa
 invalidStep = "Étape invalide"
 reviewTitle = "Résultats de l’automatisation"
 copyToSaved = "Copier vers Enregistré"
+exportForFolderScanning = "Exporter pour l'analyse de dossier"
 
 [automate.files]
 placeholder = "Sélectionnez des fichiers à traiter avec cette automatisation"
@@ -4902,6 +5565,7 @@ createTitle = "Créer une automatisation"
 editTitle = "Modifier l’automatisation"
 intro = "Les automatisations exécutent les outils séquentiellement. Pour commencer, ajoutez les outils dans l’ordre d’exécution souhaité."
 save = "Enregistrer l’automatisation"
+exportForFolderScanning = "Exporter pour l'analyse de dossier"
 
 [automate.creation.name]
 label = "Nom de l’automatisation"
@@ -4984,6 +5648,7 @@ loading = "Chargement…"
 back = "Retour"
 continue = "Continuer"
 error = "Erreur"
+save = "Enregistrer"
 
 [config.overview]
 title = "Configuration de l’application"
@@ -5045,6 +5710,15 @@ warning = "⚠️ Avertissement : cette action générera de nouvelles clés API
 impact = "Toute application ou service utilisant actuellement ces clés cessera de fonctionner jusqu’à leur mise à jour avec les nouvelles clés."
 confirmPrompt = "Êtes-vous sûr de vouloir continuer ?"
 confirmCta = "Actualiser les clés"
+
+[config.apiKeys.alert]
+apiKeyErrorTitle = "Erreur de clé API"
+failedToCreateApiKey = "Échec de création de la clé API."
+failedToRetrieveApiKey = "Échec de récupération de la clé API depuis la réponse."
+failedToFetchApiKey = "Échec de récupération de la clé API."
+apiKeyRefreshed = "Clé API actualisée"
+apiKeyRefreshedBody = "Votre clé API a été actualisée avec succès."
+failedToRefreshApiKey = "Échec d’actualisation de la clé API."
 
 [AddAttachmentsRequest]
 attachments = "Sélectionner des pièces jointes"
@@ -5150,6 +5824,16 @@ finish = "Terminer"
 startTour = "Commencer la visite"
 startTourDescription = "Suivez une visite guidée des fonctionnalités clés de Stirling PDF"
 
+[onboarding.whatsNew]
+quickAccess = "Commencez par le <strong>rail Accès rapide</strong> pour passer entre Lecteur, Automatiser, vos fichiers et toutes les visites."
+leftPanel = "Le panneau <strong>Outils</strong> à gauche liste tout ce que vous pouvez faire. Parcourez les catégories ou recherchez pour trouver un outil rapidement."
+fileUpload = "Utilisez le bouton <strong>Fichiers</strong> pour téléverser ou choisir un PDF récent. Nous chargerons un exemple pour vous montrer l’espace de travail."
+rightRail = "Le <strong>rail de droite</strong> contient des actions rapides pour sélectionner des fichiers, changer le thème ou la langue, et télécharger les résultats."
+topBar = "La barre supérieure permet de basculer entre la <strong>Visionneuse</strong>, <strong>l’Éditeur de pages</strong> et <strong>les fichiers actifs</strong>."
+pageEditorView = "Passez à l’Éditeur de pages pour réorganiser, pivoter ou supprimer des pages."
+activeFilesView = "Utilisez Fichiers actifs pour voir tout ce que vous avez ouvert et choisir sur quoi travailler."
+wrapUp = "Voilà les nouveautés de la V2. Ouvrez le menu <strong>Visites guidées</strong> à tout moment pour rejouer ceci, le parcours des outils ou le parcours Admin."
+
 [onboarding.welcomeModal]
 title = "Bienvenue dans Stirling PDF !"
 description = "Souhaitez-vous suivre une visite guidée d’une minute pour découvrir les fonctionnalités clés et comment démarrer ?"
@@ -5169,6 +5853,10 @@ skipForNow = "Passer pour l’instant"
 download = "Télécharger →"
 showMeAround = "Faites-moi faire le tour"
 skipTheTour = "Passer la visite"
+
+[onboarding.tourOverview]
+title = "Aperçu de la visite"
+body = "Stirling PDF V2 est livré avec des dizaines d’outils et une interface renouvelée. Faites une visite rapide pour voir ce qui a changé et où trouver les fonctionnalités dont vous avez besoin."
 
 [onboarding.serverLicense]
 skip = "Passer pour l’instant"
@@ -5223,7 +5911,7 @@ active = "Actif"
 disabled = "Désactivé"
 activeSession = "Session active"
 member = "Membre"
-admin = "Administrateur"
+admin = "Admin"
 editRole = "Modifier le rôle"
 enable = "Activer"
 disable = "Désactiver"
@@ -5252,9 +5940,11 @@ username = "Nom d’utilisateur (e-mail)"
 usernamePlaceholder = "user@example.com"
 password = "Mot de passe"
 passwordPlaceholder = "Saisir le mot de passe"
+passwordRequired = "Le mot de passe est requis"
 role = "Rôle"
 team = "Équipe (facultatif)"
 teamPlaceholder = "Sélectionner une équipe"
+authType = "Type d’authentification"
 forcePasswordChange = "Forcer le changement de mot de passe à la première connexion"
 cancel = "Annuler"
 submit = "Ajouter le membre"
@@ -5262,6 +5952,13 @@ usernameRequired = "Le nom d’utilisateur et le mot de passe sont obligatoires"
 passwordTooShort = "Le mot de passe doit comporter au moins 6 caractères"
 success = "Utilisateur créé avec succès"
 error = "Échec de la création de l’utilisateur"
+forceMFA = "Forcer la configuration MFA à la prochaine connexion"
+
+[workspace.people.authType]
+password = "Mot de passe"
+oauth = "OAuth2"
+saml = "SAML2"
+ssoDescription = "L’utilisateur s’authentifiera via le fournisseur SSO"
 
 [workspace.people.editMember]
 title = "Modifier le membre"
@@ -5281,6 +5978,31 @@ error = "Échec de la mise à jour du statut de l’utilisateur"
 [workspace.people.delete]
 success = "Utilisateur supprimé avec succès"
 error = "Échec de la suppression de l’utilisateur"
+
+[workspace.people.changePassword]
+action = "Changer le mot de passe"
+title = "Changer le mot de passe"
+subtitle = "Mettre à jour le mot de passe de"
+newPassword = "Nouveau mot de passe"
+confirmPassword = "Confirmer le mot de passe"
+placeholder = "Saisissez un nouveau mot de passe"
+confirmPlaceholder = "Saisissez à nouveau le nouveau mot de passe"
+passwordRequired = "Veuillez saisir un nouveau mot de passe"
+passwordMismatch = "Les mots de passe ne correspondent pas"
+generateRandom = "Générer un mot de passe sécurisé"
+generatedPreview = "Mot de passe généré :"
+copyTooltip = "Copier dans le presse-papiers"
+copiedToClipboard = "Mot de passe copié dans le presse-papiers"
+copyFailed = "Échec de la copie du mot de passe"
+sendEmail = "Envoyer un e-mail à l'utilisateur à propos de ce changement"
+includePassword = "Inclure le nouveau mot de passe dans l'e-mail"
+forcePasswordChange = "Forcer l'utilisateur à changer son mot de passe à la prochaine connexion"
+emailUnavailable = "L'e-mail de cet utilisateur n'est pas une adresse valide. Les notifications sont désactivées."
+smtpDisabled = "Les notifications par e-mail nécessitent l'activation de SMTP dans les paramètres."
+notifyOnly = "Un e-mail sera envoyé sans le mot de passe, informant l'utilisateur qu'un administrateur l'a modifié."
+submit = "Mettre à jour le mot de passe"
+success = "Mot de passe mis à jour avec succès"
+error = "Échec de la mise à jour du mot de passe"
 
 [workspace.people.emailInvite]
 tab = "Invitation par e-mail"
@@ -5339,6 +6061,11 @@ fromLicense = "de la licence"
 slotsAvailable = "{{count}} place(s) utilisateur disponibles"
 noSlotsAvailable = "Aucune place disponible"
 currentUsage = "Utilise actuellement {{current}} sur {{max}} licences utilisateur"
+
+[workspace.people.mfa]
+adminDisableSuccess = "MFA désactivée avec succès pour l'utilisateur"
+adminDisableError = "Échec de la désactivation de la MFA pour l'utilisateur"
+disableByAdmin = "Désactiver la MFA"
 
 [workspace.teams]
 title = "Équipes"
@@ -5458,6 +6185,28 @@ contactSales = "Contacter l’équipe commerciale"
 contactToUpgrade = "Contactez-nous pour mettre à niveau ou personnaliser votre forfait"
 maxUsers = "Nombre maximal d’utilisateurs"
 upTo = "Jusqu’à"
+getLicense = "Obtenir une licence serveur"
+upgradeToEnterprise = "Passer à l’Enterprise"
+selectPeriod = "Sélectionner la période de facturation"
+monthlyBilling = "Facturation mensuelle"
+yearlyBilling = "Facturation annuelle"
+checkoutOpened = "Paiement ouvert"
+checkoutInstructions = "Terminez votre achat dans l’onglet Stripe. Après le paiement, revenez ici et actualisez la page pour activer votre licence. Vous recevrez également un e-mail avec votre clé de licence."
+activateLicense = "Activer votre licence"
+
+[plan.static.licenseActivation]
+checkoutOpened = "Paiement ouvert dans un nouvel onglet"
+instructions = "Terminez votre achat dans l’onglet Stripe. Une fois le paiement terminé, vous recevrez un e-mail avec votre clé de licence."
+enterKey = "Saisissez votre clé de licence ci-dessous pour activer votre offre :"
+keyDescription = "Collez la clé de licence depuis votre e-mail"
+activate = "Activer la licence"
+doLater = "Je le ferai plus tard"
+success = "Licence activée !"
+successMessage = "Votre licence a été activée avec succès. Vous pouvez maintenant fermer cette fenêtre."
+
+[plan.static.billingPortal]
+title = "Vérification de l’e-mail requise"
+message = "Vous devrez vérifier votre adresse e-mail dans le portail de facturation Stripe. Vérifiez votre e-mail pour un lien de connexion."
 
 [plan.period]
 month = "mois"
@@ -5661,6 +6410,8 @@ notAvailable = "Système d’audit non disponible"
 notAvailableMessage = "Le système d’audit n’est pas configuré ou n’est pas disponible."
 disabled = "La journalisation d’audit est désactivée"
 disabledMessage = "Activez la journalisation d’audit dans la configuration de votre application pour suivre les événements du système."
+enterpriseRequired = "Licence Enterprise requise"
+enterpriseRequiredMessage = "Le système de journalisation d’audit est une fonctionnalité Enterprise. Veuillez passer à une licence Enterprise pour accéder aux journaux d’audit et aux analyses."
 
 [audit.error]
 title = "Erreur lors du chargement du système d’audit"
@@ -5754,10 +6505,11 @@ title = "Graphique d’utilisation des endpoints"
 
 [usage.table]
 title = "Statistiques détaillées"
-endpoint = "Point de terminaison"
+endpoint = "Endpoint"
 visits = "Visites"
 percentage = "Pourcentage"
 noData = "Aucune donnée disponible"
+unknownEndpoint = "Point de terminaison inconnu"
 
 [backendHealth]
 checking = "Vérification de l’état du backend..."
@@ -5815,11 +6567,13 @@ subtitle = "Connectez-vous avec votre compte Stirling"
 [setup.selfhosted]
 title = "Se connecter au serveur"
 subtitle = "Saisissez les identifiants du serveur"
+link = "ou connectez-vous à un compte auto-hébergé"
 
 [setup.server]
 title = "Connexion au serveur"
 subtitle = "Saisissez l’URL de votre serveur auto‑hébergé"
 testing = "Test de connexion…"
+useLast = "Last used server: {{serverUrl}}"
 
 [setup.server.type]
 saas = "Stirling PDF SaaS"
@@ -5831,8 +6585,17 @@ description = "Saisissez l’URL complète de votre serveur Stirling PDF auto‑
 
 [setup.server.error]
 emptyUrl = "Veuillez saisir une URL de serveur"
+invalidUrl = "Format d’URL invalide. Veuillez saisir une URL valide comme https://your-server.com"
 unreachable = "Connexion au serveur impossible"
 testFailed = "Échec du test de connexion"
+configFetch = "Échec de la récupération de la configuration du serveur. Veuillez vérifier l'URL et réessayer."
+
+[setup.server.error.securityDisabled]
+title = "Connexion non activée"
+body = "La connexion n'est pas activée sur ce serveur. Pour vous y connecter, vous devez activer l'authentification :"
+step1 = "Définissez DOCKER_ENABLE_SECURITY=true dans votre environnement"
+step2 = "Ou définissez security.enableLogin=true dans settings.yml"
+step3 = "Redémarrez le serveur"
 
 [setup.login]
 title = "Se connecter"
@@ -5841,6 +6604,7 @@ connectingTo = "Connexion à :"
 submit = "Se connecter"
 signInWith = "Se connecter avec"
 oauthPending = "Ouverture du navigateur pour l'authentification..."
+sso = "Authentification unique"
 orContinueWith = "Ou continuer avec l’email"
 serverRequirement = "Remarque : le serveur doit avoir la connexion activée."
 showInstructions = "Comment l’activer ?"
@@ -5855,7 +6619,7 @@ label = "Nom d’utilisateur"
 placeholder = "Entrez votre nom d’utilisateur"
 
 [setup.login.email]
-label = "E-mail"
+label = "Email"
 placeholder = "Saisissez votre email"
 
 [setup.login.password]
@@ -5905,6 +6669,9 @@ earlyAccess = "Accès anticipé"
 reset = "Réinitialiser les modifications"
 downloadJson = "Télécharger le JSON"
 generatePdf = "Générer le PDF"
+saveChanges = "Enregistrer les modifications"
+applyChanges = "Appliquer les modifications"
+downloadCopy = "Télécharger une copie"
 
 [pdfTextEditor.options.autoScaleText]
 title = "Ajuster automatiquement le texte aux cadres"
@@ -5922,6 +6689,24 @@ descriptionInline = "Astuce : Maintenez Ctrl (Cmd) ou Shift pour sélectionner p
 [pdfTextEditor.options.forceSingleElement]
 title = "Verrouiller le texte modifié à un seul élément PDF"
 description = "Lorsqu'il est activé, l'éditeur exporte chaque boîte de texte modifiée comme un seul élément de texte PDF afin d'éviter le chevauchement de glyphes ou les polices mixtes."
+
+[pdfTextEditor.options.advanced]
+title = "Paramètres avancés"
+
+[pdfTextEditor.tooltip.header]
+title = "Limitations de l’aperçu"
+
+[pdfTextEditor.tooltip.textFocus]
+title = "Focus texte et image"
+text = "Cet espace de travail se concentre sur l’édition du texte et le repositionnement des images intégrées. Les illustrations complexes de page, widgets de formulaire et graphismes en couches sont préservés pour l’export mais ne sont pas entièrement modifiables ici."
+
+[pdfTextEditor.tooltip.previewVariance]
+title = "Variations de l’aperçu"
+text = "Certains éléments visuels (tels que bordures de tableau, formes ou apparence des annotations) peuvent ne pas s’afficher exactement dans l’aperçu. Le PDF exporté conserve les commandes de dessin originales lorsque c’est possible."
+
+[pdfTextEditor.tooltip.alpha]
+title = "Visionneuse Alpha"
+text = "Cette visionneuse alpha évolue encore—certaines polices, couleurs, effets de transparence et détails de mise en page peuvent légèrement varier. Veuillez vérifier le PDF généré avant de le partager."
 
 [pdfTextEditor.manual]
 mergeTooltip = "Fusionner les boîtes sélectionnées"
@@ -5942,6 +6727,8 @@ alpha = "Ce visualiseur alpha évolue encore — certaines polices, couleurs, ef
 [pdfTextEditor.empty]
 title = "Aucun document chargé"
 subtitle = "Chargez un fichier PDF ou JSON pour commencer à modifier le texte."
+dropzone = "Glissez-déposez un fichier PDF ou JSON ici, ou cliquez pour parcourir"
+dropzoneWithFiles = "Sélectionnez un fichier depuis l'onglet Fichiers, ou glissez-déposez un fichier PDF ou JSON ici, ou cliquez pour parcourir"
 
 [pdfTextEditor.welcomeBanner]
 title = "Bienvenue dans l'éditeur de texte PDF (accès anticipé)"
@@ -6042,3 +6829,58 @@ title = "Résultats de l'ajout de texte"
 
 [addText.error]
 failed = "Une erreur est survenue lors de l'ajout de texte au PDF."
+
+[mobileUpload]
+title = "Téléverser depuis un mobile"
+description = "Scannez pour téléverser des photos. Les images se convertissent automatiquement en PDF."
+descriptionNoConvert = "Scannez pour téléverser des photos depuis votre appareil mobile."
+error = "Erreur de connexion"
+pollingError = "Erreur lors de la vérification des fichiers"
+sessionId = "ID de session"
+sessionCreateError = "Échec de création de session"
+expiryWarning = "Expiration de la session imminente"
+expiryWarningMessage = "Ce QR code expirera dans {{seconds}} secondes. Un nouveau code sera généré automatiquement."
+filesReceived = "{{count}} fichier(s) reçu(s)"
+connected = "Appareil mobile connecté"
+instructions = "Scannez avec l’appareil photo de votre téléphone. Les images sont automatiquement converties en PDF."
+instructionsNoConvert = "Scannez avec l’appareil photo de votre téléphone pour téléverser des fichiers."
+
+[mobileScanner]
+title = "Scanner mobile"
+noSession = "Session invalide"
+noSessionMessage = "Veuillez scanner un QR code valide pour accéder à cette page."
+validating = "Validation de la session..."
+sessionInvalid = "Erreur de session"
+sessionExpired = "Cette session a expiré. Veuillez actualiser et réessayer."
+sessionNotFound = "Session introuvable. Veuillez actualiser et réessayer."
+sessionValidationError = "Impossible de vérifier la session. Veuillez réessayer."
+uploadSuccess = "Téléversement réussi !"
+uploadSuccessMessage = "Vos images ont été transférées."
+httpsRequired = "L’accès à la caméra nécessite HTTPS ou localhost. Veuillez utiliser HTTPS ou accéder via localhost."
+uploadFailed = "Échec du téléversement. Veuillez réessayer."
+uploading = "Téléversement..."
+connected = "Connecté"
+connecting = "Connexion..."
+chooseMethod = "Choisir la méthode de téléversement"
+chooseMethodDescription = "Sélectionnez comment vous souhaitez scanner et téléverser des documents"
+camera = "Appareil photo"
+cameraDescription = "Scanner des documents avec l’appareil photo de votre appareil avec détection automatique des bords"
+fileUpload = "Téléversement de fichier"
+fileDescription = "Téléverser des photos ou documents existants depuis votre appareil"
+cameraAccessDenied = "Accès à la caméra refusé. Veuillez activer l’accès à la caméra."
+back = "Retour"
+settings = "Paramètres"
+edgeDetection = "Détection des bords"
+flashlight = "Lampe torche"
+flash = "Flash"
+processing = "Traitement..."
+capture = "Prendre la photo"
+selectFilesPrompt = "Sélectionnez des fichiers à téléverser"
+selectImage = "Sélectionner une image"
+preview = "Aperçu"
+retake = "Reprendre"
+addToBatch = "Ajouter au lot"
+upload = "Téléverser"
+batchImages = "Lot"
+clearBatch = "Effacer"
+uploadAll = "Tout téléverser"

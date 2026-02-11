@@ -1,8 +1,11 @@
 unsavedChanges = "Du har ulagrede endringer i PDF-en."
+pendingRedactionsTitle = "Ikke anvendte sladdinger"
+pendingRedactions = "Du har ikke anvendte sladdinger som vil gå tapt."
 areYouSure = "Er du sikker på at du vil forlate?"
 unsavedChangesTitle = "Ulagrede endringer"
 keepWorking = "Fortsett å jobbe"
 discardChanges = "Forkast og forlat"
+discardRedactions = "Forkast og forlat"
 applyAndContinue = "Lagre og forlat"
 exportAndContinue = "Eksporter og fortsett"
 cancel = "Avbryt"
@@ -131,7 +134,7 @@ unsupported = "Ikke støttet"
 
 [toolPanel]
 placeholder = "Velg et verktøy for å komme i gang"
-alpha = "Alfa"
+alpha = "Alpha"
 premiumFeature = "Premium-funksjon:"
 comingSoon = "Kommer snart:"
 
@@ -216,6 +219,8 @@ pagesAndStarting = "Sider og startnummer"
 positionAndPages = "Plassering og sider"
 preview = "Valg av plassering"
 previewDisclaimer = "Forhåndsvisningen er omtrentlig. Endelig resultat kan variere på grunn av PDF-skriftmetrikker."
+zeroPad = "Zero‑pad Width (Bates Stamping)"
+zeroPadTooltip = "Zero‑pad (Bates Stamp) page numbers to this width (e.g., 3 ⇒ 001). Set 0 to disable."
 
 [addPageNumbers.selectText]
 1 = "Velg PDF-fil:"
@@ -303,6 +308,7 @@ selectOperation = "Velg operasjon"
 addOperationButton = "Legg til operasjon"
 pipelineHeader = "Pipeline:"
 saveButton = "Last ned"
+saveForFolderScanning = "Lagre for mappeskanning"
 validateButton = "Valider"
 
 [enterpriseEdition]
@@ -340,6 +346,10 @@ advance = "Avansert"
 edit = "Vis & Rediger"
 popular = "Populært"
 
+[footer]
+discord = "Discord"
+issues = "GitHub"
+
 [settings.preferences]
 title = "Preferanser"
 
@@ -360,6 +370,7 @@ advanced = "Avansert"
 title = "Sikkerhet og autentisering"
 security = "Sikkerhet"
 connections = "Tilkoblinger"
+telegram = "Telegram"
 
 [settings.licensingAnalytics]
 title = "Lisensiering og analyse"
@@ -430,10 +441,38 @@ fullscreen = "Fullskjerm"
 [settings.general.updates]
 title = "Programvareoppdateringer"
 description = "Se etter oppdateringer og vis versjonsinformasjon"
-currentVersion = "Nåværende versjon"
+currentBackendVersion = "Current Backend Version"
+currentFrontendVersion = "Current Frontend Version"
+versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 latestVersion = "Siste versjon"
 checkForUpdates = "Søk etter oppdateringer"
 viewDetails = "Vis detaljer"
+serverNeedsUpdate = "Serveren må oppdateres av administrator"
+
+[settings.general.versionInfo]
+title = "Versjonsinformasjon"
+description = "Detaljer om skrivebords- og serverversjon"
+desktop = "Skrivebordsversjon"
+server = "Serverversjon"
+
+[settings.security]
+title = "Sikkerhet"
+description = "Oppdater passordet ditt for å holde kontoen sikker."
+
+[settings.security.password]
+subtitle = "Endre passordet ditt. Du blir logget ut etter oppdatering."
+required = "Alle felt er obligatoriske."
+mismatch = "De nye passordene samsvarer ikke."
+error = "Kan ikke oppdatere passordet. Bekreft gjeldende passord og prøv igjen."
+success = "Passordet ble oppdatert. Logg inn på nytt."
+ssoDisabled = "Passordendringer styres av identitetsleverandøren din."
+current = "Nåværende passord"
+currentPlaceholder = "Skriv inn nåværende passord"
+new = "Nytt passord"
+newPlaceholder = "Skriv inn et nytt passord"
+confirm = "Bekreft nytt passord"
+confirmPlaceholder = "Skriv inn det nye passordet på nytt"
+update = "Oppdater passord"
 
 [settings.hotkeys]
 title = "Tastatursnarveier"
@@ -488,11 +527,16 @@ low = "Lav"
 title = "Endre Legitimasjon"
 header = "Oppdater Konto Detaljer"
 changePassword = "Du bruker standard påloggingsdetaljer. Vennligst skriv inn et nytt passord"
+ssoManaged = "Kontoen din administreres av identitetsleverandøren din."
 newUsername = "Nytt Brukernavn"
 oldPassword = "Nåværende Passord"
 newPassword = "Nytt Passord"
 confirmNewPassword = "Bekreft Nytt Passord"
 submit = "Send Endringer"
+credsUpdated = "Konto oppdatert"
+description = "Endringer lagret. Logg inn på nytt."
+error = "Kan ikke oppdatere brukernavn. Bekreft passordet ditt og prøv igjen."
+changeUsername = "Oppdater brukernavnet ditt. Du blir logget ut etter oppdatering."
 
 [account]
 title = "Kontoinnstillinger"
@@ -500,6 +544,8 @@ accountSettings = "Kontoinnstillinger"
 adminSettings = "Admin Innstillinger - Vis og Legg til Brukere"
 userControlSettings = "Brukerkontroll Innstillinger"
 changeUsername = "Endre Brukernavn"
+changeUsernameDescription = "Oppdater brukernavnet ditt. Du blir logget ut etter oppdatering."
+newUsernamePlaceholder = "Skriv inn nytt brukernavn"
 newUsername = "Nytt Brukernavn"
 password = "Bekreftelsespassord"
 oldPassword = "Gammelt Passord"
@@ -514,6 +560,30 @@ property = "Egenskap"
 webBrowserSettings = "Nettleserinnstilling"
 syncToBrowser = "Synk Konto -> Nettleser"
 syncToAccount = "Synk Konto <- Nettleser"
+
+[account.mfa]
+title = "Tofaktorautentisering"
+setupFailed = "Kunne ikke starte oppsettet for tofaktorautentisering. Prøv igjen."
+codeRequired = "Skriv inn autentiseringskoden for å fortsette."
+enabled = "Tofaktorautentisering aktivert."
+enableFailed = "Kunne ikke aktivere tofaktorautentisering. Kontroller koden og prøv igjen."
+disabled = "Tofaktorautentisering deaktivert."
+disableFailed = "Kunne ikke deaktivere tofaktorautentisering. Kontroller koden og prøv igjen."
+description = "Legg til et ekstra sikkerhetslag på kontoen din."
+enableButton = "Aktiver tofaktorautentisering"
+disableButton = "Deaktiver tofaktorautentisering"
+setupTitle = "Konfigurer tofaktorautentisering"
+setupDescription = "Skann QR-koden med autentiseringsappen din, og skriv deretter inn den 6-sifrede koden for å bekrefte."
+manualKey = "Manuell oppsettnøkkel"
+secretWarning = "Hold denne nøkkelen privat. Alle som har tilgang kan generere gyldige autentiseringskoder."
+codePlaceholder = "Skriv inn 6-sifret kode"
+confirmEnable = "Aktiver"
+disableTitle = "Deaktiver tofaktorautentisering"
+disableDescription = "Skriv inn en gyldig autentiseringskode for å deaktivere tofaktorautentisering."
+codeLabel = "Autentiseringskode"
+confirmDisable = "Deaktiver"
+ssoDescription = "Tofaktorautentisering administreres av identitetsleverandøren din for kontoer med Single Sign-On."
+ssoManaged = "Konfigurer MFA via identitetsleverandøren din."
 
 [adminUserSettings]
 title = "Brukerkontroll Innstillinger"
@@ -708,6 +778,11 @@ tags = "signatur,autograf"
 title = "Signer"
 desc = "Legger til signatur i PDF ved tegning, tekst eller bilde"
 
+[home.annotate]
+tags = "annoter,uthev,tegn"
+title = "Annoter"
+desc = "Uthev, tegn, legg til notater og figurer i visningen"
+
 [home.flatten]
 tags = "forenkle,fjern,interaktiv"
 title = "Gjøre flat"
@@ -879,6 +954,7 @@ title = "Auto-del størrelse/antall"
 desc = "Del en enkelt PDF i flere dokumenter basert på størrelse, antall sider eller dokumenter"
 
 [home.replaceColor]
+tags = "replace color,invert color,color replacement,swap colors,change color,invert,negative,color swap,find and replace color,convert color,color change"
 title = "Erstatt og inverter farger"
 desc = "Erstatt eller inverter farger i PDF-dokumenter"
 
@@ -893,18 +969,22 @@ title = "Automatisert mappeskanning"
 desc = "Lenke til veiledning for automatisert mappeskanning"
 
 [home.devSsoGuide]
+tags = "SSO,single sign-on,authentication,SAML,OAuth,OIDC,login,enterprise,identity provider,IdP"
 title = "SSO-veiledning"
 desc = "Lenke til SSO-veiledning"
 
 [home.devAirgapped]
+tags = "air-gapped,offline,isolated,no internet,disconnected,secure,network isolation,standalone"
 title = "Luftgap-oppsett"
 desc = "Lenke til veiledning for luftgap-oppsett"
 
 [home.addPassword]
+tags = "encrypt,password,lock,secure,protect,security,encryption,safeguard,confidential,private,restrict access"
 title = "Legg til Passord"
 desc = "Krypter din PDF-dokument med et passord."
 
 [home.changePermissions]
+tags = "permissions,restrictions,rights,access control,allow,deny,printing,copying,editing,modify permissions,security settings,user rights"
 title = "Endre tillatelser"
 desc = "Endre dokumentbegrensninger og tillatelser"
 
@@ -914,12 +994,14 @@ title = "Automatiser"
 desc = "Bygg flertrinns arbeidsflyter ved å lenke sammen PDF-handlinger. Ideelt for gjentakende oppgaver."
 
 [home.overlay-pdfs]
+tags = "overlay,combine,merge,layer,superimpose,overlay PDF,layer PDFs,combine PDFs,stack,overlay pages,background,foreground,composite"
 desc = "Legger PDF-er over hverandre"
 title = "Overlay PDF-er"
 
 [home.pdfTextEditor]
-title = "PDF-teksteditor"
-desc = "Rediger eksisterende tekst og bilder i PDF-filer"
+tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
+title = "PDF-tekstredigerer"
+desc = "Gå gjennom og rediger Stirling PDF JSON-eksporter med gruppert tekstredigering og regenerering av PDF"
 
 [home.addText]
 tags = "tekst,merknad,etikett"
@@ -930,6 +1012,7 @@ desc = "Legg til egendefinert tekst hvor som helst i PDF-en"
 addFiles = "Legg til filer"
 uploadFromComputer = "Last opp fra datamaskin"
 openFromComputer = "Åpne fra datamaskin"
+mobileUpload = "Last opp fra mobil"
 
 [viewPdf]
 tags = "vis,les,annoter,tekst,bilde"
@@ -1217,7 +1300,12 @@ downloadHtml = "Last ned HTML-mellomfil i stedet for PDF"
 pdfaOptions = "PDF/A-alternativer"
 outputFormat = "Utdataformat"
 pdfaNote = "PDF/A-1b er mer kompatibel, PDF/A-2b støtter flere funksjoner."
+pdfaFormat = "PDF/A-format"
 pdfaDigitalSignatureWarning = "PDFen inneholder en digital signatur. Denne vil bli fjernet i neste steg."
+strictMode = "Strict Mode"
+strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
+pdfxDigitalSignatureWarning = "PDF-en inneholder en digital signatur. Denne vil bli fjernet i neste trinn."
+pdfxDescription = "PDF/X er en ISO-standardisert PDF-undermengde for pålitelig utskrift og grafikkutveksling."
 fileFormat = "Filformat"
 wordDoc = "Word-dokument"
 wordDocExt = "Word-dokument (.docx)"
@@ -1245,6 +1333,37 @@ cbzOptions = "Alternativer for CBZ til PDF"
 optimizeForEbook = "Optimaliser PDF for e-boklesere (bruker Ghostscript)"
 cbzOutputOptions = "Alternativer for PDF til CBZ"
 cbzDpi = "DPI for bildegjengivelse"
+cbrOptions = "CBR-alternativer"
+cbrOutputOptions = "Alternativer for PDF til CBR"
+cbrDpi = "DPI for bildegjengivelse"
+svgPdfOptions = "SVG to PDF Options"
+combineSvgs = "Combine SVGs into single PDF"
+combineSvgsDescription = "Combine all SVG files into one PDF with multiple pages, or create separate PDFs for each SVG"
+svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
+
+[convert.ebookOptions]
+ebookOptions = "Alternativer for eBook til PDF"
+ebookOptionsDesc = "Alternativer for å konvertere eBooks til PDF"
+embedAllFonts = "Bygg inn alle skrifter"
+embedAllFontsDesc = "Bygg inn alle skrifter fra eBook-en i den genererte PDF-en"
+includeTableOfContents = "Inkluder innholdsfortegnelse"
+includeTableOfContentsDesc = "Legg til en generert innholdsfortegnelse i den resulterende PDF-en"
+includePageNumbers = "Inkluder sidenummer"
+includePageNumbersDesc = "Legg til sidenummer i den genererte PDF-en"
+optimizeForEbookPdf = "Optimaliser for eBook-lesere"
+optimizeForEbookPdfDesc = "Optimaliser PDF-en for eBook-lesing (mindre filstørrelse, bedre gjengivelse på eInk-enheter)"
+
+[convert.epubOptions]
+epubOptions = "Alternativer for PDF til eBook"
+epubOptionsDesc = "Alternativer for å konvertere PDF til EPUB/AZW3"
+detectChapters = "Oppdag kapitler"
+detectChaptersDesc = "Oppdag overskrifter som ser ut som kapitler og sett inn EPUB-sideskift"
+targetDevice = "Målenhet"
+targetDeviceDesc = "Velg en utdata-profil optimalisert for leserenheten"
+outputFormat = "Utdataformat"
+outputFormatDesc = "Velg utdataformat for eBook-en"
+tabletPhone = "Nettbrett/mobil (med bilder)"
+kindleEink = "Kindle e-Ink (tekstoptimalisert)"
 
 [imageToPdf]
 tags = "konvertering,bilde,jpg,foto"
@@ -1322,6 +1441,7 @@ applySignatures = "Bruk bilder"
 name = "Bilde"
 placeholder = "Last opp et bilde"
 label = "Bildefil"
+hint = "Supports PNG, JPEG, GIF, BMP, TIFF, and SVG files. SVG files will be converted to PNG for embedding."
 
 [addImage.steps]
 configure = "Konfigurer bilde"
@@ -1361,6 +1481,11 @@ header = "Add attachments"
 add = "Legg til vedlegg"
 remove = "Fjern vedlegg"
 embed = "Bygg inn vedlegg"
+convertToPdfA3b = "Konverter til PDF/A-3b"
+convertToPdfA3bDescription = "Oppretter en arkiv-PDF med innebygde vedlegg"
+convertToPdfA3bTooltip = "PDF/A-3b er et arkivformat som sikrer langtidsbevaring. Det tillater å bygge inn vilkårlige filformater som vedlegg. Konvertering krever Ghostscript og kan ta lengre tid for store filer."
+convertToPdfA3bTooltipHeader = "Om PDF/A-3b-konvertering"
+convertToPdfA3bTooltipTitle = "Hva det gjør"
 submit = "Add attachments"
 
 [watermark]
@@ -2113,6 +2238,16 @@ tip = "Fungere for øyeblikket ikke for flere innganger samtidig"
 outputFormat = "Utdataformat"
 pdfWithDigitalSignature = "PDFen inneholder en digital signatur. Denne vil bli fjernet i neste steg."
 
+[pdfToPDFX]
+tags = "utskrift,standard,konvertering,produksjon,trykklargjøring,arkiv"
+title = "PDF til PDF/X"
+header = "PDF til PDF/X"
+credit = "Denne tjenesten bruker Ghostscript for PDF/X-konvertering"
+submit = "Konverter"
+tip = "Fungerer for øyeblikket ikke for flere inndata samtidig"
+outputFormat = "Utdataformat"
+pdfWithDigitalSignature = "PDF-en inneholder en digital signatur. Denne vil bli fjernet i neste trinn."
+
 [PDFToWord]
 tags = "doc,docx,odt,word,transformasjon,format,konvertering,office,microsoft,dokumentfil"
 title = "PDF til Word"
@@ -2306,6 +2441,10 @@ saved = "Lagret"
 label = "Last opp signaturbilde"
 placeholder = "Velg bildefil"
 hint = "Last opp et PNG- eller JPG-bilde av signaturen din"
+removeBackground = "Fjern hvit bakgrunn (gjør gjennomsiktig)"
+processing = "Behandler bilde..."
+backgroundRemovalFailedTitle = "Fjerning av bakgrunn mislyktes"
+backgroundRemovalFailedMessage = "Kunne ikke fjerne bakgrunnen fra bildet. Bruker originalbildet i stedet."
 
 [sign.instructions]
 title = "Slik legger du til signatur"
@@ -2350,6 +2489,11 @@ note = "Utflating fjerner interaktive elementer fra PDF-en og gjør dem ikke-red
 [flatten.options.flattenOnlyForms]
 label = "Utjevning av kun skjemaer"
 desc = "Flat bare ut skjemafelter, og la andre interaktive elementer være intakte"
+
+[flatten.renderDpi]
+label = "Renderings-DPI (valgfritt, anbefalt 150 DPI)"
+help = "La stå tomt for å bruke systemets standard. Høyere DPI gir skarpere resultat, men øker prosesseringstid og filstørrelse."
+placeholder = "f.eks. 150"
 
 [flatten.results]
 title = "Resultater for utflating"
@@ -2502,6 +2646,7 @@ label = "Original-PDF"
 
 [compare.edited]
 label = "Redigert PDF"
+placeholder = "Select the edited PDF"
 
 [compare.swap]
 confirmTitle = "Kjøre sammenligning på nytt?"
@@ -2925,6 +3070,7 @@ header = "Beskjær PDF"
 submit = "Send inn"
 noFileSelected = "Velg en PDF-fil for å begynne beskjæring"
 reset = "Tilbakestill til full PDF"
+autoCrop = "Beskjær hvite mellomrom automatisk"
 
 [crop.preview]
 title = "Valg av beskjæringsområde"
@@ -3036,6 +3182,105 @@ title = "Få Info om PDF"
 header = "Få Info om PDF"
 submit = "Få Info"
 downloadJson = "Last ned JSON"
+processing = "Henter ut informasjon..."
+results = "Resultater"
+noResults = "Kjør verktøyet for å generere en rapport."
+downloads = "Nedlastinger"
+noneDetected = "Ingen funnet"
+indexTitle = "Indeks"
+
+[getPdfInfo.report]
+entryLabel = "Fullstendig informasjonsoppsummering"
+shortTitle = "PDF-informasjon"
+
+[getPdfInfo.sections]
+metadata = "Metadata"
+formFields = "Skjemafelt"
+basicInfo = "Grunnleggende info"
+documentInfo = "Dokumentinformasjon"
+compliance = "Samsvar"
+encryption = "Kryptering"
+permissions = "Tillatelser"
+other = "Annet"
+perPageInfo = "Informasjon per side"
+tableOfContents = "Innholdsfortegnelse"
+
+[getPdfInfo.compliance]
+notDetected = "Ikke oppdaget"
+passed = "Bestått"
+failed = "Feilet"
+compliant = "I samsvar"
+nonCompliant = "Ikke i samsvar"
+none = "Ingen standarder oppdaget"
+passedCount = "bestått"
+failedCount = "feilet"
+noVerification = "Ingen verifisering utført"
+noVerificationDesc = "Samsvar med PDF-standarder ble ikke verifisert for dette dokumentet."
+
+[getPdfInfo.other]
+attachments = "Vedlegg"
+embeddedFiles = "Innebygde filer"
+javaScript = "JavaScript"
+layers = "Lag"
+structureTree = "StructureTree"
+xmp = "XMPMetadata"
+
+[getPdfInfo.perPage]
+size = "Størrelse"
+annotations = "Merknader"
+images = "Bilder"
+links = "Lenker"
+fonts = "Skrifter"
+xobjects = "XObject-antall"
+multimedia = "Multimedia"
+
+[getPdfInfo.summary]
+pages = "Sider"
+fileSize = "Filstørrelse"
+pdfVersion = "PDF-versjon"
+language = "Språk"
+title = "PDF-sammendrag"
+author = "Forfatter"
+created = "Opprettet"
+modified = "Endret"
+permsAll = "Alle tillatelser tillatt"
+permsRestricted = "{{count}} begrensninger"
+permsMixed = "Noen tillatelser begrenset"
+hasCompliance = "Har samsvarsstandarder"
+noCompliance = "Ingen samsvarsstandarder"
+compliancePassed = "I samsvar med {{standards}}"
+complianceChecked = "Standarder verifisert ({{failed}} feilet)"
+basic = "Grunnleggende informasjon"
+documentInfo = "Dokumentinformasjon"
+securityTitle = "Sikkerhetsstatus"
+technical = "Teknisk"
+overviewTitle = "PDF-oversikt"
+
+[getPdfInfo.summary.security]
+encrypted = "Kryptert PDF - passordbeskyttelse er aktiv"
+unencrypted = "Ukryptert PDF - ingen passordbeskyttelse"
+
+[getPdfInfo.summary.tech]
+images = "Bilder"
+fonts = "Skrifter"
+formFields = "Skjemafelt"
+embeddedFiles = "Innebygde filer"
+javaScript = "JavaScript"
+layers = "Lag"
+bookmarks = "Bokmerker"
+multimedia = "Multimedia"
+
+[getPdfInfo.summary.overview]
+untitled = "et navnløst dokument"
+unknown = "Ukjent forfatter"
+text = "Dette er en PDF på {{pages}} sider med tittelen {{title}}, opprettet av {{author}} (PDF-versjon {{version}})."
+
+[getPdfInfo.error]
+partial = "Noen filer kunne ikke behandles."
+unexpected = "Uventet feil under uttrekk."
+
+[getPdfInfo.status]
+complete = "Uttrekk fullført"
 
 [extractPage]
 tags = "ekstrahere"
@@ -3070,6 +3315,7 @@ title = "Sladdemetode"
 mode = "Modus"
 automatic = "Automatisk"
 automaticDesc = "Sladd tekst basert på søkeord"
+automaticDisabledTooltip = "Velg filer i filbehandleren for å sladde flere filer samtidig"
 manual = "Manuell"
 manualDesc = "Klikk og dra for å sladde bestemte områder"
 manualComingSoon = "Manuell sladding kommer snart"
@@ -3140,8 +3386,35 @@ text = "Match bare komplette ord, ikke delvise treff. «John» vil ikke matche �
 title = "Konverter til PDF-bilde"
 text = "Konverterer PDF-en til en bildebassert PDF etter sladding. Dette sikrer at teksten bak sladdeboksene er fullstendig fjernet og ikke kan gjenopprettes."
 
+[redact.tooltip.manual.header]
+title = "Manuelle sladdekontroller"
+
+[redact.tooltip.manual.markText]
+title = "Verktøy for tekstmerking"
+text = "Velg tekst direkte i PDF-en for å markere den for sladding. Klikk og dra for å utheve tekst du vil sladde."
+
+[redact.tooltip.manual.markArea]
+title = "Verktøy for områdemerking"
+text = "Tegn rektangulære områder på PDF-en for å markere områder for sladding. Nyttig for å sladde bilder, signaturer eller uregelmessige former."
+
+[redact.tooltip.manual.apply]
+title = "Bruk sladding"
+text = "Når innhold er markert, klikk «Bruk» for permanent å sladde alle markerte områder. Antallet som venter viser hvor mange sladdinger som er klare til å bli brukt."
+bullet1 = "Marker så mange områder som nødvendig før du bruker"
+bullet2 = "Alle ventende sladdinger brukes samtidig"
+bullet3 = "Sladding kan ikke angres etter bruk"
+
 [redact.manual]
+title = "Sladdeverktøy"
+instructions = "Velg tekst eller tegn områder på PDF-en for å markere innhold for sladding."
+markText = "Marker tekst"
+markArea = "Marker område"
+pendingLabel = "Venter:"
+applyWarning = "⚠️ Permanent handling, kan ikke angres og data under blir slettet"
+apply = "Bruk"
+noMarks = "Ingen sladdemerker. Bruk verktøyene ovenfor for å markere innhold for sladding."
 header = "Manuell sladding"
+controlsTitle = "Manuelle sladdekontroller"
 textBasedRedaction = "Tekstbasert sladding"
 pageBasedRedaction = "Sidebasert sladding"
 convertPDFToImageLabel = "Konverter PDF til PDF-bilde (brukes til å fjerne tekst bak boksen)"
@@ -3257,6 +3530,19 @@ placeholder = "Skriv inn antall horisontale delinger"
 label = "Vertikale delinger"
 placeholder = "Skriv inn antall vertikale delinger"
 
+[split-by-sections.splitMode]
+label = "Delingsmodus"
+description = "Velg hvordan sidene skal deles"
+splitAll = "Del alle sider"
+splitAllExceptFirst = "Del alle unntatt første"
+splitAllExceptLast = "Del alle unntatt siste"
+splitAllExceptFirstAndLast = "Del alle unntatt første og siste"
+custom = "Egendefinerte sider"
+
+[split-by-sections.customPages]
+label = "Egendefinerte sidenumre"
+placeholder = "f.eks. 2,4,6"
+
 [AddStampRequest]
 tags = "stempel,legg til bilde,senter bilde,vannmerke,PDF,embed,tilpass"
 header = "Stemple PDF"
@@ -3281,6 +3567,44 @@ imageSize = "Bildestørrelse"
 margin = "Marg"
 positionAndFormatting = "Plassering og formatering"
 quickPosition = "Velg en posisjon på siden for å plassere stempelet."
+preview = "Preview:"
+useTemplate = "Use Template"
+selectTemplate = "Select a template..."
+stampTextDescription = "Use dynamic variables below. Use @@ for literal @. Use \\n for new lines."
+dynamicVariables = "Dynamic Variables"
+clickToExpand = "Click to expand"
+variablesHelp = "Click on any variable to insert it into your stamp text. Use @@ for literal @."
+dateTimeVars = "Date & Time"
+dateDesc = "Current date"
+timeDesc = "Current time"
+datetimeDesc = "Date and time combined"
+customDateDesc = "Custom format"
+yearMonthDayDesc = "Individual date parts"
+pageVars = "Page Information"
+pageNumberDesc = "Current page number"
+totalPagesDesc = "Total number of pages"
+fileVars = "File Information"
+filenameDesc = "Filename without extension"
+filenameFullDesc = "Filename with extension"
+metadataVars = "Document Metadata"
+metadataDesc = "From PDF document properties"
+otherVars = "Other"
+uuidDesc = "Short unique identifier (8 chars)"
+examples = "Examples"
+multiLine = "multi-line"
+
+[AddStampRequest.template]
+pageNumberFooter = "Page Number Footer"
+dateHeader = "Date Header"
+europeanDate = "European Date"
+timestamp = "Timestamp"
+draftWatermark = "Draft Watermark"
+custom = "Custom"
+page-numbers = "Page Numbers"
+draft = "Draft Watermark"
+doc-info = "Document Info"
+legal-footer = "Legal Footer"
+european-date = "European Date (DD/MM/YYYY)"
 
 [AddStampRequest.error]
 failed = "Det oppstod en feil under tillegg av stempel til PDF-en."
@@ -3503,6 +3827,13 @@ passwordChangedSuccess = "Passord endret! Logg inn med det nye passordet."
 credentialsUpdated = "Innloggingsinformasjonen din er oppdatert. Logg inn på nytt."
 defaultCredentials = "Standard påloggingsopplysninger"
 changePasswordWarning = "Endre passordet ditt etter at du har logget inn for første gang"
+mfaRequired = "Tofaktorkode kreves"
+mfaCode = "Autentiseringskode"
+enterMfaCode = "Skriv inn 6-sifret kode"
+mfaPromptTitle = "Tofaktorautentisering"
+mfaPromptBody = "Skriv inn autentiseringskoden fra autentiseringsappen for å fortsette."
+verifyingMfa = "Verifiserer..."
+verifyMfa = "Verifiser kode"
 
 [login.slides.overview]
 alt = "Stirling PDF-oversikt"
@@ -3618,6 +3949,19 @@ filesize = "Filstørrelse"
 [compress.grayscale]
 label = "Bruk gråskala for komprimering"
 
+[compress.linearize]
+label = "Lineariser PDF for rask webvisning"
+
+[compress.lineArt]
+label = "Konverter bilder til strektegning"
+description = "Bruker ImageMagick for å redusere sider til høy-kontrast svart-hvitt for maksimal størrelsesreduksjon."
+unavailable = "ImageMagick er ikke installert eller aktivert på denne serveren"
+detailLevel = "Detaljnivå"
+edgeEmphasis = "Kantvektlegging"
+edgeLow = "Svak"
+edgeMedium = "Balansert"
+edgeHigh = "Sterk"
+
 [compress.tooltip.header]
 title = "Oversikt over komprimeringsinnstillinger"
 
@@ -3635,6 +3979,10 @@ bullet2 = "Høyere verdier reduserer filstørrelsen"
 title = "Gråtoner"
 text = "Velg dette alternativet for å konvertere alle bilder til svart-hvitt, noe som kan redusere filstørrelsen betydelig, spesielt for skannede PDF-er eller dokumenter med mange bilder."
 
+[compress.tooltip.lineArt]
+title = "Strektegning"
+text = "Konverter sider til høy-kontrast svart-hvitt med ImageMagick. Bruk detaljnivå for å styre hvor mye innhold som blir svart, og kantvektlegging for å styre hvor aggressivt kanter oppdages."
+
 [compress.error]
 failed = "Det oppstod en feil under komprimering av PDF-en."
 
@@ -3646,6 +3994,11 @@ failed = "Det oppstod en feil under komprimering av PDF-en."
 [compress.selectText.1]
 _value = "Komprimeringsinnstillinger"
 1 = "1-3 PDF-komprimering,</br> 4-6 lett bildekomprimering,</br> 7-9 intens bildekomprimering vil redusere bildekvaliteten kraftig"
+
+[compress.compressionLevel]
+range1to3 = "Lavere verdier bevarer kvaliteten, men gir større filer"
+range4to6 = "Middels komprimering med moderat kvalitetsreduksjon"
+range7to9 = "Høyere verdier reduserer filstørrelsen betydelig, men kan redusere bildeklarheten"
 
 [decrypt]
 passwordPrompt = "Denne filen er passordbeskyttet. Skriv inn passordet:"
@@ -3886,22 +4239,97 @@ deleteSelected = "Slett valgte sider"
 closePdf = "Lukk PDF"
 exportAll = "Eksporter PDF"
 downloadSelected = "Last ned valgte filer"
-downloadAll = "Last ned alle"
-saveAll = "Lagre alle"
+annotations = "Merknader"
+exportSelected = "Eksporter valgte sider"
+saveChanges = "Lagre endringer"
 toggleTheme = "Bytt tema"
-toggleBookmarks = "Veksle bokmerker"
 language = "Språk"
+toggleAnnotations = "Vis/skjul merknader"
 search = "Søk i PDF"
 panMode = "Panoreringsmodus"
+applyRedactionsFirst = "Bruk sladding først"
 rotateLeft = "Roter til venstre"
 rotateRight = "Roter til høyre"
 toggleSidebar = "Vis/skjul sidepanel"
-exportSelected = "Eksporter valgte sider"
-toggleAnnotations = "Vis/skjul merknader"
-annotationMode = "Veksle merknadsmodus"
+toggleBookmarks = "Veksle bokmerker"
 print = "Skriv ut PDF"
 draw = "Tegn"
+redact = "Sladd"
+exitRedaction = "Avslutt sladdemodus"
 save = "Lagre"
+downloadAll = "Last ned alle"
+saveAll = "Lagre alle"
+
+[textAlign]
+left = "Venstre"
+center = "Sentrert"
+right = "Høyre"
+
+[annotation]
+title = "Annoter"
+desc = "Bruk utheving, penn, tekst og notater. Endringer er levende—ingen utflating nødvendig."
+highlight = "Uthev"
+pen = "Penn"
+text = "Tekstboks"
+note = "Notat"
+rectangle = "Rektangel"
+ellipse = "Ellipse"
+select = "Velg"
+exit = "Avslutt annotasjonsmodus"
+strokeWidth = "Bredde"
+opacity = "Opasitet"
+strokeOpacity = "Strekopasitet"
+fillOpacity = "Fyllopasitet"
+fontSize = "Skriftstørrelse"
+chooseColor = "Velg farge"
+color = "Farge"
+strokeColor = "Strekfarge"
+fillColor = "Fyllfarge"
+underline = "Understrek"
+strikeout = "Gjennomstreking"
+squiggly = "Bølgete"
+inkHighlighter = "Frihåndsmarkering"
+freehandHighlighter = "Frihåndsmarkering"
+square = "Kvadrat"
+circle = "Sirkel"
+polygon = "Polygon"
+line = "Linje"
+stamp = "Legg til bilde"
+textMarkup = "Tekstmarkering"
+drawing = "Tegning"
+shapes = "Former"
+notesStamps = "Notater og stempler"
+settings = "Innstillinger"
+borderOn = "Kant: På"
+borderOff = "Kant: Av"
+editInk = "Rediger penn"
+editLine = "Rediger linje"
+editNote = "Rediger notat"
+editText = "Rediger tekstboks"
+editTextMarkup = "Rediger tekstmarkering"
+editSelected = "Rediger merknad"
+editSquare = "Rediger kvadrat"
+editCircle = "Rediger sirkel"
+editPolygon = "Rediger polygon"
+unsupportedType = "Denne merknadstypen er ikke fullt støttet for redigering."
+textAlignment = "Tekstjustering"
+noteIcon = "Notat-ikon"
+imagePreview = "Forhåndsvisning"
+contents = "Tekst"
+backgroundColor = "Bakgrunnsfarge"
+clearBackground = "Fjern bakgrunn"
+noBackground = "Ingen bakgrunn"
+stampSettings = "Stempelinnstillinger"
+savingCopy = "Forbereder nedlasting..."
+saveFailed = "Kan ikke lagre kopi"
+saveReady = "Nedlasting klar"
+selectAndMove = "Velg og rediger"
+editSelectDescription = "Klikk en eksisterende merknad for å redigere farge, opasitet, tekst eller størrelse."
+editStampHint = "For å endre bildet, slett dette stempelet og legg til et nytt."
+editSwitchToSelect = "Bytt til Velg og rediger for å redigere denne merknaden."
+undo = "Angre"
+redo = "Gjør om"
+applyChanges = "Bruk endringer"
 saveChanges = "Lagre endringer"
 
 [search]
@@ -3953,12 +4381,20 @@ settings = "Innst."
 adminSettings = "Admin Innst."
 allTools = "All Tools"
 reader = "Leser"
+tours = "Omvisninger"
+showMeAround = "Vis meg rundt"
+
+[quickAccess.toursTooltip]
+admin = "Se gjennomganger her: Verktøy-omvisning, ny V2-layout-omvisning og admin-omvisning."
+user = "Se gjennomganger her: Verktøy-omvisning og ny V2-layout-omvisning."
 
 [quickAccess.helpMenu]
 toolsTour = "Omvisning i verktøyene"
 toolsTourDesc = "Lær hva verktøyene kan gjøre"
 adminTour = "Admin-omvisning"
 adminTourDesc = "Utforsk admin-innstillinger og funksjoner"
+whatsNewTour = "Se hva som er nytt i V2"
+whatsNewTourDesc = "Omvisning i oppdatert layout"
 
 [admin]
 error = "Feil"
@@ -3977,6 +4413,8 @@ fetchError = "Kunne ikke laste inn innstillinger"
 saveError = "Kunne ikke lagre innstillinger"
 saved = "Innstillinger lagret"
 saveSuccess = "Innstillinger lagret"
+success = "Innstillinger lagret"
+error = "Kunne ikke lagre innstillinger"
 save = "Lagre endringer"
 discard = "Forkast"
 restartRequired = "Omstart kreves"
@@ -3996,6 +4434,10 @@ hint = "Du har ulagrede endringer"
 title = "Innloggingsmodus påkrevd"
 message = "Innloggingsmodus må være aktivert for å endre admin-innstillinger. Angi SECURITY_ENABLELOGIN=true i miljøet ditt eller security.enableLogin: true i settings.yml, og start deretter serveren på nytt."
 readOnly = "Innstillingene nedenfor viser eksempelverdier til referanse. Aktiver innloggingsmodus for å se og redigere faktisk konfigurasjon."
+
+[admin.settings.enterpriseRequired]
+title = "Enterprise-lisens kreves"
+message = "En Enterprise-lisens kreves for å få tilgang til {{featureName}}. Du ser demodata som referanse."
 
 [admin.settings.restart]
 title = "Omstart kreves"
@@ -4081,9 +4523,17 @@ description = "Konfigurer egendefinerte filsystemstier for pipeline-prosessering
 [admin.settings.general.customPaths.pipeline]
 label = "Pipeline-kataloger"
 
+[admin.settings.general.customPaths.pipeline.pipelineDir]
+label = "Pipeline Directory"
+description = "Base directory for pipeline resources (leave empty for default: /pipeline)"
+
 [admin.settings.general.customPaths.pipeline.watchedFoldersDir]
 label = "Katalog for overvåkede mapper"
 description = "Katalog der pipeline overvåker innkommende PDF-er (la stå tomt for standard: /pipeline/watchedFolders)"
+
+[admin.settings.general.customPaths.pipeline.watchedFoldersDirs]
+label = "Watched Folders Directories"
+description = "Directories where pipeline monitors for incoming PDFs (one per line or comma-separated; leave empty for default: /pipeline/watchedFolders)"
 
 [admin.settings.general.customPaths.pipeline.finishedFoldersDir]
 label = "Katalog for ferdige mapper"
@@ -4099,6 +4549,13 @@ description = "Sti til WeasyPrint-kjørbar for HTML til PDF-konvertering (la st�
 [admin.settings.general.customPaths.operations.unoconvert]
 label = "Unoconvert-kjørbar fil"
 description = "Sti til LibreOffice unoconvert for dokumentkonverteringer (la stå tomt for standard: /opt/venv/bin/unoconvert)"
+
+[admin.settings.general.frontendUrl]
+label = "Frontend URL"
+description = "Basis-URL for frontend (f.eks. https://pdf.example.com). Brukes for e-postinvitasjonslenker og mobile QR-kodeopplastinger. La stå tomt for å bruke backend-URL."
+
+[admin.settings.badge]
+clickToUpgrade = "Klikk for å se plandetaljer"
 
 [admin.settings.security]
 title = "Sikkerhet"
@@ -4128,6 +4585,13 @@ description = "Maksimalt antall mislykkede innloggingsforsøk før kontolåsing"
 [admin.settings.security.loginResetTimeMinutes]
 label = "Tilbakestillingstid for innlogging (minutter)"
 description = "Tid før mislykkede innloggingsforsøk nullstilles"
+
+[admin.settings.security.xFrameOptions]
+label = "X-Frame-Options"
+description = "Controls whether the application can be embedded in iframes"
+deny = "Deny (Prevents all framing)"
+sameorigin = "Same Origin (Allow framing from same domain)"
+disabled = "Disabled (No X-Frame-Options header)"
 
 [admin.settings.security.csrfDisabled]
 label = "Deaktiver CSRF-beskyttelse"
@@ -4176,7 +4640,7 @@ description = "Spor brukerhandlinger og systemhendelser for etterlevelse og sikk
 
 [admin.settings.security.audit.level]
 label = "Revisjonsnivå"
-description = "0=AV, 1=GRUNNLEGGENDE, 2=STANDARD, 3=DETALJERT"
+description = "0=OFF, 1=BASIC, 2=STANDARD, 3=VERBOSE"
 
 [admin.settings.security.audit.retentionDays]
 label = "Bevaring av revisjon (dager)"
@@ -4236,6 +4700,19 @@ connect = "Koble til"
 disconnect = "Koble fra"
 disconnected = "Leverandør koblet fra"
 disconnectError = "Kunne ikke koble fra leverandør"
+mobileScannerConvertToPdf = "Konverter bilder til PDF"
+mobileScannerConvertToPdfDesc = "Konverter automatisk opplastede bilder til PDF-format. Hvis deaktivert, beholdes bildene som de er."
+mobileScannerImageResolution = "Bildeoppløsning"
+mobileScannerImageResolutionDesc = "Oppløsning på opplastede bilder. «Redusert» skalerer bilder til maks 1200 px for å redusere filstørrelsen."
+imageResolutionFull = "Full (original størrelse)"
+imageResolutionReduced = "Redusert (maks 1200 px)"
+mobileScannerPageFormat = "Sideformat"
+mobileScannerPageFormatDesc = "PDF-sidestørrelse for konverterte bilder. «Behold» bruker bildenes opprinnelige dimensjoner."
+pageFormatKeep = "Behold (opprinnelige dimensjoner)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "Strekk for å fylle"
+mobileScannerStretchToFitDesc = "Strekk bilder for å fylle hele siden. Hvis deaktivert, sentreres bilder med beholdt sideforhold."
 
 [admin.settings.connections.ssoAutoLogin]
 label = "SSO automatisk innlogging"
@@ -4304,10 +4781,168 @@ description = "Opprett brukerkontoer automatisk ved første SAML2-innlogging"
 label = "Blokker registrering"
 description = "Hindre ny brukerregistrering via SAML2"
 
+[admin.settings.connections.mobileScanner]
+label = "Opplasting fra mobil"
+enable = "Aktiver QR-kodeopplasting"
+description = "Tillat brukere å laste opp filer fra mobile enheter ved å skanne en QR-kode"
+note = "Merk: Krever at Frontend URL er konfigurert. "
+link = "Konfigurer i systeminnstillinger"
+mobileScannerConvertToPdf = "Konverter bilder til PDF"
+mobileScannerConvertToPdfDesc = "Konverter automatisk opplastede bilder til PDF-format. Hvis deaktivert, beholdes bildene som de er."
+mobileScannerImageResolution = "Bildeoppløsning"
+mobileScannerImageResolutionDesc = "Oppløsning på opplastede bilder. «Redusert» skalerer bilder til maks 1200 px for å redusere filstørrelsen."
+imageResolutionFull = "Full (original størrelse)"
+imageResolutionReduced = "Redusert (maks 1200 px)"
+mobileScannerPageFormat = "Sideformat"
+mobileScannerPageFormatDesc = "PDF-sidestørrelse for konverterte bilder. «Behold» bruker bildenes opprinnelige dimensjoner."
+pageFormatKeep = "Behold (opprinnelige dimensjoner)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "Strekk for å fylle"
+mobileScannerStretchToFitDesc = "Strekk bilder for å fylle hele siden. Hvis deaktivert, sentreres bilder med beholdt sideforhold."
+
+[admin.settings.telegram]
+title = "Telegram-bot"
+description = "Konfigurer Telegram-bottilkobling, tilgangskontroll og tilbakemeldingsatferd."
+
+[admin.settings.telegram.enabled]
+label = "Aktiver Telegram-bot"
+description = "La brukere samhandle med Stirling PDF via din konfigurerte Telegram-bot."
+
+[admin.settings.telegram.botUsername]
+label = "Bot-brukernavn"
+description = "Det offentlige brukernavnet til Telegram-boten."
+
+[admin.settings.telegram.botToken]
+label = "Bot-token"
+description = "API-token levert av BotFather for Telegram-boten din."
+
+[admin.settings.telegram.pipelineInboxFolder]
+label = "Innboksmappe"
+description = "Mappe under pipeline-katalogen der innkommende Telegram-filer lagres."
+
+[admin.settings.telegram.customFolderSuffix]
+label = "Bruk egendefinert mappesuffiks"
+description = "Legg til chat-ID i mapper for innkommende filer for å isolere opplastinger per chat."
+
+[admin.settings.telegram.accessControl]
+title = "Tilgangskontroll"
+description = "Begrens hvilke brukere eller kanaler som kan samhandle med boten."
+
+[admin.settings.telegram.enableAllowUserIDs]
+label = "Tillat spesifikke bruker-ID-er"
+description = "Når aktivert, kan kun listede bruker-ID-er bruke boten."
+
+[admin.settings.telegram.allowUserIDs]
+label = "Tillatte bruker-ID-er"
+description = "Angi Telegram-bruker-ID-er som kan samhandle med boten."
+placeholder = "Legg til bruker-ID og trykk enter"
+
+[admin.settings.telegram.enableAllowChannelIDs]
+label = "Tillat spesifikke kanal-ID-er"
+description = "Når aktivert, kan kun listede kanal-ID-er bruke boten."
+
+[admin.settings.telegram.allowChannelIDs]
+label = "Tillatte kanal-ID-er"
+description = "Angi Telegram-kanal-ID-er som kan samhandle med boten."
+placeholder = "Legg til kanal-ID og trykk enter"
+
+[admin.settings.telegram.processing]
+title = "Behandling"
+description = "Kontroller pollingintervaller og tidsavbrudd for behandling av Telegram-opplastinger."
+
+[admin.settings.telegram.processingTimeoutSeconds]
+label = "Behandlingstidsavbrudd (sekunder)"
+description = "Maksimal tid å vente på en behandlingsjobb før en feil rapporteres."
+
+[admin.settings.telegram.pollingIntervalMillis]
+label = "Pollingintervall (ms)"
+description = "Intervall mellom sjekker av nye Telegram-oppdateringer."
+
+[admin.settings.telegram.feedback]
+title = "Tilbakemeldinger"
+description = "Velg når boten skal sende tilbakemeldinger til brukere og kanaler."
+
+[admin.settings.telegram.feedback.general.enabled]
+label = "Aktiver tilbakemeldinger"
+description = "Styr om boten skal sende tilbakemeldingsmeldinger i det hele tatt."
+
+[admin.settings.telegram.feedback.channel]
+title = "Regler for kanaltilbakemelding"
+
+[admin.settings.telegram.feedback.channel.noValidDocument]
+label = "Vis «Ingen gyldig dokument» (kanal)"
+description = "Undertrykk svaret «ingen gyldig dokument» for kanalopplastinger."
+
+[admin.settings.telegram.feedback.channel.errorProcessing]
+label = "Vis behandlingsfeil (kanal)"
+description = "Send behandlingsfeilmeldinger til kanaler."
+
+[admin.settings.telegram.feedback.channel.errorMessage]
+label = "Vis feilmeldinger (kanal)"
+description = "Vis detaljerte feilmeldinger for kanaler."
+
+[admin.settings.telegram.feedback.user]
+title = "Regler for brukertilbakemelding"
+
+[admin.settings.telegram.feedback.user.noValidDocument]
+label = "Vis «Ingen gyldig dokument» (bruker)"
+description = "Undertrykk svaret «ingen gyldig dokument» for brukeropplastinger."
+
+[admin.settings.telegram.feedback.user.errorProcessing]
+label = "Vis behandlingsfeil (bruker)"
+description = "Send behandlingsfeilmeldinger til brukere."
+
+[admin.settings.telegram.feedback.user.errorMessage]
+label = "Vis feilmeldinger (bruker)"
+description = "Vis detaljerte feilmeldinger for brukere."
+
 [admin.settings.database]
 title = "Database"
 description = "Konfigurer egendefinerte databaseinnstillinger for bedriftsdistribusjoner."
 configuration = "Databasekonfigurasjon"
+backupTitle = "Sikkerhetskopier og gjenoppretting"
+backupDescription = "Administrer H2-sikkerhetskopier direkte fra administrasjonskonsollen."
+loadError = "Kunne ikke laste sikkerhetskopier av databasen"
+backupCreated = "Sikkerhetskopi opprettet"
+backupFailed = "Kunne ikke opprette sikkerhetskopi"
+deleteTitle = "Slett sikkerhetskopi"
+deleteConfirm = "Slette denne sikkerhetskopien? Dette kan ikke angres."
+deleteSuccess = "Sikkerhetskopi slettet"
+deleteFailed = "Kunne ikke slette sikkerhetskopi"
+deleteConfirmAction = "Slett sikkerhetskopi"
+downloadFailed = "Kunne ikke laste ned sikkerhetskopi"
+version = "H2-versjon"
+embedded = "Innebygd H2"
+external = "Ekstern database"
+h2Only = "Sikkerhetskopier er kun tilgjengelige for den innebygde H2-databasen."
+h2Hint = "Sett databasetype til H2 og deaktiver egendefinert database for å aktivere sikkerhetskopiering og gjenoppretting."
+manageBackups = "Administrer sikkerhetskopier"
+refresh = "Oppdater"
+createBackup = "Opprett sikkerhetskopi"
+uploadTitle = "Last opp og importer"
+chooseFile = "Velg en .sql-sikkerhetskopifil"
+importFromUpload = "Importer opplasting"
+confirmImportTitle = "Bekreft databaseimport"
+overwriteWarning = "Advarsel: Dette vil overskrive den gjeldende databasen."
+overwriteWarningBody = "Alle eksisterende data vil bli erstattet av den opplastede sikkerhetskopien. Denne handlingen kan ikke angres."
+confirmCodeLabel = "Skriv inn bekreftelseskoden for å fortsette"
+enterCode = "Skriv inn koden som vises over"
+confirmImport = "Bekreft import"
+codeMismatch = "Bekreftelseskoden samsvarer ikke"
+codeMismatchBody = "Angi koden nøyaktig som vist for å fortsette."
+selectFile = "Velg en .sql-fil som skal importeres"
+importSuccess = "Sikkerhetskopi importert"
+importFailed = "Kunne ikke importere sikkerhetskopi"
+noBackups = "Ingen sikkerhetskopier funnet ennå."
+unavailable = "Liste over sikkerhetskopier er ikke tilgjengelig for gjeldende databasekonfigurasjon."
+fileName = "Fil"
+created = "Opprettet"
+size = "Størrelse"
+actions = "Handlinger"
+download = "Last ned"
+import = "Importer"
+delete = "Slett"
 
 [admin.settings.database.enableCustom]
 label = "Aktiver egendefinert database"
@@ -4385,6 +5020,26 @@ description = "Maksimal DPI for bildebehandling (0 = ubegrenset)"
 [admin.settings.advanced.tessdataDir]
 label = "Tessdata-katalog"
 description = "Sti til tessdata-katalogen for OCR-språkfiler"
+downloadMissingTitle = "Ingen språk valgt"
+downloadMissingBody = "Velg minst ett språk å laste ned."
+downloadSuccessTitle = "Språk lastet ned"
+downloadSuccessBody = "De valgte tessdata-språkene er lagret."
+downloadErrorTitle = "Nedlasting mislyktes"
+loadingLanguages = "Laster installerte tessdata-språk..."
+installedLanguages = "Installerte tessdata-språk"
+noLanguages = "Ingen tessdata-språk funnet i den konfigurerte katalogen."
+downloadLabel = "Last ned flere tessdata-språk"
+downloadPlaceholder = "Velg språk"
+downloadNothingFound = "Ingen flere språk funnet"
+permissionNotice = "tessdata-stien er ikke skrivbar. Nedlastinger åpnes i nettleseren; lagre .traineddata-filene manuelt i tessdata-mappen."
+manualLinks = "Manuelle nedlastinger: klikk på lenkene og legg filene i tessdata-mappen."
+downloadButton = "Last ned valgte språk"
+downloadInvalidTitle = "Ugyldig valg"
+downloadInvalidBody = "Noen av de valgte språkene er ikke tilgjengelige for nedlasting. Oppdater og velg fra listen."
+downloadErrorNetwork = "Nedlasting mislyktes på grunn av en nettverksfeil. Kontroller tilkoblingen og prøv igjen."
+downloadErrorServer = "Serveren støtte på en feil under nedlasting av tessdata-språk. Prøv igjen senere."
+downloadErrorPermission = "tessdata-katalogen er ikke skrivbar: {{message}}. Velg en skrivbar katalog (f.eks. under programdata-mappen) eller juster tillatelser."
+downloadErrorGeneric = "Nedlasting mislyktes: {{message}}. Prøv igjen senere."
 
 [admin.settings.advanced.disableSanitize]
 label = "Deaktiver HTML-sanitering"
@@ -4484,6 +5139,10 @@ description = "Tillat administratorer å invitere brukere via e-post med autogen
 [admin.settings.mail.frontendUrl]
 label = "Frontend-URL"
 description = "Base-URL for frontend (f.eks. https://pdf.example.com). Brukes til å generere invitasjonslenker i e-poster. La stå tomt for å bruke backend-URL."
+
+[admin.settings.mail.frontendUrlNote]
+note = "Merk: Krever at Frontend URL er konfigurert. "
+link = "Konfigurer i systeminnstillinger"
 
 [admin.settings.legal]
 title = "Juridiske dokumenter"
@@ -4669,6 +5328,9 @@ googleDriveShort = "Drive"
 myFiles = "Mine filer"
 noRecentFiles = "Ingen nylige filer funnet"
 googleDriveNotAvailable = "Google Drive-integrasjon er ikke tilgjengelig"
+mobileUpload = "Mobilopplasting"
+mobileShort = "Mobil"
+mobileUploadNotAvailable = "Mobilopplasting er ikke aktivert"
 downloadSelected = "Last ned valgte"
 saveSelected = "Lagre valgte"
 openFiles = "Åpne filer"
@@ -4881,6 +5543,7 @@ desc = "Bygg flertrinns arbeidsflyter ved å kjede sammen PDF-handlinger. Ideelt
 invalidStep = "Ugyldig trinn"
 reviewTitle = "Resultater av automatisering"
 copyToSaved = "Kopier til Lagrede"
+exportForFolderScanning = "Eksporter for mappeskanning"
 
 [automate.files]
 placeholder = "Velg filer som skal behandles med denne automatiseringen"
@@ -4902,6 +5565,7 @@ createTitle = "Opprett automatisering"
 editTitle = "Rediger automatisering"
 intro = "Automatiseringer kjører verktøy sekvensielt. For å komme i gang, legg til verktøy i den rekkefølgen du vil at de skal kjøres."
 save = "Lagre automatisering"
+exportForFolderScanning = "Eksporter for mappeskanning"
 
 [automate.creation.name]
 label = "Navn på automatisering"
@@ -4984,6 +5648,7 @@ loading = "Laster..."
 back = "Tilbake"
 continue = "Fortsett"
 error = "Feil"
+save = "Lagre"
 
 [config.overview]
 title = "Programkonfigurasjon"
@@ -5046,6 +5711,15 @@ impact = "Eventuelle applikasjoner eller tjenester som bruker disse nøklene nå
 confirmPrompt = "Er du sikker på at du vil fortsette?"
 confirmCta = "Oppdater nøkler"
 
+[config.apiKeys.alert]
+apiKeyErrorTitle = "API-nøkkelfeil"
+failedToCreateApiKey = "Kunne ikke opprette API-nøkkel."
+failedToRetrieveApiKey = "Kunne ikke hente API-nøkkel fra respons."
+failedToFetchApiKey = "Kunne ikke hente API-nøkkel."
+apiKeyRefreshed = "API-nøkkel fornyet"
+apiKeyRefreshedBody = "API-nøkkelen er fornyet."
+failedToRefreshApiKey = "Kunne ikke fornye API-nøkkel."
+
 [AddAttachmentsRequest]
 attachments = "Velg vedlegg"
 info = "Velg filer som skal legges ved PDF-en. Disse filene blir innebygd og tilgjengelige via PDF-ens vedleggspanel."
@@ -5104,7 +5778,7 @@ title = "Erstatt-Inverter-Farge"
 
 [replace-color.options]
 fill = "Fyllfarge"
-gradient = "Fargeovergang"
+gradient = "Gradient"
 
 [replace-color.selectText]
 1 = "Erstatt eller Inverter farge alternativer"
@@ -5150,6 +5824,16 @@ finish = "Fullfør"
 startTour = "Start omvisning"
 startTourDescription = "Ta en guidet tur gjennom Stirling PDF sine nøkkelfunksjoner"
 
+[onboarding.whatsNew]
+quickAccess = "Start i <strong>Hurtigtilgang</strong>-panelet for å hoppe mellom Leser, Automatiser, filene dine og alle omvisningene."
+leftPanel = "Det venstre <strong>Verktøy</strong>-panelet viser alt du kan gjøre. Bla i kategorier eller søk for å finne et verktøy raskt."
+fileUpload = "Bruk <strong>Filer</strong>-knappen for å laste opp eller velge en nylig PDF. Vi laster et eksempel så du kan se arbeidsområdet."
+rightRail = "I <strong>Høyre panel</strong> finner du hurtighandlinger for å velge filer, endre tema eller språk, og laste ned resultater."
+topBar = "Toppfeltet lar deg bytte mellom <strong>Viser</strong>, <strong>Sideeditor</strong> og <strong>Aktive filer</strong>."
+pageEditorView = "Bytt til sideeditoren for å endre rekkefølge, rotere eller slette sider."
+activeFilesView = "Bruk Aktive filer for å se alt du har åpent og velge hva du vil jobbe med."
+wrapUp = "Det er det som er nytt i V2. Åpne <strong>Omvisninger</strong>-menyen når som helst for å spille av denne, verktøyomvisningen eller admin-omvisningen."
+
 [onboarding.welcomeModal]
 title = "Velkommen til Stirling PDF!"
 description = "Vil du ta en rask 1-minutts omvisning for å lære nøkkelfunksjonene og hvordan du kommer i gang?"
@@ -5169,6 +5853,10 @@ skipForNow = "Hopp over nå"
 download = "Last ned →"
 showMeAround = "Vis meg rundt"
 skipTheTour = "Hopp over omvisningen"
+
+[onboarding.tourOverview]
+title = "Omvisningsoversikt"
+body = "Stirling PDF V2 leveres med dusinvis av verktøy og et fornyet grensesnitt. Ta en rask omvisning for å se hva som er endret og hvor du finner funksjonene du trenger."
 
 [onboarding.serverLicense]
 skip = "Hopp over nå"
@@ -5252,9 +5940,11 @@ username = "Brukernavn (e-post)"
 usernamePlaceholder = "user@example.com"
 password = "Passord"
 passwordPlaceholder = "Angi passord"
+passwordRequired = "Passord er påkrevd"
 role = "Rolle"
 team = "Team (valgfritt)"
 teamPlaceholder = "Velg et team"
+authType = "Autentiseringstype"
 forcePasswordChange = "Tving passordendring ved første innlogging"
 cancel = "Avbryt"
 submit = "Legg til medlem"
@@ -5262,6 +5952,13 @@ usernameRequired = "Brukernavn og passord er påkrevd"
 passwordTooShort = "Passordet må være minst 6 tegn"
 success = "Bruker opprettet"
 error = "Kunne ikke opprette bruker"
+forceMFA = "Krev MFA-oppsett ved neste pålogging"
+
+[workspace.people.authType]
+password = "Passord"
+oauth = "OAuth2"
+saml = "SAML2"
+ssoDescription = "Brukeren autentiseres via SSO-leverandør"
 
 [workspace.people.editMember]
 title = "Rediger medlem"
@@ -5281,6 +5978,31 @@ error = "Kunne ikke oppdatere brukerstatus"
 [workspace.people.delete]
 success = "Bruker slettet"
 error = "Kunne ikke slette bruker"
+
+[workspace.people.changePassword]
+action = "Endre passord"
+title = "Endre passord"
+subtitle = "Oppdater passordet for"
+newPassword = "Nytt passord"
+confirmPassword = "Bekreft passord"
+placeholder = "Angi et nytt passord"
+confirmPlaceholder = "Skriv inn det nye passordet på nytt"
+passwordRequired = "Angi et nytt passord"
+passwordMismatch = "Passordene samsvarer ikke"
+generateRandom = "Generer sikkert passord"
+generatedPreview = "Generert passord:"
+copyTooltip = "Kopier til utklippstavle"
+copiedToClipboard = "Passord kopiert til utklippstavle"
+copyFailed = "Kunne ikke kopiere passord"
+sendEmail = "Send e-post til brukeren om denne endringen"
+includePassword = "Inkluder det nye passordet i e-posten"
+forcePasswordChange = "Tving brukeren til å endre passord ved neste innlogging"
+emailUnavailable = "Denne brukerens e-post er ikke en gyldig e-postadresse. Varsler er deaktivert."
+smtpDisabled = "E-postvarsler krever at SMTP er aktivert i innstillingene."
+notifyOnly = "Det sendes en e-post uten passordet som informerer brukeren om at en admin har endret det."
+submit = "Oppdater passord"
+success = "Passord oppdatert"
+error = "Kunne ikke oppdatere passord"
 
 [workspace.people.emailInvite]
 tab = "E-postinvitasjon"
@@ -5339,6 +6061,11 @@ fromLicense = "fra lisens"
 slotsAvailable = "{{count}} brukerplass(er) tilgjengelig"
 noSlotsAvailable = "Ingen plasser tilgjengelig"
 currentUsage = "Bruker for tiden {{current}} av {{max}} brukerlisenser"
+
+[workspace.people.mfa]
+adminDisableSuccess = "MFA ble deaktivert for brukeren"
+adminDisableError = "Kunne ikke deaktivere MFA for brukeren"
+disableByAdmin = "Deaktiver MFA"
 
 [workspace.teams]
 title = "Team"
@@ -5458,6 +6185,28 @@ contactSales = "Kontakt salg"
 contactToUpgrade = "Kontakt oss for å oppgradere eller tilpasse planen din"
 maxUsers = "Maks brukere"
 upTo = "Opptil"
+getLicense = "Skaff serverlisens"
+upgradeToEnterprise = "Oppgrader til Enterprise"
+selectPeriod = "Velg fakturaperiode"
+monthlyBilling = "Månedlig fakturering"
+yearlyBilling = "Årlig fakturering"
+checkoutOpened = "Kassen åpnet"
+checkoutInstructions = "Fullfør kjøpet i Stripe-fanen. Etter betaling, kom tilbake hit og oppdater siden for å aktivere lisensen. Du får også en e-post med lisensnøkkelen din."
+activateLicense = "Aktiver lisensen din"
+
+[plan.static.licenseActivation]
+checkoutOpened = "Kassen åpnet i ny fane"
+instructions = "Fullfør kjøpet i Stripe-fanen. Når betalingen er fullført, mottar du en e-post med lisensnøkkelen din."
+enterKey = "Skriv inn lisensnøkkelen nedenfor for å aktivere planen:"
+keyDescription = "Lim inn lisensnøkkelen fra e-posten din"
+activate = "Aktiver lisens"
+doLater = "Jeg gjør dette senere"
+success = "Lisens aktivert!"
+successMessage = "Lisensen din er aktivert. Du kan nå lukke dette vinduet."
+
+[plan.static.billingPortal]
+title = "E-postverifisering kreves"
+message = "Du må verifisere e-postadressen din i Stripe-faktureringsportalen. Sjekk e-posten din for en påloggingslenke."
 
 [plan.period]
 month = "måned"
@@ -5661,6 +6410,8 @@ notAvailable = "Revisjonssystemet er ikke tilgjengelig"
 notAvailableMessage = "Revisjonssystemet er ikke konfigurert eller ikke tilgjengelig."
 disabled = "Revisjonslogging er deaktivert"
 disabledMessage = "Aktiver revisjonslogging i programkonfigurasjonen for å spore systemhendelser."
+enterpriseRequired = "Enterprise-lisens kreves"
+enterpriseRequiredMessage = "Revisjonsloggsystemet er en Enterprise-funksjon. Oppgrader til en Enterprise-lisens for å få tilgang til revisjonslogger og analyse."
 
 [audit.error]
 title = "Feil ved innlasting av revisjonssystemet"
@@ -5758,6 +6509,7 @@ endpoint = "Endepunkt"
 visits = "Besøk"
 percentage = "Prosentandel"
 noData = "Ingen data tilgjengelig"
+unknownEndpoint = "Ukjent endepunkt"
 
 [backendHealth]
 checking = "Sjekker backend-status..."
@@ -5815,11 +6567,13 @@ subtitle = "Logg inn med Stirling-kontoen din"
 [setup.selfhosted]
 title = "Logg inn på server"
 subtitle = "Oppgi serverlegitimasjonen din"
+link = "eller koble til en selvhostet konto"
 
 [setup.server]
 title = "Koble til server"
 subtitle = "Skriv inn URL-en til din selvhostede server"
 testing = "Tester tilkobling..."
+useLast = "Last used server: {{serverUrl}}"
 
 [setup.server.type]
 saas = "Stirling PDF SaaS"
@@ -5831,8 +6585,17 @@ description = "Skriv inn full URL til din selvhostede Stirling PDF-server"
 
 [setup.server.error]
 emptyUrl = "Skriv inn en server-URL"
+invalidUrl = "Ugyldig URL-format. Angi en gyldig URL som https://your-server.com"
 unreachable = "Kunne ikke koble til server"
 testFailed = "Tilkoblingstest mislyktes"
+configFetch = "Kunne ikke hente serverkonfigurasjon. Kontroller URL-en og prøv igjen."
+
+[setup.server.error.securityDisabled]
+title = "Innlogging ikke aktivert"
+body = "Denne serveren har ikke innlogging aktivert. For å koble til denne serveren må du aktivere autentisering:"
+step1 = "Angi DOCKER_ENABLE_SECURITY=true i miljøet ditt"
+step2 = "Eller angi security.enableLogin=true i settings.yml"
+step3 = "Start serveren på nytt"
 
 [setup.login]
 title = "Logg inn"
@@ -5841,6 +6604,7 @@ connectingTo = "Kobler til:"
 submit = "Logg inn"
 signInWith = "Logg inn med"
 oauthPending = "Åpner nettleser for autentisering..."
+sso = "Single Sign-On"
 orContinueWith = "Eller fortsett med e-post"
 serverRequirement = "Merk: Serveren må ha pålogging aktivert."
 showInstructions = "Hvordan aktivere?"
@@ -5892,7 +6656,7 @@ paragraph = "Avsnittsside"
 sparse = "Sparsom tekst"
 
 [pdfTextEditor.groupingMode]
-auto = "Automatisk"
+auto = "Auto"
 paragraph = "Avsnitt"
 singleLine = "Én linje"
 
@@ -5905,6 +6669,9 @@ earlyAccess = "Tidlig tilgang"
 reset = "Tilbakestill endringer"
 downloadJson = "Last ned JSON"
 generatePdf = "Generer PDF"
+saveChanges = "Lagre endringer"
+applyChanges = "Bruk endringer"
+downloadCopy = "Last ned kopi"
 
 [pdfTextEditor.options.autoScaleText]
 title = "Autoskalere tekst til å passe i bokser"
@@ -5922,6 +6689,24 @@ descriptionInline = "Tips: Hold Ctrl (Cmd) eller Shift for å multivelge tekstbo
 [pdfTextEditor.options.forceSingleElement]
 title = "Lås redigert tekst til ett PDF-element"
 description = "Når aktivert, eksporterer editoren hver redigerte tekstboks som ett PDF-tekstelement for å unngå overlappende glyfer eller blandede skrifttyper."
+
+[pdfTextEditor.options.advanced]
+title = "Avanserte innstillinger"
+
+[pdfTextEditor.tooltip.header]
+title = "Forhåndsvisningsbegrensninger"
+
+[pdfTextEditor.tooltip.textFocus]
+title = "Fokus på tekst og bilder"
+text = "Dette arbeidsområdet fokuserer på å redigere tekst og reposisjonere innebygde bilder. Kompleks sidegrafikk, skjemawidgets og lagdelte grafikk bevares for eksport, men er ikke fullt redigerbare her."
+
+[pdfTextEditor.tooltip.previewVariance]
+title = "Forhåndsvisningsavvik"
+text = "Noen visuelle elementer (som tabellkanter, former eller hvordan annotasjoner vises) kan avvike i forhåndsvisningen. Den eksporterte PDF-en beholder de opprinnelige tegnekommandoene der det er mulig."
+
+[pdfTextEditor.tooltip.alpha]
+title = "Alpha-visning"
+text = "Denne alpha-visningen er fortsatt under utvikling—visse skrifter, farger, gjennomsiktighetseffekter og layoutdetaljer kan endres litt. Dobbeltsjekk generert PDF før du deler."
 
 [pdfTextEditor.manual]
 mergeTooltip = "Slå sammen valgte bokser"
@@ -5942,6 +6727,8 @@ alpha = "Denne alfa-visningen er fortsatt under utvikling—visse skrifttyper, f
 [pdfTextEditor.empty]
 title = "Ingen dokument lastet inn"
 subtitle = "Last inn en PDF- eller JSON-fil for å begynne å redigere tekstinnhold."
+dropzone = "Dra og slipp en PDF- eller JSON-fil her, eller klikk for å bla gjennom"
+dropzoneWithFiles = "Velg en fil fra fanen Filer, eller dra og slipp en PDF- eller JSON-fil her, eller klikk for å bla gjennom"
 
 [pdfTextEditor.welcomeBanner]
 title = "Velkommen til PDF Text Editor (Tidlig tilgang)"
@@ -6042,3 +6829,58 @@ title = "Resultater for Legg til tekst"
 
 [addText.error]
 failed = "Det oppsto en feil da tekst skulle legges til i PDF-en."
+
+[mobileUpload]
+title = "Last opp fra mobil"
+description = "Skann for å laste opp bilder. Bilder konverteres automatisk til PDF."
+descriptionNoConvert = "Skann for å laste opp bilder fra mobilenheten din."
+error = "Tilkoblingsfeil"
+pollingError = "Feil ved kontroll av filer"
+sessionId = "Økt-ID"
+sessionCreateError = "Kunne ikke opprette økt"
+expiryWarning = "Økten utløper snart"
+expiryWarningMessage = "Denne QR-koden utløper om {{seconds}} sekunder. En ny kode genereres automatisk."
+filesReceived = "{{count}} fil(er) mottatt"
+connected = "Mobilenhet tilkoblet"
+instructions = "Skann med telefonkameraet ditt. Bilder konverteres automatisk til PDF."
+instructionsNoConvert = "Skann med telefonkameraet for å laste opp filer."
+
+[mobileScanner]
+title = "Mobilskanner"
+noSession = "Ugyldig økt"
+noSessionMessage = "Vennligst skann en gyldig QR-kode for å få tilgang til denne siden."
+validating = "Validerer økt..."
+sessionInvalid = "Øktfeil"
+sessionExpired = "Denne økten er utløpt. Oppdater og prøv igjen."
+sessionNotFound = "Økt ikke funnet. Oppdater og prøv igjen."
+sessionValidationError = "Kan ikke verifisere økten. Prøv igjen."
+uploadSuccess = "Opplasting vellykket!"
+uploadSuccessMessage = "Bildene dine er overført."
+httpsRequired = "Kameratilgang krever HTTPS eller localhost. Bruk HTTPS eller få tilgang via localhost."
+uploadFailed = "Opplasting mislyktes. Prøv igjen."
+uploading = "Laster opp..."
+connected = "Tilkoblet"
+connecting = "Kobler til..."
+chooseMethod = "Velg opplastingsmetode"
+chooseMethodDescription = "Velg hvordan du vil skanne og laste opp dokumenter"
+camera = "Kamera"
+cameraDescription = "Skann dokumenter med enhetens kamera med automatisk kantgjenkjenning"
+fileUpload = "Filopplasting"
+fileDescription = "Last opp eksisterende bilder eller dokumenter fra enheten din"
+cameraAccessDenied = "Kameratilgang nektet. Aktiver kameratilgang."
+back = "Tilbake"
+settings = "Innstillinger"
+edgeDetection = "Kantgjenkjenning"
+flashlight = "Lommelykt"
+flash = "Blits"
+processing = "Behandler..."
+capture = "Ta bilde"
+selectFilesPrompt = "Velg filer som skal lastes opp"
+selectImage = "Velg bilde"
+preview = "Forhåndsvis"
+retake = "Ta på nytt"
+addToBatch = "Legg til i bunt"
+upload = "Last opp"
+batchImages = "Bunt"
+clearBatch = "Tøm"
+uploadAll = "Last opp alt"

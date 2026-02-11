@@ -1,8 +1,11 @@
 unsavedChanges = "Имате незаписани промени във вашия PDF."
+pendingRedactionsTitle = "Неприложени заличавания"
+pendingRedactions = "Имате неприложени заличавания, които ще бъдат загубени."
 areYouSure = "Сигурни ли сте, че искате да напуснете?"
 unsavedChangesTitle = "Незаписани промени"
 keepWorking = "Продължи работа"
 discardChanges = "Отхвърли и излез"
+discardRedactions = "Отхвърляне и изход"
 applyAndContinue = "Запази и излез"
 exportAndContinue = "Експортирай и продължи"
 cancel = "Отказ"
@@ -216,6 +219,8 @@ pagesAndStarting = "Страници и начално число"
 positionAndPages = "Позиция и страници"
 preview = "Избор на позиция"
 previewDisclaimer = "Прегледът е ориентировъчен. Крайният резултат може да се различава заради метриките на PDF шрифтовете."
+zeroPad = "Zero‑pad Width (Bates Stamping)"
+zeroPadTooltip = "Zero‑pad (Bates Stamp) page numbers to this width (e.g., 3 ⇒ 001). Set 0 to disable."
 
 [addPageNumbers.selectText]
 1 = "Изберете PDF файл:"
@@ -303,6 +308,7 @@ selectOperation = "Избор на операция"
 addOperationButton = "Добавяне на операция"
 pipelineHeader = "Пайплайн:"
 saveButton = "Изтегли"
+saveForFolderScanning = "Запазване за сканиране на папки"
 validateButton = "Валидирай"
 
 [enterpriseEdition]
@@ -340,6 +346,10 @@ advance = "Разширено"
 edit = "Преглед и редактиране"
 popular = "Популярни"
 
+[footer]
+discord = "Discord"
+issues = "GitHub"
+
 [settings.preferences]
 title = "Предпочитания"
 
@@ -360,6 +370,7 @@ advanced = "Разширени"
 title = "Сигурност и удостоверяване"
 security = "Сигурност"
 connections = "Връзки"
+telegram = "Telegram"
 
 [settings.licensingAnalytics]
 title = "Лицензиране и аналитика"
@@ -430,10 +441,38 @@ fullscreen = "Цял екран"
 [settings.general.updates]
 title = "Актуализации на софтуера"
 description = "Проверете за актуализации и вижте информация за версията"
-currentVersion = "Текуща версия"
+currentBackendVersion = "Current Backend Version"
+currentFrontendVersion = "Current Frontend Version"
+versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 latestVersion = "Последна версия"
 checkForUpdates = "Провери за актуализации"
 viewDetails = "Виж подробности"
+serverNeedsUpdate = "Сървърът трябва да бъде актуализиран от администратор"
+
+[settings.general.versionInfo]
+title = "Информация за версията"
+description = "Подробности за версиите на десктоп и сървър"
+desktop = "Десктоп версия"
+server = "Сървърна версия"
+
+[settings.security]
+title = "Сигурност"
+description = "Актуализирайте паролата си, за да запазите акаунта си защитен."
+
+[settings.security.password]
+subtitle = "Променете паролата си. След актуализиране ще бъдете изведени от профила."
+required = "Всички полета са задължителни."
+mismatch = "Новите пароли не съвпадат."
+error = "Неуспешно актуализиране на парола. Проверете текущата си парола и опитайте отново."
+success = "Паролата е актуализирана успешно. Моля, влезте отново."
+ssoDisabled = "Промените на паролата се управляват от вашия доставчик на удостоверяване."
+current = "Текуща парола"
+currentPlaceholder = "Въведете текущата си парола"
+new = "Нова парола"
+newPlaceholder = "Въведете нова парола"
+confirm = "Потвърдете новата парола"
+confirmPlaceholder = "Въведете отново новата си парола"
+update = "Актуализиране на паролата"
 
 [settings.hotkeys]
 title = "Клавишни комбинации"
@@ -488,11 +527,16 @@ low = "Нисък"
 title = "Промяна на идентификационните данни"
 header = "Актуализирайте данните за акаунта си"
 changePassword = "Използвате идентификационни данни за вход по подразбиране. Моля, въведете нова парола"
+ssoManaged = "Вашият акаунт се управлява от вашия доставчик на удостоверяване."
 newUsername = "Ново потребителско име"
 oldPassword = "Текуща парола"
 newPassword = "Нова парола"
 confirmNewPassword = "Подтвърдете новата парола"
 submit = "Изпращане на промените"
+credsUpdated = "Акаунтът е актуализиран"
+description = "Промените са записани. Моля, влезте отново."
+error = "Неуспешно актуализиране на потребителското име. Проверете паролата си и опитайте отново."
+changeUsername = "Актуализирайте потребителското си име. След актуализиране ще бъдете изведени от профила."
 
 [account]
 title = "Настройки на акаунта"
@@ -500,6 +544,8 @@ accountSettings = "Настройки на акаунта"
 adminSettings = "Настройки на администратора - Преглед и добавяне на потребители"
 userControlSettings = "Настройки за потребителски контрол"
 changeUsername = "Промени потребител"
+changeUsernameDescription = "Актуализирайте потребителското си име. След актуализиране ще бъдете изведени от профила."
+newUsernamePlaceholder = "Въведете новото си потребителско име"
 newUsername = "Ново потребителско име"
 password = "Парола за потвърждение"
 oldPassword = "Стара парола"
@@ -514,6 +560,30 @@ property = "Свойство"
 webBrowserSettings = "Уеб-браузър настройки"
 syncToBrowser = "Синхронизиране на акаунт -> Браузър"
 syncToAccount = "Синхронизиране на акаунт <- Браузър"
+
+[account.mfa]
+title = "Двуфакторно удостоверяване"
+setupFailed = "Не може да се стартира настройването на двуфакторното удостоверяване. Моля, опитайте отново."
+codeRequired = "Въведете кода за удостоверяване, за да продължите."
+enabled = "Двуфакторното удостоверяване е активирано."
+enableFailed = "Не може да се активира двуфакторното удостоверяване. Проверете кода и опитайте отново."
+disabled = "Двуфакторното удостоверяване е деактивирано."
+disableFailed = "Не може да се деактивира двуфакторното удостоверяване. Проверете кода и опитайте отново."
+description = "Добавете допълнителен слой защита към акаунта си."
+enableButton = "Активиране на двуфакторното удостоверяване"
+disableButton = "Деактивиране на двуфакторното удостоверяване"
+setupTitle = "Настройване на двуфакторното удостоверяване"
+setupDescription = "Сканирайте QR кода с вашето приложение за удостоверяване, след това въведете 6-цифрения код, за да потвърдите."
+manualKey = "Ключ за ръчна настройка"
+secretWarning = "Пазете този ключ в тайна. Всеки с достъп може да генерира валидни кодове за удостоверяване."
+codePlaceholder = "Въведете 6-цифрен код"
+confirmEnable = "Активирай"
+disableTitle = "Деактивиране на двуфакторното удостоверяване"
+disableDescription = "Въведете валиден код за удостоверяване, за да деактивирате двуфакторното удостоверяване."
+codeLabel = "Код за удостоверяване"
+confirmDisable = "Деактивирай"
+ssoDescription = "Двуфакторното удостоверяване се управлява от вашия доставчик на идентичност за акаунти със Single Sign-On."
+ssoManaged = "Конфигурирайте MFA чрез вашия доставчик на идентичност."
 
 [adminUserSettings]
 title = "Настройки за потребителски контрол"
@@ -708,6 +778,11 @@ tags = "подпис,автограф"
 title = "Подпишете"
 desc = "Добавя подпис към PDF чрез рисунка, текст или изображение"
 
+[home.annotate]
+tags = "анотиране,открояване,рисуване"
+title = "Анотиране"
+desc = "Откроявайте, рисувайте, добавяйте бележки и форми във визуализатора"
+
 [home.flatten]
 tags = "опростяване,премахване,интерактивни"
 title = "Изравняване"
@@ -879,6 +954,7 @@ title = "Авто делене по размер/брой"
 desc = "Разделете един PDF на множество документи въз основа на размер, брой страници или брой документи"
 
 [home.replaceColor]
+tags = "replace color,invert color,color replacement,swap colors,change color,invert,negative,color swap,find and replace color,convert color,color change"
 title = "Смени/обърни цветове"
 desc = "Заместване или инвертиране на цветове в PDF документи"
 
@@ -893,18 +969,22 @@ title = "Авто сканиране на папки"
 desc = "Връзка към ръководство за автоматизирано сканиране на папки"
 
 [home.devSsoGuide]
+tags = "SSO,single sign-on,authentication,SAML,OAuth,OIDC,login,enterprise,identity provider,IdP"
 title = "Ръководство за SSO"
 desc = "Връзка към SSO ръководство"
 
 [home.devAirgapped]
+tags = "air-gapped,offline,isolated,no internet,disconnected,secure,network isolation,standalone"
 title = "Настройка за air‑gapped среда"
 desc = "Връзка към ръководство за air‑gapped настройка"
 
 [home.addPassword]
+tags = "encrypt,password,lock,secure,protect,security,encryption,safeguard,confidential,private,restrict access"
 title = "Добавете парола"
 desc = "Шифровайте вашия PDF документ с парола."
 
 [home.changePermissions]
+tags = "permissions,restrictions,rights,access control,allow,deny,printing,copying,editing,modify permissions,security settings,user rights"
 title = "Промяна на правата"
 desc = "Промяна на ограниченията и разрешенията на документа"
 
@@ -914,12 +994,14 @@ title = "Автоматизация"
 desc = "Създавайте многостъпкови работни процеси чрез свързване на PDF действия. Идеално за повтарящи се задачи."
 
 [home.overlay-pdfs]
+tags = "overlay,combine,merge,layer,superimpose,overlay PDF,layer PDFs,combine PDFs,stack,overlay pages,background,foreground,composite"
 desc = "Наслагва PDF файлове върху друг PDF"
 title = "Наслагване PDF-и"
 
 [home.pdfTextEditor]
-title = "Редактор на текст в PDF"
-desc = "Редактирайте съществуващ текст и изображения в PDF файлове"
+tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
+title = "PDF текстов редактор"
+desc = "Преглеждайте и редактирайте JSON експорти на Stirling PDF с групово редактиране на текст и повторно генериране на PDF"
 
 [home.addText]
 tags = "текст,анотация,етикет"
@@ -930,6 +1012,7 @@ desc = "Добавете собствен текст навсякъде в PDF"
 addFiles = "Добавяне на файлове"
 uploadFromComputer = "Качване от компютър"
 openFromComputer = "Отвори от компютър"
+mobileUpload = "Качване от мобилно устройство"
 
 [viewPdf]
 tags = "преглед,четене,анотиране,текст,изображение"
@@ -1217,7 +1300,12 @@ downloadHtml = "Изтегляне на междинния HTML файл вме�
 pdfaOptions = "Опции за PDF/A"
 outputFormat = "Изходен формат"
 pdfaNote = "PDF/A-1b е по-съвместим, PDF/A-2b поддържа повече функции."
+pdfaFormat = "Формат PDF/A"
 pdfaDigitalSignatureWarning = "PDF файлът съдържа цифров подпис. Това ще бъде премахнато в следващата стъпка."
+strictMode = "Strict Mode"
+strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
+pdfxDigitalSignatureWarning = "PDF файлът съдържа цифров подпис. Той ще бъде премахнат на следващата стъпка."
+pdfxDescription = "PDF/X е подмножество на PDF по стандарта ISO за надежден печат и обмен на графики."
 fileFormat = "Файлов формат"
 wordDoc = "Word документ"
 wordDocExt = "Word документ (.docx)"
@@ -1245,6 +1333,37 @@ cbzOptions = "Опции за CBZ към PDF"
 optimizeForEbook = "Оптимизиране на PDF за четци на електронни книги (използва Ghostscript)"
 cbzOutputOptions = "Опции за PDF към CBZ"
 cbzDpi = "DPI за изобразяване на изображение"
+cbrOptions = "Опции за CBR"
+cbrOutputOptions = "Опции за PDF към CBR"
+cbrDpi = "DPI за рендериране на изображения"
+svgPdfOptions = "SVG to PDF Options"
+combineSvgs = "Combine SVGs into single PDF"
+combineSvgsDescription = "Combine all SVG files into one PDF with multiple pages, or create separate PDFs for each SVG"
+svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
+
+[convert.ebookOptions]
+ebookOptions = "Опции за eBook към PDF"
+ebookOptionsDesc = "Опции за конвертиране на eBook към PDF"
+embedAllFonts = "Вграждане на всички шрифтове"
+embedAllFontsDesc = "Вграждане на всички шрифтове от eBook във генерирания PDF"
+includeTableOfContents = "Включване на съдържание"
+includeTableOfContentsDesc = "Добавяне на генерирано съдържание към получения PDF"
+includePageNumbers = "Включване на номера на страници"
+includePageNumbersDesc = "Добавяне на номера на страници към генерирания PDF"
+optimizeForEbookPdf = "Оптимизиране за eBook четци"
+optimizeForEbookPdfDesc = "Оптимизиране на PDF за четене на eBook (по-малък размер на файла, по-добро рендериране на eInk устройства)"
+
+[convert.epubOptions]
+epubOptions = "Опции за PDF към eBook"
+epubOptionsDesc = "Опции за конвертиране на PDF към EPUB/AZW3"
+detectChapters = "Откриване на глави"
+detectChaptersDesc = "Откриване на заглавия, които изглеждат като глави, и вмъкване на прекъсвания на страници в EPUB"
+targetDevice = "Целево устройство"
+targetDeviceDesc = "Изберете изходен профил, оптимизиран за устройството-четец"
+outputFormat = "Формат на изхода"
+outputFormatDesc = "Изберете изходния формат за eBook"
+tabletPhone = "Таблет/Телефон (с изображения)"
+kindleEink = "Kindle e-Ink (оптимизиран за текст)"
 
 [imageToPdf]
 tags = "преобразуване,img,jpg,изображение,снимка"
@@ -1322,6 +1441,7 @@ applySignatures = "Приложи изображения"
 name = "Изображение"
 placeholder = "Качете изображение"
 label = "Файл с изображение"
+hint = "Supports PNG, JPEG, GIF, BMP, TIFF, and SVG files. SVG files will be converted to PNG for embedding."
 
 [addImage.steps]
 configure = "Конфигурирай изображението"
@@ -1361,6 +1481,11 @@ header = "Add attachments"
 add = "Добавяне на прикачен файл"
 remove = "Премахване на прикачен файл"
 embed = "Вграждане на прикачен файл"
+convertToPdfA3b = "Конвертиране в PDF/A-3b"
+convertToPdfA3bDescription = "Създава архивен PDF с вградени прикачени файлове"
+convertToPdfA3bTooltip = "PDF/A-3b е архивен формат, който осигурява дългосрочно съхранение. Позволява вграждане на произволни файлови формати като прикачени файлове. Конвертирането изисква Ghostscript и може да отнеме повече време при големи файлове."
+convertToPdfA3bTooltipHeader = "За конвертирането в PDF/A-3b"
+convertToPdfA3bTooltipTitle = "Какво прави"
 submit = "Add attachments"
 
 [watermark]
@@ -2113,6 +2238,16 @@ tip = "В момента не работи за няколко входа нав
 outputFormat = "Изходен формат"
 pdfWithDigitalSignature = "PDF файлът съдържа цифров подпис. Това ще бъде премахнато в следващата стъпка."
 
+[pdfToPDFX]
+tags = "печат,стандарт,конвертиране,производство,предпечат,архив"
+title = "PDF към PDF/X"
+header = "PDF към PDF/X"
+credit = "Тази услуга използва Ghostscript за конвертиране към PDF/X"
+submit = "Конвертирай"
+tip = "В момента не работи за множество входове едновременно"
+outputFormat = "Изходен формат"
+pdfWithDigitalSignature = "PDF файлът съдържа цифров подпис. Той ще бъде премахнат на следващата стъпка."
+
 [PDFToWord]
 tags = "doc,docx,odt,word,трансформация,формат,преобразуване,офис,microsoft,docfile"
 title = "PDF към Word"
@@ -2306,6 +2441,10 @@ saved = "Запазени"
 label = "Качете изображение на подпис"
 placeholder = "Изберете файл с изображение"
 hint = "Качете PNG или JPG изображение на вашия подпис"
+removeBackground = "Премахване на бял фон (прозрачен)"
+processing = "Обработка на изображението..."
+backgroundRemovalFailedTitle = "Неуспешно премахване на фона"
+backgroundRemovalFailedMessage = "Фонът не можа да бъде премахнат. Ще се използва оригиналното изображение."
 
 [sign.instructions]
 title = "Как да добавите подпис"
@@ -2350,6 +2489,11 @@ note = "Сплескването премахва интерактивните �
 [flatten.options.flattenOnlyForms]
 label = "Изравнете само форми"
 desc = "Сплесквай само полетата на формите, оставяйки другите интерактивни елементи непокътнати"
+
+[flatten.renderDpi]
+label = "DPI на рендериране (по избор, препоръчително 150 DPI)"
+help = "Оставете празно за системната стойност по подразбиране. По-висок DPI изостря изхода, но увеличава времето за обработка и размера на файла."
+placeholder = "напр. 150"
 
 [flatten.results]
 title = "Резултати от сплескване"
@@ -2502,6 +2646,7 @@ label = "Оригинален PDF"
 
 [compare.edited]
 label = "Редактиран PDF"
+placeholder = "Select the edited PDF"
 
 [compare.swap]
 confirmTitle = "Да се изпълни сравнение отново?"
@@ -2925,6 +3070,7 @@ header = "Изрязване на PDF"
 submit = "Подайте"
 noFileSelected = "Изберете PDF файл, за да започнете изрязването"
 reset = "Нулиране към целия PDF"
+autoCrop = "Автоматично изрязване на бели полета"
 
 [crop.preview]
 title = "Избор на област за изрязване"
@@ -3036,6 +3182,105 @@ title = "Вземете информация за PDF"
 header = "Вземете информация за PDF"
 submit = "Вземете информация"
 downloadJson = "Изтеглете JSON"
+processing = "Извличане на информация..."
+results = "Резултати"
+noResults = "Стартирайте инструмента, за да генерирате отчет."
+downloads = "Изтегляния"
+noneDetected = "Нищо не е открито"
+indexTitle = "Индекс"
+
+[getPdfInfo.report]
+entryLabel = "Пълно резюме на информацията"
+shortTitle = "Информация за PDF"
+
+[getPdfInfo.sections]
+metadata = "Метаданни"
+formFields = "Полета на формуляра"
+basicInfo = "Основна информация"
+documentInfo = "Информация за документа"
+compliance = "Съответствие"
+encryption = "Шифриране"
+permissions = "Разрешения"
+other = "Друго"
+perPageInfo = "Информация по страници"
+tableOfContents = "Съдържание"
+
+[getPdfInfo.compliance]
+notDetected = "Не е открито"
+passed = "Преминато"
+failed = "Неуспешно"
+compliant = "Съвместим"
+nonCompliant = "Несъвместим"
+none = "Не са открити стандарти"
+passedCount = "преминали"
+failedCount = "неуспешни"
+noVerification = "Не е извършена проверка"
+noVerificationDesc = "Съответствието със стандартите на PDF не беше проверено за този документ."
+
+[getPdfInfo.other]
+attachments = "Прикачени файлове"
+embeddedFiles = "Вградени файлове"
+javaScript = "JavaScript"
+layers = "Слоеве"
+structureTree = "StructureTree"
+xmp = "XMPMetadata"
+
+[getPdfInfo.perPage]
+size = "Размер"
+annotations = "Анотации"
+images = "Изображения"
+links = "Връзки"
+fonts = "Шрифтове"
+xobjects = "Брой XObject"
+multimedia = "Мултимедия"
+
+[getPdfInfo.summary]
+pages = "Страници"
+fileSize = "Размер на файла"
+pdfVersion = "Версия на PDF"
+language = "Език"
+title = "Обобщение на PDF"
+author = "Автор"
+created = "Създаден"
+modified = "Променен"
+permsAll = "Всички разрешения са позволени"
+permsRestricted = "{{count}} ограничения"
+permsMixed = "Някои разрешения са ограничени"
+hasCompliance = "Има стандарти за съответствие"
+noCompliance = "Няма стандарти за съответствие"
+compliancePassed = "Съвместим с {{standards}}"
+complianceChecked = "Проверени стандарти ({{failed}} неуспешни)"
+basic = "Основна информация"
+documentInfo = "Информация за документа"
+securityTitle = "Състояние на сигурността"
+technical = "Технически"
+overviewTitle = "Преглед на PDF"
+
+[getPdfInfo.summary.security]
+encrypted = "Шифриран PDF - налична защита с парола"
+unencrypted = "Нешифриран PDF - няма защита с парола"
+
+[getPdfInfo.summary.tech]
+images = "Изображения"
+fonts = "Шрифтове"
+formFields = "Полета на формуляра"
+embeddedFiles = "Вградени файлове"
+javaScript = "JavaScript"
+layers = "Слоеве"
+bookmarks = "Отметки"
+multimedia = "Мултимедия"
+
+[getPdfInfo.summary.overview]
+untitled = "неозаглавен документ"
+unknown = "Неизвестен автор"
+text = "Това е {{pages}}-страничен PDF със заглавие {{title}}, създаден от {{author}} (версия на PDF {{version}})."
+
+[getPdfInfo.error]
+partial = "Някои файлове не можаха да бъдат обработени."
+unexpected = "Неочаквана грешка по време на извличане."
+
+[getPdfInfo.status]
+complete = "Извличането е завършено"
 
 [extractPage]
 tags = "извличане"
@@ -3070,6 +3315,7 @@ title = "Метод на заличаване"
 mode = "Режим"
 automatic = "Автоматичен"
 automaticDesc = "Заличаване на текст въз основа на търсене"
+automaticDisabledTooltip = "Изберете файлове във файловия мениджър, за да заличите няколко файла наведнъж"
 manual = "Ръчен"
 manualDesc = "Щракнете и плъзнете, за да заличите конкретни области"
 manualComingSoon = "Скоро ще бъде налично ръчно заличаване"
@@ -3140,8 +3386,35 @@ text = "Съвпада само с цели думи, не с частични. 
 title = "Конвертиране в PDF-Image"
 text = "Конвертира PDF в PDF на база изображение след заличаване. Това гарантира, че текстът зад полетата за заличаване е напълно премахнат и невъзстановим."
 
+[redact.tooltip.manual.header]
+title = "Контроли за ръчно заличаване"
+
+[redact.tooltip.manual.markText]
+title = "Инструмент за маркиране на текст"
+text = "Изберете текст директно в PDF, за да го маркирате за заличаване. Щракнете и плъзнете, за да откроите конкретен текст, който искате да заличите."
+
+[redact.tooltip.manual.markArea]
+title = "Инструмент за маркиране на област"
+text = "Начертайте правоъгълни области върху PDF, за да отбележите зони за заличаване. Полезно за заличаване на изображения, подписи или неправилни форми."
+
+[redact.tooltip.manual.apply]
+title = "Прилагане на заличаванията"
+text = "След маркиране на съдържание щракнете „Прилагане“, за да заличите трайно всички маркирани области. Броят на чакащите показва колко заличавания са готови за прилагане."
+bullet1 = "Маркирайте колкото области е нужно преди прилагане"
+bullet2 = "Всички чакащи заличавания се прилагат наведнъж"
+bullet3 = "След прилагане заличаванията не могат да бъдат отменени"
+
 [redact.manual]
+title = "Инструменти за заличаване"
+instructions = "Изберете текст или начертайте области върху PDF, за да маркирате съдържание за заличаване."
+markText = "Маркиране на текст"
+markArea = "Маркиране на област"
+pendingLabel = "Чакащи:"
+applyWarning = "⚠️ Постоянно прилагане, не може да се отмени и данните отдолу ще бъдат изтрити"
+apply = "Прилагане"
+noMarks = "Няма марки за заличаване. Използвайте инструментите по-горе, за да маркирате съдържание за заличаване."
 header = "Ръчно заличаване"
+controlsTitle = "Ръчни контроли за заличаване"
 textBasedRedaction = "Заличаване по текст"
 pageBasedRedaction = "Заличаване по страници"
 convertPDFToImageLabel = "Конвертиране на PDF в PDF-Image (за премахване на текст зад полето)"
@@ -3257,6 +3530,19 @@ placeholder = "Въведете брой хоризонтални деления
 label = "Вертикални разделения"
 placeholder = "Въведете брой вертикални деления"
 
+[split-by-sections.splitMode]
+label = "Режим на разделяне"
+description = "Изберете как да разделите страниците"
+splitAll = "Разделяне на всички страници"
+splitAllExceptFirst = "Разделяне на всички с изключение на първата"
+splitAllExceptLast = "Разделяне на всички с изключение на последната"
+splitAllExceptFirstAndLast = "Разделяне на всички с изключение на първата и последната"
+custom = "Потребителски страници"
+
+[split-by-sections.customPages]
+label = "Потребителски номера на страници"
+placeholder = "напр. 2,4,6"
+
 [AddStampRequest]
 tags = "Печат,добавяне на изображение,централно изображение,воден знак,PDF,вграждане,персонализиране"
 header = "Поставяне на печат на PDF"
@@ -3281,6 +3567,44 @@ imageSize = "Размер на изображението"
 margin = "Отстъп"
 positionAndFormatting = "Позиция и форматиране"
 quickPosition = "Изберете позиция на страницата, където да поставите печата."
+preview = "Preview:"
+useTemplate = "Use Template"
+selectTemplate = "Select a template..."
+stampTextDescription = "Use dynamic variables below. Use @@ for literal @. Use \\n for new lines."
+dynamicVariables = "Dynamic Variables"
+clickToExpand = "Click to expand"
+variablesHelp = "Click on any variable to insert it into your stamp text. Use @@ for literal @."
+dateTimeVars = "Date & Time"
+dateDesc = "Current date"
+timeDesc = "Current time"
+datetimeDesc = "Date and time combined"
+customDateDesc = "Custom format"
+yearMonthDayDesc = "Individual date parts"
+pageVars = "Page Information"
+pageNumberDesc = "Current page number"
+totalPagesDesc = "Total number of pages"
+fileVars = "File Information"
+filenameDesc = "Filename without extension"
+filenameFullDesc = "Filename with extension"
+metadataVars = "Document Metadata"
+metadataDesc = "From PDF document properties"
+otherVars = "Other"
+uuidDesc = "Short unique identifier (8 chars)"
+examples = "Examples"
+multiLine = "multi-line"
+
+[AddStampRequest.template]
+pageNumberFooter = "Page Number Footer"
+dateHeader = "Date Header"
+europeanDate = "European Date"
+timestamp = "Timestamp"
+draftWatermark = "Draft Watermark"
+custom = "Custom"
+page-numbers = "Page Numbers"
+draft = "Draft Watermark"
+doc-info = "Document Info"
+legal-footer = "Legal Footer"
+european-date = "European Date (DD/MM/YYYY)"
 
 [AddStampRequest.error]
 failed = "Възникна грешка при добавяне на печат към PDF."
@@ -3503,6 +3827,13 @@ passwordChangedSuccess = "Паролата е променена успешно!
 credentialsUpdated = "Данните ви за вход бяха обновени. Моля, влезте отново."
 defaultCredentials = "Данни за вход по подразбиране"
 changePasswordWarning = "Моля, сменете паролата си след първото влизане"
+mfaRequired = "Изисква се двуфакторен код"
+mfaCode = "Код за удостоверяване"
+enterMfaCode = "Въведете 6-цифрен код"
+mfaPromptTitle = "Двуфакторно удостоверяване"
+mfaPromptBody = "Въведете кода за удостоверяване от вашето приложение за удостоверяване, за да продължите."
+verifyingMfa = "Проверка..."
+verifyMfa = "Провери кода"
 
 [login.slides.overview]
 alt = "Преглед на Stirling PDF"
@@ -3618,6 +3949,19 @@ filesize = "Размер на файла"
 [compress.grayscale]
 label = "Приложи сива скала за компресиране"
 
+[compress.linearize]
+label = "Линеаризиране на PDF за бързо уеб преглеждане"
+
+[compress.lineArt]
+label = "Конвертиране на изображения в Line Art"
+description = "Използва ImageMagick, за да намали страниците до черно-бяло с висок контраст за максимално намаляване на размера."
+unavailable = "ImageMagick не е инсталиран или активиран на този сървър"
+detailLevel = "Ниво на детайл"
+edgeEmphasis = "Подчертаване на ръбовете"
+edgeLow = "Леко"
+edgeMedium = "Баланс"
+edgeHigh = "Силно"
+
 [compress.tooltip.header]
 title = "Преглед на настройките за компресия"
 
@@ -3635,6 +3979,10 @@ bullet2 = "По-високите стойности намаляват разм�
 title = "Сива скала"
 text = "Изберете тази опция, за да конвертирате всички изображения в черно-бяло, което може значително да намали размера на файла, особено за сканирани PDF-и или документи с много изображения."
 
+[compress.tooltip.lineArt]
+title = "Line Art"
+text = "Конвертирайте страниците в черно-бяло с висок контраст с помощта на ImageMagick. Използвайте нивото на детайл, за да контролирате колко съдържание става черно, и подчертаването на ръбовете, за да контролирате колко агресивно се откриват ръбовете."
+
 [compress.error]
 failed = "Възникна грешка при компресиране на PDF."
 
@@ -3646,6 +3994,11 @@ failed = "Възникна грешка при компресиране на PDF
 [compress.selectText.1]
 _value = "Настройки за компресия"
 1 = "1-3 компресия на PDF,</br> 4-6 лека компресия на изображения,</br> 7-9 силна компресия на изображения Ще намали значително качеството на изображенията"
+
+[compress.compressionLevel]
+range1to3 = "По-ниските стойности запазват качеството, но водят до по-големи файлове"
+range4to6 = "Средна компресия с умерено намаляване на качеството"
+range7to9 = "По-високите стойности значително намаляват размера, но може да влошат яснотата на изображенията"
 
 [decrypt]
 passwordPrompt = "Този файл е защитен с парола. Моля, въведете паролата:"
@@ -3886,23 +4239,98 @@ deleteSelected = "Изтрий избраните страници"
 closePdf = "Затвори PDF"
 exportAll = "Експорт на PDF"
 downloadSelected = "Изтегли избраните файлове"
-downloadAll = "Изтегли всички"
-saveAll = "Запази всички"
+annotations = "Анотации"
+exportSelected = "Експорт на избраните страници"
+saveChanges = "Запази промените"
 toggleTheme = "Превключи тема"
-toggleBookmarks = "Превключи отметките"
 language = "Език"
+toggleAnnotations = "Показване/скриване на анотациите"
 search = "Търсене в PDF"
 panMode = "Режим на придвижване"
+applyRedactionsFirst = "Първо приложете заличаванията"
 rotateLeft = "Завърти наляво"
 rotateRight = "Завърти надясно"
 toggleSidebar = "Показване/скриване на страничната лента"
-exportSelected = "Експорт на избраните страници"
-toggleAnnotations = "Показване/скриване на анотациите"
-annotationMode = "Превключи режим на анотации"
+toggleBookmarks = "Превключи отметките"
 print = "Печат на PDF"
 draw = "Рисуване"
+redact = "Заличаване"
+exitRedaction = "Изход от режим на заличаване"
 save = "Запази"
-saveChanges = "Запази промените"
+downloadAll = "Изтегли всички"
+saveAll = "Запази всички"
+
+[textAlign]
+left = "Ляво"
+center = "Център"
+right = "Дясно"
+
+[annotation]
+title = "Анотиране"
+desc = "Използвайте открояване, перо, текст и бележки. Промените остават активни — не е нужно сплескване."
+highlight = "Открояване"
+pen = "Перо"
+text = "Текстово поле"
+note = "Бележка"
+rectangle = "Правоъгълник"
+ellipse = "Елипса"
+select = "Избор"
+exit = "Изход от режим за анотиране"
+strokeWidth = "Дебелина"
+opacity = "Непрозрачност"
+strokeOpacity = "Непрозрачност на контура"
+fillOpacity = "Непрозрачност на запълването"
+fontSize = "Размер на шрифта"
+chooseColor = "Избор на цвят"
+color = "Цвят"
+strokeColor = "Цвят на контура"
+fillColor = "Цвят на запълването"
+underline = "Подчертаване"
+strikeout = "Зачеркване"
+squiggly = "Вълнообразно подчертаване"
+inkHighlighter = "Ръчно открояване"
+freehandHighlighter = "Ръчно открояване"
+square = "Квадрат"
+circle = "Кръг"
+polygon = "Многоъгълник"
+line = "Линия"
+stamp = "Добавяне на изображение"
+textMarkup = "Маркиране на текст"
+drawing = "Рисуване"
+shapes = "Форми"
+notesStamps = "Бележки и печати"
+settings = "Настройки"
+borderOn = "Рамка: Вкл."
+borderOff = "Рамка: Изкл."
+editInk = "Редактиране на перо"
+editLine = "Редактиране на линия"
+editNote = "Редактиране на бележка"
+editText = "Редактиране на текстово поле"
+editTextMarkup = "Редактиране на маркиран текст"
+editSelected = "Редактиране на анотация"
+editSquare = "Редактиране на квадрат"
+editCircle = "Редактиране на кръг"
+editPolygon = "Редактиране на многоъгълник"
+unsupportedType = "Този тип анотация не се поддържа напълно за редактиране."
+textAlignment = "Подравняване на текст"
+noteIcon = "Икона на бележка"
+imagePreview = "Преглед"
+contents = "Текст"
+backgroundColor = "Цвят на фона"
+clearBackground = "Премахване на фона"
+noBackground = "Без фон"
+stampSettings = "Настройки на печат"
+savingCopy = "Подготовка за изтегляне..."
+saveFailed = "Неуспешно записване на копие"
+saveReady = "Готово за изтегляне"
+selectAndMove = "Избор и редактиране"
+editSelectDescription = "Щракнете съществуваща анотация, за да редактирате цвета, непрозрачността, текста или размера."
+editStampHint = "За да промените изображението, изтрийте този печат и добавете нов."
+editSwitchToSelect = "Превключете към „Избор и редактиране“, за да редактирате тази анотация."
+undo = "Отмяна"
+redo = "Повторение"
+applyChanges = "Прилагане на промените"
+saveChanges = "Запазване на промените"
 
 [search]
 title = "Търсене в PDF"
@@ -3953,12 +4381,20 @@ settings = "Опции"
 adminSettings = "Админ опции"
 allTools = "All Tools"
 reader = "Четец"
+tours = "Турове"
+showMeAround = "Покажете ми наоколо"
+
+[quickAccess.toursTooltip]
+admin = "Гледайте обиколките тук: обиколка на инструментите, обиколка на новия V2 дизайн и админ обиколка."
+user = "Гледайте обиколките тук: обиколка на инструментите и обиколка на новия V2 дизайн."
 
 [quickAccess.helpMenu]
 toolsTour = "Обиколка на инструментите"
 toolsTourDesc = "Научете какво могат инструментите"
 adminTour = "Обиколка за админи"
 adminTourDesc = "Разгледайте админ настройките и функциите"
+whatsNewTour = "Вижте какво е ново във V2"
+whatsNewTourDesc = "Обиколка на обновения дизайн"
 
 [admin]
 error = "Грешка"
@@ -3977,6 +4413,8 @@ fetchError = "Неуспешно зареждане на настройките"
 saveError = "Неуспешно запазване на настройките"
 saved = "Настройките са запазени успешно"
 saveSuccess = "Настройките са запазени успешно"
+success = "Настройките са записани успешно"
+error = "Неуспешно записване на настройките"
 save = "Запази промените"
 discard = "Отхвърли"
 restartRequired = "Изисква се рестарт"
@@ -3996,6 +4434,10 @@ hint = "Имате незаписани промени"
 title = "Необходим е режим за вход"
 message = "Режимът за вход трябва да е активиран, за да променяте административните настройки. Моля, задайте SECURITY_ENABLELOGIN=true във вашата среда или security.enableLogin: true в settings.yml, след което рестартирайте сървъра."
 readOnly = "Настройките по-долу показват примерни стойности за ориентиране. Активирайте режим за вход, за да видите и редактирате реалната конфигурация."
+
+[admin.settings.enterpriseRequired]
+title = "Изисква се Enterprise лиценз"
+message = "Необходим е Enterprise лиценз за достъп до {{featureName}}. Преглеждате демонстрационни данни за справка."
 
 [admin.settings.restart]
 title = "Изисква се рестарт"
@@ -4081,9 +4523,17 @@ description = "Конфигурирайте персонализирани пъ�
 [admin.settings.general.customPaths.pipeline]
 label = "Директории за Pipeline"
 
+[admin.settings.general.customPaths.pipeline.pipelineDir]
+label = "Pipeline Directory"
+description = "Base directory for pipeline resources (leave empty for default: /pipeline)"
+
 [admin.settings.general.customPaths.pipeline.watchedFoldersDir]
 label = "Директория за наблюдавани папки"
 description = "Директория, където pipeline наблюдава за входящи PDF (оставете празно за подразбиране: /pipeline/watchedFolders)"
+
+[admin.settings.general.customPaths.pipeline.watchedFoldersDirs]
+label = "Watched Folders Directories"
+description = "Directories where pipeline monitors for incoming PDFs (one per line or comma-separated; leave empty for default: /pipeline/watchedFolders)"
 
 [admin.settings.general.customPaths.pipeline.finishedFoldersDir]
 label = "Директория за завършени папки"
@@ -4099,6 +4549,13 @@ description = "Път до изпълнимия файл WeasyPrint за HTML к
 [admin.settings.general.customPaths.operations.unoconvert]
 label = "Изпълним файл на Unoconvert"
 description = "Път до LibreOffice unoconvert за конвертиране на документи (оставете празно за подразбиране: /opt/venv/bin/unoconvert)"
+
+[admin.settings.general.frontendUrl]
+label = "Frontend URL"
+description = "Базов URL за фронтенда (напр. https://pdf.example.com). Използва се за линкове за покана по имейл и мобилно качване чрез QR код. Оставете празно, за да се използва backend URL."
+
+[admin.settings.badge]
+clickToUpgrade = "Щракнете, за да видите подробности за плана"
 
 [admin.settings.security]
 title = "Сигурност"
@@ -4128,6 +4585,13 @@ description = "Максимален брой неуспешни опити за 
 [admin.settings.security.loginResetTimeMinutes]
 label = "Време за нулиране на входа (минути)"
 description = "Време, преди неуспешните опити за вход да се нулират"
+
+[admin.settings.security.xFrameOptions]
+label = "X-Frame-Options"
+description = "Controls whether the application can be embedded in iframes"
+deny = "Deny (Prevents all framing)"
+sameorigin = "Same Origin (Allow framing from same domain)"
+disabled = "Disabled (No X-Frame-Options header)"
 
 [admin.settings.security.csrfDisabled]
 label = "Деактивирай CSRF защита"
@@ -4236,6 +4700,19 @@ connect = "Свържи"
 disconnect = "Прекъсни връзката"
 disconnected = "Доставчикът е разкачен успешно"
 disconnectError = "Неуспешно разкачване на доставчика"
+mobileScannerConvertToPdf = "Конвертиране на изображения в PDF"
+mobileScannerConvertToPdfDesc = "Автоматично конвертиране на качените изображения в PDF формат. Ако е изключено, изображенията се запазват без промяна."
+mobileScannerImageResolution = "Резолюция на изображението"
+mobileScannerImageResolutionDesc = "Резолюция на качените изображения. „Намалена“ мащабира до максимум 1200px за по-малък размер на файла."
+imageResolutionFull = "Пълна (оригинален размер)"
+imageResolutionReduced = "Намалена (макс. 1200px)"
+mobileScannerPageFormat = "Формат на страницата"
+mobileScannerPageFormatDesc = "Размер на PDF страницата за конвертираните изображения. „Запазване“ използва оригиналните размери на изображението."
+pageFormatKeep = "Запазване (оригинални размери)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "Разтягане до запълване"
+mobileScannerStretchToFitDesc = "Разтягане на изображенията, за да запълнят цялата страница. Ако е изключено, изображенията са центрирани със запазено съотношение."
 
 [admin.settings.connections.ssoAutoLogin]
 label = "SSO автоматичен вход"
@@ -4304,10 +4781,168 @@ description = "Автоматично създаване на акаунти п�
 label = "Блокирай регистрацията"
 description = "Предотврати регистрация на нови потребители чрез SAML2"
 
+[admin.settings.connections.mobileScanner]
+label = "Качване от мобилен телефон"
+enable = "Разрешаване на качване чрез QR код"
+description = "Позволете на потребителите да качват файлове от мобилни устройства чрез сканиране на QR код"
+note = "Забележка: Изисква конфигуриран Frontend URL. "
+link = "Конфигуриране в системните настройки"
+mobileScannerConvertToPdf = "Конвертиране на изображения в PDF"
+mobileScannerConvertToPdfDesc = "Автоматично конвертиране на качените изображения в PDF формат. Ако е изключено, изображенията се запазват без промяна."
+mobileScannerImageResolution = "Резолюция на изображението"
+mobileScannerImageResolutionDesc = "Резолюция на качените изображения. „Намалена“ мащабира до максимум 1200px за по-малък размер на файла."
+imageResolutionFull = "Пълна (оригинален размер)"
+imageResolutionReduced = "Намалена (макс. 1200px)"
+mobileScannerPageFormat = "Формат на страницата"
+mobileScannerPageFormatDesc = "Размер на PDF страницата за конвертираните изображения. „Запазване“ използва оригиналните размери на изображението."
+pageFormatKeep = "Запазване (оригинални размери)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "Разтягане до запълване"
+mobileScannerStretchToFitDesc = "Разтягане на изображенията, за да запълнят цялата страница. Ако е изключено, изображенията са центрирани със запазено съотношение."
+
+[admin.settings.telegram]
+title = "Telegram бот"
+description = "Конфигурирайте свързването на Telegram бота, контрола на достъпа и поведението на обратната връзка."
+
+[admin.settings.telegram.enabled]
+label = "Активиране на Telegram бот"
+description = "Позволете на потребителите да работят със Stirling PDF чрез конфигурирания от вас Telegram бот."
+
+[admin.settings.telegram.botUsername]
+label = "Потребителско име на бота"
+description = "Публичното потребителско име на вашия Telegram бот."
+
+[admin.settings.telegram.botToken]
+label = "Bot Token"
+description = "API токен, предоставен от BotFather за вашия Telegram бот."
+
+[admin.settings.telegram.pipelineInboxFolder]
+label = "Папка „Входящи“"
+description = "Папка под директорията pipeline, където се съхраняват входящите Telegram файлове."
+
+[admin.settings.telegram.customFolderSuffix]
+label = "Използване на персонализиран суфикс за папка"
+description = "Добавяне на ID на чата към папките за входящи файлове, за да се изолират качванията по чат."
+
+[admin.settings.telegram.accessControl]
+title = "Контрол на достъпа"
+description = "Ограничете кои потребители или канали могат да взаимодействат с бота."
+
+[admin.settings.telegram.enableAllowUserIDs]
+label = "Разрешаване на конкретни потребителски ID"
+description = "Когато е активно, само изброените потребителски ID могат да използват бота."
+
+[admin.settings.telegram.allowUserIDs]
+label = "Разрешени потребителски ID"
+description = "Въведете Telegram потребителски ID, които могат да взаимодействат с бота."
+placeholder = "Добавете потребителско ID и натиснете Enter"
+
+[admin.settings.telegram.enableAllowChannelIDs]
+label = "Разрешаване на конкретни ID на канали"
+description = "Когато е активно, само изброените ID на канали могат да използват бота."
+
+[admin.settings.telegram.allowChannelIDs]
+label = "Разрешени ID на канали"
+description = "Въведете Telegram ID на канали, на които е позволено да взаимодействат с бота."
+placeholder = "Добавете ID на канал и натиснете Enter"
+
+[admin.settings.telegram.processing]
+title = "Обработка"
+description = "Контролирайте интервалите на проверка и таймаутите за обработка при Telegram качвания."
+
+[admin.settings.telegram.processingTimeoutSeconds]
+label = "Таймаут за обработка (секунди)"
+description = "Максимално време за изчакване на задача за обработка преди да се съобщи грешка."
+
+[admin.settings.telegram.pollingIntervalMillis]
+label = "Интервал на проверка (ms)"
+description = "Интервал между проверките за нови Telegram обновявания."
+
+[admin.settings.telegram.feedback]
+title = "Съобщения за обратна връзка"
+description = "Изберете кога ботът да изпраща обратна връзка към потребители и канали."
+
+[admin.settings.telegram.feedback.general.enabled]
+label = "Активиране на обратна връзка"
+description = "Контрол дали ботът изобщо изпраща съобщения за обратна връзка."
+
+[admin.settings.telegram.feedback.channel]
+title = "Правила за обратна връзка (канали)"
+
+[admin.settings.telegram.feedback.channel.noValidDocument]
+label = "Показване на \"Няма валиден документ\" (Канал)"
+description = "Потискане на отговора „няма валиден документ“ за качвания в канали."
+
+[admin.settings.telegram.feedback.channel.errorProcessing]
+label = "Показване на грешки при обработка (Канал)"
+description = "Изпращане на съобщения за грешки при обработка към канали."
+
+[admin.settings.telegram.feedback.channel.errorMessage]
+label = "Показване на съобщения за грешки (Канал)"
+description = "Показване на подробни съобщения за грешки за канали."
+
+[admin.settings.telegram.feedback.user]
+title = "Правила за обратна връзка (потребители)"
+
+[admin.settings.telegram.feedback.user.noValidDocument]
+label = "Показване на \"Няма валиден документ\" (Потребител)"
+description = "Потискане на отговора „няма валиден документ“ за потребителски качвания."
+
+[admin.settings.telegram.feedback.user.errorProcessing]
+label = "Показване на грешки при обработка (Потребител)"
+description = "Изпращане на съобщения за грешки при обработка към потребители."
+
+[admin.settings.telegram.feedback.user.errorMessage]
+label = "Показване на съобщения за грешки (Потребител)"
+description = "Показване на подробни съобщения за грешки за потребители."
+
 [admin.settings.database]
 title = "База данни"
 description = "Конфигурирайте персонализирани настройки за връзка към база данни за корпоративни внедрявания."
 configuration = "Конфигурация на база данни"
+backupTitle = "Резервни копия и възстановяване"
+backupDescription = "Управлявайте резервни копия на H2 директно от административната конзола."
+loadError = "Неуспешно зареждане на резервни копия на базата данни"
+backupCreated = "Резервното копие е създадено успешно"
+backupFailed = "Неуспешно създаване на резервно копие"
+deleteTitle = "Изтриване на резервно копие"
+deleteConfirm = "Да се изтрие ли това резервно копие? Действието е необратимо."
+deleteSuccess = "Резервното копие е изтрито"
+deleteFailed = "Неуспешно изтриване на резервно копие"
+deleteConfirmAction = "Изтриване на резервно копие"
+downloadFailed = "Неуспешно изтегляне на резервно копие"
+version = "Версия на H2"
+embedded = "Вградено H2"
+external = "Външна база данни"
+h2Only = "Резервните копия са налични само за вградената база данни H2."
+h2Hint = "Задайте типа база данни на H2 и деактивирайте персонализираната база данни, за да активирате архивиране и възстановяване."
+manageBackups = "Управление на резервни копия"
+refresh = "Опресняване"
+createBackup = "Създаване на резервно копие"
+uploadTitle = "Качване и импортиране"
+chooseFile = "Изберете .sql файл с резервно копие"
+importFromUpload = "Импортиране на каченото"
+confirmImportTitle = "Потвърждаване на импортирането на базата данни"
+overwriteWarning = "Внимание: Това ще презапише текущата база данни."
+overwriteWarningBody = "Всички съществуващи данни ще бъдат заменени от каченото резервно копие. Това действие е необратимо."
+confirmCodeLabel = "Въведете кода за потвърждение, за да продължите"
+enterCode = "Въведете кода, показан по-горе"
+confirmImport = "Потвърждаване на импортирането"
+codeMismatch = "Кодът за потвърждение не съвпада"
+codeMismatchBody = "Моля, въведете кода точно както е показан, за да продължите."
+selectFile = "Моля, изберете .sql файл за импортиране"
+importSuccess = "Резервното копие е импортирано успешно"
+importFailed = "Неуспешно импортиране на резервно копие"
+noBackups = "Все още няма намерени резервни копия."
+unavailable = "Списъкът с резервни копия не е наличен за текущата конфигурация на базата данни."
+fileName = "Файл"
+created = "Създадено"
+size = "Размер"
+actions = "Действия"
+download = "Изтегляне"
+import = "Импортиране"
+delete = "Изтриване"
 
 [admin.settings.database.enableCustom]
 label = "Активирай персонализирана база данни"
@@ -4385,6 +5020,26 @@ description = "Максимален DPI за обработка на изобр�
 [admin.settings.advanced.tessdataDir]
 label = "Директория Tessdata"
 description = "Път до директорията tessdata за OCR езикови файлове"
+downloadMissingTitle = "Няма избран език"
+downloadMissingBody = "Моля, изберете поне един език за изтегляне."
+downloadSuccessTitle = "Езиците са изтеглени"
+downloadSuccessBody = "Избраните tessdata езици са запазени."
+downloadErrorTitle = "Неуспешно изтегляне"
+loadingLanguages = "Зареждане на инсталираните tessdata езици..."
+installedLanguages = "Инсталирани tessdata езици"
+noLanguages = "Няма намерени tessdata езици в конфигурираната директория."
+downloadLabel = "Изтегляне на допълнителни tessdata езици"
+downloadPlaceholder = "Изберете езици"
+downloadNothingFound = "Не са намерени допълнителни езици"
+permissionNotice = "Пътят към tessdata няма права за запис. Изтеглянията ще се отварят в браузъра; моля, запишете файловете .traineddata ръчно в папката tessdata."
+manualLinks = "Ръчни изтегляния: щракнете върху връзките и поставете файловете в папката tessdata."
+downloadButton = "Изтегляне на избраните езици"
+downloadInvalidTitle = "Невалиден избор"
+downloadInvalidBody = "Някои от избраните езици не са налични за изтегляне. Моля, опреснете и изберете от списъка."
+downloadErrorNetwork = "Изтеглянето се провали поради мрежова грешка. Моля, проверете връзката си и опитайте отново."
+downloadErrorServer = "Сървърът срещна грешка при изтегляне на tessdata езици. Моля, опитайте по-късно."
+downloadErrorPermission = "Директорията tessdata няма права за запис: {{message}}. Моля, изберете директория с права за запис (напр. под папката с данни на приложението) или коригирайте правата."
+downloadErrorGeneric = "Неуспешно изтегляне: {{message}}. Моля, опитайте по-късно."
 
 [admin.settings.advanced.disableSanitize]
 label = "Деактивирай HTML санитизация"
@@ -4484,6 +5139,10 @@ description = "Позволи на администраторите да кан�
 [admin.settings.mail.frontendUrl]
 label = "Frontend URL"
 description = "Базов URL за фронтенда (напр. https://pdf.example.com). Използва се за генериране на покани в имейли. Оставете празно, за да се използва backend URL."
+
+[admin.settings.mail.frontendUrlNote]
+note = "Забележка: Изисква конфигуриран Frontend URL. "
+link = "Конфигуриране в системните настройки"
 
 [admin.settings.legal]
 title = "Правни документи"
@@ -4669,6 +5328,9 @@ googleDriveShort = "Drive"
 myFiles = "Моите файлове"
 noRecentFiles = "Няма намерени последни файлове"
 googleDriveNotAvailable = "Интеграцията с Google Drive не е налична"
+mobileUpload = "Качване от мобилно устройство"
+mobileShort = "Мобилно"
+mobileUploadNotAvailable = "Качването от мобилно не е активирано"
 downloadSelected = "Изтегли избраните"
 saveSelected = "Запази избраните"
 openFiles = "Отвори файлове"
@@ -4881,6 +5543,7 @@ desc = "Създавайте многостъпкови работни пото�
 invalidStep = "Невалидна стъпка"
 reviewTitle = "Резултати от автоматизация"
 copyToSaved = "Копиране в „Запазени“"
+exportForFolderScanning = "Експортиране за сканиране на папки"
 
 [automate.files]
 placeholder = "Изберете файлове за обработка с тази автоматизация"
@@ -4902,6 +5565,7 @@ createTitle = "Създаване на автоматизация"
 editTitle = "Редактиране на автоматизация"
 intro = "Автоматизациите изпълняват инструментите последователно. За да започнете, добавете инструментите в реда, в който желаете да се изпълняват."
 save = "Запазване на автоматизацията"
+exportForFolderScanning = "Експортиране за сканиране на папки"
 
 [automate.creation.name]
 label = "Име на автоматизацията"
@@ -4984,6 +5648,7 @@ loading = "Зареждане..."
 back = "Назад"
 continue = "Продължи"
 error = "Грешка"
+save = "Запазване"
 
 [config.overview]
 title = "Конфигурация на приложението"
@@ -5045,6 +5710,15 @@ warning = "⚠️ Внимание: Това действие ще генери�
 impact = "Всички приложения или услуги, които използват тези ключове, ще спрат да работят, докато не ги обновите с новите ключове."
 confirmPrompt = "Сигурни ли сте, че искате да продължите?"
 confirmCta = "Опресни ключовете"
+
+[config.apiKeys.alert]
+apiKeyErrorTitle = "Грешка с API ключ"
+failedToCreateApiKey = "Неуспешно създаване на API ключ."
+failedToRetrieveApiKey = "Неуспешно извличане на API ключ от отговора."
+failedToFetchApiKey = "Неуспешно извличане на API ключ."
+apiKeyRefreshed = "API ключът е обновен"
+apiKeyRefreshedBody = "Вашият API ключ беше успешно обновен."
+failedToRefreshApiKey = "Неуспешно обновяване на API ключ."
 
 [AddAttachmentsRequest]
 attachments = "Изберете прикачени файлове"
@@ -5150,6 +5824,16 @@ finish = "Готово"
 startTour = "Започни обиколката"
 startTourDescription = "Направете обиколка с водач на основните функции на Stirling PDF"
 
+[onboarding.whatsNew]
+quickAccess = "Започнете от релсата <strong>Quick Access</strong>, за да превключвате между Reader, Automate, вашите файлове и всички турове."
+leftPanel = "Левият панел <strong>Tools</strong> изброява всичко, което можете да правите. Разглеждайте категориите или търсете, за да намерите инструмент бързо."
+fileUpload = "Използвайте бутона <strong>Files</strong>, за да качите или изберете скорошен PDF. Ще заредим пример, за да видите работното пространство."
+rightRail = "<strong>Дясната релса</strong> съдържа бързи действия за избор на файлове, смяна на тема или език и изтегляне на резултати."
+topBar = "Горната лента ви позволява да превключвате между <strong>Viewer</strong>, <strong>Page Editor</strong> и <strong>Active Files</strong>."
+pageEditorView = "Преминете към Page Editor, за да пренареждате, завъртате или изтривате страници."
+activeFilesView = "Използвайте Active Files, за да видите всичко отворено и да изберете върху какво да работите."
+wrapUp = "Това е новото във V2. Отворете менюто <strong>Турове</strong> по всяко време, за да прегледате отново това, обиколката на инструментите или админ обиколката."
+
 [onboarding.welcomeModal]
 title = "Добре дошли в Stirling PDF!"
 description = "Искате ли бърза 1-минутна обиколка, за да научите основните функции и как да започнете?"
@@ -5169,6 +5853,10 @@ skipForNow = "Пропусни засега"
 download = "Изтегли →"
 showMeAround = "Разходи ме из новото"
 skipTheTour = "Пропусни обиколката"
+
+[onboarding.tourOverview]
+title = "Преглед на тура"
+body = "Stirling PDF V2 идва с десетки инструменти и обновен интерфейс. Направете бърза обиколка, за да видите какво се е променило и къде да намерите нужните функции."
 
 [onboarding.serverLicense]
 skip = "Пропусни засега"
@@ -5252,9 +5940,11 @@ username = "Потребителско име (имейл)"
 usernamePlaceholder = "user@example.com"
 password = "Парола"
 passwordPlaceholder = "Въведете парола"
+passwordRequired = "Изисква се парола"
 role = "Роля"
 team = "Екип (незадължително)"
 teamPlaceholder = "Изберете екип"
+authType = "Тип удостоверяване"
 forcePasswordChange = "Изисквай смяна на паролата при първи вход"
 cancel = "Отказ"
 submit = "Добавяне на член"
@@ -5262,6 +5952,13 @@ usernameRequired = "Потребителско име и парола са за�
 passwordTooShort = "Паролата трябва да е поне 6 знака"
 success = "Потребителят е създаден успешно"
 error = "Неуспешно създаване на потребител"
+forceMFA = "Задължително настройване на MFA при следващо влизане"
+
+[workspace.people.authType]
+password = "Парола"
+oauth = "OAuth2"
+saml = "SAML2"
+ssoDescription = "Потребителят ще се удостоверява чрез SSO доставчик"
 
 [workspace.people.editMember]
 title = "Редактиране на член"
@@ -5281,6 +5978,31 @@ error = "Неуспешно обновяване на статус на потр
 [workspace.people.delete]
 success = "Потребителят е изтрит успешно"
 error = "Неуспешно изтриване на потребител"
+
+[workspace.people.changePassword]
+action = "Промяна на парола"
+title = "Промяна на парола"
+subtitle = "Актуализирайте паролата за"
+newPassword = "Нова парола"
+confirmPassword = "Потвърдете паролата"
+placeholder = "Въведете нова парола"
+confirmPlaceholder = "Въведете отново новата парола"
+passwordRequired = "Моля, въведете нова парола"
+passwordMismatch = "Паролите не съвпадат"
+generateRandom = "Генерирайте сигурна парола"
+generatedPreview = "Генерирана парола:"
+copyTooltip = "Копиране в клипборда"
+copiedToClipboard = "Паролата е копирана в клипборда"
+copyFailed = "Неуспешно копиране на паролата"
+sendEmail = "Изпратете имейл на потребителя за тази промяна"
+includePassword = "Включете новата парола в имейла"
+forcePasswordChange = "Принудете потребителя да смени паролата при следващо влизане"
+emailUnavailable = "Имейлът на този потребител не е валиден адрес. Известията са изключени."
+smtpDisabled = "Имейл известията изискват SMTP да е активиран в настройките."
+notifyOnly = "Ще бъде изпратен имейл без паролата, за да уведоми потребителя, че администратор я е променил."
+submit = "Актуализиране на паролата"
+success = "Паролата е актуализирана успешно"
+error = "Неуспешно актуализиране на паролата"
 
 [workspace.people.emailInvite]
 tab = "Покана по имейл"
@@ -5339,6 +6061,11 @@ fromLicense = "от лиценз"
 slotsAvailable = "Налични са {{count}} потребителски слота"
 noSlotsAvailable = "Няма налични слотове"
 currentUsage = "В момента се използват {{current}} от {{max}} потребителски лицензи"
+
+[workspace.people.mfa]
+adminDisableSuccess = "MFA е деактивирана успешно за потребителя"
+adminDisableError = "Неуспешно деактивиране на MFA за потребителя"
+disableByAdmin = "Деактивиране на MFA"
 
 [workspace.teams]
 title = "Екипи"
@@ -5458,6 +6185,28 @@ contactSales = "Свържете се с отдел Продажби"
 contactToUpgrade = "Свържете се с нас, за да надградите или персонализирате плана си"
 maxUsers = "Макс. потребители"
 upTo = "До"
+getLicense = "Вземете лиценз за сървър"
+upgradeToEnterprise = "Надграждане до Enterprise"
+selectPeriod = "Изберете период на фактуриране"
+monthlyBilling = "Месечно фактуриране"
+yearlyBilling = "Годишно фактуриране"
+checkoutOpened = "Чек-аутът е отворен"
+checkoutInstructions = "Завършете покупката си в раздела на Stripe. След плащане се върнете тук и обновете страницата, за да активирате лиценза си. Ще получите и имейл с лицензионния си ключ."
+activateLicense = "Активирайте лиценза си"
+
+[plan.static.licenseActivation]
+checkoutOpened = "Чек-аутът е отворен в нов раздел"
+instructions = "Завършете покупката си в раздела на Stripe. След като плащането приключи, ще получите имейл с вашия лицензионен ключ."
+enterKey = "Въведете своя лицензионен ключ по-долу, за да активирате плана:"
+keyDescription = "Поставете лицензионния ключ от имейла си"
+activate = "Активиране на лиценз"
+doLater = "Ще направя това по-късно"
+success = "Лицензът е активиран!"
+successMessage = "Лицензът ви беше активиран успешно. Можете да затворите този прозорец."
+
+[plan.static.billingPortal]
+title = "Изисква се потвърждение на имейл"
+message = "Ще трябва да потвърдите имейл адреса си в портала за фактуриране на Stripe. Проверете имейла си за линк за вход."
 
 [plan.period]
 month = "месец"
@@ -5661,6 +6410,8 @@ notAvailable = "Системата за одит не е налична"
 notAvailableMessage = "Системата за одит не е конфигурирана или не е налична."
 disabled = "Одитният лог е изключен"
 disabledMessage = "Активирайте одитното логване в конфигурацията на приложението, за да проследявате системни събития."
+enterpriseRequired = "Необходим е лиценз Enterprise"
+enterpriseRequiredMessage = "Системата за журнализация на одити е функция на Enterprise. Моля, надградете до лиценз Enterprise, за да получите достъп до одитните логове и анализите."
 
 [audit.error]
 title = "Грешка при зареждане на системата за одит"
@@ -5758,6 +6509,7 @@ endpoint = "Крайна точка"
 visits = "Посещения"
 percentage = "Процент"
 noData = "Няма налични данни"
+unknownEndpoint = "Неизвестна крайна точка"
 
 [backendHealth]
 checking = "Проверка на състоянието на бекенда..."
@@ -5815,11 +6567,13 @@ subtitle = "Впишете се с вашия Stirling акаунт"
 [setup.selfhosted]
 title = "Впишете се в сървъра"
 subtitle = "Въведете своите данни за сървъра"
+link = "или се свържете със самостоятелно хостван акаунт"
 
 [setup.server]
 title = "Свързване към сървър"
 subtitle = "Въведете URL на самостоятелно хоствания си сървър"
 testing = "Тестване на връзката..."
+useLast = "Last used server: {{serverUrl}}"
 
 [setup.server.type]
 saas = "Stirling PDF SaaS"
@@ -5831,8 +6585,17 @@ description = "Въведете пълния URL на вашия самосто�
 
 [setup.server.error]
 emptyUrl = "Моля, въведете URL на сървър"
+invalidUrl = "Невалиден формат на URL. Въведете валиден URL като https://your-server.com"
 unreachable = "Неуспешна връзка със сървъра"
 testFailed = "Тестът на връзката е неуспешен"
+configFetch = "Неуспешно извличане на конфигурацията на сървъра. Моля, проверете URL адреса и опитайте отново."
+
+[setup.server.error.securityDisabled]
+title = "Входът не е активиран"
+body = "На този сървър не е активиран вход. За да се свържете, трябва да активирате удостоверяване:"
+step1 = "Задайте DOCKER_ENABLE_SECURITY=true във вашата среда"
+step2 = "Или задайте security.enableLogin=true в settings.yml"
+step3 = "Рестартирайте сървъра"
 
 [setup.login]
 title = "Вписване"
@@ -5841,6 +6604,7 @@ connectingTo = "Свързване към:"
 submit = "Вход"
 signInWith = "Вписване с"
 oauthPending = "Отваряне на браузър за удостоверяване..."
+sso = "Единно вписване"
 orContinueWith = "Или продължете с имейл"
 serverRequirement = "Забележка: Сървърът трябва да има активиран вход."
 showInstructions = "Как да се активира?"
@@ -5905,6 +6669,9 @@ earlyAccess = "Ранен достъп"
 reset = "Отмени промените"
 downloadJson = "Изтегли JSON"
 generatePdf = "Генерирай PDF"
+saveChanges = "Запази промените"
+applyChanges = "Прилагане на промените"
+downloadCopy = "Изтегляне на копие"
 
 [pdfTextEditor.options.autoScaleText]
 title = "Авто-мащабиране на текст за напасване в полетата"
@@ -5922,6 +6689,24 @@ descriptionInline = "Съвет: Задръжте Ctrl (Cmd) или Shift за �
 [pdfTextEditor.options.forceSingleElement]
 title = "Заключи редактирания текст към един PDF елемент"
 description = "Когато е включено, редакторът експортира всяко редактирано текстово поле като един PDF текстов елемент, за да избегне застъпване на глифове или смесени шрифтове."
+
+[pdfTextEditor.options.advanced]
+title = "Разширени настройки"
+
+[pdfTextEditor.tooltip.header]
+title = "Ограничения на предварителния преглед"
+
+[pdfTextEditor.tooltip.textFocus]
+title = "Фокус върху текст и изображения"
+text = "Това работно пространство е насочено към редактиране на текст и преместване на вградени изображения. Сложни графики на страницата, формуляри и многослойна графика се запазват за експорт, но не са напълно редактируеми тук."
+
+[pdfTextEditor.tooltip.previewVariance]
+title = "Разлики в предварителния преглед"
+text = "Някои визуални елементи (като рамки на таблици, форми или вид на анотации) може да не се показват точно в предварителния преглед. Експортираният PDF запазва оригиналните команди за рисуване, когато е възможно."
+
+[pdfTextEditor.tooltip.alpha]
+title = "Алфа визуализатор"
+text = "Този алфа визуализатор все още се развива — определени шрифтове, цветове, ефекти на прозрачност и детайли в оформлението може леко да се променят. Моля, проверете генерирания PDF преди да го споделите."
 
 [pdfTextEditor.manual]
 mergeTooltip = "Слей избраните полета"
@@ -5942,6 +6727,8 @@ alpha = "Този алфа визуализатор все още се разв�
 [pdfTextEditor.empty]
 title = "Няма зареден документ"
 subtitle = "Заредете PDF или JSON файл, за да започнете да редактирате текстовото съдържание."
+dropzone = "Плъзнете и пуснете тук PDF или JSON файл или щракнете, за да прегледате"
+dropzoneWithFiles = "Изберете файл от раздела Файлове или плъзнете и пуснете тук PDF или JSON файл, или щракнете, за да прегледате"
 
 [pdfTextEditor.welcomeBanner]
 title = "Добре дошли в PDF Text Editor (ранен достъп)"
@@ -6042,3 +6829,58 @@ title = "Резултати от добавяне на текст"
 
 [addText.error]
 failed = "Възникна грешка при добавяне на текст към PDF."
+
+[mobileUpload]
+title = "Качване от мобилно устройство"
+description = "Сканирайте, за да качите снимки. Изображенията се конвертират автоматично в PDF."
+descriptionNoConvert = "Сканирайте, за да качвате снимки от мобилното си устройство."
+error = "Грешка при свързване"
+pollingError = "Грешка при проверка за файлове"
+sessionId = "ID на сесия"
+sessionCreateError = "Неуспешно създаване на сесия"
+expiryWarning = "Сесията скоро изтича"
+expiryWarningMessage = "Този QR код ще изтече след {{seconds}} секунди. Нов код ще бъде генериран автоматично."
+filesReceived = "Получени {{count}} файл(а)"
+connected = "Мобилното устройство е свързано"
+instructions = "Сканирайте с камерата на телефона си. Изображенията се конвертират автоматично в PDF."
+instructionsNoConvert = "Сканирайте с камерата на телефона си, за да качите файлове."
+
+[mobileScanner]
+title = "Мобилен скенер"
+noSession = "Невалидна сесия"
+noSessionMessage = "Моля, сканирайте валиден QR код, за да получите достъп до тази страница."
+validating = "Валидиране на сесията..."
+sessionInvalid = "Грешка в сесията"
+sessionExpired = "Тази сесия е изтекла. Моля, обновете и опитайте отново."
+sessionNotFound = "Сесията не е намерена. Моля, обновете и опитайте отново."
+sessionValidationError = "Неуспешна проверка на сесията. Опитайте отново."
+uploadSuccess = "Качването е успешно!"
+uploadSuccessMessage = "Вашите изображения бяха прехвърлени."
+httpsRequired = "Достъпът до камерата изисква HTTPS или localhost. Моля, използвайте HTTPS или достъп чрез localhost."
+uploadFailed = "Качването не бе успешно. Опитайте отново."
+uploading = "Качване..."
+connected = "Свързано"
+connecting = "Свързване..."
+chooseMethod = "Изберете метод за качване"
+chooseMethodDescription = "Изберете как искате да сканирате и качвате документи"
+camera = "Камера"
+cameraDescription = "Сканиране на документи с камерата на устройството с автоматично откриване на ръбове"
+fileUpload = "Качване на файл"
+fileDescription = "Качете съществуващи снимки или документи от устройството си"
+cameraAccessDenied = "Достъпът до камерата е отказан. Моля, разрешете достъп до камерата."
+back = "Назад"
+settings = "Настройки"
+edgeDetection = "Откриване на ръбове"
+flashlight = "Фенерче"
+flash = "Светкавица"
+processing = "Обработка..."
+capture = "Заснемане на снимка"
+selectFilesPrompt = "Изберете файлове за качване"
+selectImage = "Изберете изображение"
+preview = "Преглед"
+retake = "Повтори снимката"
+addToBatch = "Добавяне към пакет"
+upload = "Качване"
+batchImages = "Пакет"
+clearBatch = "Изчистване"
+uploadAll = "Качване на всички"

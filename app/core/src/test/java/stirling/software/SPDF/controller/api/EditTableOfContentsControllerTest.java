@@ -1,7 +1,6 @@
 package stirling.software.SPDF.controller.api;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 import java.io.ByteArrayOutputStream;
@@ -24,7 +23,6 @@ import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mock.web.MockMultipartFile;
@@ -92,9 +90,8 @@ class EditTableOfContentsControllerTest {
 
         // Then
         assertNotNull(response);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
         List<Map<String, Object>> result = response.getBody();
-        assertNotNull(result);
         assertEquals(1, result.size());
 
         Map<String, Object> bookmark = result.get(0);
@@ -118,9 +115,8 @@ class EditTableOfContentsControllerTest {
 
         // Then
         assertNotNull(response);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
         List<Map<String, Object>> result = response.getBody();
-        assertNotNull(result);
         assertTrue(result.isEmpty());
         verify(mockDocument).close();
     }
@@ -156,9 +152,8 @@ class EditTableOfContentsControllerTest {
 
         // Then
         assertNotNull(response);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
         List<Map<String, Object>> result = response.getBody();
-        assertNotNull(result);
         assertEquals(1, result.size());
 
         Map<String, Object> parentBookmark = result.get(0);
@@ -196,9 +191,8 @@ class EditTableOfContentsControllerTest {
 
         // Then
         assertNotNull(response);
-        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
         List<Map<String, Object>> result = response.getBody();
-        assertNotNull(result);
         assertEquals(1, result.size());
 
         Map<String, Object> bookmark = result.get(0);

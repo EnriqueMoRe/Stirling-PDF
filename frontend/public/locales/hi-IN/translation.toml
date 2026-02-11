@@ -1,8 +1,11 @@
 unsavedChanges = "आपके PDF में असहेजे परिवर्तन हैं।"
+pendingRedactionsTitle = "लागू न किए गए रिडैक्शन"
+pendingRedactions = "आपके पास लागू न किए गए रिडैक्शन हैं जो खो जाएँगे।"
 areYouSure = "क्या आप वाकई छोड़ना चाहते हैं?"
 unsavedChangesTitle = "असहेजे परिवर्तन"
 keepWorking = "काम जारी रखें"
 discardChanges = "त्यागें और बाहर निकलें"
+discardRedactions = "त्यागें और बाहर निकलें"
 applyAndContinue = "सहेजें और बाहर निकलें"
 exportAndContinue = "निर्यात करें और जारी रखें"
 cancel = "रद्द करें"
@@ -131,7 +134,7 @@ unsupported = "असमर्थित"
 
 [toolPanel]
 placeholder = "शुरू करने के लिए कोई टूल चुनें"
-alpha = "अल्फा"
+alpha = "Alpha"
 premiumFeature = "प्रीमियम फीचर:"
 comingSoon = "जल्द आ रहा है:"
 
@@ -216,6 +219,8 @@ pagesAndStarting = "पृष्ठ और आरंभिक संख्या
 positionAndPages = "स्थिति और पृष्ठ"
 preview = "स्थिति चयन"
 previewDisclaimer = "पूर्वावलोकन अनुमानित है। अंतिम आउटपुट PDF फ़ॉन्ट मेट्रिक्स के कारण भिन्न हो सकता है।"
+zeroPad = "Zero‑pad Width (Bates Stamping)"
+zeroPadTooltip = "Zero‑pad (Bates Stamp) page numbers to this width (e.g., 3 ⇒ 001). Set 0 to disable."
 
 [addPageNumbers.selectText]
 1 = "PDF फ़ाइल चुनें:"
@@ -303,6 +308,7 @@ selectOperation = "ऑपरेशन चुनें"
 addOperationButton = "ऑपरेशन जोड़ें"
 pipelineHeader = "पाइपलाइन:"
 saveButton = "डाउनलोड करें"
+saveForFolderScanning = "फ़ोल्डर स्कैनिंग के लिए सहेजें"
 validateButton = "मान्य करें"
 
 [enterpriseEdition]
@@ -340,6 +346,10 @@ advance = "उन्नत"
 edit = "देखें और संपादित करें"
 popular = "लोकप्रिय"
 
+[footer]
+discord = "Discord"
+issues = "GitHub"
+
 [settings.preferences]
 title = "प्राथमिकताएँ"
 
@@ -360,6 +370,7 @@ advanced = "एडवांस्ड"
 title = "सुरक्षा और प्रमाणीकरण"
 security = "सुरक्षा"
 connections = "कनेक्शन्स"
+telegram = "Telegram"
 
 [settings.licensingAnalytics]
 title = "लाइसेंसिंग और एनालिटिक्स"
@@ -374,7 +385,7 @@ privacy = "गोपनीयता"
 
 [settings.developer]
 title = "डेवलपर"
-apiKeys = "API कुंजियाँ"
+apiKeys = "API Keys"
 
 [settings.tooltips]
 enableLoginFirst = "पहले लॉगिन मोड सक्षम करें"
@@ -430,10 +441,38 @@ fullscreen = "फुलस्क्रीन"
 [settings.general.updates]
 title = "सॉफ़्टवेयर अपडेट्स"
 description = "अपडेट्स जाँचें और वर्ज़न जानकारी देखें"
-currentVersion = "वर्तमान संस्करण"
+currentBackendVersion = "Current Backend Version"
+currentFrontendVersion = "Current Frontend Version"
+versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 latestVersion = "नवीनतम संस्करण"
 checkForUpdates = "अपडेट्स जाँचें"
 viewDetails = "विवरण देखें"
+serverNeedsUpdate = "व्यवस्थापक को सर्वर अपडेट करना होगा"
+
+[settings.general.versionInfo]
+title = "संस्करण जानकारी"
+description = "डेस्कटॉप और सर्वर संस्करण विवरण"
+desktop = "डेस्कटॉप संस्करण"
+server = "सर्वर संस्करण"
+
+[settings.security]
+title = "सुरक्षा"
+description = "अपने खाते को सुरक्षित रखने के लिए अपना पासवर्ड अपडेट करें।"
+
+[settings.security.password]
+subtitle = "अपना पासवर्ड बदलें। अपडेट के बाद आप लॉगआउट हो जाएँगे।"
+required = "सभी फ़ील्ड अनिवार्य हैं।"
+mismatch = "नए पासवर्ड मेल नहीं खाते।"
+error = "पासवर्ड अपडेट नहीं हो सका। कृपया अपना वर्तमान पासवर्ड जाँचें और फिर से प्रयास करें।"
+success = "पासवर्ड सफलतापूर्वक अपडेट किया गया। कृपया दोबारा साइन इन करें।"
+ssoDisabled = "पासवर्ड परिवर्तन आपके पहचान प्रदाता द्वारा प्रबंधित किए जाते हैं।"
+current = "वर्तमान पासवर्ड"
+currentPlaceholder = "अपना वर्तमान पासवर्ड दर्ज करें"
+new = "नया पासवर्ड"
+newPlaceholder = "नया पासवर्ड दर्ज करें"
+confirm = "नए पासवर्ड की पुष्टि करें"
+confirmPlaceholder = "अपने नए पासवर्ड को फिर से दर्ज करें"
+update = "पासवर्ड अपडेट करें"
 
 [settings.hotkeys]
 title = "कीबोर्ड शॉर्टकट्स"
@@ -488,11 +527,16 @@ low = "कम"
 title = "क्रेडेंशियल्स बदलें"
 header = "अपना खाता विवरण अपडेट करें"
 changePassword = "आप डिफ़ॉल्ट लॉगिन क्रेडेंशियल्स का उपयोग कर रहे हैं। कृपया एक नया पासवर्ड दर्ज करें"
+ssoManaged = "आपका खाता आपके पहचान प्रदाता द्वारा प्रबंधित है।"
 newUsername = "नया उपयोगकर्ता नाम"
 oldPassword = "वर्तमान पासवर्ड"
 newPassword = "नया पासवर्ड"
 confirmNewPassword = "नए पासवर्ड की पुष्टि करें"
 submit = "परिवर्तन जमा करें"
+credsUpdated = "खाता अपडेट किया गया"
+description = "परिवर्तन सहेजे गए। कृपया दोबारा लॉग इन करें।"
+error = "उपयोगकर्ता नाम अपडेट नहीं हो सका। कृपया अपना पासवर्ड जाँचें और फिर से प्रयास करें।"
+changeUsername = "अपना उपयोगकर्ता नाम अपडेट करें। अपडेट के बाद आप लॉगआउट हो जाएँगे।"
 
 [account]
 title = "खाता सेटिंग्स"
@@ -500,6 +544,8 @@ accountSettings = "खाता सेटिंग्स"
 adminSettings = "व्यवस्थापक सेटिंग्स - उपयोगकर्ताओं को देखें और जोड़ें"
 userControlSettings = "उपयोगकर्ता नियंत्रण सेटिंग्स"
 changeUsername = "उपयोगकर्ता नाम बदलें"
+changeUsernameDescription = "अपना उपयोगकर्ता नाम अपडेट करें। अपडेट के बाद आप लॉगआउट हो जाएँगे।"
+newUsernamePlaceholder = "अपना नया उपयोगकर्ता नाम दर्ज करें"
 newUsername = "नया उपयोगकर्ता नाम"
 password = "पुष्टिकरण पासवर्ड"
 oldPassword = "पुराना पासवर्ड"
@@ -514,6 +560,30 @@ property = "संपत्ति"
 webBrowserSettings = "वेब ब्राउज़र सेटिंग"
 syncToBrowser = "सिंक खाता -> ब्राउज़र"
 syncToAccount = "सिंक खाता <- ब्राउज़र"
+
+[account.mfa]
+title = "दो-कारक प्रमाणीकरण"
+setupFailed = "दो-कारक सेटअप प्रारंभ करने में असमर्थ। कृपया पुनः प्रयास करें।"
+codeRequired = "जारी रखने के लिए प्रमाणीकरण कोड दर्ज करें।"
+enabled = "दो-कारक प्रमाणीकरण सक्षम किया गया।"
+enableFailed = "दो-कारक प्रमाणीकरण सक्षम करने में असमर्थ। कोड जाँचें और पुनः प्रयास करें।"
+disabled = "दो-कारक प्रमाणीकरण अक्षम किया गया।"
+disableFailed = "दो-कारक प्रमाणीकरण अक्षम करने में असमर्थ। कोड जाँचें और पुनः प्रयास करें।"
+description = "अपने खाते में सुरक्षा की अतिरिक्त परत जोड़ें।"
+enableButton = "दो-कारक प्रमाणीकरण सक्षम करें"
+disableButton = "दो-कारक प्रमाणीकरण अक्षम करें"
+setupTitle = "दो-कारक प्रमाणीकरण सेट करें"
+setupDescription = "अपने ऑथेंटिकेटर ऐप से QR कोड स्कैन करें, फिर पुष्टि के लिए 6-अंकों का कोड दर्ज करें।"
+manualKey = "मैनुअल सेटअप कुंजी"
+secretWarning = "इस कुंजी को निजी रखें। जिसके पास भी पहुँच होगी, वह वैध प्रमाणीकरण कोड जनरेट कर सकता है।"
+codePlaceholder = "6-अंकों का कोड दर्ज करें"
+confirmEnable = "सक्षम करें"
+disableTitle = "दो-कारक प्रमाणीकरण अक्षम करें"
+disableDescription = "दो-कारक प्रमाणीकरण अक्षम करने के लिए वैध प्रमाणीकरण कोड दर्ज करें।"
+codeLabel = "प्रमाणीकरण कोड"
+confirmDisable = "अक्षम करें"
+ssoDescription = "SSO खातों के लिए दो-कारक प्रमाणीकरण आपका पहचान प्रदाता प्रबंधित करता है।"
+ssoManaged = "अपने पहचान प्रदाता के माध्यम से MFA कॉन्फ़िगर करें।"
 
 [adminUserSettings]
 title = "उपयोगकर्ता नियंत्रण सेटिंग्स"
@@ -708,6 +778,11 @@ tags = "हस्ताक्षर,ऑटोग्राफ"
 title = "हस्ताक्षर करें"
 desc = "चित्र बनाकर, टेक्स्ट या छवि द्वारा PDF में हस्ताक्षर जोड़ें"
 
+[home.annotate]
+tags = "annotate,highlight,draw"
+title = "टिप्पणी करें"
+desc = "व्यूअर में हाइलाइट करें, ड्रॉ करें, नोट्स और आकार जोड़ें"
+
 [home.flatten]
 tags = "सरल बनाएं,हटाएँ,इंटरैक्टिव"
 title = "समतल करें"
@@ -879,6 +954,7 @@ title = "आकार/गिनती से ऑटो बाँटें"
 desc = "एक PDF को आकार, पृष्ठ संख्या, या दस्तावेज़ संख्या के आधार पर कई दस्तावेज़ों में विभाजित करें"
 
 [home.replaceColor]
+tags = "replace color,invert color,color replacement,swap colors,change color,invert,negative,color swap,find and replace color,convert color,color change"
 title = "रंग बदलें/उलटें"
 desc = "PDF दस्तावेज़ों में रंगों को प्रतिस्थापित या उलटें"
 
@@ -893,18 +969,22 @@ title = "स्वचालित फ़ोल्डर स्कैनिंग
 desc = "स्वचालित फ़ोल्डर स्कैनिंग गाइड के लिए लिंक"
 
 [home.devSsoGuide]
+tags = "SSO,single sign-on,authentication,SAML,OAuth,OIDC,login,enterprise,identity provider,IdP"
 title = "SSO गाइड"
 desc = "SSO गाइड के लिए लिंक"
 
 [home.devAirgapped]
+tags = "air-gapped,offline,isolated,no internet,disconnected,secure,network isolation,standalone"
 title = "एयर-गैप्ड सेटअप"
 desc = "एयर-गैप्ड सेटअप गाइड के लिए लिंक"
 
 [home.addPassword]
+tags = "encrypt,password,lock,secure,protect,security,encryption,safeguard,confidential,private,restrict access"
 title = "पासवर्ड जोड़ें"
 desc = "पासवर्ड के साथ अपने PDF दस्तावेज को एन्क्रिप्ट करें।"
 
 [home.changePermissions]
+tags = "permissions,restrictions,rights,access control,allow,deny,printing,copying,editing,modify permissions,security settings,user rights"
 title = "अनुमतियां बदलें"
 desc = "दस्तावेज़ प्रतिबंध और अनुमतियाँ बदलें"
 
@@ -914,12 +994,14 @@ title = "स्वचालित करें"
 desc = "PDF क्रियाओं को जोड़कर बहु-चरणीय वर्कफ़्लो बनाएँ। बार-बार होने वाले कार्यों के लिए उपयुक्त।"
 
 [home.overlay-pdfs]
+tags = "overlay,combine,merge,layer,superimpose,overlay PDF,layer PDFs,combine PDFs,stack,overlay pages,background,foreground,composite"
 desc = "PDF को दूसरी PDF के ऊपर ओवरले करें"
 title = "PDF ओवरले करें"
 
 [home.pdfTextEditor]
+tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
 title = "PDF टेक्स्ट एडिटर"
-desc = "PDF फ़ाइलों के भीतर मौजूदा टेक्स्ट और इमेज संपादित करें"
+desc = "ग्रुप्ड टेक्स्ट एडिटिंग और PDF पुनर्जनन के साथ Stirling PDF JSON एक्सपोर्ट की समीक्षा व संपादन करें"
 
 [home.addText]
 tags = "text,annotation,label"
@@ -930,6 +1012,7 @@ desc = "अपने PDF में कहीं भी कस्टम टेक
 addFiles = "फ़ाइलें जोड़ें"
 uploadFromComputer = "कंप्यूटर से अपलोड करें"
 openFromComputer = "कंप्यूटर से खोलें"
+mobileUpload = "मोबाइल से अपलोड करें"
 
 [viewPdf]
 tags = "देखें,पढ़ें,टिप्पणी,टेक्स्ट,छवि"
@@ -1181,7 +1264,7 @@ selectFilesPlaceholder = "शुरू करने के लिए मुख�
 settings = "सेटिंग्स"
 conversionCompleted = "रूपांतरण पूरा हुआ"
 results = "परिणाम"
-defaultFilename = "परिवर्तित_फ़ाइल"
+defaultFilename = "converted_file"
 conversionResults = "रूपांतरण परिणाम"
 convertFrom = "से रूपांतरित करें"
 convertTo = "में रूपांतरित करें"
@@ -1217,15 +1300,20 @@ downloadHtml = "PDF के बजाय HTML इंटरमीडिएट फ�
 pdfaOptions = "PDF/A विकल्प"
 outputFormat = "आउटपुट फ़ॉर्मेट"
 pdfaNote = "PDF/A-1b अधिक संगत है, PDF/A-2b अधिक सुविधाएँ समर्थित करता है।"
+pdfaFormat = "PDF/A फ़ॉर्मेट"
 pdfaDigitalSignatureWarning = "PDF में एक डिजिटल हस्ताक्षर है। यह अगले चरण में हटा दिया जाएगा।"
+strictMode = "Strict Mode"
+strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
+pdfxDigitalSignatureWarning = "PDF में एक डिजिटल हस्ताक्षर है। यह अगले चरण में हटा दिया जाएगा।"
+pdfxDescription = "PDF/X विश्वसनीय प्रिंटिंग और ग्राफ़िक्स विनिमय के लिए एक ISO मानक PDF उपसमुच्चय है।"
 fileFormat = "फ़ाइल फ़ॉर्मेट"
 wordDoc = "Word दस्तावेज़"
 wordDocExt = "Word दस्तावेज़ (.docx)"
 odtExt = "OpenDocument Text (.odt)"
 pptExt = "PowerPoint (.pptx)"
 odpExt = "OpenDocument Presentation (.odp)"
-txtExt = "सादा पाठ (.txt)"
-rtfExt = "रिच टेक्स्ट फ़ॉर्मेट (.rtf)"
+txtExt = "Plain Text (.txt)"
+rtfExt = "Rich Text Format (.rtf)"
 selectedFiles = "चयनित फ़ाइलें"
 noFileSelected = "कोई फ़ाइल चयनित नहीं। फ़ाइलें जोड़ने के लिए फ़ाइल पैनल का उपयोग करें।"
 convertFiles = "फ़ाइलें रूपांतरित करें"
@@ -1245,6 +1333,37 @@ cbzOptions = "CBZ से PDF विकल्प"
 optimizeForEbook = "ईबुक रीडर्स के लिए PDF ऑप्टिमाइज़ करें (Ghostscript का उपयोग करता है)"
 cbzOutputOptions = "PDF से CBZ विकल्प"
 cbzDpi = "इमेज रेंडरिंग के लिए DPI"
+cbrOptions = "CBR विकल्प"
+cbrOutputOptions = "PDF से CBR विकल्प"
+cbrDpi = "छवि रेंडरिंग के लिए DPI"
+svgPdfOptions = "SVG to PDF Options"
+combineSvgs = "Combine SVGs into single PDF"
+combineSvgsDescription = "Combine all SVG files into one PDF with multiple pages, or create separate PDFs for each SVG"
+svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
+
+[convert.ebookOptions]
+ebookOptions = "eBook से PDF विकल्प"
+ebookOptionsDesc = "eBooks को PDF में बदलने के विकल्प"
+embedAllFonts = "सभी फ़ॉन्ट एम्बेड करें"
+embedAllFontsDesc = "eBook के सभी फ़ॉन्ट जनरेट की गई PDF में एम्बेड करें"
+includeTableOfContents = "विषयसूची शामिल करें"
+includeTableOfContentsDesc = "तैयार PDF में निर्मित विषयसूची जोड़ें"
+includePageNumbers = "पेज नंबर शामिल करें"
+includePageNumbersDesc = "जनरेट की गई PDF में पेज नंबर जोड़ें"
+optimizeForEbookPdf = "ईबुक रीडर्स के लिए अनुकूलित करें"
+optimizeForEbookPdfDesc = "eBook पढ़ने के लिए PDF को अनुकूलित करें (छोटा फ़ाइल आकार, eInk डिवाइस पर बेहतर रेंडरिंग)"
+
+[convert.epubOptions]
+epubOptions = "PDF से eBook विकल्प"
+epubOptionsDesc = "PDF को EPUB/AZW3 में बदलने के विकल्प"
+detectChapters = "अध्याय पहचानें"
+detectChaptersDesc = "अध्याय जैसे दिखने वाले शीर्षकों का पता लगाएँ और EPUB पेज ब्रेक जोड़ें"
+targetDevice = "लक्षित डिवाइस"
+targetDeviceDesc = "रीडर डिवाइस के लिए अनुकूलित आउटपुट प्रोफाइल चुनें"
+outputFormat = "आउटपुट फ़ॉर्मेट"
+outputFormatDesc = "ईबुक के लिए आउटपुट फ़ॉर्मेट चुनें"
+tabletPhone = "टैबलेट/फ़ोन (चित्र सहित)"
+kindleEink = "Kindle e-Ink (पाठ के लिए अनुकूलित)"
 
 [imageToPdf]
 tags = "रूपांतरण,img,jpg,चित्र,फोटो"
@@ -1322,6 +1441,7 @@ applySignatures = "इमेज लागू करें"
 name = "इमेज"
 placeholder = "एक इमेज अपलोड करें"
 label = "इमेज फ़ाइल"
+hint = "Supports PNG, JPEG, GIF, BMP, TIFF, and SVG files. SVG files will be converted to PNG for embedding."
 
 [addImage.steps]
 configure = "इमेज कॉन्फ़िगर करें"
@@ -1361,6 +1481,11 @@ header = "Add attachments"
 add = "अटैचमेंट जोड़ें"
 remove = "अटैचमेंट हटाएँ"
 embed = "अटैचमेंट एम्बेड करें"
+convertToPdfA3b = "PDF/A-3b में बदलें"
+convertToPdfA3bDescription = "एम्बेडेड अटैचमेंट्स के साथ एक आर्काइवल PDF बनाता है"
+convertToPdfA3bTooltip = "PDF/A-3b एक आर्काइवल फ़ॉर्मेट है जो दीर्घकालिक संरक्षण सुनिश्चित करता है। यह मनमाने फ़ाइल फ़ॉर्मेट्स को अटैचमेंट के रूप में एम्बेड करने की अनुमति देता है। कन्वर्ज़न के लिए Ghostscript आवश्यक है और बड़े फ़ाइलों में अधिक समय लग सकता है।"
+convertToPdfA3bTooltipHeader = "PDF/A-3b कन्वर्ज़न के बारे में"
+convertToPdfA3bTooltipTitle = "यह क्या करता है"
 submit = "Add attachments"
 
 [watermark]
@@ -1368,7 +1493,7 @@ title = "वॉटरमार्क जोड़ें"
 desc = "PDF फ़ाइलों में टेक्स्ट या इमेज वॉटरमार्क जोड़ें"
 completed = "वॉटरमार्क जोड़ा गया"
 submit = "वॉटरमार्क जोड़ें"
-filenamePrefix = "वॉटरमार्क_युक्त"
+filenamePrefix = "watermarked"
 
 [watermark.error]
 failed = "PDF में वॉटरमार्क जोड़ते समय एक त्रुटि हुई।"
@@ -1643,7 +1768,7 @@ subtitle = "प्रोसेस्ड फ़ाइल डाउनलोड �
 [removePages]
 tags = "पृष्ठ निकालें,पृष्ठ हटाएं"
 title = "निकालें"
-filenamePrefix = "पृष्ठ_हटाए_गए"
+filenamePrefix = "pages_removed"
 submit = "निकालें"
 
 [removePages.pageNumbers]
@@ -1845,7 +1970,7 @@ title = "फॉर्म फ़ील्ड से Read-Only हटाएं"
 header = "PDF फॉर्म अनलॉक करें"
 submit = "Remove"
 description = "यह टूल PDF फॉर्म फ़ील्ड से Read-Only प्रतिबंध हटाएगा, जिससे वे संपादन योग्य और भरने योग्य बनेंगे।"
-filenamePrefix = "अनलॉक_फ़ॉर्म"
+filenamePrefix = "unlocked_forms"
 
 [unlockPDFForms.files]
 placeholder = "शुरू करने के लिए मुख्य दृश्य में एक PDF फ़ाइल चुनें"
@@ -1859,7 +1984,7 @@ title = "अनलॉक किए गए फॉर्म के परिणा
 [changeMetadata]
 header = "मेटाडेटा बदलें"
 submit = "बदलें"
-filenamePrefix = "मेटाडेटा"
+filenamePrefix = "metadata"
 
 [changeMetadata.settings]
 title = "मेटाडेटा सेटिंग्स"
@@ -2113,6 +2238,16 @@ tip = "वर्तमान में एक बार में कई इन�
 outputFormat = "आउटपुट प्रारूप"
 pdfWithDigitalSignature = "PDF में एक डिजिटल हस्ताक्षर है। यह अगले चरण में हटा दिया जाएगा।"
 
+[pdfToPDFX]
+tags = "print,standard,conversion,production,prepress,archive"
+title = "PDF से PDF/X"
+header = "PDF से PDF/X"
+credit = "यह सेवा PDF/X रूपांतरण के लिए Ghostscript का उपयोग करती है"
+submit = "परिवर्तित करें"
+tip = "फिलहाल एक साथ कई इनपुट पर काम नहीं करता।"
+outputFormat = "आउटपुट फ़ॉर्मेट"
+pdfWithDigitalSignature = "PDF में एक डिजिटल हस्ताक्षर है। यह अगले चरण में हटा दिया जाएगा।"
+
 [PDFToWord]
 tags = "doc,docx,odt,word,रूपांतरण,प्रारूप,रूपांतरण,कार्यालय,माइक्रोसॉफ्ट,docfile"
 title = "PDF से Word"
@@ -2306,6 +2441,10 @@ saved = "सहेजा गया"
 label = "हस्ताक्षर की इमेज अपलोड करें"
 placeholder = "इमेज फ़ाइल चुनें"
 hint = "अपने हस्ताक्षर की PNG या JPG इमेज अपलोड करें"
+removeBackground = "सफेद पृष्ठभूमि हटाएँ (पारदर्शी बनाएँ)"
+processing = "छवि संसाधित हो रही है..."
+backgroundRemovalFailedTitle = "पृष्ठभूमि हटाना विफल"
+backgroundRemovalFailedMessage = "छवि से पृष्ठभूमि नहीं हटाई जा सकी। इसके बजाय मूल छवि का उपयोग किया जाएगा।"
 
 [sign.instructions]
 title = "हस्ताक्षर कैसे जोड़ें"
@@ -2334,7 +2473,7 @@ title = "समतल करें"
 header = "PDF समतल करें"
 flattenOnlyForms = "केवल फ़ॉर्म समतल करें"
 submit = "समतल करें"
-filenamePrefix = "समतलीकृत"
+filenamePrefix = "flattened"
 
 [flatten.files]
 placeholder = "शुरू करने के लिए मुख्य दृश्य में एक PDF फ़ाइल चुनें"
@@ -2350,6 +2489,11 @@ note = "फ्लैटन करने से PDF के इंटरैक्�
 [flatten.options.flattenOnlyForms]
 label = "केवल फ़ॉर्म समतल करें"
 desc = "केवल फॉर्म फ़ील्ड फ्लैटन करें, अन्य इंटरैक्टिव तत्व यथावत रखें"
+
+[flatten.renderDpi]
+label = "रेंडरिंग DPI (वैकल्पिक, 150 DPI अनुशंसित)"
+help = "सिस्टम डिफ़ॉल्ट का उपयोग करने के लिए खाली छोड़ें। अधिक DPI आउटपुट को तेज़ बनाता है, पर प्रसंस्करण समय और फ़ाइल आकार बढ़ाता है।"
+placeholder = "उदा. 150"
 
 [flatten.results]
 title = "फ्लैटन परिणाम"
@@ -2382,7 +2526,7 @@ title = "मरम्मत"
 header = "PDF मरम्मत"
 submit = "मरम्मत"
 description = "यह टूल भ्रष्ट या क्षतिग्रस्त PDF फ़ाइलों की मरम्मत करने का प्रयास करेगा। कोई अतिरिक्त सेटिंग्स आवश्यक नहीं हैं।"
-filenamePrefix = "मरम्मत_किया"
+filenamePrefix = "repaired"
 
 [repair.files]
 placeholder = "शुरू करने के लिए मुख्य दृश्य में एक PDF फ़ाइल चुनें"
@@ -2502,6 +2646,7 @@ label = "मूल PDF"
 
 [compare.edited]
 label = "संपादित PDF"
+placeholder = "Select the edited PDF"
 
 [compare.swap]
 confirmTitle = "तुलना पुनः चलाएं?"
@@ -2583,7 +2728,7 @@ stopButton = "तुलना रोकें"
 [certSign]
 tags = "प्रमाणीकरण,PEM,P12,आधिकारिक,एन्क्रिप्ट"
 title = "प्रमाणपत्र हस्ताक्षर"
-filenamePrefix = "हस्ताक्षरित"
+filenamePrefix = "signed"
 chooseCertificate = "प्रमाणपत्र फ़ाइल चुनें"
 chooseJksFile = "JKS फ़ाइल चुनें"
 chooseP12File = "PKCS12 फ़ाइल चुनें"
@@ -2717,7 +2862,7 @@ header = "PDF से डिजिटल प्रमाणपत्र हटा
 selectPDF = "PDF फ़ाइल चुनें:"
 submit = "हस्ताक्षर हटाएं"
 description = "यह टूल आपके PDF दस्तावेज़ से डिजिटल प्रमाणपत्र हस्ताक्षर हटाएगा।"
-filenamePrefix = "अनहस्ताक्षरित"
+filenamePrefix = "unsigned"
 
 [removeCertSign.files]
 placeholder = "शुरू करने के लिए मुख्य दृश्य में एक PDF फ़ाइल चुनें"
@@ -2925,6 +3070,7 @@ header = "PDF क्रॉप करें"
 submit = "जमा करें"
 noFileSelected = "क्रॉप शुरू करने के लिए एक PDF फ़ाइल चुनें"
 reset = "पूर्ण PDF पर रीसेट करें"
+autoCrop = "खाली स्थान स्वतः क्रॉप करें"
 
 [crop.preview]
 title = "क्रॉप क्षेत्र चयन"
@@ -3036,6 +3182,105 @@ title = "PDF की जानकारी प्राप्त करें"
 header = "PDF की जानकारी प्राप्त करें"
 submit = "जानकारी प्राप्त करें"
 downloadJson = "JSON डाउनलोड करें"
+processing = "जानकारी निकाली जा रही है..."
+results = "परिणाम"
+noResults = "रिपोर्ट बनाने के लिए टूल चलाएँ।"
+downloads = "डाउनलोड"
+noneDetected = "कुछ भी पता नहीं चला"
+indexTitle = "अनुक्रमणिका"
+
+[getPdfInfo.report]
+entryLabel = "पूरी जानकारी का सारांश"
+shortTitle = "PDF जानकारी"
+
+[getPdfInfo.sections]
+metadata = "मेटाडेटा"
+formFields = "फ़ॉर्म फ़ील्ड्स"
+basicInfo = "मूल जानकारी"
+documentInfo = "दस्तावेज़ जानकारी"
+compliance = "अनुपालन"
+encryption = "एन्क्रिप्शन"
+permissions = "अनुमतियाँ"
+other = "अन्य"
+perPageInfo = "प्रति पेज जानकारी"
+tableOfContents = "विषय सूची"
+
+[getPdfInfo.compliance]
+notDetected = "पता नहीं चला"
+passed = "उत्तीर्ण"
+failed = "असफल"
+compliant = "अनुरूप"
+nonCompliant = "अननुरूप"
+none = "कोई मानक नहीं मिला"
+passedCount = "उत्तीर्ण"
+failedCount = "असफल"
+noVerification = "कोई सत्यापन नहीं किया गया"
+noVerificationDesc = "इस दस्तावेज़ के लिए PDF मानकों का अनुपालन सत्यापित नहीं किया गया।"
+
+[getPdfInfo.other]
+attachments = "संलग्नक"
+embeddedFiles = "एम्बेडेड फ़ाइलें"
+javaScript = "JavaScript"
+layers = "लेयर्स"
+structureTree = "स्ट्रक्चर ट्री"
+xmp = "XMPMetadata"
+
+[getPdfInfo.perPage]
+size = "आकार"
+annotations = "टिप्पणियाँ"
+images = "छवियाँ"
+links = "लिंक"
+fonts = "फ़ॉन्ट्स"
+xobjects = "XObject की संख्या"
+multimedia = "मल्टीमीडिया"
+
+[getPdfInfo.summary]
+pages = "पृष्ठ"
+fileSize = "फ़ाइल आकार"
+pdfVersion = "PDF संस्करण"
+language = "भाषा"
+title = "PDF सारांश"
+author = "लेखक"
+created = "निर्मित"
+modified = "संशोधित"
+permsAll = "सभी अनुमतियाँ स्वीकृत"
+permsRestricted = "{{count}} प्रतिबंध"
+permsMixed = "कुछ अनुमतियाँ प्रतिबंधित"
+hasCompliance = "अनुपालन मानक मौजूद हैं"
+noCompliance = "कोई अनुपालन मानक नहीं"
+compliancePassed = "{{standards}} अनुरूप"
+complianceChecked = "मानक सत्यापित ({{failed}} असफल)"
+basic = "मूल जानकारी"
+documentInfo = "दस्तावेज़ जानकारी"
+securityTitle = "सुरक्षा स्थिति"
+technical = "तकनीकी"
+overviewTitle = "PDF अवलोकन"
+
+[getPdfInfo.summary.security]
+encrypted = "एन्क्रिप्टेड PDF - पासवर्ड सुरक्षा मौजूद है"
+unencrypted = "बिना एन्क्रिप्शन वाला PDF - पासवर्ड सुरक्षा नहीं है"
+
+[getPdfInfo.summary.tech]
+images = "छवियाँ"
+fonts = "फ़ॉन्ट्स"
+formFields = "फ़ॉर्म फ़ील्ड्स"
+embeddedFiles = "एम्बेडेड फ़ाइलें"
+javaScript = "JavaScript"
+layers = "लेयर्स"
+bookmarks = "बुकमार्क"
+multimedia = "मल्टीमीडिया"
+
+[getPdfInfo.summary.overview]
+untitled = "एक बिना शीर्षक वाला दस्तावेज़"
+unknown = "अज्ञात लेखक"
+text = "यह {{pages}}-पृष्ठ वाला PDF है जिसका शीर्षक {{title}} है, जिसे {{author}} ने बनाया है (PDF संस्करण {{version}})."
+
+[getPdfInfo.error]
+partial = "कुछ फ़ाइलों का प्रसंस्करण नहीं हो सका।"
+unexpected = "निकालते समय अप्रत्याशित त्रुटि हुई।"
+
+[getPdfInfo.status]
+complete = "एक्सट्रैक्शन पूर्ण"
 
 [extractPage]
 tags = "निकालें"
@@ -3070,6 +3315,7 @@ title = "रिडैक्शन विधि"
 mode = "मोड"
 automatic = "स्वचालित"
 automaticDesc = "खोज शब्दों के आधार पर टेक्स्ट रिडैक्ट करें"
+automaticDisabledTooltip = "एक साथ कई फ़ाइलों पर रिडैक्शन करने के लिए फ़ाइल प्रबंधक में फ़ाइलें चुनें"
 manual = "मैनुअल"
 manualDesc = "विशिष्ट क्षेत्रों को रिडैक्ट करने के लिए क्लिक और ड्रैग करें"
 manualComingSoon = "मैनुअल रिडैक्शन जल्द आ रहा है"
@@ -3140,8 +3386,35 @@ text = "केवल पूर्ण शब्दों से मेल कर�
 title = "PDF-Image में बदलें"
 text = "रिडैक्शन के बाद PDF को इमेज-आधारित PDF में बदल देता है। यह सुनिश्चित करता है कि रिडैक्शन बॉक्स के पीछे का टेक्स्ट पूरी तरह हट जाए और पुनर्प्राप्त न हो सके।"
 
+[redact.tooltip.manual.header]
+title = "मैनुअल रिडैक्शन नियंत्रण"
+
+[redact.tooltip.manual.markText]
+title = "टेक्स्ट चिह्नित करने का टूल"
+text = "PDF पर सीधे टेक्स्ट चुनकर उसे रिडैक्शन के लिए चिह्नित करें। जिस टेक्स्ट को रिडैक्ट करना है उसे हाइलाइट करने के लिए क्लिक करें और खींचें।"
+
+[redact.tooltip.manual.markArea]
+title = "क्षेत्र चिह्नित करने का टूल"
+text = "PDF पर आयताकार क्षेत्र बनाकर रिडैक्शन के लिए क्षेत्र चिह्नित करें। छवियाँ, हस्ताक्षर, या अनियमित आकृतियों को रिडैक्ट करने में उपयोगी।"
+
+[redact.tooltip.manual.apply]
+title = "रिडैक्शन लागू करें"
+text = "सामग्री चिह्नित करने के बाद 'लागू करें' पर क्लिक करें ताकि सभी चिह्नित क्षेत्रों को स्थायी रूप से रिडैक्ट किया जा सके। लंबित गिनती दिखाती है कि कितने रिडैक्शन लागू करने के लिए तैयार हैं।"
+bullet1 = "लागू करने से पहले जितने क्षेत्र आवश्यक हों, चिह्नित करें"
+bullet2 = "सभी लंबित रिडैक्शन एक साथ लागू किए जाते हैं"
+bullet3 = "लागू करने के बाद रिडैक्शन पूर्ववत नहीं किए जा सकते"
+
 [redact.manual]
+title = "रिडैक्शन टूल"
+instructions = "रिडैक्शन के लिए सामग्री चिह्नित करने हेतु PDF पर टेक्स्ट चुनें या क्षेत्र बनाएं।"
+markText = "टेक्स्ट चिह्नित करें"
+markArea = "क्षेत्र चिह्नित करें"
+pendingLabel = "लंबित:"
+applyWarning = "⚠️ स्थायी लागू, पूर्ववत नहीं किया जा सकता और नीचे का डेटा हटा दिया जाएगा"
+apply = "लागू करें"
+noMarks = "कोई रिडैक्शन चिह्न नहीं। रिडैक्शन के लिए सामग्री चिह्नित करने हेतु ऊपर दिए टूल्स का उपयोग करें।"
 header = "मैनुअल रिडैक्शन"
+controlsTitle = "मैनुअल रिडैक्शन नियंत्रण"
 textBasedRedaction = "टेक्स्ट-आधारित रिडैक्शन"
 pageBasedRedaction = "पृष्ठ-आधारित रिडैक्शन"
 convertPDFToImageLabel = "PDF को PDF-Image में बदलें (बॉक्स के पीछे का टेक्स्ट हटाने हेतु)"
@@ -3257,6 +3530,19 @@ placeholder = "क्षैतिज विभाजनों की संख�
 label = "ऊर्ध्वाधर विभाजन"
 placeholder = "ऊर्ध्वाधर विभाजनों की संख्या दर्ज करें"
 
+[split-by-sections.splitMode]
+label = "विभाजन मोड"
+description = "पृष्ठों को कैसे विभाजित करना है, चुनें"
+splitAll = "सभी पृष्ठ विभाजित करें"
+splitAllExceptFirst = "पहले को छोड़कर सभी विभाजित करें"
+splitAllExceptLast = "अंतिम को छोड़कर सभी विभाजित करें"
+splitAllExceptFirstAndLast = "पहले और अंतिम को छोड़कर सभी विभाजित करें"
+custom = "कस्टम पृष्ठ"
+
+[split-by-sections.customPages]
+label = "कस्टम पेज नंबर"
+placeholder = "उदा. 2,4,6"
+
 [AddStampRequest]
 tags = "स्टैम्प, छवि जोड़ें, केंद्र छवि, वॉटरमार्क, PDF, एम्बेड, अनुकूलित"
 header = "PDF स्टैम्प करें"
@@ -3281,6 +3567,44 @@ imageSize = "छवि आकार"
 margin = "हाशिया"
 positionAndFormatting = "स्थिति और फ़ॉर्मैटिंग"
 quickPosition = "मुहर रखने के लिए पृष्ठ पर एक स्थान चुनें।"
+preview = "Preview:"
+useTemplate = "Use Template"
+selectTemplate = "Select a template..."
+stampTextDescription = "Use dynamic variables below. Use @@ for literal @. Use \\n for new lines."
+dynamicVariables = "Dynamic Variables"
+clickToExpand = "Click to expand"
+variablesHelp = "Click on any variable to insert it into your stamp text. Use @@ for literal @."
+dateTimeVars = "Date & Time"
+dateDesc = "Current date"
+timeDesc = "Current time"
+datetimeDesc = "Date and time combined"
+customDateDesc = "Custom format"
+yearMonthDayDesc = "Individual date parts"
+pageVars = "Page Information"
+pageNumberDesc = "Current page number"
+totalPagesDesc = "Total number of pages"
+fileVars = "File Information"
+filenameDesc = "Filename without extension"
+filenameFullDesc = "Filename with extension"
+metadataVars = "Document Metadata"
+metadataDesc = "From PDF document properties"
+otherVars = "Other"
+uuidDesc = "Short unique identifier (8 chars)"
+examples = "Examples"
+multiLine = "multi-line"
+
+[AddStampRequest.template]
+pageNumberFooter = "Page Number Footer"
+dateHeader = "Date Header"
+europeanDate = "European Date"
+timestamp = "Timestamp"
+draftWatermark = "Draft Watermark"
+custom = "Custom"
+page-numbers = "Page Numbers"
+draft = "Draft Watermark"
+doc-info = "Document Info"
+legal-footer = "Legal Footer"
+european-date = "European Date (DD/MM/YYYY)"
 
 [AddStampRequest.error]
 failed = "PDF में मुहर जोड़ते समय त्रुटि हुई।"
@@ -3503,6 +3827,13 @@ passwordChangedSuccess = "पासवर्ड सफलतापूर्व�
 credentialsUpdated = "आपके क्रेडेंशियल अपडेट कर दिए गए हैं। कृपया फिर से साइन इन करें।"
 defaultCredentials = "डिफ़ॉल्ट लॉगिन क्रेडेंशियल्स"
 changePasswordWarning = "पहली बार लॉगिन करने के बाद कृपया अपना पासवर्ड बदलें"
+mfaRequired = "दो-कारक कोड आवश्यक"
+mfaCode = "प्रमाणीकरण कोड"
+enterMfaCode = "6-अंकों का कोड दर्ज करें"
+mfaPromptTitle = "दो-कारक प्रमाणीकरण"
+mfaPromptBody = "जारी रखने के लिए अपने ऑथेंटिकेटर ऐप का प्रमाणीकरण कोड दर्ज करें।"
+verifyingMfa = "सत्यापन हो रहा है..."
+verifyMfa = "कोड सत्यापित करें"
 
 [login.slides.overview]
 alt = "Stirling PDF ओवरव्यू"
@@ -3552,7 +3883,7 @@ title = "PDF को एकल पृष्ठ में"
 header = "PDF को एकल पृष्ठ में"
 submit = "एकल पृष्ठ में बदलें"
 description = "यह टूल आपके PDF के सभी पृष्ठों को एक बड़े एकल पृष्ठ में मिला देगा। चौड़ाई मूल पृष्ठों जैसी ही रहेगी, पर ऊँचाई सभी पृष्ठ ऊँचाइयों का योग होगी।"
-filenamePrefix = "एकल_पृष्ठ"
+filenamePrefix = "single_page"
 
 [pdfToSinglePage.files]
 placeholder = "शुरू करने के लिए मुख्य दृश्य में एक PDF फ़ाइल चुनें"
@@ -3618,6 +3949,19 @@ filesize = "फ़ाइल आकार"
 [compress.grayscale]
 label = "संपीड़न के लिए ग्रेस्केल लागू करें"
 
+[compress.linearize]
+label = "तेज़ वेब देखने के लिए PDF को लिनियराइज़ करें"
+
+[compress.lineArt]
+label = "छवियों को लाइन आर्ट में बदलें"
+description = "ImageMagick का उपयोग करके पृष्ठों को उच्च-प्रति-विपरीत काले-सफेद में बदलता है ताकि अधिकतम आकार घटे।"
+unavailable = "ImageMagick इस सर्वर पर इंस्टॉल या सक्षम नहीं है"
+detailLevel = "विस्तार स्तर"
+edgeEmphasis = "किनारों पर जोर"
+edgeLow = "हल्का"
+edgeMedium = "संतुलित"
+edgeHigh = "प्रबल"
+
 [compress.tooltip.header]
 title = "संपीड़न सेटिंग्स अवलोकन"
 
@@ -3635,6 +3979,10 @@ bullet2 = "अधिक मान फ़ाइल आकार घटाते �
 title = "श्वेत-श्याम"
 text = "सभी छवियों को काले-सफेद में बदलने के लिए इस विकल्प को चुनें, जो विशेषकर स्कैन किए गए PDFs या चित्र-प्रधान दस्तावेज़ों के लिए फ़ाइल आकार को काफी घटा सकता है।"
 
+[compress.tooltip.lineArt]
+title = "लाइन आर्ट"
+text = "ImageMagick का उपयोग करके पृष्ठों को उच्च-प्रति-विपरीत काले-सफेद में बदलें। कितना कंटेंट काला हो, इसे नियंत्रित करने के लिए 'विस्तार स्तर' और किनारों की पहचान की तीव्रता नियंत्रित करने के लिए 'किनारों पर जोर' का उपयोग करें।"
+
 [compress.error]
 failed = "PDF संपीड़ित करते समय त्रुटि हुई।"
 
@@ -3646,6 +3994,11 @@ failed = "PDF संपीड़ित करते समय त्रुटि
 [compress.selectText.1]
 _value = "संपीड़न सेटिंग्स"
 1 = "1-3 PDF संपीड़न,</br> 4-6 हल्का छवि संपीड़न,</br> 7-9 तीव्र छवि संपीड़न छवि गुणवत्ता को काफी घटाएगा"
+
+[compress.compressionLevel]
+range1to3 = "कम मान गुणवत्ता बनाए रखते हैं लेकिन फ़ाइल आकार बड़ा होता है"
+range4to6 = "मध्यम संपीड़न, गुणवत्ता में मध्यम कमी के साथ"
+range7to9 = "उच्च मान फ़ाइल आकार को काफी घटाते हैं, लेकिन छवि की स्पष्टता कम हो सकती है"
 
 [decrypt]
 passwordPrompt = "यह फ़ाइल पासवर्ड से सुरक्षित है। कृपया पासवर्ड दर्ज करें:"
@@ -3886,23 +4239,98 @@ deleteSelected = "चयनित पृष्ठ हटाएँ"
 closePdf = "PDF बंद करें"
 exportAll = "PDF निर्यात करें"
 downloadSelected = "चयनित फ़ाइलें डाउनलोड करें"
-downloadAll = "सभी डाउनलोड करें"
-saveAll = "सभी सहेजें"
+annotations = "एनोटेशन"
+exportSelected = "चयनित पृष्ठ निर्यात करें"
+saveChanges = "परिवर्तनों को सहेजें"
 toggleTheme = "थीम टॉगल करें"
-toggleBookmarks = "बुकमार्क्स टॉगल करें"
 language = "भाषा"
+toggleAnnotations = "एनोटेशन दृश्यता टॉगल करें"
 search = "PDF खोजें"
 panMode = "पैन मोड"
+applyRedactionsFirst = "पहले रिडैक्शन लागू करें"
 rotateLeft = "बाएँ घुमाएँ"
 rotateRight = "दाएँ घुमाएँ"
 toggleSidebar = "साइडबार टॉगल करें"
-exportSelected = "चयनित पृष्ठ निर्यात करें"
-toggleAnnotations = "एनोटेशन दृश्यता टॉगल करें"
-annotationMode = "एनोटेशन मोड टॉगल करें"
+toggleBookmarks = "बुकमार्क्स टॉगल करें"
 print = "PDF प्रिंट करें"
 draw = "ड्रॉ"
+redact = "रिडैक्ट करें"
+exitRedaction = "रिडैक्शन मोड से बाहर निकलें"
 save = "सहेजें"
-saveChanges = "परिवर्तनों को सहेजें"
+downloadAll = "सभी डाउनलोड करें"
+saveAll = "सभी सहेजें"
+
+[textAlign]
+left = "बाएँ"
+center = "मध्य"
+right = "दाएँ"
+
+[annotation]
+title = "टिप्पणी करें"
+desc = "हाइलाइट, पेन, टेक्स्ट और नोट्स का उपयोग करें। परिवर्तन लाइव रहते हैं—फ़्लैटेनिंग की आवश्यकता नहीं।"
+highlight = "हाइलाइट"
+pen = "पेन"
+text = "टेक्स्ट बॉक्स"
+note = "नोट"
+rectangle = "आयत"
+ellipse = "अंडाकार"
+select = "चुनें"
+exit = "एनोटेशन मोड से बाहर निकलें"
+strokeWidth = "चौड़ाई"
+opacity = "अपारदर्शिता"
+strokeOpacity = "रेखा अपारदर्शिता"
+fillOpacity = "भराव अपारदर्शिता"
+fontSize = "फ़ॉन्ट आकार"
+chooseColor = "रंग चुनें"
+color = "रंग"
+strokeColor = "रेखा रंग"
+fillColor = "भराव रंग"
+underline = "रेखांकित"
+strikeout = "स्ट्राइकथ्रू"
+squiggly = "टेढ़ी रेखा"
+inkHighlighter = "स्वतंत्र-हस्त हाइलाइटर"
+freehandHighlighter = "स्वतंत्र-हस्त हाइलाइटर"
+square = "वर्ग"
+circle = "वृत्त"
+polygon = "बहुभुज"
+line = "रेखा"
+stamp = "छवि जोड़ें"
+textMarkup = "टेक्स्ट मार्कअप"
+drawing = "ड्रॉइंग"
+shapes = "आकृतियाँ"
+notesStamps = "नोट्स और मुहरें"
+settings = "सेटिंग्स"
+borderOn = "बॉर्डर: चालू"
+borderOff = "बॉर्डर: बंद"
+editInk = "पेन संपादित करें"
+editLine = "रेखा संपादित करें"
+editNote = "नोट संपादित करें"
+editText = "टेक्स्ट बॉक्स संपादित करें"
+editTextMarkup = "टेक्स्ट मार्कअप संपादित करें"
+editSelected = "एनोटेशन संपादित करें"
+editSquare = "वर्ग संपादित करें"
+editCircle = "वृत्त संपादित करें"
+editPolygon = "बहुभुज संपादित करें"
+unsupportedType = "इस एनोटेशन प्रकार का संपादन पूर्ण रूप से समर्थित नहीं है।"
+textAlignment = "टेक्स्ट संरेखण"
+noteIcon = "नोट आइकन"
+imagePreview = "पूर्वावलोकन"
+contents = "टेक्स्ट"
+backgroundColor = "पृष्ठभूमि रंग"
+clearBackground = "पृष्ठभूमि हटाएँ"
+noBackground = "कोई पृष्ठभूमि नहीं"
+stampSettings = "मुहर सेटिंग्स"
+savingCopy = "डाउनलोड तैयार किया जा रहा है..."
+saveFailed = "कॉपी सहेजी नहीं जा सकी"
+saveReady = "डाउनलोड तैयार"
+selectAndMove = "चुनें और संपादित करें"
+editSelectDescription = "किसी मौजूदा एनोटेशन पर क्लिक कर उसका रंग, अपारदर्शिता, टेक्स्ट या आकार संपादित करें।"
+editStampHint = "छवि बदलने के लिए, इस मुहर को हटाएँ और नई जोड़ें।"
+editSwitchToSelect = "इस एनोटेशन को संपादित करने के लिए 'चुनें और संपादित करें' पर स्विच करें।"
+undo = "पूर्ववत"
+redo = "फिर करें"
+applyChanges = "परिवर्तन लागू करें"
+saveChanges = "परिवर्तन सहेजें"
 
 [search]
 title = "PDF खोजें"
@@ -3953,12 +4381,20 @@ settings = "सेटिंग्स"
 adminSettings = "एडमिन सेटिंग्स"
 allTools = "All Tools"
 reader = "रीडर"
+tours = "टूर"
+showMeAround = "मुझे दिखाएँ"
+
+[quickAccess.toursTooltip]
+admin = "यहाँ वॉकथ्रू देखें: टूल्स टूर, नया V2 लेआउट टूर, और एडमिन टूर।"
+user = "यहाँ वॉकथ्रू देखें: टूल्स टूर और नया V2 लेआउट टूर।"
 
 [quickAccess.helpMenu]
 toolsTour = "टूल्स टूर"
 toolsTourDesc = "जानें कि टूल क्या कर सकते हैं"
 adminTour = "एडमिन टूर"
 adminTourDesc = "एडमिन सेटिंग्स और फ़ीचर्स का अन्वेषण करें"
+whatsNewTour = "V2 में नया क्या है देखें"
+whatsNewTourDesc = "अद्यतन लेआउट का टूर"
 
 [admin]
 error = "त्रुटि"
@@ -3977,6 +4413,8 @@ fetchError = "सेटिंग्स लोड करने में वि�
 saveError = "सेटिंग्स सहेजने में विफल"
 saved = "सेटिंग्स सफलतापूर्वक सहेजी गईं"
 saveSuccess = "सेटिंग्स सफलतापूर्वक सहेजी गईं"
+success = "सेटिंग्स सफलतापूर्वक सहेजी गईं"
+error = "सेटिंग्स सहेजने में विफल"
 save = "परिवर्तनों को सहेजें"
 discard = "त्यागें"
 restartRequired = "रीस्टार्ट आवश्यक"
@@ -3996,6 +4434,10 @@ hint = "आपके कुछ परिवर्तन सहेजे नह�
 title = "लॉगिन मोड आवश्यक"
 message = "एडमिन सेटिंग्स बदलने के लिए लॉगिन मोड सक्षम होना चाहिए। कृपया अपने एनवायरनमेंट में SECURITY_ENABLELOGIN=true या settings.yml में security.enableLogin: true सेट करें, फिर सर्वर रीस्टार्ट करें।"
 readOnly = "नीचे दी गई सेटिंग्स संदर्भ हेतु उदाहरण मान दिखाती हैं। वास्तविक कॉन्फ़िगरेशन देखने और संपादित करने के लिए लॉगिन मोड सक्षम करें।"
+
+[admin.settings.enterpriseRequired]
+title = "एंटरप्राइज़ लाइसेंस आवश्यक"
+message = "{{featureName}} तक पहुँच के लिए एंटरप्राइज़ लाइसेंस आवश्यक है। आप संदर्भ के लिए डेमो डेटा देख रहे हैं।"
 
 [admin.settings.restart]
 title = "रीस्टार्ट आवश्यक"
@@ -4081,9 +4523,17 @@ description = "पाइपलाइन प्रोसेसिंग और �
 [admin.settings.general.customPaths.pipeline]
 label = "पाइपलाइन डायरेक्टरीज़"
 
+[admin.settings.general.customPaths.pipeline.pipelineDir]
+label = "Pipeline Directory"
+description = "Base directory for pipeline resources (leave empty for default: /pipeline)"
+
 [admin.settings.general.customPaths.pipeline.watchedFoldersDir]
 label = "वॉच्ड फ़ोल्डर्स डायरेक्टरी"
 description = "वह डायरेक्टरी जहाँ पाइपलाइन आने वाले PDF मॉनिटर करती है (डिफ़ॉल्ट हेतु खाली छोड़ें: /pipeline/watchedFolders)"
+
+[admin.settings.general.customPaths.pipeline.watchedFoldersDirs]
+label = "Watched Folders Directories"
+description = "Directories where pipeline monitors for incoming PDFs (one per line or comma-separated; leave empty for default: /pipeline/watchedFolders)"
 
 [admin.settings.general.customPaths.pipeline.finishedFoldersDir]
 label = "फिनिश्ड फ़ोल्डर्स डायरेक्टरी"
@@ -4099,6 +4549,13 @@ description = "HTML से PDF कन्वर्ज़न के लिए Weas
 [admin.settings.general.customPaths.operations.unoconvert]
 label = "Unoconvert एक्ज़िक्यूटेबल"
 description = "दस्तावेज़ कन्वर्ज़न के लिए LibreOffice unoconvert का पाथ (डिफ़ॉल्ट हेतु खाली छोड़ें: /opt/venv/bin/unoconvert)"
+
+[admin.settings.general.frontendUrl]
+label = "फ्रंटएंड URL"
+description = "फ्रंटएंड के लिए बेस URL (उदा., https://pdf.example.com)। ईमेल आमंत्रण लिंक और मोबाइल QR कोड अपलोड के लिए उपयोग होता है। बैकएंड URL उपयोग करने के लिए खाली छोड़ें।"
+
+[admin.settings.badge]
+clickToUpgrade = "प्लान विवरण देखने के लिए क्लिक करें"
 
 [admin.settings.security]
 title = "सुरक्षा"
@@ -4128,6 +4585,13 @@ description = "खाते को लॉक करने से पहले �
 [admin.settings.security.loginResetTimeMinutes]
 label = "लॉगिन रीसेट समय (मिनट)"
 description = "वह समय जिसके बाद असफल लॉगिन प्रयास रीसेट हो जाते हैं"
+
+[admin.settings.security.xFrameOptions]
+label = "X-Frame-Options"
+description = "Controls whether the application can be embedded in iframes"
+deny = "Deny (Prevents all framing)"
+sameorigin = "Same Origin (Allow framing from same domain)"
+disabled = "Disabled (No X-Frame-Options header)"
 
 [admin.settings.security.csrfDisabled]
 label = "CSRF सुरक्षा निष्क्रिय करें"
@@ -4236,6 +4700,19 @@ connect = "कनेक्ट करें"
 disconnect = "डिसकनेक्ट करें"
 disconnected = "प्रदाता सफलतापूर्वक डिसकनेक्ट किया गया"
 disconnectError = "प्रदाता को डिसकनेक्ट करने में विफल"
+mobileScannerConvertToPdf = "छवियों को PDF में बदलें"
+mobileScannerConvertToPdfDesc = "अपलोड की गई छवियों को स्वचालित रूप से PDF फ़ॉर्मेट में बदलें। अक्षम होने पर, छवियाँ जैसे हैं वैसी ही रहेंगी।"
+mobileScannerImageResolution = "छवि रेज़ोल्यूशन"
+mobileScannerImageResolutionDesc = "अपलोड की गई छवियों का रेज़ोल्यूशन। \"Reduced\" विकल्प छवियों को अधिकतम 1200px तक स्केल कर फ़ाइल आकार घटाता है।"
+imageResolutionFull = "पूर्ण (मूल आकार)"
+imageResolutionReduced = "कम (अधिकतम 1200px)"
+mobileScannerPageFormat = "पृष्ठ फ़ॉर्मेट"
+mobileScannerPageFormatDesc = "PDF पृष्ठ आकार परिवर्तित छवियों के लिए। \"Keep\" मूल छवि आयामों का उपयोग करता है।"
+pageFormatKeep = "जैसा है रखें (मूल आयाम)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "फिट करने हेतु फैलाएँ"
+mobileScannerStretchToFitDesc = "छवि को पूरी पृष्ठ भरने के लिए फैलाएँ। अक्षम होने पर, छवियाँ केंद्रित रहती हैं और अनुपात सुरक्षित रहता है।"
 
 [admin.settings.connections.ssoAutoLogin]
 label = "SSO ऑटो लॉगिन"
@@ -4254,7 +4731,7 @@ label = "प्रदाता"
 description = "प्रमाणीकरण के लिए उपयोग किया जाने वाला OAuth2 प्रदाता"
 
 [admin.settings.connections.oauth2.issuer]
-label = "जारीकर्ता URL"
+label = "Issuer URL"
 description = "OAuth2 प्रदाता का Issuer URL"
 
 [admin.settings.connections.oauth2.clientId]
@@ -4304,10 +4781,168 @@ description = "पहले SAML2 लॉगिन पर उपयोगकर�
 label = "पंजीकरण रोकें"
 description = "SAML2 के माध्यम से नए उपयोगकर्ता पंजीकरण को रोकें"
 
+[admin.settings.connections.mobileScanner]
+label = "मोबाइल फ़ोन अपलोड"
+enable = "QR कोड अपलोड सक्षम करें"
+description = "उपयोगकर्ताओं को QR कोड स्कैन करके मोबाइल डिवाइसेज़ से फ़ाइलें अपलोड करने दें"
+note = "ध्यान दें: इसके लिए फ्रंटएंड URL कॉन्फ़िगर होना आवश्यक है। "
+link = "सिस्टम सेटिंग्स में कॉन्फ़िगर करें"
+mobileScannerConvertToPdf = "छवियों को PDF में बदलें"
+mobileScannerConvertToPdfDesc = "अपलोड की गई छवियों को स्वचालित रूप से PDF फ़ॉर्मेट में बदलें। अक्षम होने पर, छवियाँ जैसे हैं वैसी ही रहेंगी।"
+mobileScannerImageResolution = "छवि रेज़ोल्यूशन"
+mobileScannerImageResolutionDesc = "अपलोड की गई छवियों का रेज़ोल्यूशन। \"Reduced\" विकल्प छवियों को अधिकतम 1200px तक स्केल कर फ़ाइल आकार घटाता है।"
+imageResolutionFull = "पूर्ण (मूल आकार)"
+imageResolutionReduced = "कम (अधिकतम 1200px)"
+mobileScannerPageFormat = "पृष्ठ फ़ॉर्मेट"
+mobileScannerPageFormatDesc = "PDF पृष्ठ आकार परिवर्तित छवियों के लिए। \"Keep\" मूल छवि आयामों का उपयोग करता है।"
+pageFormatKeep = "जैसा है रखें (मूल आयाम)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "फिट करने हेतु फैलाएँ"
+mobileScannerStretchToFitDesc = "छवि को पूरी पृष्ठ भरने के लिए फैलाएँ। अक्षम होने पर, छवियाँ केंद्रित रहती हैं और अनुपात सुरक्षित रहता है।"
+
+[admin.settings.telegram]
+title = "Telegram बॉट"
+description = "Telegram बॉट कनेक्टिविटी, एक्सेस नियंत्रण और फ़ीडबैक व्यवहार कॉन्फ़िगर करें।"
+
+[admin.settings.telegram.enabled]
+label = "Telegram बॉट सक्षम करें"
+description = "उपयोगकर्ताओं को आपके कॉन्फ़िगर किए गए Telegram बॉट के माध्यम से Stirling PDF के साथ इंटरेक्ट करने दें।"
+
+[admin.settings.telegram.botUsername]
+label = "बॉट उपयोगकर्ता नाम"
+description = "आपके Telegram बॉट का सार्वजनिक उपयोगकर्ता नाम।"
+
+[admin.settings.telegram.botToken]
+label = "बॉट टोकन"
+description = "आपके Telegram बॉट के लिए BotFather द्वारा प्रदत्त API टोकन।"
+
+[admin.settings.telegram.pipelineInboxFolder]
+label = "इनबॉक्स फ़ोल्डर"
+description = "पाइपलाइन डायरेक्टरी के अंतर्गत वह फ़ोल्डर जहाँ आने वाली Telegram फ़ाइलें संग्रहीत होती हैं।"
+
+[admin.settings.telegram.customFolderSuffix]
+label = "कस्टम फ़ोल्डर प्रत्यय उपयोग करें"
+description = "प्रत्येक चैट के अपलोड अलग रखने हेतु आने वाली फ़ाइल फ़ोल्डरों में चैट ID जोड़ें।"
+
+[admin.settings.telegram.accessControl]
+title = "प्रवेश नियंत्रण"
+description = "कौन-से उपयोगकर्ता या चैनल बॉट के साथ इंटरेक्ट कर सकते हैं, इसे सीमित करें।"
+
+[admin.settings.telegram.enableAllowUserIDs]
+label = "विशिष्ट उपयोगकर्ता IDs को अनुमति दें"
+description = "सक्रिय होने पर, केवल सूचीबद्ध उपयोगकर्ता IDs बॉट का उपयोग कर सकते हैं।"
+
+[admin.settings.telegram.allowUserIDs]
+label = "अनुमत उपयोगकर्ता IDs"
+description = "बॉट से इंटरेक्ट करने के लिए अनुमत Telegram उपयोगकर्ता IDs दर्ज करें।"
+placeholder = "उपयोगकर्ता ID जोड़ें और एंटर दबाएँ"
+
+[admin.settings.telegram.enableAllowChannelIDs]
+label = "विशिष्ट चैनल IDs को अनुमति दें"
+description = "सक्रिय होने पर, केवल सूचीबद्ध चैनल IDs बॉट का उपयोग कर सकते हैं।"
+
+[admin.settings.telegram.allowChannelIDs]
+label = "अनुमत चैनल IDs"
+description = "बॉट से इंटरेक्ट करने के लिए अनुमत Telegram चैनल IDs दर्ज करें।"
+placeholder = "चैनल ID जोड़ें और एंटर दबाएँ"
+
+[admin.settings.telegram.processing]
+title = "प्रसंस्करण"
+description = "Telegram अपलोड के लिए पोलिंग अंतराल और प्रोसेसिंग टाइमआउट नियंत्रित करें।"
+
+[admin.settings.telegram.processingTimeoutSeconds]
+label = "प्रोसेसिंग टाइमआउट (सेकंड)"
+description = "त्रुटि रिपोर्ट करने से पहले प्रोसेसिंग जॉब के लिए प्रतीक्षा का अधिकतम समय।"
+
+[admin.settings.telegram.pollingIntervalMillis]
+label = "पोलिंग अंतराल (ms)"
+description = "नए Telegram अपडेट की जाँच के बीच का अंतराल।"
+
+[admin.settings.telegram.feedback]
+title = "फ़ीडबैक संदेश"
+description = "बॉट उपयोगकर्ताओं और चैनलों को फ़ीडबैक कब भेजे, यह चुनें।"
+
+[admin.settings.telegram.feedback.general.enabled]
+label = "फ़ीडबैक सक्षम करें"
+description = "नियंत्रित करें कि बॉट कोई फ़ीडबैक संदेश भेजे या नहीं।"
+
+[admin.settings.telegram.feedback.channel]
+title = "चैनल फ़ीडबैक नियम"
+
+[admin.settings.telegram.feedback.channel.noValidDocument]
+label = "\"No valid document\" दिखाएँ (चैनल)"
+description = "चैनल अपलोड के लिए 'no valid document' प्रतिक्रिया को दबाएँ।"
+
+[admin.settings.telegram.feedback.channel.errorProcessing]
+label = "प्रोसेसिंग त्रुटियाँ दिखाएँ (चैनल)"
+description = "प्रोसेसिंग त्रुटि संदेश चैनलों को भेजें।"
+
+[admin.settings.telegram.feedback.channel.errorMessage]
+label = "त्रुटि संदेश दिखाएँ (चैनल)"
+description = "चैनलों के लिए विस्तृत त्रुटि संदेश दिखाएँ।"
+
+[admin.settings.telegram.feedback.user]
+title = "उपयोगकर्ता फ़ीडबैक नियम"
+
+[admin.settings.telegram.feedback.user.noValidDocument]
+label = "\"No valid document\" दिखाएँ (उपयोगकर्ता)"
+description = "उपयोगकर्ता अपलोड के लिए 'no valid document' प्रतिक्रिया को दबाएँ।"
+
+[admin.settings.telegram.feedback.user.errorProcessing]
+label = "प्रोसेसिंग त्रुटियाँ दिखाएँ (उपयोगकर्ता)"
+description = "प्रोसेसिंग त्रुटि संदेश उपयोगकर्ताओं को भेजें।"
+
+[admin.settings.telegram.feedback.user.errorMessage]
+label = "त्रुटि संदेश दिखाएँ (उपयोगकर्ता)"
+description = "उपयोगकर्ताओं के लिए विस्तृत त्रुटि संदेश दिखाएँ।"
+
 [admin.settings.database]
 title = "डेटाबेस"
 description = "एंटरप्राइज़ डिप्लॉयमेंट के लिए कस्टम डेटाबेस कनेक्शन सेटिंग्स कॉन्फ़िगर करें।"
 configuration = "डेटाबेस कॉन्फ़िगरेशन"
+backupTitle = "बैकअप और रिस्टोर"
+backupDescription = "एडमिन कंसोल से सीधे H2 बैकअप प्रबंधित करें।"
+loadError = "डेटाबेस बैकअप लोड करने में विफल"
+backupCreated = "बैकअप सफलतापूर्वक बनाया गया"
+backupFailed = "बैकअप बनाने में विफल"
+deleteTitle = "बैकअप हटाएं"
+deleteConfirm = "क्या इस बैकअप को हटाना चाहते हैं? इसे वापस नहीं किया जा सकता।"
+deleteSuccess = "बैकअप हटाया गया"
+deleteFailed = "बैकअप हटाने में विफल"
+deleteConfirmAction = "बैकअप हटाएं"
+downloadFailed = "बैकअप डाउनलोड करने में विफल"
+version = "H2 संस्करण"
+embedded = "एम्बेडेड H2"
+external = "बाहरी डेटाबेस"
+h2Only = "बैकअप केवल एम्बेडेड H2 डेटाबेस के लिए उपलब्ध हैं।"
+h2Hint = "बैकअप और रिस्टोर सक्षम करने के लिए डेटाबेस प्रकार को H2 पर सेट करें और कस्टम डेटाबेस को अक्षम करें।"
+manageBackups = "बैकअप प्रबंधित करें"
+refresh = "रिफ्रेश"
+createBackup = "बैकअप बनाएं"
+uploadTitle = "अपलोड और इम्पोर्ट"
+chooseFile = ".sql बैकअप फ़ाइल चुनें"
+importFromUpload = "अपलोड इम्पोर्ट करें"
+confirmImportTitle = "डेटाबेस इम्पोर्ट की पुष्टि करें"
+overwriteWarning = "चेतावनी: यह वर्तमान डेटाबेस को ओवरराइट कर देगा।"
+overwriteWarningBody = "सारा मौजूदा डेटा अपलोड किए गए बैकअप से बदल दिया जाएगा। यह क्रिया वापस नहीं की जा सकती।"
+confirmCodeLabel = "आगे बढ़ने के लिए कन्फर्मेशन कोड दर्ज करें"
+enterCode = "ऊपर दिखाया गया कोड दर्ज करें"
+confirmImport = "इम्पोर्ट की पुष्टि करें"
+codeMismatch = "कन्फर्मेशन कोड मेल नहीं खाता"
+codeMismatchBody = "कृपया आगे बढ़ने के लिए कोड ठीक उसी प्रकार दर्ज करें जैसा दिखाया गया है।"
+selectFile = "इम्पोर्ट करने के लिए .sql फ़ाइल चुनें"
+importSuccess = "बैकअप सफलतापूर्वक इम्पोर्ट किया गया"
+importFailed = "बैकअप इम्पोर्ट करने में विफल"
+noBackups = "अभी तक कोई बैकअप नहीं मिला।"
+unavailable = "वर्तमान डेटाबेस कॉन्फ़िगरेशन के लिए बैकअप सूची उपलब्ध नहीं है।"
+fileName = "फ़ाइल"
+created = "बनाया गया"
+size = "आकार"
+actions = "क्रियाएं"
+download = "डाउनलोड"
+import = "इम्पोर्ट"
+delete = "हटाएं"
 
 [admin.settings.database.enableCustom]
 label = "कस्टम डेटाबेस सक्रिय करें"
@@ -4385,6 +5020,26 @@ description = "इमेज प्रोसेसिंग के लिए अ�
 [admin.settings.advanced.tessdataDir]
 label = "tessdata डायरेक्टरी"
 description = "OCR भाषा फ़ाइलों के लिए tessdata डायरेक्टरी का पाथ"
+downloadMissingTitle = "कोई भाषा चयनित नहीं"
+downloadMissingBody = "कृपया डाउनलोड के लिए कम से कम एक भाषा चुनें।"
+downloadSuccessTitle = "भाषाएं डाउनलोड की गईं"
+downloadSuccessBody = "चयनित tessdata भाषाएं सहेज ली गई हैं।"
+downloadErrorTitle = "डाउनलोड विफल"
+loadingLanguages = "इंस्टॉल की गई tessdata भाषाएं लोड की जा रही हैं..."
+installedLanguages = "इंस्टॉल की गई tessdata भाषाएं"
+noLanguages = "कॉन्फ़िगर की गई डायरेक्टरी में कोई tessdata भाषा नहीं मिली।"
+downloadLabel = "अतिरिक्त tessdata भाषाएं डाउनलोड करें"
+downloadPlaceholder = "भाषाएं चुनें"
+downloadNothingFound = "कोई अतिरिक्त भाषाएं नहीं मिलीं"
+permissionNotice = "tessdata पाथ पर लिखना संभव नहीं है। डाउनलोड ब्राउज़र में खुलेंगे; कृपया .traineddata फ़ाइलें मैन्युअल रूप से tessdata फ़ोल्डर में सहेजें।"
+manualLinks = "मैन्युअल डाउनलोड: लिंक पर क्लिक करें और फ़ाइलें tessdata फ़ोल्डर में रखें।"
+downloadButton = "चयनित भाषाएं डाउनलोड करें"
+downloadInvalidTitle = "अमान्य चयन"
+downloadInvalidBody = "कुछ चयनित भाषाएं डाउनलोड के लिए उपलब्ध नहीं हैं। कृपया रिफ्रेश करें और सूची में से चुनें।"
+downloadErrorNetwork = "नेटवर्क त्रुटि के कारण डाउनलोड विफल हुआ। कृपया अपना कनेक्शन जांचें और पुनः प्रयास करें।"
+downloadErrorServer = "tessdata भाषाएं डाउनलोड करते समय सर्वर में त्रुटि हुई। कृपया बाद में पुनः प्रयास करें।"
+downloadErrorPermission = "tessdata डायरेक्टरी पर लिखना संभव नहीं है: {{message}}। कृपया किसी लिखने योग्य डायरेक्टरी का चयन करें (जैसे एप्लिकेशन डेटा फ़ोल्डर के अंदर) या अनुमतियां समायोजित करें।"
+downloadErrorGeneric = "डाउनलोड विफल: {{message}}। कृपया बाद में पुनः प्रयास करें।"
 
 [admin.settings.advanced.disableSanitize]
 label = "HTML सैनिटाइज़ेशन निष्क्रिय करें"
@@ -4430,7 +5085,7 @@ description = "विस्तृत सिस्टम टेम्प डा�
 label = "प्रोसेस एक्सीक्यूटर सीमाएँ"
 description = "प्रत्येक प्रोसेस एक्सीक्यूटर के लिए सेशन सीमाएँ और टाइमआउट कॉन्फ़िगर करें"
 libreOffice = "LibreOffice"
-pdfToHtml = "PDF से HTML"
+pdfToHtml = "PDF to HTML"
 qpdf = "QPDF"
 tesseract = "Tesseract OCR"
 pythonOpenCv = "Python OpenCV"
@@ -4484,6 +5139,10 @@ description = "एडमिन को ऑटो-जनरेटेड पास�
 [admin.settings.mail.frontendUrl]
 label = "फ़्रंटएंड URL"
 description = "फ़्रंटएंड के लिए बेस URL (उदा. https://pdf.example.com)। ईमेल में इनवाइट लिंक जनरेट करने के लिए उपयोग। खाली छोड़ने पर बैकएंड URL उपयोग होगा।"
+
+[admin.settings.mail.frontendUrlNote]
+note = "ध्यान दें: इसके लिए फ्रंटएंड URL कॉन्फ़िगर होना आवश्यक है। "
+link = "सिस्टम सेटिंग्स में कॉन्फ़िगर करें"
 
 [admin.settings.legal]
 title = "कानूनी दस्तावेज़"
@@ -4669,6 +5328,9 @@ googleDriveShort = "Drive"
 myFiles = "मेरी फ़ाइलें"
 noRecentFiles = "कोई हालिया फ़ाइल नहीं मिली"
 googleDriveNotAvailable = "Google Drive इंटीग्रेशन उपलब्ध नहीं"
+mobileUpload = "मोबाइल अपलोड"
+mobileShort = "मोबाइल"
+mobileUploadNotAvailable = "मोबाइल अपलोड सक्षम नहीं है"
 downloadSelected = "चयनित डाउनलोड करें"
 saveSelected = "चयनित सहेजें"
 openFiles = "फ़ाइलें खोलें"
@@ -4881,6 +5543,7 @@ desc = "PDF कार्रवाइयों को जोड़कर बह�
 invalidStep = "अमान्य चरण"
 reviewTitle = "स्वचालन परिणाम"
 copyToSaved = "सहेजे गए में कॉपी करें"
+exportForFolderScanning = "फ़ोल्डर स्कैनिंग के लिए निर्यात करें"
 
 [automate.files]
 placeholder = "इस स्वचालन के साथ प्रोसेस करने के लिए फ़ाइलें चुनें"
@@ -4902,6 +5565,7 @@ createTitle = "स्वचालन बनाएँ"
 editTitle = "स्वचालन संपादित करें"
 intro = "स्वचालन टूल्स को क्रमवार चलाते हैं। शुरू करने के लिए, टूल्स उसी क्रम में जोड़ें जिसमें आप उन्हें चलाना चाहते हैं।"
 save = "स्वचालन सहेजें"
+exportForFolderScanning = "फ़ोल्डर स्कैनिंग के लिए निर्यात करें"
 
 [automate.creation.name]
 label = "स्वचालन नाम"
@@ -4984,6 +5648,7 @@ loading = "लोड हो रहा है..."
 back = "वापस"
 continue = "जारी रखें"
 error = "त्रुटि"
+save = "सहेजें"
 
 [config.overview]
 title = "एप्लिकेशन कॉन्फ़िगरेशन"
@@ -5045,6 +5710,15 @@ warning = "⚠️ चेतावनी: यह क्रिया नई API �
 impact = "वर्तमान में इन कुंजियों का उपयोग कर रही कोई भी एप्लिकेशन या सेवा तब तक काम करना बंद कर देगी जब तक आप उन्हें नई कुंजियों से अपडेट नहीं करते।"
 confirmPrompt = "क्या आप वाकई जारी रखना चाहते हैं?"
 confirmCta = "कुंजियाँ रीफ़्रेश करें"
+
+[config.apiKeys.alert]
+apiKeyErrorTitle = "API कुंजी त्रुटि"
+failedToCreateApiKey = "API कुंजी बनाने में विफल।"
+failedToRetrieveApiKey = "प्रतिक्रिया से API कुंजी प्राप्त करने में विफल।"
+failedToFetchApiKey = "API कुंजी फ़ेच करने में विफल।"
+apiKeyRefreshed = "API कुंजी रीफ़्रेश की गई"
+apiKeyRefreshedBody = "आपकी API कुंजी सफलतापूर्वक रीफ़्रेश की गई है।"
+failedToRefreshApiKey = "API कुंजी रीफ़्रेश करने में विफल।"
 
 [AddAttachmentsRequest]
 attachments = "संलग्नक चुनें"
@@ -5150,6 +5824,16 @@ finish = "समाप्त करें"
 startTour = "टूर शुरू करें"
 startTourDescription = "Stirling PDF की प्रमुख विशेषताओं का मार्गदर्शित टूर लें"
 
+[onboarding.whatsNew]
+quickAccess = "रीडर, ऑटोमेट, आपकी फ़ाइलें और सभी टूर के बीच जाने के लिए <strong>Quick Access</strong> रेल से शुरू करें।"
+leftPanel = "बाएँ <strong>Tools</strong> पैनल में वे सब सूचीबद्ध है जो आप कर सकते हैं। श्रेणियाँ ब्राउज़ करें या जल्दी टूल खोजने के लिए सर्च करें।"
+fileUpload = "<strong>Files</strong> बटन से अपलोड करें या हाल की PDF चुनें। हम एक नमूना लोड करेंगे ताकि आप वर्कस्पेस देख सकें।"
+rightRail = "<strong>Right Rail</strong> में त्वरित क्रियाएँ होती हैं जिनसे फ़ाइलें चुनें, थीम या भाषा बदलें, और परिणाम डाउनलोड करें।"
+topBar = "ऊपरी बार आपको <strong>Viewer</strong>, <strong>Page Editor</strong>, और <strong>Active Files</strong> के बीच स्विच करने देता है।"
+pageEditorView = "पेजों को पुनःक्रमित, घुमाने या हटाने के लिए Page Editor पर स्विच करें।"
+activeFilesView = "Active Files में अपनी सभी खुली फ़ाइलें देखें और जिस पर काम करना है उसे चुनें।"
+wrapUp = "V2 में नया यही है। इसे, Tools टूर या Admin टूर को फिर से देखने के लिए कभी भी <strong>Tours</strong> मेनू खोलें।"
+
 [onboarding.welcomeModal]
 title = "Stirling PDF में आपका स्वागत है!"
 description = "क्या आप 1-मिनट का त्वरित टूर लेना चाहेंगे ताकि मुख्य फीचर्स और शुरुआत करने का तरीका जान सकें?"
@@ -5169,6 +5853,10 @@ skipForNow = "अभी छोड़ें"
 download = "डाउनलोड →"
 showMeAround = "मुझे दिखाएँ"
 skipTheTour = "टूर छोड़ें"
+
+[onboarding.tourOverview]
+title = "टूर अवलोकन"
+body = "Stirling PDF V2 दर्जनों टूल और नए लेआउट के साथ आता है। क्या बदला है और आवश्यक फीचर्स कहाँ मिलेंगे, यह देखने के लिए एक त्वरित टूर लें।"
 
 [onboarding.serverLicense]
 skip = "अभी छोड़ें"
@@ -5252,9 +5940,11 @@ username = "यूज़रनेम (ईमेल)"
 usernamePlaceholder = "user@example.com"
 password = "पासवर्ड"
 passwordPlaceholder = "पासवर्ड दर्ज करें"
+passwordRequired = "पासवर्ड आवश्यक है"
 role = "भूमिका"
 team = "टीम (वैकल्पिक)"
 teamPlaceholder = "एक टीम चुनें"
+authType = "प्रमाणीकरण प्रकार"
 forcePasswordChange = "पहली लॉगिन पर पासवर्ड बदलना अनिवार्य करें"
 cancel = "रद्द करें"
 submit = "सदस्य जोड़ें"
@@ -5262,6 +5952,13 @@ usernameRequired = "यूज़रनेम और पासवर्ड आव
 passwordTooShort = "पासवर्ड कम से कम 6 अक्षर का होना चाहिए"
 success = "उपयोगकर्ता सफलतापूर्वक बनाया गया"
 error = "उपयोगकर्ता बनाने में विफल"
+forceMFA = "अगले लॉगिन पर MFA सेटअप अनिवार्य करें"
+
+[workspace.people.authType]
+password = "पासवर्ड"
+oauth = "OAuth2"
+saml = "SAML2"
+ssoDescription = "उपयोगकर्ता SSO प्रदाता के माध्यम से प्रमाणीकरण करेगा"
 
 [workspace.people.editMember]
 title = "सदस्य संपादित करें"
@@ -5281,6 +5978,31 @@ error = "उपयोगकर्ता स्थिति अपडेट क�
 [workspace.people.delete]
 success = "उपयोगकर्ता सफलतापूर्वक हटाया गया"
 error = "उपयोगकर्ता हटाने में विफल"
+
+[workspace.people.changePassword]
+action = "पासवर्ड बदलें"
+title = "पासवर्ड बदलें"
+subtitle = "के लिए पासवर्ड अपडेट करें"
+newPassword = "नया पासवर्ड"
+confirmPassword = "पासवर्ड की पुष्टि करें"
+placeholder = "नया पासवर्ड दर्ज करें"
+confirmPlaceholder = "नया पासवर्ड फिर से दर्ज करें"
+passwordRequired = "कृपया नया पासवर्ड दर्ज करें"
+passwordMismatch = "पासवर्ड मेल नहीं खाते"
+generateRandom = "सुरक्षित पासवर्ड जनरेट करें"
+generatedPreview = "जनरेट किया गया पासवर्ड:"
+copyTooltip = "क्लिपबोर्ड पर कॉपी करें"
+copiedToClipboard = "पासवर्ड क्लिपबोर्ड पर कॉपी किया गया"
+copyFailed = "पासवर्ड कॉपी करने में विफल"
+sendEmail = "इस बदलाव के बारे में उपयोगकर्ता को ईमेल करें"
+includePassword = "ईमेल में नया पासवर्ड शामिल करें"
+forcePasswordChange = "अगले लॉगिन पर उपयोगकर्ता को पासवर्ड बदलने के लिए बाध्य करें"
+emailUnavailable = "इस उपयोगकर्ता का ईमेल एक मान्य ईमेल पता नहीं है। सूचनाएँ अक्षम हैं।"
+smtpDisabled = "ईमेल सूचनाओं के लिए सेटिंग्स में SMTP सक्षम होना आवश्यक है।"
+notifyOnly = "पासवर्ड के बिना एक ईमेल भेजा जाएगा, जिससे उपयोगकर्ता को पता चलेगा कि किसी व्यवस्थापक ने इसे बदला है।"
+submit = "पासवर्ड अपडेट करें"
+success = "पासवर्ड सफलतापूर्वक अपडेट किया गया"
+error = "पासवर्ड अपडेट करने में विफल"
 
 [workspace.people.emailInvite]
 tab = "ईमेल आमंत्रण"
@@ -5339,6 +6061,11 @@ fromLicense = "लाइसेंस से"
 slotsAvailable = "{{count}} उपयोगकर्ता स्लॉट उपलब्ध"
 noSlotsAvailable = "कोई स्लॉट उपलब्ध नहीं"
 currentUsage = "वर्तमान में {{max}} में से {{current}} उपयोगकर्ता लाइसेंस उपयोग में"
+
+[workspace.people.mfa]
+adminDisableSuccess = "उपयोगकर्ता के लिए MFA सफलतापूर्वक अक्षम किया गया"
+adminDisableError = "उपयोगकर्ता के लिए MFA अक्षम करने में विफल"
+disableByAdmin = "MFA अक्षम करें"
 
 [workspace.teams]
 title = "टीम्स"
@@ -5458,6 +6185,28 @@ contactSales = "सेल्स से संपर्क करें"
 contactToUpgrade = "अपने प्लान को अपग्रेड या कस्टमाइज़ करने के लिए हमसे संपर्क करें"
 maxUsers = "अधिकतम उपयोगकर्ता"
 upTo = "तक"
+getLicense = "सर्वर लाइसेंस प्राप्त करें"
+upgradeToEnterprise = "एंटरप्राइज़ में अपग्रेड करें"
+selectPeriod = "बिलिंग अवधि चुनें"
+monthlyBilling = "मासिक बिलिंग"
+yearlyBilling = "वार्षिक बिलिंग"
+checkoutOpened = "चेकआउट खुला"
+checkoutInstructions = "Stripe टैब में अपनी खरीद पूरी करें। भुगतान के बाद यहाँ लौटें और अपना लाइसेंस सक्रिय करने के लिए पेज रीफ़्रेश करें। आपको अपने लाइसेंस कुंजी के साथ ईमेल भी प्राप्त होगा।"
+activateLicense = "अपना लाइसेंस सक्रिय करें"
+
+[plan.static.licenseActivation]
+checkoutOpened = "नए टैब में चेकआउट खोला गया"
+instructions = "Stripe टैब में अपनी खरीद पूरी करें। भुगतान पूरा होने पर आपको अपनी लाइसेंस कुंजी के साथ ईमेल प्राप्त होगा।"
+enterKey = "अपनी योजना सक्रिय करने के लिए नीचे अपनी लाइसेंस कुंजी दर्ज करें:"
+keyDescription = "ईमेल से मिली लाइसेंस कुंजी पेस्ट करें"
+activate = "लाइसेंस सक्रिय करें"
+doLater = "यह बाद में करूँगा"
+success = "लाइसेंस सक्रिय हुआ!"
+successMessage = "आपका लाइसेंस सफलतापूर्वक सक्रिय हो गया है। अब आप यह विंडो बंद कर सकते हैं।"
+
+[plan.static.billingPortal]
+title = "ईमेल सत्यापन आवश्यक"
+message = "आपको Stripe बिलिंग पोर्टल में अपना ईमेल पता सत्यापित करना होगा। लॉगिन लिंक के लिए अपना ईमेल देखें।"
 
 [plan.period]
 month = "माह"
@@ -5661,6 +6410,8 @@ notAvailable = "ऑडिट सिस्टम उपलब्ध नहीं"
 notAvailableMessage = "ऑडिट सिस्टम कॉन्फ़िगर नहीं है या उपलब्ध नहीं है।"
 disabled = "ऑडिट लॉगिंग अक्षम है"
 disabledMessage = "सिस्टम ईवेंट ट्रैक करने के लिए अपनी एप्लिकेशन कॉन्फ़िगरेशन में ऑडिट लॉगिंग सक्षम करें।"
+enterpriseRequired = "एंटरप्राइज़ लाइसेंस आवश्यक"
+enterpriseRequiredMessage = "ऑडिट लॉगिंग सिस्टम एक एंटरप्राइज़ फीचर है। ऑडिट लॉग और एनालिटिक्स तक पहुँच के लिए कृपया एंटरप्राइज़ लाइसेंस में अपग्रेड करें।"
 
 [audit.error]
 title = "ऑडिट सिस्टम लोड करने में त्रुटि"
@@ -5758,6 +6509,7 @@ endpoint = "एंडपॉइंट"
 visits = "विज़िट"
 percentage = "प्रतिशत"
 noData = "कोई डेटा उपलब्ध नहीं"
+unknownEndpoint = "अज्ञात एंडपॉइंट"
 
 [backendHealth]
 checking = "बैकएंड स्थिति की जाँच की जा रही है..."
@@ -5815,11 +6567,13 @@ subtitle = "अपने Stirling खाते से साइन इन कर
 [setup.selfhosted]
 title = "सर्वर में साइन इन"
 subtitle = "अपने सर्वर क्रेडेंशियल्स दर्ज करें"
+link = "या किसी स्व-होस्टेड खाते से कनेक्ट करें"
 
 [setup.server]
 title = "सर्वर से कनेक्ट करें"
 subtitle = "अपना सेल्फ-होस्टेड सर्वर URL दर्ज करें"
 testing = "कनेक्शन परीक्षण हो रहा है..."
+useLast = "Last used server: {{serverUrl}}"
 
 [setup.server.type]
 saas = "Stirling PDF SaaS"
@@ -5831,8 +6585,17 @@ description = "अपने सेल्फ-होस्टेड Stirling PDF �
 
 [setup.server.error]
 emptyUrl = "कृपया सर्वर URL दर्ज करें"
+invalidUrl = "अमान्य URL प्रारूप। कृपया https://your-server.com जैसे वैध URL दर्ज करें"
 unreachable = "सर्वर से कनेक्ट नहीं हो सका"
 testFailed = "कनेक्शन परीक्षण विफल"
+configFetch = "सर्वर कॉन्फ़िगरेशन प्राप्त करने में विफल। कृपया URL जाँचें और फिर से प्रयास करें।"
+
+[setup.server.error.securityDisabled]
+title = "लॉगिन सक्षम नहीं है"
+body = "इस सर्वर पर लॉगिन सक्षम नहीं है। इस सर्वर से कनेक्ट करने के लिए, आपको प्रमाणीकरण सक्षम करना होगा:"
+step1 = "अपने एनवायरनमेंट में DOCKER_ENABLE_SECURITY=true सेट करें"
+step2 = "या settings.yml में security.enableLogin=true सेट करें"
+step3 = "सर्वर को पुनः प्रारंभ करें"
 
 [setup.login]
 title = "साइन इन"
@@ -5841,6 +6604,7 @@ connectingTo = "किससे कनेक्ट हो रहा है:"
 submit = "लॉगिन"
 signInWith = "इसके साथ साइन इन करें"
 oauthPending = "प्रमाणीकरण के लिए ब्राउज़र खुल रहा है..."
+sso = "Single Sign-On"
 orContinueWith = "या ईमेल के साथ जारी रखें"
 serverRequirement = "ध्यान दें: सर्वर पर लॉगिन सक्षम होना चाहिए।"
 showInstructions = "कैसे सक्षम करें?"
@@ -5905,6 +6669,9 @@ earlyAccess = "अर्ली एक्सेस"
 reset = "परिवर्तन रीसेट करें"
 downloadJson = "JSON डाउनलोड करें"
 generatePdf = "PDF जनरेट करें"
+saveChanges = "परिवर्तन सहेजें"
+applyChanges = "परिवर्तन लागू करें"
+downloadCopy = "कॉपी डाउनलोड करें"
 
 [pdfTextEditor.options.autoScaleText]
 title = "टेक्स्ट को बॉक्स में फिट करने हेतु ऑटो-स्केल"
@@ -5922,6 +6689,24 @@ descriptionInline = "टिप: मल्टी-सेलेक्ट करन�
 [pdfTextEditor.options.forceSingleElement]
 title = "संपादित टेक्स्ट को एक ही PDF एलिमेंट में लॉक करें"
 description = "सक्रिय होने पर, ओवरलैपिंग glyphs या मिश्रित फ़ॉन्ट्स से बचने के लिए, एडिटर संपादित हर टेक्स्ट बॉक्स को एक PDF टेक्स्ट एलिमेंट के रूप में एक्सपोर्ट करता है."
+
+[pdfTextEditor.options.advanced]
+title = "उन्नत सेटिंग्स"
+
+[pdfTextEditor.tooltip.header]
+title = "पूर्वावलोकन सीमाएँ"
+
+[pdfTextEditor.tooltip.textFocus]
+title = "टेक्स्ट और छवि फोकस"
+text = "यह कार्यक्षेत्र टेक्स्ट संपादन और एम्बेडेड छवियों को पुनर्स्थापित करने पर केंद्रित है। जटिल पेज आर्टवर्क, फ़ॉर्म विजेट और लेयर्ड ग्राफ़िक्स निर्यात के लिए सुरक्षित रहते हैं, लेकिन यहाँ पूरी तरह संपादन योग्य नहीं हैं।"
+
+[pdfTextEditor.tooltip.previewVariance]
+title = "पूर्वावलोकन अंतर"
+text = "कुछ विज़ुअल (जैसे टेबल बॉर्डर, आकृतियाँ, या एनोटेशन की उपस्थिति) पूर्वावलोकन में ठीक वैसे प्रदर्शित नहीं हो सकते। निर्यातित PDF जहाँ संभव हो, मूल ड्रॉइंग कमांड बनाए रखता है।"
+
+[pdfTextEditor.tooltip.alpha]
+title = "अल्फा व्यूअर"
+text = "यह अल्फा व्यूअर अभी विकसित हो रहा है—कुछ फ़ॉन्ट, रंग, पारदर्शिता प्रभाव और लेआउट विवरण हल्के बदल सकते हैं। साझा करने से पहले कृपया जनरेट की गई PDF को दोबारा जाँच लें।"
 
 [pdfTextEditor.manual]
 mergeTooltip = "चयनित बॉक्सों को मर्ज करें"
@@ -5942,6 +6727,8 @@ alpha = "यह alpha व्यूअर अभी विकसित हो र
 [pdfTextEditor.empty]
 title = "कोई दस्तावेज़ लोड नहीं"
 subtitle = "टेक्स्ट सामग्री संपादित करने के लिए PDF या JSON फ़ाइल लोड करें."
+dropzone = "यहाँ PDF या JSON फ़ाइल खींचकर छोड़ें, या ब्राउज़ करने के लिए क्लिक करें"
+dropzoneWithFiles = "फ़ाइलें टैब से कोई फ़ाइल चुनें, या यहाँ PDF या JSON फ़ाइल खींचकर छोड़ें, या ब्राउज़ करने के लिए क्लिक करें"
 
 [pdfTextEditor.welcomeBanner]
 title = "PDF Text Editor में आपका स्वागत है (Early Access)"
@@ -6042,3 +6829,58 @@ title = "टेक्स्ट जोड़ने के परिणाम"
 
 [addText.error]
 failed = "PDF में टेक्स्ट जोड़ते समय त्रुटि हुई."
+
+[mobileUpload]
+title = "मोबाइल से अपलोड करें"
+description = "फ़ोटो अपलोड करने के लिए स्कैन करें। छवियाँ स्वतः PDF में बदल जाती हैं।"
+descriptionNoConvert = "अपने मोबाइल डिवाइस से फ़ोटो अपलोड करने के लिए स्कैन करें।"
+error = "कनेक्शन त्रुटि"
+pollingError = "फ़ाइलें जाँचने में त्रुटि"
+sessionId = "सेशन ID"
+sessionCreateError = "सेशन बनाने में विफल"
+expiryWarning = "सेशन शीघ्र ही समाप्त हो रहा है"
+expiryWarningMessage = "यह QR कोड {{seconds}} सेकंड में समाप्त हो जाएगा। नया कोड स्वचालित रूप से जनरेट हो जाएगा।"
+filesReceived = "{{count}} फ़ाइल(ें) प्राप्त हुईं"
+connected = "मोबाइल डिवाइस कनेक्टेड"
+instructions = "अपने फ़ोन कैमरे से स्कैन करें। छवियाँ स्वतः PDF में बदल जाती हैं।"
+instructionsNoConvert = "फ़ाइलें अपलोड करने के लिए अपने फ़ोन कैमरे से स्कैन करें।"
+
+[mobileScanner]
+title = "मोबाइल स्कैनर"
+noSession = "अमान्य सेशन"
+noSessionMessage = "इस पेज तक पहुँचने के लिए कृपया वैध QR कोड स्कैन करें।"
+validating = "सेशन सत्यापित किया जा रहा है..."
+sessionInvalid = "सेशन त्रुटि"
+sessionExpired = "यह सेशन समाप्त हो गया है। कृपया रिफ़्रेश करें और फिर से प्रयास करें।"
+sessionNotFound = "सेशन नहीं मिला। कृपया रिफ़्रेश करें और फिर से प्रयास करें।"
+sessionValidationError = "सेशन सत्यापित नहीं हो सका। कृपया फिर से प्रयास करें।"
+uploadSuccess = "अपलोड सफल!"
+uploadSuccessMessage = "आपकी छवियाँ स्थानांतरित कर दी गई हैं।"
+httpsRequired = "कैमरा एक्सेस के लिए HTTPS या localhost आवश्यक है। कृपया HTTPS उपयोग करें या localhost के माध्यम से पहुँचें।"
+uploadFailed = "अपलोड विफल। कृपया फिर से प्रयास करें।"
+uploading = "अपलोड हो रहा है..."
+connected = "कनेक्टेड"
+connecting = "कनेक्ट किया जा रहा है..."
+chooseMethod = "अपलोड विधि चुनें"
+chooseMethodDescription = "दस्तावेज़ स्कैन और अपलोड करने का तरीका चुनें"
+camera = "कैमरा"
+cameraDescription = "अपने डिवाइस कैमरे से स्वचालित किनारा पहचान के साथ दस्तावेज़ स्कैन करें"
+fileUpload = "फ़ाइल अपलोड"
+fileDescription = "अपने डिवाइस से मौजूदा फ़ोटो या दस्तावेज़ अपलोड करें"
+cameraAccessDenied = "कैमरा एक्सेस अस्वीकृत। कृपया कैमरा एक्सेस सक्षम करें।"
+back = "वापस"
+settings = "सेटिंग्स"
+edgeDetection = "किनारों की पहचान"
+flashlight = "फ्लैशलाइट"
+flash = "फ्लैश"
+processing = "प्रसंस्करण..."
+capture = "फ़ोटो कैप्चर करें"
+selectFilesPrompt = "अपलोड करने के लिए फ़ाइलें चुनें"
+selectImage = "छवि चुनें"
+preview = "पूर्वावलोकन"
+retake = "फिर से लें"
+addToBatch = "बैच में जोड़ें"
+upload = "अपलोड"
+batchImages = "बैच"
+clearBatch = "साफ़ करें"
+uploadAll = "सभी अपलोड करें"

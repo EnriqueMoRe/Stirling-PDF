@@ -1,8 +1,11 @@
 unsavedChanges = "شما تغییرات ذخیره‌نشده‌ای در PDF دارید."
+pendingRedactionsTitle = "سانسورهای اعمال‌نشده"
+pendingRedactions = "شما سانسورهای اعمال‌نشده‌ای دارید که از دست خواهند رفت."
 areYouSure = "مطمئنید می‌خواهید خارج شوید؟"
 unsavedChangesTitle = "تغییرات ذخیره‌نشده"
 keepWorking = "ادامه کار"
 discardChanges = "لغو تغییرات و خروج"
+discardRedactions = "حذف و خروج"
 applyAndContinue = "ذخیره و خروج"
 exportAndContinue = "خروجی بگیرید و ادامه دهید"
 cancel = "انصراف"
@@ -216,6 +219,8 @@ pagesAndStarting = "صفحات و شماره آغازین"
 positionAndPages = "موقعیت و صفحات"
 preview = "انتخاب موقعیت"
 previewDisclaimer = "پیش‌نمایش تقریبی است. خروجی نهایی ممکن است به دلیل معیارهای فونت PDF متفاوت باشد."
+zeroPad = "Zero‑pad Width (Bates Stamping)"
+zeroPadTooltip = "Zero‑pad (Bates Stamp) page numbers to this width (e.g., 3 ⇒ 001). Set 0 to disable."
 
 [addPageNumbers.selectText]
 1 = "انتخاب فایل PDF:"
@@ -303,6 +308,7 @@ selectOperation = "عملیات را انتخاب کنید"
 addOperationButton = "اضافه کردن عملیات"
 pipelineHeader = "پایپلاین:"
 saveButton = "دانلود"
+saveForFolderScanning = "ذخیره برای اسکن پوشه"
 validateButton = "اعتبارسنجی"
 
 [enterpriseEdition]
@@ -340,6 +346,10 @@ advance = "پیشرفته"
 edit = "مشاهده و ویرایش"
 popular = "محبوب"
 
+[footer]
+discord = "Discord"
+issues = "GitHub"
+
 [settings.preferences]
 title = "ترجیحات"
 
@@ -360,6 +370,7 @@ advanced = "پیشرفته"
 title = "امنیت و احراز هویت"
 security = "امنیت"
 connections = "اتصالات"
+telegram = "Telegram"
 
 [settings.licensingAnalytics]
 title = "مجوزها و آنالیتیکس"
@@ -430,10 +441,38 @@ fullscreen = "تمام‌صفحه"
 [settings.general.updates]
 title = "به‌روزرسانی نرم‌افزار"
 description = "بررسی به‌روزرسانی و مشاهده اطلاعات نسخه"
-currentVersion = "نسخه فعلی"
+currentBackendVersion = "Current Backend Version"
+currentFrontendVersion = "Current Frontend Version"
+versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 latestVersion = "آخرین نسخه"
 checkForUpdates = "بررسی به‌روزرسانی"
 viewDetails = "مشاهده جزئیات"
+serverNeedsUpdate = "سرور باید توسط مدیر به‌روزرسانی شود"
+
+[settings.general.versionInfo]
+title = "اطلاعات نسخه"
+description = "جزئیات نسخه دسکتاپ و سرور"
+desktop = "نسخه دسکتاپ"
+server = "نسخه سرور"
+
+[settings.security]
+title = "امنیت"
+description = "رمز عبور خود را به‌روزرسانی کنید تا حسابتان ایمن بماند."
+
+[settings.security.password]
+subtitle = "رمز عبور خود را تغییر دهید. پس از به‌روزرسانی از حساب خارج خواهید شد."
+required = "همه فیلدها الزامی هستند."
+mismatch = "رمزهای عبور جدید با هم مطابقت ندارند."
+error = "امکان به‌روزرسانی رمز عبور نیست. لطفاً رمز عبور فعلی خود را بررسی کرده و دوباره تلاش کنید."
+success = "رمز عبور با موفقیت به‌روزرسانی شد. لطفاً دوباره وارد شوید."
+ssoDisabled = "تغییر رمز عبور توسط ارائه‌دهنده هویت شما مدیریت می‌شود."
+current = "رمز عبور فعلی"
+currentPlaceholder = "رمز عبور فعلی خود را وارد کنید"
+new = "رمز عبور جدید"
+newPlaceholder = "یک رمز عبور جدید وارد کنید"
+confirm = "تأیید رمز عبور جدید"
+confirmPlaceholder = "رمز عبور جدید خود را دوباره وارد کنید"
+update = "به‌روزرسانی رمز عبور"
 
 [settings.hotkeys]
 title = "میانبرهای صفحه‌کلید"
@@ -488,11 +527,16 @@ low = "کم"
 title = "تغییر مشخصات"
 header = "به‌روزرسانی جزئیات حساب کاربری"
 changePassword = "شما از مشخصات پیش‌فرض ورود استفاده می‌کنید. لطفاً یک رمز عبور جدید وارد کنید"
+ssoManaged = "حساب شما توسط ارائه‌دهنده هویت شما مدیریت می‌شود."
 newUsername = "نام کاربری جدید"
 oldPassword = "رمز عبور فعلی"
 newPassword = "رمز عبور جدید"
 confirmNewPassword = "تأیید رمز عبور جدید"
 submit = "ثبت تغییرات"
+credsUpdated = "حساب به‌روزرسانی شد"
+description = "تغییرات ذخیره شد. لطفاً دوباره وارد شوید."
+error = "امکان به‌روزرسانی نام کاربری نیست. لطفاً رمز عبور خود را بررسی کرده و دوباره تلاش کنید."
+changeUsername = "نام کاربری خود را به‌روزرسانی کنید. پس از به‌روزرسانی از حساب خارج خواهید شد."
 
 [account]
 title = "تنظیمات حساب"
@@ -500,6 +544,8 @@ accountSettings = "تنظیمات حساب"
 adminSettings = "تنظیمات ادمین - مشاهده و اضافه کردن کاربران"
 userControlSettings = "تنظیمات کنترل کاربران"
 changeUsername = "تغییر نام کاربری"
+changeUsernameDescription = "نام کاربری خود را به‌روزرسانی کنید. پس از به‌روزرسانی از حساب خارج خواهید شد."
+newUsernamePlaceholder = "نام کاربری جدید خود را وارد کنید"
 newUsername = "نام کاربری جدید"
 password = "رمز عبور تأییدیه"
 oldPassword = "رمز عبور قدیمی"
@@ -514,6 +560,30 @@ property = "ویژگی"
 webBrowserSettings = "تنظیمات مرورگر وب"
 syncToBrowser = "همگام‌سازی حساب -> مرورگر"
 syncToAccount = "همگام‌سازی حساب <- مرورگر"
+
+[account.mfa]
+title = "احراز هویت دومرحله‌ای"
+setupFailed = "امکان شروع راه‌اندازی احراز هویت دومرحله‌ای فراهم نشد. لطفاً دوباره تلاش کنید."
+codeRequired = "برای ادامه، کد احراز هویت را وارد کنید."
+enabled = "احراز هویت دومرحله‌ای فعال شد."
+enableFailed = "امکان فعال‌سازی احراز هویت دومرحله‌ای وجود ندارد. کد را بررسی کرده و دوباره تلاش کنید."
+disabled = "احراز هویت دومرحله‌ای غیرفعال شد."
+disableFailed = "امکان غیرفعال‌سازی احراز هویت دومرحله‌ای وجود ندارد. کد را بررسی کرده و دوباره تلاش کنید."
+description = "یک لایه امنیتی اضافی به حساب خود اضافه کنید."
+enableButton = "فعال‌سازی احراز هویت دومرحله‌ای"
+disableButton = "غیرفعال‌سازی احراز هویت دومرحله‌ای"
+setupTitle = "راه‌اندازی احراز هویت دومرحله‌ای"
+setupDescription = "کد QR را با برنامه احراز هویت خود اسکن کنید، سپس کد ۶ رقمی را برای تأیید وارد کنید."
+manualKey = "کلید راه‌اندازی دستی"
+secretWarning = "این کلید را محرمانه نگه دارید. هر کسی که به آن دسترسی داشته باشد می‌تواند کدهای احراز هویت معتبر تولید کند."
+codePlaceholder = "کد ۶ رقمی را وارد کنید"
+confirmEnable = "فعال‌سازی"
+disableTitle = "غیرفعال کردن احراز هویت دومرحله‌ای"
+disableDescription = "برای غیرفعال کردن احراز هویت دومرحله‌ای، یک کد احراز هویت معتبر وارد کنید."
+codeLabel = "کد احراز هویت"
+confirmDisable = "غیرفعال‌سازی"
+ssoDescription = "احراز هویت دومرحله‌ای برای حساب‌های Single Sign-On توسط ارائه‌دهنده هویت شما مدیریت می‌شود."
+ssoManaged = "MFA را از طریق ارائه‌دهنده هویت خود پیکربندی کنید."
 
 [adminUserSettings]
 title = "تنظیمات کنترل کاربران"
@@ -708,6 +778,11 @@ tags = "امضا,دستخط"
 title = "امضا"
 desc = "افزودن امضا به PDF با کشیدن، متن یا تصویر"
 
+[home.annotate]
+tags = "annotate,highlight,draw"
+title = "حاشیه‌نویسی"
+desc = "هایلایت، رسم، افزودن یادداشت و شکل‌ها در نمایشگر"
+
 [home.flatten]
 tags = "ساده‌سازی,حذف,تعامل"
 title = "تسطیح"
@@ -879,6 +954,7 @@ title = "تقسیم خودکار بر اساس اندازه/تعداد"
 desc = "تقسیم یک PDF به چند سند بر اساس اندازه، تعداد صفحات، یا تعداد اسناد"
 
 [home.replaceColor]
+tags = "replace color,invert color,color replacement,swap colors,change color,invert,negative,color swap,find and replace color,convert color,color change"
 title = "جایگزینی و معکوس کردن رنگ"
 desc = "جایگزینی یا معکوس کردن رنگ‌ها در اسناد PDF"
 
@@ -893,18 +969,22 @@ title = "اسکن خودکار پوشه"
 desc = "پیوند به راهنمای اسکن خودکار پوشه"
 
 [home.devSsoGuide]
+tags = "SSO,single sign-on,authentication,SAML,OAuth,OIDC,login,enterprise,identity provider,IdP"
 title = "راهنمای SSO"
 desc = "پیوند به راهنمای SSO"
 
 [home.devAirgapped]
+tags = "air-gapped,offline,isolated,no internet,disconnected,secure,network isolation,standalone"
 title = "راه‌اندازی Air-gapped"
 desc = "پیوند به راهنمای راه‌اندازی Air-gapped"
 
 [home.addPassword]
+tags = "encrypt,password,lock,secure,protect,security,encryption,safeguard,confidential,private,restrict access"
 title = "افزودن رمز عبور"
 desc = "رمزگذاری سند PDF شما با رمز عبور."
 
 [home.changePermissions]
+tags = "permissions,restrictions,rights,access control,allow,deny,printing,copying,editing,modify permissions,security settings,user rights"
 title = "تغییر مجوزها"
 desc = "تغییر محدودیت‌ها و مجوزهای سند"
 
@@ -914,12 +994,14 @@ title = "اتوماسیون"
 desc = "ساخت گردش‌کارهای چندمرحله‌ای با زنجیره کردن اقدامات PDF. مناسب برای کارهای تکرارشونده."
 
 [home.overlay-pdfs]
+tags = "overlay,combine,merge,layer,superimpose,overlay PDF,layer PDFs,combine PDFs,stack,overlay pages,background,foreground,composite"
 desc = "PDF‌ها را بر روی PDF دیگری هم‌پوشانی می‌کند"
 title = "هم‌پوشانی PDF‌ها"
 
 [home.pdfTextEditor]
+tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
 title = "ویرایشگر متن PDF"
-desc = "ویرایش متن و تصاویر موجود در PDFها"
+desc = "بازبینی و ویرایش خروجی‌های JSON Stirling PDF با ویرایش گروهی متن و بازتولید PDF"
 
 [home.addText]
 tags = "متن,حاشیه‌نویسی,برچسب"
@@ -930,6 +1012,7 @@ desc = "افزودن متن دلخواه در هر جای PDF"
 addFiles = "افزودن فایل‌ها"
 uploadFromComputer = "بارگذاری از رایانه"
 openFromComputer = "باز کردن از رایانه"
+mobileUpload = "آپلود از موبایل"
 
 [viewPdf]
 tags = "مشاهده،خواندن،حاشیه‌نویسی،متن،تصویر"
@@ -1217,7 +1300,12 @@ downloadHtml = "به‌جای PDF فایل HTML میانی را دانلود ک�
 pdfaOptions = "گزینه‌های PDF/A"
 outputFormat = "قالب خروجی"
 pdfaNote = "PDF/A-1b سازگارتر است، PDF/A-2b از قابلیت‌های بیشتری پشتیبانی می‌کند."
+pdfaFormat = "فرمت PDF/A"
 pdfaDigitalSignatureWarning = "PDF حاوی یک امضای دیجیتال است. این در مرحله بعد حذف خواهد شد."
+strictMode = "Strict Mode"
+strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
+pdfxDigitalSignatureWarning = "این PDF شامل امضای دیجیتال است. این مورد در مرحله بعد حذف خواهد شد."
+pdfxDescription = "PDF/X زیرمجموعه استاندارد ISO از PDF برای چاپ قابل‌اعتماد و تبادل گرافیک است."
 fileFormat = "قالب فایل"
 wordDoc = "سند Word"
 wordDocExt = "سند Word (.docx)"
@@ -1245,6 +1333,37 @@ cbzOptions = "گزینه‌های CBZ به PDF"
 optimizeForEbook = "بهینه‌سازی PDF برای کتاب‌خوان‌ها (از Ghostscript استفاده می‌کند)"
 cbzOutputOptions = "گزینه‌های PDF به CBZ"
 cbzDpi = "DPI برای رندر تصویر"
+cbrOptions = "گزینه‌های CBR"
+cbrOutputOptions = "گزینه‌های PDF به CBR"
+cbrDpi = "DPI برای رندر تصویر"
+svgPdfOptions = "SVG to PDF Options"
+combineSvgs = "Combine SVGs into single PDF"
+combineSvgsDescription = "Combine all SVG files into one PDF with multiple pages, or create separate PDFs for each SVG"
+svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
+
+[convert.ebookOptions]
+ebookOptions = "گزینه‌های eBook به PDF"
+ebookOptionsDesc = "گزینه‌های تبدیل eBook به PDF"
+embedAllFonts = "جاسازی همه فونت‌ها"
+embedAllFontsDesc = "همه فونت‌های eBook را در PDF تولیدشده جاسازی کن"
+includeTableOfContents = "شامل فهرست مطالب"
+includeTableOfContentsDesc = "افزودن فهرست مطالب تولیدشده به PDF حاصل"
+includePageNumbers = "شامل شماره صفحات"
+includePageNumbersDesc = "افزودن شماره صفحات به PDF تولیدشده"
+optimizeForEbookPdf = "بهینه‌سازی برای خوانندگان eBook"
+optimizeForEbookPdfDesc = "بهینه‌سازی PDF برای خواندن eBook (حجم فایل کمتر، رندر بهتر روی دستگاه‌های eInk)"
+
+[convert.epubOptions]
+epubOptions = "گزینه‌های PDF به eBook"
+epubOptionsDesc = "گزینه‌های تبدیل PDF به EPUB/AZW3"
+detectChapters = "شناسایی فصل‌ها"
+detectChaptersDesc = "شناسایی عناوینی که شبیه فصل هستند و درج شکست صفحه EPUB"
+targetDevice = "دستگاه هدف"
+targetDeviceDesc = "یک پروفایل خروجی بهینه‌شده برای دستگاه خوانش انتخاب کنید"
+outputFormat = "فرمت خروجی"
+outputFormatDesc = "فرمت خروجی eBook را انتخاب کنید"
+tabletPhone = "تبلت/گوشی (به‌همراه تصاویر)"
+kindleEink = "Kindle e-Ink (بهینه‌شده برای متن)"
 
 [imageToPdf]
 tags = "تبدیل،عکس،jpg،تصویر،عکس"
@@ -1322,6 +1441,7 @@ applySignatures = "اعمال تصاویر"
 name = "تصویر"
 placeholder = "بارگذاری یک تصویر"
 label = "فایل تصویر"
+hint = "Supports PNG, JPEG, GIF, BMP, TIFF, and SVG files. SVG files will be converted to PNG for embedding."
 
 [addImage.steps]
 configure = "پیکربندی تصویر"
@@ -1361,6 +1481,11 @@ header = "Add attachments"
 add = "افزودن پیوست"
 remove = "حذف پیوست"
 embed = "جاسازی پیوست"
+convertToPdfA3b = "تبدیل به PDF/A-3b"
+convertToPdfA3bDescription = "یک PDF آرشیوی با پیوست‌های توکار ایجاد می‌کند"
+convertToPdfA3bTooltip = "PDF/A-3b یک فرمت آرشیوی برای حفظ بلندمدت است. این فرمت اجازه می‌دهد هر نوع فرمت فایلی را به‌عنوان پیوست جاسازی کنید. تبدیل نیازمند Ghostscript است و ممکن است برای فایل‌های بزرگ بیشتر زمان ببرد."
+convertToPdfA3bTooltipHeader = "درباره تبدیل PDF/A-3b"
+convertToPdfA3bTooltipTitle = "عملکرد آن"
 submit = "Add attachments"
 
 [watermark]
@@ -2113,6 +2238,16 @@ tip = "در حال حاضر برای چندین ورودی به طور همزم�
 outputFormat = "فرمت خروجی"
 pdfWithDigitalSignature = "PDF حاوی یک امضای دیجیتال است. این در مرحله بعد حذف خواهد شد."
 
+[pdfToPDFX]
+tags = "چاپ,استاندارد,تبدیل,تولید,پیش‌ازچاپ,آرشیو"
+title = "تبدیل PDF به PDF/X"
+header = "تبدیل PDF به PDF/X"
+credit = "این سرویس برای تبدیل PDF/X از Ghostscript استفاده می‌کند"
+submit = "تبدیل"
+tip = "در حال حاضر برای چند ورودی همزمان کار نمی‌کند"
+outputFormat = "فرمت خروجی"
+pdfWithDigitalSignature = "این PDF شامل امضای دیجیتال است. این مورد در مرحله بعد حذف خواهد شد."
+
 [PDFToWord]
 tags = "doc،docx،odt،ورد،تبدیل،فرمت،تبدیل،دفتر،مایکروسافت،فایل ورد"
 title = "PDF به ورد"
@@ -2306,6 +2441,10 @@ saved = "ذخیره‌شده"
 label = "بارگذاری تصویر امضا"
 placeholder = "انتخاب فایل تصویر"
 hint = "یک تصویر PNG یا JPG از امضای خود بارگذاری کنید"
+removeBackground = "حذف پس‌زمینه سفید (شفاف‌سازی)"
+processing = "در حال پردازش تصویر..."
+backgroundRemovalFailedTitle = "حذف پس‌زمینه ناموفق بود"
+backgroundRemovalFailedMessage = "امکان حذف پس‌زمینه از تصویر نبود. از تصویر اصلی استفاده می‌شود."
 
 [sign.instructions]
 title = "چگونه امضا اضافه کنیم"
@@ -2350,6 +2489,11 @@ note = "تخت‌سازی عناصر تعاملی را از PDF حذف می‌ک
 [flatten.options.flattenOnlyForms]
 label = "فقط فرم‌ها را یکپارچه کن"
 desc = "فقط فیلدهای فرم را تخت‌سازی کن و سایر عناصر تعاملی را دست‌نخورده بگذار"
+
+[flatten.renderDpi]
+label = "DPI رندر (اختیاری، 150 DPI توصیه می‌شود)"
+help = "برای استفاده از پیش‌فرض سیستم خالی بگذارید. DPI بالاتر خروجی را شارپ‌تر می‌کند اما زمان پردازش و اندازه فایل را افزایش می‌دهد."
+placeholder = "مثلاً 150"
 
 [flatten.results]
 title = "نتایج تخت‌سازی"
@@ -2502,6 +2646,7 @@ label = "PDF اصلی"
 
 [compare.edited]
 label = "PDF ویرایش‌شده"
+placeholder = "Select the edited PDF"
 
 [compare.swap]
 confirmTitle = "مقایسه دوباره انجام شود؟"
@@ -2925,6 +3070,7 @@ header = "برش PDF"
 submit = "ارسال"
 noFileSelected = "برای شروع برش یک فایل PDF انتخاب کنید"
 reset = "بازنشانی به کل PDF"
+autoCrop = "برش خودکار فضاهای خالی"
 
 [crop.preview]
 title = "انتخاب ناحیه برش"
@@ -3036,6 +3182,105 @@ title = "اطلاعات PDF را دریافت کنید"
 header = "اطلاعات PDF را دریافت کنید"
 submit = "دریافت اطلاعات"
 downloadJson = "دانلود JSON"
+processing = "در حال استخراج اطلاعات..."
+results = "نتایج"
+noResults = "برای ایجاد گزارش، ابزار را اجرا کنید."
+downloads = "دانلودها"
+noneDetected = "هیچ موردی شناسایی نشد"
+indexTitle = "نمایه"
+
+[getPdfInfo.report]
+entryLabel = "خلاصهٔ کامل اطلاعات"
+shortTitle = "اطلاعات PDF"
+
+[getPdfInfo.sections]
+metadata = "فراداده"
+formFields = "فیلدهای فرم"
+basicInfo = "اطلاعات پایه"
+documentInfo = "اطلاعات سند"
+compliance = "انطباق"
+encryption = "رمزگذاری"
+permissions = "مجوزها"
+other = "سایر"
+perPageInfo = "اطلاعات هر صفحه"
+tableOfContents = "فهرست مطالب"
+
+[getPdfInfo.compliance]
+notDetected = "شناسایی نشد"
+passed = "موفق"
+failed = "ناموفق"
+compliant = "مطابق"
+nonCompliant = "نامنطبق"
+none = "استانداردی شناسایی نشد"
+passedCount = "موفق"
+failedCount = "ناموفق"
+noVerification = "هیچ راستی‌آزمایی انجام نشد"
+noVerificationDesc = "انطباق با استانداردهای PDF برای این سند راستی‌آزمایی نشده است."
+
+[getPdfInfo.other]
+attachments = "پیوست‌ها"
+embeddedFiles = "فایل‌های جاسازی‌شده"
+javaScript = "JavaScript"
+layers = "لایه‌ها"
+structureTree = "StructureTree"
+xmp = "XMPMetadata"
+
+[getPdfInfo.perPage]
+size = "اندازه"
+annotations = "حاشیه‌نویسی‌ها"
+images = "تصاویر"
+links = "پیوندها"
+fonts = "فونت‌ها"
+xobjects = "تعداد XObject"
+multimedia = "چندرسانه‌ای"
+
+[getPdfInfo.summary]
+pages = "صفحات"
+fileSize = "حجم فایل"
+pdfVersion = "نسخهٔ PDF"
+language = "زبان"
+title = "خلاصهٔ PDF"
+author = "نویسنده"
+created = "ایجاد شده"
+modified = "ویرایش شده"
+permsAll = "همهٔ مجوزها مجاز هستند"
+permsRestricted = "{{count}} محدودیت"
+permsMixed = "برخی مجوزها محدود شده‌اند"
+hasCompliance = "دارای استانداردهای انطباق"
+noCompliance = "بدون استانداردهای انطباق"
+compliancePassed = "مطابق با {{standards}}"
+complianceChecked = "استانداردها راستی‌آزمایی شدند ({{failed}} ناموفق)"
+basic = "اطلاعات پایه"
+documentInfo = "اطلاعات سند"
+securityTitle = "وضعیت امنیتی"
+technical = "فنی"
+overviewTitle = "نمای کلی PDF"
+
+[getPdfInfo.summary.security]
+encrypted = "PDF رمزگذاری‌شده - دارای محافظت با گذرواژه"
+unencrypted = "PDF رمزگذاری‌نشده - بدون محافظت با گذرواژه"
+
+[getPdfInfo.summary.tech]
+images = "تصاویر"
+fonts = "فونت‌ها"
+formFields = "فیلدهای فرم"
+embeddedFiles = "فایل‌های جاسازی‌شده"
+javaScript = "JavaScript"
+layers = "لایه‌ها"
+bookmarks = "نشانک‌ها"
+multimedia = "چندرسانه‌ای"
+
+[getPdfInfo.summary.overview]
+untitled = "یک سند بدون عنوان"
+unknown = "نویسندهٔ نامشخص"
+text = "این یک PDF {{pages}} صفحه‌ای با عنوان {{title}} است که توسط {{author}} ایجاد شده است (نسخهٔ PDF {{version}})."
+
+[getPdfInfo.error]
+partial = "برخی فایل‌ها قابل پردازش نبودند."
+unexpected = "خطای غیرمنتظره هنگام استخراج."
+
+[getPdfInfo.status]
+complete = "استخراج کامل شد"
 
 [extractPage]
 tags = "استخراج"
@@ -3070,6 +3315,7 @@ title = "روش پنهان‌سازی"
 mode = "حالت"
 automatic = "خودکار"
 automaticDesc = "پنهان‌سازی متن بر اساس عبارات جستجو"
+automaticDisabledTooltip = "برای سانسور چند فایل به‌صورت همزمان، فایل‌ها را در مدیر فایل انتخاب کنید"
 manual = "دستی"
 manualDesc = "برای پنهان‌سازی نواحی خاص کلیک و درگ کنید"
 manualComingSoon = "پنهان‌سازی دستی به‌زودی"
@@ -3140,8 +3386,35 @@ text = "فقط کلمات کامل را مطابقت می‌دهد، نه تطا
 title = "تبدیل به PDF-Image"
 text = "پس از پنهان‌سازی، PDF را به یک PDF مبتنی بر تصویر تبدیل می‌کند. این اطمینان می‌دهد که متن پشت کادرهای پنهان‌سازی کاملاً حذف و غیرقابل بازیابی شود."
 
+[redact.tooltip.manual.header]
+title = "کنترل‌های سانسور دستی"
+
+[redact.tooltip.manual.markText]
+title = "ابزار علامت‌گذاری متن"
+text = "متن را مستقیماً روی PDF انتخاب کنید تا برای سانسور علامت‌گذاری شود. برای برجسته‌کردن متن خاصی که می‌خواهید سانسور کنید، کلیک کرده و بکشید."
+
+[redact.tooltip.manual.markArea]
+title = "ابزار علامت‌گذاری ناحیه"
+text = "ناحیه‌های مستطیلی روی PDF بکشید تا برای سانسور علامت‌گذاری شوند. برای سانسور تصاویر، امضاها یا شکل‌های نامنظم مفید است."
+
+[redact.tooltip.manual.apply]
+title = "اعمال سانسورها"
+text = "پس از علامت‌گذاری محتوا، روی 'اعمال' کلیک کنید تا همه نواحی علامت‌گذاری‌شده به‌طور دائمی سانسور شوند. شمارنده در انتظار نشان می‌دهد چند سانسور آماده اعمال است."
+bullet1 = "پیش از اعمال، هر تعداد ناحیه که لازم است علامت بزنید"
+bullet2 = "تمام سانسورهای در انتظار یک‌جا اعمال می‌شوند"
+bullet3 = "پس از اعمال، سانسورها قابل بازگشت نیستند"
+
 [redact.manual]
+title = "ابزارهای سانسور"
+instructions = "متن را انتخاب کنید یا ناحیه‌هایی روی PDF بکشید تا برای سانسور علامت‌گذاری شود."
+markText = "علامت‌گذاری متن"
+markArea = "علامت‌گذاری ناحیه"
+pendingLabel = "در انتظار:"
+applyWarning = "⚠️ اعمال دائمی، قابل بازگشت نیست و داده‌های زیرین حذف خواهند شد"
+apply = "اعمال"
+noMarks = "هیچ علامت سانسوری وجود ندارد. از ابزارهای بالا برای علامت‌گذاری محتوا جهت سانسور استفاده کنید."
 header = "پنهان‌سازی دستی"
+controlsTitle = "کنترل‌های سانسور دستی"
 textBasedRedaction = "پنهان‌سازی مبتنی بر متن"
 pageBasedRedaction = "پنهان‌سازی مبتنی بر صفحه"
 convertPDFToImageLabel = "تبدیل PDF به PDF-Image (برای حذف متن پشت کادر استفاده می‌شود)"
@@ -3257,6 +3530,19 @@ placeholder = "تعداد تقسیمات افقی را وارد کنید"
 label = "تقسیمات عمودی"
 placeholder = "تعداد تقسیمات عمودی را وارد کنید"
 
+[split-by-sections.splitMode]
+label = "حالت تقسیم"
+description = "نحوه تقسیم صفحات را انتخاب کنید"
+splitAll = "تقسیم همه صفحات"
+splitAllExceptFirst = "تقسیم همه به‌جز اول"
+splitAllExceptLast = "تقسیم همه به‌جز آخر"
+splitAllExceptFirstAndLast = "تقسیم همه به‌جز اول و آخر"
+custom = "صفحات سفارشی"
+
+[split-by-sections.customPages]
+label = "شماره صفحات سفارشی"
+placeholder = "مثلاً 2,4,6"
+
 [AddStampRequest]
 tags = "مهر، افزودن تصویر، واترمارک، PDF، سفارشی‌سازی"
 header = "مهر زدن به PDF"
@@ -3281,6 +3567,44 @@ imageSize = "اندازه تصویر"
 margin = "حاشیه"
 positionAndFormatting = "موقعیت و قالب‌بندی"
 quickPosition = "یک موقعیت روی صفحه برای قرار دادن مهر انتخاب کنید."
+preview = "Preview:"
+useTemplate = "Use Template"
+selectTemplate = "Select a template..."
+stampTextDescription = "Use dynamic variables below. Use @@ for literal @. Use \\n for new lines."
+dynamicVariables = "Dynamic Variables"
+clickToExpand = "Click to expand"
+variablesHelp = "Click on any variable to insert it into your stamp text. Use @@ for literal @."
+dateTimeVars = "Date & Time"
+dateDesc = "Current date"
+timeDesc = "Current time"
+datetimeDesc = "Date and time combined"
+customDateDesc = "Custom format"
+yearMonthDayDesc = "Individual date parts"
+pageVars = "Page Information"
+pageNumberDesc = "Current page number"
+totalPagesDesc = "Total number of pages"
+fileVars = "File Information"
+filenameDesc = "Filename without extension"
+filenameFullDesc = "Filename with extension"
+metadataVars = "Document Metadata"
+metadataDesc = "From PDF document properties"
+otherVars = "Other"
+uuidDesc = "Short unique identifier (8 chars)"
+examples = "Examples"
+multiLine = "multi-line"
+
+[AddStampRequest.template]
+pageNumberFooter = "Page Number Footer"
+dateHeader = "Date Header"
+europeanDate = "European Date"
+timestamp = "Timestamp"
+draftWatermark = "Draft Watermark"
+custom = "Custom"
+page-numbers = "Page Numbers"
+draft = "Draft Watermark"
+doc-info = "Document Info"
+legal-footer = "Legal Footer"
+european-date = "European Date (DD/MM/YYYY)"
 
 [AddStampRequest.error]
 failed = "هنگام افزودن مهر به PDF خطایی رخ داد."
@@ -3503,6 +3827,13 @@ passwordChangedSuccess = "گذرواژه با موفقیت تغییر کرد! ل
 credentialsUpdated = "اطلاعات ورود شما به‌روزرسانی شد. لطفاً دوباره وارد شوید."
 defaultCredentials = "مشخصات ورود پیش‌فرض"
 changePasswordWarning = "لطفاً پس از اولین ورود، گذرواژه خود را تغییر دهید"
+mfaRequired = "کد احراز هویت دومرحله‌ای لازم است"
+mfaCode = "کد احراز هویت"
+enterMfaCode = "کد ۶ رقمی را وارد کنید"
+mfaPromptTitle = "احراز هویت دومرحله‌ای"
+mfaPromptBody = "برای ادامه، کد احراز هویت را از برنامه احراز هویت خود وارد کنید."
+verifyingMfa = "در حال تأیید..."
+verifyMfa = "تأیید کد"
 
 [login.slides.overview]
 alt = "نمای کلی Stirling PDF"
@@ -3618,6 +3949,19 @@ filesize = "اندازه فایل"
 [compress.grayscale]
 label = "اعمال مقیاس خاکستری برای فشرده‌سازی"
 
+[compress.linearize]
+label = "خطی‌سازی PDF برای نمایش سریع در وب"
+
+[compress.lineArt]
+label = "تبدیل تصاویر به Line Art"
+description = "از ImageMagick برای کاهش صفحات به سیاه‌وسفید با کنتراست بالا جهت حداکثر کاهش حجم استفاده می‌کند."
+unavailable = "ImageMagick روی این سرور نصب یا فعال نشده است"
+detailLevel = "سطح جزئیات"
+edgeEmphasis = "تأکید لبه‌ها"
+edgeLow = "ملایم"
+edgeMedium = "متعادل"
+edgeHigh = "قوی"
+
 [compress.tooltip.header]
 title = "مرور تنظیمات فشرده‌سازی"
 
@@ -3635,6 +3979,10 @@ bullet2 = "مقادیر بالا اندازه فایل را کاهش می‌ده
 title = "سیاه‌وسفید"
 text = "با انتخاب این گزینه تمام تصاویر به سیاه‌وسفید تبدیل می‌شوند که می‌تواند به‌طور قابل‌توجهی اندازه فایل را کاهش دهد، مخصوصاً برای PDFهای اسکن‌شده یا اسناد پر از تصویر."
 
+[compress.tooltip.lineArt]
+title = "Line Art"
+text = "تبدیل صفحات به سیاه‌وسفید با کنتراست بالا با استفاده از ImageMagick. از «سطح جزئیات» برای کنترل میزان سیاه‌شدن محتوا و از «تأکید لبه‌ها» برای کنترل شدت تشخیص لبه‌ها استفاده کنید."
+
 [compress.error]
 failed = "هنگام فشرده‌سازی PDF خطایی رخ داد."
 
@@ -3646,6 +3994,11 @@ failed = "هنگام فشرده‌سازی PDF خطایی رخ داد."
 [compress.selectText.1]
 _value = "تنظیمات فشرده‌سازی"
 1 = "1-3 فشرده‌سازی PDF،</br> 4-6 فشرده‌سازی سبک تصویر،</br> 7-9 فشرده‌سازی شدید تصویر باعث کاهش چشمگیر کیفیت تصویر می‌شود"
+
+[compress.compressionLevel]
+range1to3 = "مقادیر پایین کیفیت را بهتر حفظ می‌کنند اما منجر به فایل‌های بزرگ‌تر می‌شوند"
+range4to6 = "فشرده‌سازی متوسط با کاهش کیفیت ملایم"
+range7to9 = "مقادیر بالاتر اندازه فایل را به‌طور قابل توجهی کاهش می‌دهند اما ممکن است وضوح تصویر را کم کنند"
 
 [decrypt]
 passwordPrompt = "این فایل با گذرواژه محافظت شده است. لطفاً گذرواژه را وارد کنید:"
@@ -3886,22 +4239,97 @@ deleteSelected = "حذف صفحات انتخاب‌شده"
 closePdf = "بستن PDF"
 exportAll = "برون‌بری PDF"
 downloadSelected = "دانلود فایل‌های انتخاب‌شده"
-downloadAll = "دانلود همه"
-saveAll = "ذخیره همه"
+annotations = "حاشیه‌نویسی‌ها"
+exportSelected = "برون‌بری صفحات انتخاب‌شده"
+saveChanges = "ذخیره تغییرات"
 toggleTheme = "تغییر تم"
-toggleBookmarks = "نمایش/پنهان‌کردن نشانک‌ها"
 language = "زبان"
+toggleAnnotations = "تغییر وضعیت نمایش حاشیه‌نویسی‌ها"
 search = "جستجوی PDF"
 panMode = "حالت پیمایش"
+applyRedactionsFirst = "ابتدا سانسورها را اعمال کنید"
 rotateLeft = "چرخش به چپ"
 rotateRight = "چرخش به راست"
 toggleSidebar = "تغییر وضعیت نوار کناری"
-exportSelected = "برون‌بری صفحات انتخاب‌شده"
-toggleAnnotations = "تغییر وضعیت نمایش حاشیه‌نویسی‌ها"
-annotationMode = "تغییر حالت حاشیه‌نویسی"
+toggleBookmarks = "نمایش/پنهان‌کردن نشانک‌ها"
 print = "چاپ PDF"
 draw = "رسم"
+redact = "سانسور"
+exitRedaction = "خروج از حالت سانسور"
 save = "ذخیره"
+downloadAll = "دانلود همه"
+saveAll = "ذخیره همه"
+
+[textAlign]
+left = "چپ"
+center = "وسط"
+right = "راست"
+
+[annotation]
+title = "حاشیه‌نویسی"
+desc = "از هایلایت، قلم، متن و یادداشت‌ها استفاده کنید. تغییرات زنده می‌مانند—نیازی به فلت‌کردن نیست."
+highlight = "هایلایت"
+pen = "قلم"
+text = "کادر متن"
+note = "یادداشت"
+rectangle = "مستطیل"
+ellipse = "بیضی"
+select = "انتخاب"
+exit = "خروج از حالت حاشیه‌نویسی"
+strokeWidth = "ضخامت"
+opacity = "شفافیت"
+strokeOpacity = "شفافیت خط دور"
+fillOpacity = "شفافیت پُرکردن"
+fontSize = "اندازه فونت"
+chooseColor = "انتخاب رنگ"
+color = "رنگ"
+strokeColor = "رنگ خط دور"
+fillColor = "رنگ پُرکردن"
+underline = "زیرخط"
+strikeout = "خط‌خوردگی"
+squiggly = "خط موج‌دار"
+inkHighlighter = "هایلایتر آزاد"
+freehandHighlighter = "هایلایتر آزاد"
+square = "مربع"
+circle = "دایره"
+polygon = "چندضلعی"
+line = "خط"
+stamp = "افزودن تصویر"
+textMarkup = "نشانه‌گذاری متن"
+drawing = "رسم"
+shapes = "اشکال"
+notesStamps = "یادداشت‌ها و مهرها"
+settings = "تنظیمات"
+borderOn = "حاشیه: روشن"
+borderOff = "حاشیه: خاموش"
+editInk = "ویرایش قلم"
+editLine = "ویرایش خط"
+editNote = "ویرایش یادداشت"
+editText = "ویرایش کادر متن"
+editTextMarkup = "ویرایش نشانه‌گذاری متن"
+editSelected = "ویرایش حاشیه‌نویسی"
+editSquare = "ویرایش مربع"
+editCircle = "ویرایش دایره"
+editPolygon = "ویرایش چندضلعی"
+unsupportedType = "این نوع حاشیه‌نویسی به‌طور کامل برای ویرایش پشتیبانی نمی‌شود."
+textAlignment = "تراز متن"
+noteIcon = "آیکون یادداشت"
+imagePreview = "پیش‌نمایش"
+contents = "متن"
+backgroundColor = "رنگ پس‌زمینه"
+clearBackground = "حذف پس‌زمینه"
+noBackground = "بدون پس‌زمینه"
+stampSettings = "تنظیمات مهر"
+savingCopy = "در حال آماده‌سازی دانلود..."
+saveFailed = "امکان ذخیره نسخه وجود ندارد"
+saveReady = "دانلود آماده است"
+selectAndMove = "انتخاب و ویرایش"
+editSelectDescription = "روی یک حاشیه‌نویسی موجود کلیک کنید تا رنگ، شفافیت، متن یا اندازه آن را ویرایش کنید."
+editStampHint = "برای تغییر تصویر، این مهر را حذف کرده و یک مورد جدید اضافه کنید."
+editSwitchToSelect = "برای ویرایش این حاشیه‌نویسی به حالت انتخاب و ویرایش بروید."
+undo = "واگرد"
+redo = "انجام مجدد"
+applyChanges = "اعمال تغییرات"
 saveChanges = "ذخیره تغییرات"
 
 [search]
@@ -3953,12 +4381,20 @@ settings = "تنظیمات"
 adminSettings = "تنظیمات مدیر"
 allTools = "All Tools"
 reader = "نمایشگر"
+tours = "تورها"
+showMeAround = "راهنمایی‌ام کن"
+
+[quickAccess.toursTooltip]
+admin = "راهنماها را اینجا تماشا کنید: تور ابزارها، تور چیدمان جدید V2 و تور مدیریت."
+user = "راهنماها را اینجا تماشا کنید: تور ابزارها و تور چیدمان جدید V2."
 
 [quickAccess.helpMenu]
 toolsTour = "تور ابزارها"
 toolsTourDesc = "با قابلیت‌های ابزارها آشنا شوید"
 adminTour = "تور مدیریت"
 adminTourDesc = "تنظیمات و قابلیت‌های مدیریت را بررسی کنید"
+whatsNewTour = "مشاهده تازه‌های V2"
+whatsNewTourDesc = "تور چیدمان به‌روزشده"
 
 [admin]
 error = "خطا"
@@ -3977,6 +4413,8 @@ fetchError = "بارگذاری تنظیمات ناموفق بود"
 saveError = "ذخیره تنظیمات ناموفق بود"
 saved = "تنظیمات با موفقیت ذخیره شد"
 saveSuccess = "تنظیمات با موفقیت ذخیره شد"
+success = "تنظیمات با موفقیت ذخیره شد"
+error = "ذخیره تنظیمات انجام نشد"
 save = "ذخیره تغییرات"
 discard = "نادیده گرفتن"
 restartRequired = "نیاز به راه‌اندازی مجدد"
@@ -3996,6 +4434,10 @@ hint = "تغییرات ذخیره‌نشده دارید"
 title = "نیاز به حالت ورود"
 message = "برای تغییر تنظیمات مدیر باید حالت ورود فعال باشد. لطفاً SECURITY_ENABLELOGIN=true را در محیط خود یا security.enableLogin: true را در settings.yml تنظیم کرده و سپس سرور را راه‌اندازی مجدد کنید."
 readOnly = "تنظیمات زیر صرفاً مقادیر نمونه را نشان می‌دهند. برای مشاهده و ویرایش پیکربندی واقعی، حالت ورود را فعال کنید."
+
+[admin.settings.enterpriseRequired]
+title = "مجوز Enterprise لازم است"
+message = "برای دسترسی به {{featureName}} به یک مجوز Enterprise نیاز است. شما در حال مشاهده داده‌های نمایشی برای مرجع هستید."
 
 [admin.settings.restart]
 title = "نیاز به راه‌اندازی مجدد"
@@ -4081,9 +4523,17 @@ description = "پیکربندی مسیرهای فایل سیستم سفارشی 
 [admin.settings.general.customPaths.pipeline]
 label = "دایرکتوری‌های پایپلاین"
 
+[admin.settings.general.customPaths.pipeline.pipelineDir]
+label = "Pipeline Directory"
+description = "Base directory for pipeline resources (leave empty for default: /pipeline)"
+
 [admin.settings.general.customPaths.pipeline.watchedFoldersDir]
 label = "دایرکتوری پوشه‌های پایش‌شده"
 description = "مسیر پوشه‌ای که پایپلاین برای PDFهای ورودی پایش می‌کند (خالی بگذارید برای پیش‌فرض: /pipeline/watchedFolders)"
+
+[admin.settings.general.customPaths.pipeline.watchedFoldersDirs]
+label = "Watched Folders Directories"
+description = "Directories where pipeline monitors for incoming PDFs (one per line or comma-separated; leave empty for default: /pipeline/watchedFolders)"
 
 [admin.settings.general.customPaths.pipeline.finishedFoldersDir]
 label = "دایرکتوری پوشه‌های پایان‌یافته"
@@ -4099,6 +4549,13 @@ description = "مسیر فایل اجرایی WeasyPrint برای تبدیل HTM
 [admin.settings.general.customPaths.operations.unoconvert]
 label = "فایل اجرایی Unoconvert"
 description = "مسیر LibreOffice unoconvert برای تبدیل اسناد (خالی بگذارید برای پیش‌فرض: /opt/venv/bin/unoconvert)"
+
+[admin.settings.general.frontendUrl]
+label = "Frontend URL"
+description = "آدرس پایه برای فرانت‌اند (مثلاً https://pdf.example.com). برای لینک‌های دعوت ایمیل و آپلودهای کد QR موبایل استفاده می‌شود. برای استفاده از آدرس بک‌اند خالی بگذارید."
+
+[admin.settings.badge]
+clickToUpgrade = "برای مشاهده جزئیات طرح کلیک کنید"
 
 [admin.settings.security]
 title = "امنیت"
@@ -4128,6 +4585,13 @@ description = "حداکثر تعداد تلاش ناموفق ورود قبل ا�
 [admin.settings.security.loginResetTimeMinutes]
 label = "زمان بازنشانی ورود (دقیقه)"
 description = "مدتی که پس از آن تلاش‌های ناموفق ورود بازنشانی می‌شوند"
+
+[admin.settings.security.xFrameOptions]
+label = "X-Frame-Options"
+description = "Controls whether the application can be embedded in iframes"
+deny = "Deny (Prevents all framing)"
+sameorigin = "Same Origin (Allow framing from same domain)"
+disabled = "Disabled (No X-Frame-Options header)"
 
 [admin.settings.security.csrfDisabled]
 label = "غیرفعال کردن محافظت CSRF"
@@ -4236,6 +4700,19 @@ connect = "اتصال"
 disconnect = "قطع اتصال"
 disconnected = "ارائه‌دهنده با موفقیت قطع شد"
 disconnectError = "قطع ارتباط ارائه‌دهنده ناموفق بود"
+mobileScannerConvertToPdf = "تبدیل تصاویر به PDF"
+mobileScannerConvertToPdfDesc = "تصاویر آپلودشده را به‌صورت خودکار به فرمت PDF تبدیل کن. در صورت غیرفعال بودن، تصاویر بدون تغییر باقی می‌مانند."
+mobileScannerImageResolution = "وضوح تصویر"
+mobileScannerImageResolutionDesc = "وضوح تصاویر آپلودشده. «کاهش‌یافته» تصاویر را تا حداکثر 1200px مقیاس می‌کند تا اندازه فایل کاهش یابد."
+imageResolutionFull = "کامل (اندازه اصلی)"
+imageResolutionReduced = "کاهش‌یافته (حداکثر 1200px)"
+mobileScannerPageFormat = "فرمت صفحه"
+mobileScannerPageFormatDesc = "اندازه صفحه PDF برای تصاویر تبدیل‌شده. «حفظ» از ابعاد اصلی تصویر استفاده می‌کند."
+pageFormatKeep = "حفظ (ابعاد اصلی)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "کشیدن برای پر کردن"
+mobileScannerStretchToFitDesc = "تصاویر را برای پر کردن کل صفحه بکش. در صورت غیرفعال بودن، تصاویر با حفظ نسبت در مرکز قرار می‌گیرند."
 
 [admin.settings.connections.ssoAutoLogin]
 label = "ورود خودکار SSO"
@@ -4304,10 +4781,168 @@ description = "ایجاد خودکار حساب کاربری در اولین و�
 label = "مسدود کردن ثبت‌نام"
 description = "جلوگیری از ثبت‌نام کاربر جدید از طریق SAML2"
 
+[admin.settings.connections.mobileScanner]
+label = "آپلود از تلفن همراه"
+enable = "فعالسازی آپلود با کد QR"
+description = "اجازه دهید کاربران با اسکن کد QR از دستگاه‌های موبایل فایل آپلود کنند"
+note = "توجه: نیاز به پیکربندی آدرس فرانت‌اند دارد. "
+link = "پیکربندی در تنظیمات سیستم"
+mobileScannerConvertToPdf = "تبدیل تصاویر به PDF"
+mobileScannerConvertToPdfDesc = "تصاویر آپلودشده را به‌صورت خودکار به فرمت PDF تبدیل کن. در صورت غیرفعال بودن، تصاویر بدون تغییر باقی می‌مانند."
+mobileScannerImageResolution = "وضوح تصویر"
+mobileScannerImageResolutionDesc = "وضوح تصاویر آپلودشده. «کاهش‌یافته» تصاویر را تا حداکثر 1200px مقیاس می‌کند تا اندازه فایل کاهش یابد."
+imageResolutionFull = "کامل (اندازه اصلی)"
+imageResolutionReduced = "کاهش‌یافته (حداکثر 1200px)"
+mobileScannerPageFormat = "فرمت صفحه"
+mobileScannerPageFormatDesc = "اندازه صفحه PDF برای تصاویر تبدیل‌شده. «حفظ» از ابعاد اصلی تصویر استفاده می‌کند."
+pageFormatKeep = "حفظ (ابعاد اصلی)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "کشیدن برای پر کردن"
+mobileScannerStretchToFitDesc = "تصاویر را برای پر کردن کل صفحه بکش. در صورت غیرفعال بودن، تصاویر با حفظ نسبت در مرکز قرار می‌گیرند."
+
+[admin.settings.telegram]
+title = "ربات تلگرام"
+description = "پیکربندی اتصال ربات تلگرام، کنترل‌های دسترسی و رفتار بازخورد."
+
+[admin.settings.telegram.enabled]
+label = "فعالسازی ربات تلگرام"
+description = "اجازه دهید کاربران از طریق ربات تلگرام پیکربندی‌شده شما با Stirling PDF تعامل داشته باشند."
+
+[admin.settings.telegram.botUsername]
+label = "نام کاربری ربات"
+description = "نام کاربری عمومی ربات تلگرام شما."
+
+[admin.settings.telegram.botToken]
+label = "توکن ربات"
+description = "توکن API ارائه‌شده توسط BotFather برای ربات تلگرام شما."
+
+[admin.settings.telegram.pipelineInboxFolder]
+label = "پوشه صندوق ورودی"
+description = "پوشه‌ای در زیر دایرکتوری pipeline که فایل‌های ورودی تلگرام در آن ذخیره می‌شوند."
+
+[admin.settings.telegram.customFolderSuffix]
+label = "استفاده از پسوند پوشه سفارشی"
+description = "شناسه چت را به پوشه‌های فایل ورودی اضافه کنید تا آپلودها به ازای هر چت جدا شوند."
+
+[admin.settings.telegram.accessControl]
+title = "کنترل دسترسی"
+description = "محدود کنید کدام کاربران یا کانال‌ها می‌توانند با ربات تعامل داشته باشند."
+
+[admin.settings.telegram.enableAllowUserIDs]
+label = "اجازه به شناسه‌های کاربری خاص"
+description = "در صورت فعال‌سازی، فقط شناسه‌های کاربری فهرست‌شده می‌توانند از ربات استفاده کنند."
+
+[admin.settings.telegram.allowUserIDs]
+label = "شناسه‌های کاربری مجاز"
+description = "شناسه‌های کاربری تلگرام مجاز برای تعامل با ربات را وارد کنید."
+placeholder = "شناسه کاربری را اضافه کرده و اینتر بزنید"
+
+[admin.settings.telegram.enableAllowChannelIDs]
+label = "اجازه به شناسه‌های کانال خاص"
+description = "در صورت فعال‌سازی، فقط شناسه‌های کانال فهرست‌شده می‌توانند از ربات استفاده کنند."
+
+[admin.settings.telegram.allowChannelIDs]
+label = "شناسه‌های کانال مجاز"
+description = "شناسه‌های کانال تلگرام مجاز برای تعامل با ربات را وارد کنید."
+placeholder = "شناسه کانال را اضافه کرده و اینتر بزنید"
+
+[admin.settings.telegram.processing]
+title = "پردازش"
+description = "کنترل بازه پایش و مهلت‌های پردازش برای آپلودهای تلگرام."
+
+[admin.settings.telegram.processingTimeoutSeconds]
+label = "مهلت پردازش (ثانیه)"
+description = "حداکثر زمان انتظار برای یک کار پردازش پیش از گزارش خطا."
+
+[admin.settings.telegram.pollingIntervalMillis]
+label = "بازه پایش (ms)"
+description = "بازه بین بررسی به‌روزرسانی‌های جدید تلگرام."
+
+[admin.settings.telegram.feedback]
+title = "پیام‌های بازخورد"
+description = "انتخاب کنید ربات چه زمانی باید به کاربران و کانال‌ها بازخورد بدهد."
+
+[admin.settings.telegram.feedback.general.enabled]
+label = "فعالسازی بازخورد"
+description = "کنترل اینکه آیا ربات اصلاً پیام بازخورد ارسال کند یا نه."
+
+[admin.settings.telegram.feedback.channel]
+title = "قوانین بازخورد کانال"
+
+[admin.settings.telegram.feedback.channel.noValidDocument]
+label = "نمایش «سند معتبر نیست» (کانال)"
+description = "پاسخ «سند معتبر نیست» را برای آپلودهای کانال سرکوب کنید."
+
+[admin.settings.telegram.feedback.channel.errorProcessing]
+label = "نمایش خطاهای پردازش (کانال)"
+description = "ارسال پیام‌های خطای پردازش به کانال‌ها."
+
+[admin.settings.telegram.feedback.channel.errorMessage]
+label = "نمایش پیام‌های خطا (کانال)"
+description = "نمایش پیام‌های خطای تفصیلی برای کانال‌ها."
+
+[admin.settings.telegram.feedback.user]
+title = "قوانین بازخورد کاربر"
+
+[admin.settings.telegram.feedback.user.noValidDocument]
+label = "نمایش «سند معتبر نیست» (کاربر)"
+description = "پاسخ «سند معتبر نیست» را برای آپلودهای کاربر سرکوب کنید."
+
+[admin.settings.telegram.feedback.user.errorProcessing]
+label = "نمایش خطاهای پردازش (کاربر)"
+description = "ارسال پیام‌های خطای پردازش برای کاربران."
+
+[admin.settings.telegram.feedback.user.errorMessage]
+label = "نمایش پیام‌های خطا (کاربر)"
+description = "نمایش پیام‌های خطای تفصیلی برای کاربران."
+
 [admin.settings.database]
 title = "پایگاه داده"
 description = "پیکربندی تنظیمات اتصال پایگاه داده سفارشی برای استقرارهای سازمانی."
 configuration = "پیکربندی پایگاه داده"
+backupTitle = "پشتیبان‌گیری و بازیابی"
+backupDescription = "مدیریت نسخه‌های پشتیبان H2 به‌صورت مستقیم از کنسول مدیریتی."
+loadError = "بارگذاری نسخه‌های پشتیبان پایگاه داده ناموفق بود"
+backupCreated = "نسخهٔ پشتیبان با موفقیت ایجاد شد"
+backupFailed = "ایجاد نسخهٔ پشتیبان ناموفق بود"
+deleteTitle = "حذف نسخهٔ پشتیبان"
+deleteConfirm = "این نسخهٔ پشتیبان حذف شود؟ این کار قابل بازگشت نیست."
+deleteSuccess = "نسخهٔ پشتیبان حذف شد"
+deleteFailed = "حذف نسخهٔ پشتیبان ناموفق بود"
+deleteConfirmAction = "حذف نسخهٔ پشتیبان"
+downloadFailed = "دانلود نسخهٔ پشتیبان ناموفق بود"
+version = "نسخهٔ H2"
+embedded = "H2 تعبیه‌شده"
+external = "پایگاه دادهٔ خارجی"
+h2Only = "نسخه‌های پشتیبان فقط برای پایگاه دادهٔ H2 تعبیه‌شده در دسترس هستند."
+h2Hint = "نوع پایگاه داده را روی H2 تنظیم کرده و پایگاه دادهٔ سفارشی را غیرفعال کنید تا پشتیبان‌گیری و بازیابی فعال شود."
+manageBackups = "مدیریت نسخه‌های پشتیبان"
+refresh = "تازه‌سازی"
+createBackup = "ایجاد نسخهٔ پشتیبان"
+uploadTitle = "بارگذاری و درون‌ریزی"
+chooseFile = "یک فایل پشتیبان .sql انتخاب کنید"
+importFromUpload = "درون‌ریزی بارگذاری‌شده"
+confirmImportTitle = "تأیید درون‌ریزی پایگاه داده"
+overwriteWarning = "هشدار: این کار پایگاه دادهٔ فعلی را بازنویسی می‌کند."
+overwriteWarningBody = "تمام داده‌های موجود با نسخهٔ پشتیبان بارگذاری‌شده جایگزین خواهند شد. این عملیات غیرقابل بازگشت است."
+confirmCodeLabel = "برای ادامه، کد تأیید را وارد کنید"
+enterCode = "کد نمایش‌داده‌شده در بالا را وارد کنید"
+confirmImport = "تأیید درون‌ریزی"
+codeMismatch = "کد تأیید مطابقت ندارد"
+codeMismatchBody = "برای ادامه، کد را دقیقاً مطابق نمایش وارد کنید."
+selectFile = "لطفاً یک فایل .sql برای درون‌ریزی انتخاب کنید"
+importSuccess = "نسخهٔ پشتیبان با موفقیت درون‌ریزی شد"
+importFailed = "درون‌ریزی نسخهٔ پشتیبان ناموفق بود"
+noBackups = "هنوز هیچ نسخهٔ پشتیبان یافت نشده است."
+unavailable = "فهرست نسخه‌های پشتیبان برای پیکربندی فعلی پایگاه داده در دسترس نیست."
+fileName = "فایل"
+created = "ایجاد شده"
+size = "اندازه"
+actions = "اقدامات"
+download = "دانلود"
+import = "درون‌ریزی"
+delete = "حذف"
 
 [admin.settings.database.enableCustom]
 label = "فعال‌سازی پایگاه داده سفارشی"
@@ -4385,6 +5020,26 @@ description = "حداکثر DPI برای پردازش تصویر (0 = نامحد
 [admin.settings.advanced.tessdataDir]
 label = "دایرکتوری Tessdata"
 description = "مسیر دایرکتوری tessdata برای فایل‌های زبان OCR"
+downloadMissingTitle = "هیچ زبانی انتخاب نشده است"
+downloadMissingBody = "لطفاً دست‌کم یک زبان برای دانلود انتخاب کنید."
+downloadSuccessTitle = "زبان‌ها دانلود شدند"
+downloadSuccessBody = "زبان‌های انتخاب‌شدهٔ tessdata ذخیره شدند."
+downloadErrorTitle = "دانلود ناموفق بود"
+loadingLanguages = "در حال بارگذاری زبان‌های نصب‌شدهٔ tessdata..."
+installedLanguages = "زبان‌های نصب‌شدهٔ tessdata"
+noLanguages = "هیچ زبان tessdata در پوشهٔ پیکربندی‌شده یافت نشد."
+downloadLabel = "دانلود زبان‌های اضافی tessdata"
+downloadPlaceholder = "انتخاب زبان‌ها"
+downloadNothingFound = "هیچ زبان اضافی‌ای یافت نشد"
+permissionNotice = "مسیر tessdata قابل نوشتن نیست. دانلودها در مرورگر باز می‌شوند؛ لطفاً فایل‌های .traineddata را به‌صورت دستی در پوشهٔ tessdata ذخیره کنید."
+manualLinks = "دانلود دستی: روی پیوندها کلیک کنید و فایل‌ها را در پوشهٔ tessdata قرار دهید."
+downloadButton = "دانلود زبان‌های انتخاب‌شده"
+downloadInvalidTitle = "انتخاب نامعتبر"
+downloadInvalidBody = "برخی از زبان‌های انتخاب‌شده برای دانلود در دسترس نیستند. لطفاً تازه‌سازی کنید و از فهرست انتخاب کنید."
+downloadErrorNetwork = "دانلود به دلیل خطای شبکه ناموفق بود. لطفاً اتصال خود را بررسی کرده و دوباره تلاش کنید."
+downloadErrorServer = "سرور هنگام دانلود زبان‌های tessdata با خطا مواجه شد. لطفاً بعداً دوباره تلاش کنید."
+downloadErrorPermission = "پوشهٔ Tessdata قابل نوشتن نیست: {{message}}. لطفاً یک پوشهٔ قابل نوشتن انتخاب کنید (مثلاً در پوشهٔ داده‌های برنامه) یا مجوزها را تنظیم کنید."
+downloadErrorGeneric = "دانلود ناموفق بود: {{message}}. لطفاً بعداً دوباره تلاش کنید."
 
 [admin.settings.advanced.disableSanitize]
 label = "غیرفعال کردن پاک‌سازی HTML"
@@ -4485,6 +5140,10 @@ description = "اجازه به مدیران برای دعوت کاربران ا�
 label = "URL فرانت‌اند"
 description = "URL پایه برای فرانت‌اند (مثلاً https://pdf.example.com). برای ایجاد لینک دعوت در ایمیل‌ها استفاده می‌شود. برای استفاده از URL بک‌اند خالی بگذارید."
 
+[admin.settings.mail.frontendUrlNote]
+note = "توجه: نیاز به پیکربندی آدرس فرانت‌اند دارد. "
+link = "پیکربندی در تنظیمات سیستم"
+
 [admin.settings.legal]
 title = "اسناد حقوقی"
 description = "پیوندها به اسناد و سیاست‌های حقوقی را پیکربندی کنید."
@@ -4510,7 +5169,7 @@ label = "خط‌مشی کوکی"
 description = "URL یا نام فایل برای خط‌مشی کوکی"
 
 [admin.settings.legal.impressum]
-label = "اطلاعات حقوقی"
+label = "Impressum"
 description = "URL یا نام فایل برای impressum (در برخی حوزه‌های قضایی الزامی است)"
 
 [admin.settings.premium]
@@ -4669,6 +5328,9 @@ googleDriveShort = "Drive"
 myFiles = "فایل‌های من"
 noRecentFiles = "هیچ فایل اخیری یافت نشد"
 googleDriveNotAvailable = "یکپارچگی Google Drive در دسترس نیست"
+mobileUpload = "آپلود از موبایل"
+mobileShort = "موبایل"
+mobileUploadNotAvailable = "آپلود موبایل فعال نیست"
 downloadSelected = "دانلود انتخاب‌شده‌ها"
 saveSelected = "ذخیره موارد انتخاب‌شده"
 openFiles = "باز کردن فایل‌ها"
@@ -4881,6 +5543,7 @@ desc = "با زنجیره‌کردن اقدامات PDF، گردش‌کار چن
 invalidStep = "گام نامعتبر"
 reviewTitle = "نتایج اتوماسیون"
 copyToSaved = "کپی به ذخیره‌شده‌ها"
+exportForFolderScanning = "برون‌بری برای اسکن پوشه"
 
 [automate.files]
 placeholder = "فایل‌ها را برای پردازش با این اتوماسیون انتخاب کنید"
@@ -4902,6 +5565,7 @@ createTitle = "ایجاد اتوماسیون"
 editTitle = "ویرایش اتوماسیون"
 intro = "اتوماسیون‌ها ابزارها را به‌صورت ترتیبی اجرا می‌کنند. برای شروع، ابزارها را به ترتیبی که می‌خواهید اجرا شوند اضافه کنید."
 save = "ذخیره اتوماسیون"
+exportForFolderScanning = "برون‌بری برای اسکن پوشه"
 
 [automate.creation.name]
 label = "نام اتوماسیون"
@@ -4984,6 +5648,7 @@ loading = "در حال بارگذاری..."
 back = "بازگشت"
 continue = "ادامه"
 error = "خطا"
+save = "ذخیره"
 
 [config.overview]
 title = "پیکربندی برنامه"
@@ -5045,6 +5710,15 @@ warning = "⚠️ هشدار: این اقدام کلیدهای API جدیدی ا
 impact = "هر برنامه یا سرویسی که اکنون از این کلیدها استفاده می‌کند، تا زمانی که آن‌ها را با کلیدهای جدید به‌روزرسانی نکنید از کار خواهد افتاد."
 confirmPrompt = "مطمئنید می‌خواهید ادامه دهید؟"
 confirmCta = "تازه‌سازی کلیدها"
+
+[config.apiKeys.alert]
+apiKeyErrorTitle = "خطای کلید API"
+failedToCreateApiKey = "ایجاد کلید API ناموفق بود."
+failedToRetrieveApiKey = "دریافت کلید API از پاسخ ناموفق بود."
+failedToFetchApiKey = "واکشی کلید API ناموفق بود."
+apiKeyRefreshed = "کلید API تازه‌سازی شد"
+apiKeyRefreshedBody = "کلید API شما با موفقیت تازه‌سازی شد."
+failedToRefreshApiKey = "تازه‌سازی کلید API ناموفق بود."
 
 [AddAttachmentsRequest]
 attachments = "انتخاب پیوست‌ها"
@@ -5150,6 +5824,16 @@ finish = "پایان"
 startTour = "شروع تور"
 startTourDescription = "یک تور راهنما از قابلیت‌های کلیدی Stirling PDF"
 
+[onboarding.whatsNew]
+quickAccess = "از نوار <strong>Quick Access</strong> شروع کنید تا بین Reader، Automate، فایل‌ها و همه تورها جابه‌جا شوید."
+leftPanel = "پنل <strong>Tools</strong> در سمت چپ همه کارهایی که می‌توانید انجام دهید را فهرست می‌کند. برای یافتن سریع ابزار، دسته‌ها را مرور کنید یا جستجو نمایید."
+fileUpload = "از دکمه <strong>Files</strong> برای آپلود یا انتخاب یک PDF اخیر استفاده کنید. یک نمونه بارگذاری می‌کنیم تا محیط کار را ببینید."
+rightRail = "<strong>نوار کناری راست</strong> شامل اقدامات سریع برای انتخاب فایل‌ها، تغییر پوسته یا زبان، و دانلود نتایج است."
+topBar = "نوار بالا به شما اجازه می‌دهد بین <strong>Viewer</strong>، <strong>Page Editor</strong> و <strong>Active Files</strong> جابه‌جا شوید."
+pageEditorView = "به ویرایشگر صفحات بروید تا صفحات را مرتب، بچرخانید یا حذف کنید."
+activeFilesView = "از فایل‌های فعال استفاده کنید تا همه چیزهای باز را ببینید و انتخاب کنید روی چه چیزی کار کنید."
+wrapUp = "این‌ها موارد جدید در V2 هستند. هر زمان منوی <strong>Tours</strong> را باز کنید تا این تور، تور ابزارها یا تور مدیریت را دوباره پخش کنید."
+
 [onboarding.welcomeModal]
 title = "به Stirling PDF خوش آمدید!"
 description = "مایلید یک تور سریع ۱ دقیقه‌ای بگیرید تا با قابلیت‌های کلیدی و نحوه شروع آشنا شوید؟"
@@ -5169,6 +5853,10 @@ skipForNow = "فعلاً رد کن"
 download = "دانلود →"
 showMeAround = "راهنمایی کن"
 skipTheTour = "از تور بگذر"
+
+[onboarding.tourOverview]
+title = "نمای کلی تور"
+body = "Stirling PDF V2 با ده‌ها ابزار و یک چیدمان تازه ارائه می‌شود. یک تور سریع بگیرید تا ببینید چه چیزهایی تغییر کرده و ویژگی‌های موردنیازتان را کجا پیدا کنید."
 
 [onboarding.serverLicense]
 skip = "فعلاً رد کن"
@@ -5252,9 +5940,11 @@ username = "نام کاربری (ایمیل)"
 usernamePlaceholder = "user@example.com"
 password = "رمز عبور"
 passwordPlaceholder = "رمز عبور را وارد کنید"
+passwordRequired = "رمز عبور الزامی است"
 role = "نقش"
 team = "تیم (اختیاری)"
 teamPlaceholder = "یک تیم انتخاب کنید"
+authType = "نوع احراز هویت"
 forcePasswordChange = "اجبار تغییر رمز عبور در اولین ورود"
 cancel = "انصراف"
 submit = "افزودن عضو"
@@ -5262,6 +5952,13 @@ usernameRequired = "نام کاربری و رمز عبور الزامی است"
 passwordTooShort = "رمز عبور باید حداقل ۶ نویسه باشد"
 success = "کاربر با موفقیت ایجاد شد"
 error = "ایجاد کاربر ناموفق بود"
+forceMFA = "الزام راه‌اندازی MFA در ورود بعدی"
+
+[workspace.people.authType]
+password = "رمز عبور"
+oauth = "OAuth2"
+saml = "SAML2"
+ssoDescription = "کاربر از طریق ارائه‌دهندهٔ SSO احراز هویت خواهد شد"
 
 [workspace.people.editMember]
 title = "ویرایش عضو"
@@ -5281,6 +5978,31 @@ error = "به‌روزرسانی وضعیت کاربر ناموفق بود"
 [workspace.people.delete]
 success = "کاربر با موفقیت حذف شد"
 error = "حذف کاربر ناموفق بود"
+
+[workspace.people.changePassword]
+action = "تغییر گذرواژه"
+title = "تغییر گذرواژه"
+subtitle = "به‌روزرسانی گذرواژه برای"
+newPassword = "گذرواژهٔ جدید"
+confirmPassword = "تأیید گذرواژه"
+placeholder = "گذرواژهٔ جدید وارد کنید"
+confirmPlaceholder = "گذرواژهٔ جدید را دوباره وارد کنید"
+passwordRequired = "لطفاً یک گذرواژهٔ جدید وارد کنید"
+passwordMismatch = "گذرواژه‌ها یکسان نیستند"
+generateRandom = "ایجاد گذرواژهٔ امن"
+generatedPreview = "گذرواژهٔ تولیدشده:"
+copyTooltip = "کپی در کلیپ‌بورد"
+copiedToClipboard = "گذرواژه در کلیپ‌بورد کپی شد"
+copyFailed = "کپی گذرواژه ناموفق بود"
+sendEmail = "به کاربر دربارهٔ این تغییر ایمیل ارسال کنید"
+includePassword = "گذرواژهٔ جدید را در ایمیل درج کنید"
+forcePasswordChange = "کاربر را ملزم کنید در ورود بعدی گذرواژه را تغییر دهد"
+emailUnavailable = "ایمیل این کاربر معتبر نیست. اعلان‌ها غیرفعال شده‌اند."
+smtpDisabled = "برای اعلان‌های ایمیل باید SMTP در تنظیمات فعال باشد."
+notifyOnly = "ایمیلی بدون گذرواژه ارسال خواهد شد تا به کاربر اطلاع دهد که یک مدیر آن را تغییر داده است."
+submit = "به‌روزرسانی گذرواژه"
+success = "گذرواژه با موفقیت به‌روزرسانی شد"
+error = "به‌روزرسانی گذرواژه ناموفق بود"
 
 [workspace.people.emailInvite]
 tab = "دعوت ایمیلی"
@@ -5339,6 +6061,11 @@ fromLicense = "از مجوز"
 slotsAvailable = "‏{{count}} جایگاه کاربر در دسترس است"
 noSlotsAvailable = "هیچ جایگاهی در دسترس نیست"
 currentUsage = "در حال استفاده از {{current}} از {{max}} مجوز کاربر"
+
+[workspace.people.mfa]
+adminDisableSuccess = "MFA برای کاربر با موفقیت غیرفعال شد"
+adminDisableError = "غیرفعال کردن MFA برای کاربر ناموفق بود"
+disableByAdmin = "غیرفعال کردن MFA"
 
 [workspace.teams]
 title = "تیم‌ها"
@@ -5458,6 +6185,28 @@ contactSales = "تماس با فروش"
 contactToUpgrade = "برای ارتقا یا سفارشی‌سازی طرح خود با ما تماس بگیرید"
 maxUsers = "حداکثر کاربران"
 upTo = "تا"
+getLicense = "دریافت لایسنس سرور"
+upgradeToEnterprise = "ارتقا به سازمانی"
+selectPeriod = "انتخاب دوره پرداخت"
+monthlyBilling = "پرداخت ماهانه"
+yearlyBilling = "پرداخت سالانه"
+checkoutOpened = "فرآیند پرداخت باز شد"
+checkoutInstructions = "خرید خود را در تب Stripe کامل کنید. پس از پرداخت، برای فعال‌سازی لایسنس به اینجا برگردید و صفحه را نوسازی کنید. همچنین ایمیلی با کلید لایسنس دریافت خواهید کرد."
+activateLicense = "فعالسازی لایسنس شما"
+
+[plan.static.licenseActivation]
+checkoutOpened = "پرداخت در تب جدید باز شد"
+instructions = "خرید خود را در تب Stripe کامل کنید. پس از تکمیل پرداخت، ایمیلی با کلید لایسنس دریافت خواهید کرد."
+enterKey = "برای فعال‌سازی طرح خود، کلید لایسنس را در زیر وارد کنید:"
+keyDescription = "کلید لایسنس موجود در ایمیل خود را جای‌گذاری کنید"
+activate = "فعالسازی لایسنس"
+doLater = "بعداً انجام می‌دهم"
+success = "لایسنس فعال شد!"
+successMessage = "لایسنس شما با موفقیت فعال شد. اکنون می‌توانید این پنجره را ببندید."
+
+[plan.static.billingPortal]
+title = "نیاز به تأیید ایمیل"
+message = "باید آدرس ایمیل خود را در پورتال پرداخت Stripe تأیید کنید. ایمیل خود را برای لینک ورود بررسی کنید."
 
 [plan.period]
 month = "ماه"
@@ -5661,6 +6410,8 @@ notAvailable = "سیستم ممیزی در دسترس نیست"
 notAvailableMessage = "سیستم ممیزی پیکربندی نشده یا در دسترس نیست."
 disabled = "ثبت وقایع ممیزی غیرفعال است"
 disabledMessage = "برای پیگیری رویدادهای سیستم، ثبت ممیزی را در پیکربندی برنامه خود فعال کنید."
+enterpriseRequired = "نیازمند لایسنس سازمانی"
+enterpriseRequiredMessage = "سیستم ثبت وقایع یک ویژگی سازمانی است. لطفاً برای دسترسی به لاگ‌های ممیزی و تحلیل‌ها به لایسنس سازمانی ارتقا دهید."
 
 [audit.error]
 title = "خطا در بارگذاری سیستم ممیزی"
@@ -5758,6 +6509,7 @@ endpoint = "اندپوینت"
 visits = "بازدیدها"
 percentage = "درصد"
 noData = "داده‌ای در دسترس نیست"
+unknownEndpoint = "نقطه پایانی ناشناخته"
 
 [backendHealth]
 checking = "در حال بررسی وضعیت بک‌اند..."
@@ -5815,11 +6567,13 @@ subtitle = "با حساب Stirling خود وارد شوید"
 [setup.selfhosted]
 title = "ورود به سرور"
 subtitle = "اطلاعات کاربری سرور خود را وارد کنید"
+link = "یا به یک حساب خودمیزبان متصل شوید"
 
 [setup.server]
 title = "اتصال به سرور"
 subtitle = "URL سرور خودمیزبان خود را وارد کنید"
 testing = "در حال آزمون اتصال..."
+useLast = "Last used server: {{serverUrl}}"
 
 [setup.server.type]
 saas = "Stirling PDF SaaS"
@@ -5831,8 +6585,17 @@ description = "URL کامل سرور خودمیزبان Stirling PDF خود را
 
 [setup.server.error]
 emptyUrl = "لطفاً URL سرور را وارد کنید"
+invalidUrl = "قالب URL نامعتبر است. لطفاً یک URL معتبر مانند https://your-server.com وارد کنید"
 unreachable = "اتصال به سرور ممکن نشد"
 testFailed = "آزمون اتصال ناموفق بود"
+configFetch = "بازیابی پیکربندی سرور ناموفق بود. لطفاً URL را بررسی کنید و دوباره تلاش کنید."
+
+[setup.server.error.securityDisabled]
+title = "ورود فعال نیست"
+body = "ورود در این سرور فعال نشده است. برای اتصال به این سرور باید احراز هویت را فعال کنید:"
+step1 = "DOCKER_ENABLE_SECURITY=true را در محیط خود تنظیم کنید"
+step2 = "یا security.enableLogin=true را در settings.yml تنظیم کنید"
+step3 = "سرور را راه‌اندازی مجدد کنید"
 
 [setup.login]
 title = "ورود"
@@ -5841,6 +6604,7 @@ connectingTo = "در حال اتصال به:"
 submit = "ورود"
 signInWith = "ورود با"
 oauthPending = "در حال باز کردن مرورگر برای احراز هویت..."
+sso = "ورود یکپارچه"
 orContinueWith = "یا با ایمیل ادامه دهید"
 serverRequirement = "توجه: سرور باید ورود را فعال کرده باشد."
 showInstructions = "نحوه فعال‌سازی؟"
@@ -5905,6 +6669,9 @@ earlyAccess = "دسترسی زودهنگام"
 reset = "بازنشانی تغییرات"
 downloadJson = "دانلود JSON"
 generatePdf = "تولید PDF"
+saveChanges = "ذخیرهٔ تغییرات"
+applyChanges = "اعمال تغییرات"
+downloadCopy = "دانلود نسخه"
 
 [pdfTextEditor.options.autoScaleText]
 title = "مقیاس خودکار متن برای جا شدن در باکس‌ها"
@@ -5922,6 +6689,24 @@ descriptionInline = "نکته: برای انتخاب چندگانه باکس‌�
 [pdfTextEditor.options.forceSingleElement]
 title = "قفل‌کردن متن ویرایش‌شده به یک عنصر PDF واحد"
 description = "وقتی فعال باشد، هر باکس متن ویرایش‌شده را به‌صورت یک عنصر متن PDF خروجی می‌گیرد تا از هم‌پوشانی گلیف‌ها یا فونت‌های ترکیبی جلوگیری شود."
+
+[pdfTextEditor.options.advanced]
+title = "تنظیمات پیشرفته"
+
+[pdfTextEditor.tooltip.header]
+title = "محدودیت‌های پیش‌نمایش"
+
+[pdfTextEditor.tooltip.textFocus]
+title = "تمرکز متن و تصویر"
+text = "این فضای کاری بر ویرایش متن و جابه‌جایی تصاویر توکار تمرکز دارد. آثار هنری پیچیده صفحه، ابزارک‌های فرم و گرافیک‌های لایه‌ای برای خروجی حفظ می‌شوند اما در اینجا کاملاً قابل ویرایش نیستند."
+
+[pdfTextEditor.tooltip.previewVariance]
+title = "تفاوت پیش‌نمایش"
+text = "برخی نماها (مانند خطوط جدول، شکل‌ها یا ظاهر حاشیه‌نویسی‌ها) ممکن است دقیقاً در پیش‌نمایش نمایش داده نشوند. PDF خروجی تا حد امکان دستورات رسم اصلی را حفظ می‌کند."
+
+[pdfTextEditor.tooltip.alpha]
+title = "نمایشگر آلفا"
+text = "این نمایشگر آلفا هنوز در حال تکامل است—برخی فونت‌ها، رنگ‌ها، افکت‌های شفافیت و جزئیات چیدمان ممکن است کمی جابه‌جا شوند. لطفاً قبل از اشتراک‌گذاری، PDF تولیدشده را دوباره بررسی کنید."
 
 [pdfTextEditor.manual]
 mergeTooltip = "ادغام باکس‌های انتخاب‌شده"
@@ -5942,6 +6727,8 @@ alpha = "این نمایشگر آلفا هنوز در حال تکامل است�
 [pdfTextEditor.empty]
 title = "هیچ سندی بارگذاری نشده است"
 subtitle = "برای شروع ویرایش متن، یک فایل PDF یا JSON بارگذاری کنید."
+dropzone = "یک فایل PDF یا JSON را اینجا بکشید و رها کنید، یا برای مرور کلیک کنید"
+dropzoneWithFiles = "یک فایل را از برگهٔ فایل‌ها انتخاب کنید، یا یک فایل PDF یا JSON را اینجا بکشید و رها کنید، یا برای مرور کلیک کنید"
 
 [pdfTextEditor.welcomeBanner]
 title = "به ویرایشگر متن PDF (دسترسی زودهنگام) خوش آمدید"
@@ -6042,3 +6829,58 @@ title = "نتایج افزودن متن"
 
 [addText.error]
 failed = "هنگام افزودن متن به PDF خطایی رخ داد."
+
+[mobileUpload]
+title = "آپلود از موبایل"
+description = "برای آپلود عکس‌ها اسکن کنید. تصاویر به‌صورت خودکار به PDF تبدیل می‌شوند."
+descriptionNoConvert = "برای آپلود عکس‌ها از دستگاه موبایل خود اسکن کنید."
+error = "خطای اتصال"
+pollingError = "خطا در بررسی فایل‌ها"
+sessionId = "شناسه نشست"
+sessionCreateError = "ایجاد نشست ناموفق بود"
+expiryWarning = "نشست به‌زودی منقضی می‌شود"
+expiryWarningMessage = "این کد QR تا {{seconds}} ثانیه دیگر منقضی می‌شود. یک کد جدید به‌صورت خودکار تولید خواهد شد."
+filesReceived = "{{count}} فایل دریافت شد"
+connected = "دستگاه موبایل متصل شد"
+instructions = "با دوربین گوشی خود اسکن کنید. تصاویر به‌صورت خودکار به PDF تبدیل می‌شوند."
+instructionsNoConvert = "برای آپلود فایل‌ها با دوربین گوشی خود اسکن کنید."
+
+[mobileScanner]
+title = "اسکنر موبایل"
+noSession = "نشست نامعتبر"
+noSessionMessage = "لطفاً برای دسترسی به این صفحه یک کد QR معتبر اسکن کنید."
+validating = "در حال اعتبارسنجی نشست..."
+sessionInvalid = "خطای نشست"
+sessionExpired = "این نشست منقضی شده است. لطفاً نوسازی و دوباره تلاش کنید."
+sessionNotFound = "نشست یافت نشد. لطفاً نوسازی و دوباره تلاش کنید."
+sessionValidationError = "امکان تأیید نشست نیست. لطفاً دوباره تلاش کنید."
+uploadSuccess = "آپلود موفق!"
+uploadSuccessMessage = "تصاویر شما منتقل شدند."
+httpsRequired = "دسترسی به دوربین نیازمند HTTPS یا localhost است. لطفاً از HTTPS استفاده کنید یا از طریق localhost دسترسی یابید."
+uploadFailed = "آپلود ناموفق بود. لطفاً دوباره تلاش کنید."
+uploading = "در حال آپلود..."
+connected = "متصل شد"
+connecting = "در حال اتصال..."
+chooseMethod = "انتخاب روش آپلود"
+chooseMethodDescription = "انتخاب کنید چگونه می‌خواهید اسناد را اسکن و آپلود کنید"
+camera = "دوربین"
+cameraDescription = "اسناد را با دوربین دستگاه خود با تشخیص خودکار لبه اسکن کنید"
+fileUpload = "آپلود فایل"
+fileDescription = "عکس‌ها یا اسناد موجود را از دستگاه خود آپلود کنید"
+cameraAccessDenied = "دسترسی به دوربین رد شد. لطفاً دسترسی دوربین را فعال کنید."
+back = "بازگشت"
+settings = "تنظیمات"
+edgeDetection = "تشخیص لبه"
+flashlight = "چراغ‌قوه"
+flash = "فلش"
+processing = "در حال پردازش..."
+capture = "گرفتن عکس"
+selectFilesPrompt = "فایل‌ها را برای آپلود انتخاب کنید"
+selectImage = "انتخاب تصویر"
+preview = "پیش‌نمایش"
+retake = "عکس مجدد"
+addToBatch = "افزودن به دسته"
+upload = "آپلود"
+batchImages = "دسته"
+clearBatch = "پاک‌سازی"
+uploadAll = "آپلود همه"

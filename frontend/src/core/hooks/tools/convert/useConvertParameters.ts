@@ -35,12 +35,33 @@ export interface ConvertParameters extends BaseParameters {
   };
   pdfaOptions: {
     outputFormat: string;
+    strict?: boolean;
+  };
+  pdfxOptions: {
+    outputFormat: string;
+  };
+  cbrOptions: {
+    optimizeForEbook: boolean;
+  };
+  pdfToCbrOptions: {
+    dpi: number;
   };
   cbzOptions: {
     optimizeForEbook: boolean;
   };
   cbzOutputOptions: {
     dpi: number;
+  };
+  ebookOptions?: {
+    embedAllFonts: boolean;
+    includeTableOfContents: boolean;
+    includePageNumbers: boolean;
+    optimizeForEbook: boolean;
+  };
+  epubOptions?: {
+    detectChapters: boolean;
+    targetDevice: string;
+    outputFormat: string;
   };
   isSmartDetection: boolean;
   smartDetectionType: 'mixed' | 'images' | 'web' | 'none';
@@ -73,13 +94,34 @@ export const defaultParameters: ConvertParameters = {
     includeAllRecipients: false,
   },
   pdfaOptions: {
-    outputFormat: 'pdfa-1',
+    outputFormat: 'pdfa-2b',
+    strict: false,
+  },
+  pdfxOptions: {
+    outputFormat: 'pdfx',
+  },
+  cbrOptions: {
+    optimizeForEbook: false,
+  },
+  pdfToCbrOptions: {
+    dpi: 150,
   },
   cbzOptions: {
     optimizeForEbook: false,
   },
   cbzOutputOptions: {
     dpi: 150,
+  },
+  ebookOptions: {
+    embedAllFonts: false,
+    includeTableOfContents: false,
+    includePageNumbers: false,
+    optimizeForEbook: false,
+  },
+  epubOptions: {
+    detectChapters: true,
+    targetDevice: 'TABLET_PHONE_IMAGES',
+    outputFormat: 'EPUB',
   },
   isSmartDetection: false,
   smartDetectionType: 'none',

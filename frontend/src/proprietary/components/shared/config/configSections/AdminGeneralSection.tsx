@@ -1,6 +1,7 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { TextInput, Switch, Button, Stack, Paper, Text, Loader, Group, MultiSelect, Badge, SegmentedControl } from '@mantine/core';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { TextInput, Textarea, Switch, Button, Stack, Paper, Text, Loader, Group, MultiSelect, Badge, SegmentedControl, Select } from '@mantine/core';
 import { alert } from '@app/components/toast';
 import RestartConfirmationModal from '@app/components/shared/config/RestartConfirmationModal';
 import { useRestartServer } from '@app/components/shared/config/useRestartServer';
@@ -11,6 +12,8 @@ import { useLoginRequired } from '@app/hooks/useLoginRequired';
 import LoginRequiredBanner from '@app/components/shared/config/LoginRequiredBanner';
 import { usePreferences } from '@app/contexts/PreferencesContext';
 import { useUnsavedChanges } from '@app/contexts/UnsavedChangesContext';
+import { supportedLanguages, toUnderscoreFormat, toUnderscoreLanguages } from '@app/i18n';
+import { Z_INDEX_CONFIG_MODAL } from '@app/styles/zIndex';
 
 interface GeneralSettingsData {
   ui: {
@@ -24,10 +27,13 @@ interface GeneralSettingsData {
     showUpdateOnlyAdmin?: boolean;
     customHTMLFiles?: boolean;
     fileUploadLimit?: string;
+    frontendUrl?: string;
   };
   customPaths?: {
     pipeline?: {
+      pipelineDir?: string;
       watchedFoldersDir?: string;
+      watchedFoldersDirs?: string[];
       finishedFoldersDir?: string;
     };
     operations?: {
@@ -45,10 +51,29 @@ interface GeneralSettingsData {
 
 export default function AdminGeneralSection() {
   const { t } = useTranslation();
+  const location = useLocation();
+  const navigate = useNavigate();
   const { loginEnabled, validateLoginEnabled } = useLoginRequired();
   const { restartModalOpened, showRestartModal, closeRestartModal, restartServer } = useRestartServer();
   const { preferences, updatePreference } = usePreferences();
   const { setIsDirty, markClean } = useUnsavedChanges();
+  const languageOptions = useMemo(
+    () => Object.entries(supportedLanguages)
+      .map(([code, label]) => ({ value: toUnderscoreFormat(code), label: `${label} (${code})` }))
+      .sort((a, b) => a.label.localeCompare(b.label)),
+    []
+  );
+  const parseWatchedFoldersInput = useCallback((value: string) => {
+    const paths = value
+      .split(/[\n,;]+/)
+      .map((entry) => entry.trim())
+      .filter(Boolean);
+
+    // Deduplicate paths (case-sensitive, exact match)
+    const uniquePaths = Array.from(new Set(paths));
+
+    return uniquePaths;
+  }, []);
   
   // Track original settings for dirty detection
   const [originalSettingsSnapshot, setOriginalSettingsSnapshot] = useState<string>('');
@@ -73,21 +98,37 @@ export default function AdminGeneralSection() {
         apiClient.get('/api/v1/admin/settings/section/premium')
       ]);
 
-      const ui = uiResponse.data || {};
-      const system = systemResponse.data || {};
-      const premium = premiumResponse.data || {};
+      const ui = { ...(uiResponse.data || {}) };
+      const system = { ...(systemResponse.data || {}) };
+      const premium = { ...(premiumResponse.data || {}) };
+
+      ui.languages = Array.isArray(ui.languages) ? toUnderscoreLanguages(ui.languages) : [];
+
+      const pipelinePaths = system.customPaths?.pipeline || {};
+      const watchedFoldersDirs = Array.isArray(pipelinePaths.watchedFoldersDirs)
+        ? pipelinePaths.watchedFoldersDirs
+        : [];
+      const normalizedWatchedFoldersDirs =
+        watchedFoldersDirs.length > 0
+          ? watchedFoldersDirs
+          : (pipelinePaths.watchedFoldersDir ? [pipelinePaths.watchedFoldersDir] : []);
 
       const result: any = {
         ui,
         system,
-        customPaths: system.customPaths || {
+        customPaths: {
+          ...(system.customPaths || {}),
           pipeline: {
-            watchedFoldersDir: '',
-            finishedFoldersDir: ''
+            ...pipelinePaths,
+            pipelineDir: pipelinePaths.pipelineDir || '',
+            watchedFoldersDir: pipelinePaths.watchedFoldersDir || '',
+            watchedFoldersDirs: normalizedWatchedFoldersDirs,
+            finishedFoldersDir: pipelinePaths.finishedFoldersDir || ''
           },
           operations: {
-            weasyprint: '',
-            unoconvert: ''
+            ...(system.customPaths?.operations || {}),
+            weasyprint: system.customPaths?.operations?.weasyprint || '',
+            unoconvert: system.customPaths?.operations?.unoconvert || ''
           }
         },
         customMetadata: premium.proFeatures?.customMetadata || {
@@ -131,6 +172,7 @@ export default function AdminGeneralSection() {
         'system.showUpdateOnlyAdmin': settings.system?.showUpdateOnlyAdmin,
         'system.customHTMLFiles': settings.system?.customHTMLFiles,
         'system.fileUploadLimit': settings.system?.fileUploadLimit,
+        'system.frontendUrl': settings.system?.frontendUrl,
         // Premium custom metadata
         'premium.proFeatures.customMetadata.autoUpdateMetadata': settings.customMetadata?.autoUpdateMetadata,
         'premium.proFeatures.customMetadata.author': settings.customMetadata?.author,
@@ -139,7 +181,9 @@ export default function AdminGeneralSection() {
       };
 
       if (settings.customPaths) {
+        deltaSettings['system.customPaths.pipeline.pipelineDir'] = settings.customPaths?.pipeline?.pipelineDir;
         deltaSettings['system.customPaths.pipeline.watchedFoldersDir'] = settings.customPaths?.pipeline?.watchedFoldersDir;
+        deltaSettings['system.customPaths.pipeline.watchedFoldersDirs'] = settings.customPaths?.pipeline?.watchedFoldersDirs;
         deltaSettings['system.customPaths.pipeline.finishedFoldersDir'] = settings.customPaths?.pipeline?.finishedFoldersDir;
         deltaSettings['system.customPaths.operations.weasyprint'] = settings.customPaths?.operations?.weasyprint;
         deltaSettings['system.customPaths.operations.unoconvert'] = settings.customPaths?.operations?.unoconvert;
@@ -151,6 +195,69 @@ export default function AdminGeneralSection() {
       };
     }
   });
+
+  const selectedLanguages = useMemo(
+    () => toUnderscoreLanguages(settings.ui?.languages || []),
+    [settings.ui?.languages]
+  );
+  const watchedFoldersInput = useMemo(() => (
+    (settings.customPaths?.pipeline?.watchedFoldersDirs || []).join('\n')
+  ), [settings.customPaths?.pipeline?.watchedFoldersDirs]);
+
+  const watchedFoldersValidation = useMemo(() => {
+    const paths = settings.customPaths?.pipeline?.watchedFoldersDirs || [];
+    const finishedPath = settings.customPaths?.pipeline?.finishedFoldersDir || '';
+    const warnings: string[] = [];
+
+    // Normalize paths for comparison (handle both Windows and Unix paths)
+    const normalizePath = (p: string) => p.replace(/\\/g, '/').replace(/\/+$/, '');
+
+    // Check for overlapping watched folders
+    if (paths.length >= 2) {
+      for (let i = 0; i < paths.length; i++) {
+        for (let j = i + 1; j < paths.length; j++) {
+          const path1 = normalizePath(paths[i]);
+          const path2 = normalizePath(paths[j]);
+
+          if (path1 === path2) {
+            warnings.push(`Duplicate path detected: '${paths[i]}'`);
+          } else if (path1.startsWith(path2 + '/')) {
+            warnings.push(`'${paths[i]}' is nested inside '${paths[j]}' - may cause duplicate processing`);
+          } else if (path2.startsWith(path1 + '/')) {
+            warnings.push(`'${paths[j]}' is nested inside '${paths[i]}' - may cause duplicate processing`);
+          }
+        }
+      }
+    }
+
+    // Check for conflicts with finished folder
+    if (finishedPath && paths.length > 0) {
+      const normalizedFinished = normalizePath(finishedPath);
+      for (const watchedPath of paths) {
+        const normalizedWatched = normalizePath(watchedPath);
+
+        if (normalizedWatched === normalizedFinished) {
+          warnings.push(`CRITICAL: Watched folder '${watchedPath}' is the same as finished folder - will cause processing loops!`);
+        } else if (normalizedFinished.startsWith(normalizedWatched + '/')) {
+          warnings.push(`Finished folder is nested inside watched folder '${watchedPath}' - may cause issues`);
+        } else if (normalizedWatched.startsWith(normalizedFinished + '/')) {
+          warnings.push(`CRITICAL: Watched folder '${watchedPath}' is nested inside finished folder - will cause processing loops!`);
+        }
+      }
+    }
+
+    return warnings.length > 0 ? warnings : null;
+  }, [settings.customPaths?.pipeline?.watchedFoldersDirs, settings.customPaths?.pipeline?.finishedFoldersDir]);
+
+  // Filter default locale options based on available languages setting
+  const defaultLocaleOptions = useMemo(() => {
+    // If no languages are selected (empty), show all languages
+    if (!selectedLanguages || selectedLanguages.length === 0) {
+      return languageOptions;
+    }
+    // Otherwise, only show languages that are in the selected list
+    return languageOptions.filter(option => selectedLanguages.includes(option.value));
+  }, [selectedLanguages, languageOptions]);
 
   useEffect(() => {
     // Only fetch real settings if login is enabled
@@ -202,6 +309,19 @@ export default function AdminGeneralSection() {
       setIsDirty(false);
     };
   }, [setIsDirty]);
+
+  // Handle hash navigation for deep linking to specific fields
+  useEffect(() => {
+    if (location.hash && !loading) {
+      const elementId = location.hash.substring(1); // Remove the #
+      const element = document.getElementById(elementId);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location.hash, loading]);
 
   const handleDiscard = useCallback(() => {
     if (originalSettingsSnapshot) {
@@ -369,30 +489,19 @@ export default function AdminGeneralSection() {
                 </Group>
               }
               description={t('admin.settings.general.languages.description', 'Limit which languages are available (empty = all languages)')}
-              value={settings.ui?.languages || []}
+              value={selectedLanguages}
               onChange={(value) => setSettings({ ...settings, ui: { ...settings.ui, languages: value } })}
-              data={[
-                { value: 'de_DE', label: 'Deutsch' },
-                { value: 'es_ES', label: 'Español' },
-                { value: 'fr_FR', label: 'Français' },
-                { value: 'it_IT', label: 'Italiano' },
-                { value: 'pl_PL', label: 'Polski' },
-                { value: 'pt_BR', label: 'Português (Brasil)' },
-                { value: 'ru_RU', label: 'Русский' },
-                { value: 'zh_CN', label: '简体中文' },
-                { value: 'ja_JP', label: '日本語' },
-                { value: 'ko_KR', label: '한국어' },
-              ]}
+              data={languageOptions}
               searchable
               clearable
               placeholder={t('admin.settings.general.languages.placeholder', 'Select languages')}
-              comboboxProps={{ zIndex: 1400 }}
+              comboboxProps={{ zIndex: Z_INDEX_CONFIG_MODAL }}
               disabled={!loginEnabled}
             />
           </div>
 
           <div>
-            <TextInput
+            <Select
               label={
                 <Group gap="xs">
                   <span>{t('admin.settings.general.defaultLocale.label', 'Default Locale')}</span>
@@ -400,9 +509,13 @@ export default function AdminGeneralSection() {
                 </Group>
               }
               description={t('admin.settings.general.defaultLocale.description', 'The default language for new users (e.g., en_US, es_ES)')}
-              value={ settings.system?.defaultLocale || ''}
-              onChange={(e) => setSettings({ ...settings, system: { ...settings.system, defaultLocale: e.target.value } })}
-              placeholder="en_US"
+              value={settings.system?.defaultLocale || ''}
+              onChange={(value) => setSettings({ ...settings, system: { ...settings.system, defaultLocale: value || '' } })}
+              data={defaultLocaleOptions}
+              searchable
+              clearable
+              placeholder="en_GB"
+              comboboxProps={{ zIndex: Z_INDEX_CONFIG_MODAL }}
               disabled={!loginEnabled}
             />
           </div>
@@ -419,6 +532,22 @@ export default function AdminGeneralSection() {
               value={ settings.system?.fileUploadLimit || ''}
               onChange={(e) => setSettings({ ...settings, system: { ...settings.system, fileUploadLimit: e.target.value } })}
               placeholder="100MB"
+              disabled={!loginEnabled}
+            />
+          </div>
+
+          <div id="frontendUrl">
+            <TextInput
+              label={
+                <Group gap="xs">
+                  <span>{t('admin.settings.general.frontendUrl.label', 'Frontend URL')}</span>
+                  <PendingBadge show={isFieldPending('system.frontendUrl')} />
+                </Group>
+              }
+              description={t('admin.settings.general.frontendUrl.description', 'Base URL for frontend (e.g., https://pdf.example.com). Used for email invite links and mobile QR code uploads. Leave empty to use backend URL.')}
+              value={settings.system?.frontendUrl || ''}
+              onChange={(e) => setSettings({ ...settings, system: { ...settings.system, frontendUrl: e.target.value } })}
+              placeholder="https://pdf.example.com"
               disabled={!loginEnabled}
             />
           </div>
@@ -481,7 +610,15 @@ export default function AdminGeneralSection() {
         <Stack gap="md">
           <Group justify="space-between" align="center">
             <Text fw={600} size="sm">{t('admin.settings.general.customMetadata.label', 'Custom Metadata')}</Text>
-            <Badge color="yellow" size="sm">PRO</Badge>
+            <Badge
+              color="grape"
+              size="sm"
+              style={{ cursor: 'pointer' }}
+              onClick={() => navigate('/settings/adminPlan')}
+              title={t('admin.settings.badge.clickToUpgrade', 'Click to view plan details')}
+            >
+              PRO
+            </Badge>
           </Group>
 
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -591,25 +728,72 @@ export default function AdminGeneralSection() {
             <TextInput
               label={
                 <Group gap="xs">
-                  <span>{t('admin.settings.general.customPaths.pipeline.watchedFoldersDir.label', 'Watched Folders Directory')}</span>
-                  <PendingBadge show={isFieldPending('customPaths.pipeline.watchedFoldersDir')} />
+                  <span>{t('admin.settings.general.customPaths.pipeline.pipelineDir.label', 'Pipeline Directory')}</span>
+                  <PendingBadge show={isFieldPending('customPaths.pipeline.pipelineDir')} />
                 </Group>
               }
-              description={t('admin.settings.general.customPaths.pipeline.watchedFoldersDir.description', 'Directory where pipeline monitors for incoming PDFs (leave empty for default: /pipeline/watchedFolders)')}
-              value={settings.customPaths?.pipeline?.watchedFoldersDir || ''}
+              description={t('admin.settings.general.customPaths.pipeline.pipelineDir.description', 'Base directory for pipeline resources (leave empty for default: /pipeline)')}
+              value={settings.customPaths?.pipeline?.pipelineDir || ''}
               onChange={(e) => setSettings({
                 ...settings,
                 customPaths: {
                   ...settings.customPaths,
                   pipeline: {
                     ...settings.customPaths?.pipeline,
-                    watchedFoldersDir: e.target.value
+                    pipelineDir: e.target.value
                   }
                 }
               })}
-              placeholder="/pipeline/watchedFolders"
+              placeholder="/pipeline"
               disabled={!loginEnabled}
             />
+          </div>
+
+          <div>
+            <Textarea
+              label={
+                <Group gap="xs">
+                  <span>{t('admin.settings.general.customPaths.pipeline.watchedFoldersDirs.label', 'Watched Folders Directories')}</span>
+                  <PendingBadge show={
+                    isFieldPending('customPaths.pipeline.watchedFoldersDirs')
+                    || isFieldPending('customPaths.pipeline.watchedFoldersDir')
+                  } />
+                </Group>
+              }
+              description={t('admin.settings.general.customPaths.pipeline.watchedFoldersDirs.description', 'Directories where pipeline monitors for incoming PDFs (one per line or comma-separated; leave empty for default: /pipeline/watchedFolders)')}
+              value={watchedFoldersInput}
+              onChange={(e) => {
+                const parsedDirs = parseWatchedFoldersInput(e.target.value);
+                setSettings({
+                  ...settings,
+                  customPaths: {
+                    ...settings.customPaths,
+                    pipeline: {
+                      ...settings.customPaths?.pipeline,
+                      watchedFoldersDir: parsedDirs[0] || '',
+                      watchedFoldersDirs: parsedDirs
+                    }
+                  }
+                });
+              }}
+              placeholder="/pipeline/watchedFolders"
+              minRows={3}
+              autosize
+              disabled={!loginEnabled}
+            />
+            {watchedFoldersValidation && (
+              <Stack gap="xs" mt="xs">
+                {watchedFoldersValidation.map((warning, idx) => (
+                  <Text
+                    key={idx}
+                    size="sm"
+                    c={warning.includes('CRITICAL') ? 'red' : 'yellow'}
+                  >
+                    {warning}
+                  </Text>
+                ))}
+              </Stack>
+            )}
           </div>
 
           <div>

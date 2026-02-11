@@ -1,8 +1,11 @@
 unsavedChanges = "Aveți modificări nesalvate în PDF."
+pendingRedactionsTitle = "Redactări neaplicate"
+pendingRedactions = "Aveți redactări neaplicate care vor fi pierdute."
 areYouSure = "Sigur doriți să părăsiți?"
 unsavedChangesTitle = "Modificări nesalvate"
 keepWorking = "Continuați lucrul"
 discardChanges = "Renunțați și ieșiți"
+discardRedactions = "Renunță și părăsește"
 applyAndContinue = "Salvați și ieșiți"
 exportAndContinue = "Exportați și continuați"
 cancel = "Anulare"
@@ -216,6 +219,8 @@ pagesAndStarting = "Pagini și număr de start"
 positionAndPages = "Poziție și pagini"
 preview = "Selecție poziție"
 previewDisclaimer = "Previzualizarea este aproximativă. Rezultatul final poate varia din cauza metricilor de font ale PDF-ului."
+zeroPad = "Zero‑pad Width (Bates Stamping)"
+zeroPadTooltip = "Zero‑pad (Bates Stamp) page numbers to this width (e.g., 3 ⇒ 001). Set 0 to disable."
 
 [addPageNumbers.selectText]
 1 = "Selectează fișierul PDF:"
@@ -303,6 +308,7 @@ selectOperation = "Selectați Operația"
 addOperationButton = "Adaugă operație"
 pipelineHeader = "Flux:"
 saveButton = "Descarcă"
+saveForFolderScanning = "Salvează pentru scanarea folderelor"
 validateButton = "Validează"
 
 [enterpriseEdition]
@@ -340,6 +346,10 @@ advance = "Avansat"
 edit = "Vizualizează & Editează"
 popular = "Populare"
 
+[footer]
+discord = "Discord"
+issues = "GitHub"
+
 [settings.preferences]
 title = "Preferințe"
 
@@ -360,6 +370,7 @@ advanced = "Avansat"
 title = "Securitate și autentificare"
 security = "Securitate"
 connections = "Conexiuni"
+telegram = "Telegram"
 
 [settings.licensingAnalytics]
 title = "Licențiere și Analytics"
@@ -430,10 +441,38 @@ fullscreen = "Ecran complet"
 [settings.general.updates]
 title = "Actualizări software"
 description = "Caută actualizări și vezi informații despre versiune"
-currentVersion = "Versiune curentă"
+currentBackendVersion = "Current Backend Version"
+currentFrontendVersion = "Current Frontend Version"
+versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 latestVersion = "Ultima versiune"
 checkForUpdates = "Caută actualizări"
 viewDetails = "Vezi detalii"
+serverNeedsUpdate = "Serverul trebuie actualizat de administrator"
+
+[settings.general.versionInfo]
+title = "Informații despre versiune"
+description = "Detalii despre versiunile pentru desktop și server"
+desktop = "Versiune Desktop"
+server = "Versiune Server"
+
+[settings.security]
+title = "Securitate"
+description = "Actualizați parola pentru a vă menține contul în siguranță."
+
+[settings.security.password]
+subtitle = "Schimbați parola. Veți fi deconectat(ă) după actualizare."
+required = "Toate câmpurile sunt obligatorii."
+mismatch = "Noile parole nu coincid."
+error = "Nu s-a putut actualiza parola. Verificați parola curentă și încercați din nou."
+success = "Parola a fost actualizată cu succes. Conectați-vă din nou."
+ssoDisabled = "Schimbarea parolei este gestionată de furnizorul dvs. de identitate."
+current = "Parola curentă"
+currentPlaceholder = "Introduceți parola curentă"
+new = "Parolă nouă"
+newPlaceholder = "Introduceți o parolă nouă"
+confirm = "Confirmați parola nouă"
+confirmPlaceholder = "Reintroduceți parola nouă"
+update = "Actualizați parola"
 
 [settings.hotkeys]
 title = "Scurtături de tastatură"
@@ -488,11 +527,16 @@ low = "Scăzută"
 title = "Schimbă Credențialele"
 header = "Actualizează Detaliile Contului Tău"
 changePassword = "Utilizezi credențiale de conectare implicite. Te rugăm să introduci o nouă parolă"
+ssoManaged = "Contul dvs. este gestionat de furnizorul de identitate."
 newUsername = "Nume de Utilizator Nou"
 oldPassword = "Parola Curentă"
 newPassword = "Parolă Nouă"
 confirmNewPassword = "Confirmă Parola Nouă"
 submit = "Trimite Modificările"
+credsUpdated = "Cont actualizat"
+description = "Modificări salvate. Conectați-vă din nou."
+error = "Nu s-a putut actualiza numele de utilizator. Verificați parola și încercați din nou."
+changeUsername = "Actualizați numele de utilizator. Veți fi deconectat(ă) după actualizare."
 
 [account]
 title = "Setări Cont"
@@ -500,6 +544,8 @@ accountSettings = "Setări Cont"
 adminSettings = "Setări Admin - Vizualizează și Adaugă Utilizatori"
 userControlSettings = "Setări Control Utilizator"
 changeUsername = "Schimbă Numele de Utilizator"
+changeUsernameDescription = "Actualizați numele de utilizator. Veți fi deconectat(ă) după actualizare."
+newUsernamePlaceholder = "Introduceți noul nume de utilizator"
 newUsername = "Nume de Utilizator Nou"
 password = "Parolă de Confirmare"
 oldPassword = "Parola veche"
@@ -514,6 +560,30 @@ property = "Proprietate"
 webBrowserSettings = "Setare Browser Web"
 syncToBrowser = "Sincronizează Cont -> Browser"
 syncToAccount = "Sincronizează Cont <- Browser"
+
+[account.mfa]
+title = "Autentificare cu doi factori"
+setupFailed = "Nu se poate începe configurarea autentificării cu doi factori. Încercați din nou."
+codeRequired = "Introduceți codul de autentificare pentru a continua."
+enabled = "Autentificarea cu doi factori a fost activată."
+enableFailed = "Nu se poate activa autentificarea cu doi factori. Verificați codul și încercați din nou."
+disabled = "Autentificarea cu doi factori a fost dezactivată."
+disableFailed = "Nu se poate dezactiva autentificarea cu doi factori. Verificați codul și încercați din nou."
+description = "Adăugați un nivel suplimentar de securitate contului."
+enableButton = "Activați autentificarea cu doi factori"
+disableButton = "Dezactivați autentificarea cu doi factori"
+setupTitle = "Configurați autentificarea cu doi factori"
+setupDescription = "Scanați codul QR cu aplicația de autentificare, apoi introduceți codul din 6 cifre pentru confirmare."
+manualKey = "Cheie de configurare manuală"
+secretWarning = "Păstrați această cheie privată. Oricine are acces poate genera coduri de autentificare valide."
+codePlaceholder = "Introduceți codul din 6 cifre"
+confirmEnable = "Activați"
+disableTitle = "Dezactivați autentificarea cu doi factori"
+disableDescription = "Introduceți un cod de autentificare valid pentru a dezactiva autentificarea cu doi factori."
+codeLabel = "Cod de autentificare"
+confirmDisable = "Dezactivați"
+ssoDescription = "Autentificarea cu doi factori este gestionată de furnizorul dvs. de identitate pentru conturile cu autentificare unică."
+ssoManaged = "Configurați MFA prin furnizorul dvs. de identitate."
 
 [adminUserSettings]
 title = "Setări Control Utilizator"
@@ -708,6 +778,11 @@ tags = "semnătură,autograf"
 title = "Semnează"
 desc = "Adaugă o semnătură la documentul PDF prin desenare, text sau imagine."
 
+[home.annotate]
+tags = "anotare,evidențiere,desen"
+title = "Anotare"
+desc = "Evidențiați, desenați, adăugați note și forme în vizualizator"
+
 [home.flatten]
 tags = "simplifică,elimină,interactiv"
 title = "Nivelare"
@@ -879,6 +954,7 @@ title = "Auto-împărțire mărime/pagini"
 desc = "Împarte un singur PDF în mai multe documente bazat pe dimensiune, număr de pagini sau număr de documente"
 
 [home.replaceColor]
+tags = "replace color,invert color,color replacement,swap colors,change color,invert,negative,color swap,find and replace color,convert color,color change"
 title = "Schimbă și inversează culori"
 desc = "Înlocuiți sau inversați culorile în documente PDF"
 
@@ -893,18 +969,22 @@ title = "Scanare automată foldere"
 desc = "Link către ghidul de scanare automată a folderelor"
 
 [home.devSsoGuide]
+tags = "SSO,single sign-on,authentication,SAML,OAuth,OIDC,login,enterprise,identity provider,IdP"
 title = "Ghid SSO"
 desc = "Link către ghidul SSO"
 
 [home.devAirgapped]
+tags = "air-gapped,offline,isolated,no internet,disconnected,secure,network isolation,standalone"
 title = "Configurare air-gapped"
 desc = "Link către ghidul de configurare izolată de rețea"
 
 [home.addPassword]
+tags = "encrypt,password,lock,secure,protect,security,encryption,safeguard,confidential,private,restrict access"
 title = "Adaugă Parolă"
 desc = "Criptează documentul PDF cu o parolă."
 
 [home.changePermissions]
+tags = "permissions,restrictions,rights,access control,allow,deny,printing,copying,editing,modify permissions,security settings,user rights"
 title = "Schimbă Permisiunile"
 desc = "Schimbați restricțiile și permisiunile documentului"
 
@@ -914,12 +994,14 @@ title = "Automatizare"
 desc = "Construiți fluxuri cu mai mulți pași legând acțiuni PDF. Ideal pentru sarcini recurente."
 
 [home.overlay-pdfs]
+tags = "overlay,combine,merge,layer,superimpose,overlay PDF,layer PDFs,combine PDFs,stack,overlay pages,background,foreground,composite"
 desc = "Suprapune PDF-uri peste alt PDF"
 title = "Suprapune PDF-uri"
 
 [home.pdfTextEditor]
-title = "Editor de text PDF"
-desc = "Editați textul și imaginile existente în PDF-uri"
+tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
+title = "Editor text PDF"
+desc = "Revizuiește și editează exporturile JSON Stirling PDF cu editare de text grupată și regenerare PDF"
 
 [home.addText]
 tags = "text,anotare,etichetă"
@@ -930,6 +1012,7 @@ desc = "Adaugă text personalizat oriunde în PDF-ul tău"
 addFiles = "Adăugați fișiere"
 uploadFromComputer = "Încărcați de pe calculator"
 openFromComputer = "Deschide de pe calculator"
+mobileUpload = "Încărcare de pe mobil"
 
 [viewPdf]
 tags = "vizualizare,citește,adnotează,text,imagine"
@@ -1217,15 +1300,20 @@ downloadHtml = "Descărcați fișierul intermediar HTML în loc de PDF"
 pdfaOptions = "Opțiuni PDF/A"
 outputFormat = "Format de ieșire"
 pdfaNote = "PDF/A-1b este mai compatibil, PDF/A-2b acceptă mai multe funcții."
+pdfaFormat = "Format PDF/A"
 pdfaDigitalSignatureWarning = "PDF-ul conține o semnătură digitală. Aceasta va fi eliminată în pasul următor."
+strictMode = "Strict Mode"
+strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
+pdfxDigitalSignatureWarning = "PDF-ul conține o semnătură digitală. Aceasta va fi eliminată în pasul următor."
+pdfxDescription = "PDF/X este un subset PDF standardizat ISO pentru tipărire fiabilă și schimb de grafică."
 fileFormat = "Format fișier"
 wordDoc = "Document Word"
 wordDocExt = "Document Word (.docx)"
-odtExt = "Text OpenDocument (.odt)"
+odtExt = "OpenDocument Text (.odt)"
 pptExt = "PowerPoint (.pptx)"
-odpExt = "Prezentare OpenDocument (.odp)"
+odpExt = "OpenDocument Presentation (.odp)"
 txtExt = "Text simplu (.txt)"
-rtfExt = "Format Rich Text (.rtf)"
+rtfExt = "Rich Text Format (.rtf)"
 selectedFiles = "Fișiere selectate"
 noFileSelected = "Niciun fișier selectat. Folosiți panoul de fișiere pentru a adăuga fișiere."
 convertFiles = "Convertiți fișiere"
@@ -1245,6 +1333,37 @@ cbzOptions = "Opțiuni CBZ la PDF"
 optimizeForEbook = "Optimizați PDF pentru e-readere (folosește Ghostscript)"
 cbzOutputOptions = "Opțiuni PDF la CBZ"
 cbzDpi = "DPI pentru randarea imaginilor"
+cbrOptions = "Opțiuni CBR"
+cbrOutputOptions = "Opțiuni PDF către CBR"
+cbrDpi = "DPI pentru randarea imaginilor"
+svgPdfOptions = "SVG to PDF Options"
+combineSvgs = "Combine SVGs into single PDF"
+combineSvgsDescription = "Combine all SVG files into one PDF with multiple pages, or create separate PDFs for each SVG"
+svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
+
+[convert.ebookOptions]
+ebookOptions = "Opțiuni eBook către PDF"
+ebookOptionsDesc = "Opțiuni pentru conversia eBook-urilor în PDF"
+embedAllFonts = "Încorporează toate fonturile"
+embedAllFontsDesc = "Încorporează toate fonturile din eBook în PDF-ul generat"
+includeTableOfContents = "Include cuprins"
+includeTableOfContentsDesc = "Adaugă un cuprins generat în PDF-ul rezultat"
+includePageNumbers = "Include numerele de pagină"
+includePageNumbersDesc = "Adaugă numere de pagină în PDF-ul generat"
+optimizeForEbookPdf = "Optimizează pentru cititoare de eBook"
+optimizeForEbookPdfDesc = "Optimizează PDF-ul pentru citirea pe eBook (dimensiune de fișier mai mică, randare mai bună pe dispozitive eInk)"
+
+[convert.epubOptions]
+epubOptions = "Opțiuni PDF către eBook"
+epubOptionsDesc = "Opțiuni pentru conversia PDF în EPUB/AZW3"
+detectChapters = "Detectează capitolele"
+detectChaptersDesc = "Detectează titlurile care par capitole și inserează întreruperi de pagină EPUB"
+targetDevice = "Dispozitiv țintă"
+targetDeviceDesc = "Alege un profil de ieșire optimizat pentru dispozitivul de citire"
+outputFormat = "Format de ieșire"
+outputFormatDesc = "Alege formatul de ieșire pentru eBook"
+tabletPhone = "Tabletă/Telefon (cu imagini)"
+kindleEink = "Kindle e-Ink (text optimizat)"
 
 [imageToPdf]
 tags = "conversie,img,jpg,poză,fotografie"
@@ -1322,6 +1441,7 @@ applySignatures = "Aplică imagini"
 name = "Imagine"
 placeholder = "Încarcă o imagine"
 label = "Fișier imagine"
+hint = "Supports PNG, JPEG, GIF, BMP, TIFF, and SVG files. SVG files will be converted to PNG for embedding."
 
 [addImage.steps]
 configure = "Configurează imaginea"
@@ -1361,6 +1481,11 @@ header = "Add attachments"
 add = "Adaugă atașament"
 remove = "Elimină atașament"
 embed = "Încorporează atașament"
+convertToPdfA3b = "Convertește la PDF/A-3b"
+convertToPdfA3bDescription = "Creează un PDF pentru arhivare cu atașamente încorporate"
+convertToPdfA3bTooltip = "PDF/A-3b este un format de arhivare care asigură păstrarea pe termen lung. Permite încorporarea oricăror formate de fișiere ca atașamente. Conversia necesită Ghostscript și poate dura mai mult pentru fișiere mari."
+convertToPdfA3bTooltipHeader = "Despre conversia PDF/A-3b"
+convertToPdfA3bTooltipTitle = "Ce face"
 submit = "Add attachments"
 
 [watermark]
@@ -1403,7 +1528,7 @@ height = "Spațiere pe înălțime"
 width = "Spațiere pe lățime"
 
 [watermark.alphabet]
-roman = "Romano/Latin"
+roman = "Roman/Latin"
 arabic = "Arabă"
 japanese = "Japoneză"
 korean = "Coreeană"
@@ -2113,6 +2238,16 @@ tip = "În prezent nu funcționează pentru mai multe intrări simultan"
 outputFormat = "Format de ieșire"
 pdfWithDigitalSignature = "PDF-ul conține o semnătură digitală. Aceasta va fi eliminată în pasul următor."
 
+[pdfToPDFX]
+tags = "tipărire,standard,conversie,producție,pregătire pentru tipar,arhivă"
+title = "PDF în PDF/X"
+header = "PDF în PDF/X"
+credit = "Acest serviciu folosește Ghostscript pentru conversia PDF/X"
+submit = "Convertiți"
+tip = "În prezent nu funcționează pentru mai multe intrări simultan"
+outputFormat = "Format de ieșire"
+pdfWithDigitalSignature = "PDF-ul conține o semnătură digitală. Aceasta va fi eliminată în pasul următor."
+
 [PDFToWord]
 tags = "doc,docx,odt,word,transformare,format,conversie,office,microsoft,fișier doc"
 title = "PDF către Word"
@@ -2306,6 +2441,10 @@ saved = "Salvate"
 label = "Încarcă imaginea semnăturii"
 placeholder = "Selectați fișierul imagine"
 hint = "Încărcați o imagine PNG sau JPG a semnăturii dvs."
+removeBackground = "Elimină fundalul alb (transparentizează)"
+processing = "Se procesează imaginea..."
+backgroundRemovalFailedTitle = "Eliminarea fundalului a eșuat"
+backgroundRemovalFailedMessage = "Nu s-a putut elimina fundalul din imagine. Se va folosi imaginea originală."
 
 [sign.instructions]
 title = "Cum să adăugați semnătura"
@@ -2350,6 +2489,11 @@ note = "Aplatizarea elimină elementele interactive din PDF, făcându-le needit
 [flatten.options.flattenOnlyForms]
 label = "Nivelează doar formularele"
 desc = "Aplatizează doar câmpurile de formular, lăsând celelalte elemente interactive intacte"
+
+[flatten.renderDpi]
+label = "DPI de randare (opțional, recomandat 150 DPI)"
+help = "Lăsați necompletat pentru a folosi valoarea implicită a sistemului. Un DPI mai mare îmbunătățește claritatea, dar crește timpul de procesare și dimensiunea fișierului."
+placeholder = "ex. 150"
 
 [flatten.results]
 title = "Rezultatele aplatizării"
@@ -2502,6 +2646,7 @@ label = "PDF original"
 
 [compare.edited]
 label = "PDF editat"
+placeholder = "Select the edited PDF"
 
 [compare.swap]
 confirmTitle = "Rulați din nou comparația?"
@@ -2925,6 +3070,7 @@ header = "Decupează PDF"
 submit = "Trimite"
 noFileSelected = "Selectați un fișier PDF pentru a începe decuparea"
 reset = "Resetează la PDF complet"
+autoCrop = "Decupare automată a spațiilor albe"
 
 [crop.preview]
 title = "Selecție zonă de decupare"
@@ -3036,6 +3182,105 @@ title = "Obține Informații despre PDF"
 header = "Obține Informații despre PDF"
 submit = "Obține Informații"
 downloadJson = "Descarcă JSON"
+processing = "Se extrag informațiile..."
+results = "Rezultate"
+noResults = "Rulați instrumentul pentru a genera un raport."
+downloads = "Descărcări"
+noneDetected = "Nu s-a detectat nimic"
+indexTitle = "Index"
+
+[getPdfInfo.report]
+entryLabel = "Rezumat complet al informațiilor"
+shortTitle = "Informații PDF"
+
+[getPdfInfo.sections]
+metadata = "Metadate"
+formFields = "Câmpuri de formular"
+basicInfo = "Informații de bază"
+documentInfo = "Informații despre document"
+compliance = "Conformitate"
+encryption = "Criptare"
+permissions = "Permisiuni"
+other = "Altele"
+perPageInfo = "Informații pe pagină"
+tableOfContents = "Cuprins"
+
+[getPdfInfo.compliance]
+notDetected = "Nedetectat"
+passed = "Reușit"
+failed = "Eșuat"
+compliant = "Conform"
+nonCompliant = "Neconform"
+none = "Niciun standard detectat"
+passedCount = "reușite"
+failedCount = "eșuate"
+noVerification = "Nu s-a efectuat nicio verificare"
+noVerificationDesc = "Conformitatea cu standardele PDF nu a fost verificată pentru acest document."
+
+[getPdfInfo.other]
+attachments = "Atașamente"
+embeddedFiles = "Fișiere încorporate"
+javaScript = "JavaScript"
+layers = "Straturi"
+structureTree = "Arbore de structură"
+xmp = "XMPMetadata"
+
+[getPdfInfo.perPage]
+size = "Dimensiune"
+annotations = "Adnotări"
+images = "Imagini"
+links = "Linkuri"
+fonts = "Fonturi"
+xobjects = "Număr de XObject-uri"
+multimedia = "Multimedia"
+
+[getPdfInfo.summary]
+pages = "Pagini"
+fileSize = "Dimensiune fișier"
+pdfVersion = "Versiune PDF"
+language = "Limbă"
+title = "Rezumat PDF"
+author = "Autor"
+created = "Creat"
+modified = "Modificat"
+permsAll = "Toate permisiunile sunt acordate"
+permsRestricted = "{{count}} restricții"
+permsMixed = "Unele permisiuni sunt restricționate"
+hasCompliance = "Are standarde de conformitate"
+noCompliance = "Fără standarde de conformitate"
+compliancePassed = "Conform cu {{standards}}"
+complianceChecked = "Standarde verificate ({{failed}} eșuate)"
+basic = "Informații de bază"
+documentInfo = "Informații despre document"
+securityTitle = "Starea securității"
+technical = "Tehnic"
+overviewTitle = "Prezentare generală PDF"
+
+[getPdfInfo.summary.security]
+encrypted = "PDF criptat - Protejat cu parolă"
+unencrypted = "PDF necriptat - Fără protecție prin parolă"
+
+[getPdfInfo.summary.tech]
+images = "Imagini"
+fonts = "Fonturi"
+formFields = "Câmpuri de formular"
+embeddedFiles = "Fișiere încorporate"
+javaScript = "JavaScript"
+layers = "Straturi"
+bookmarks = "Marcaje"
+multimedia = "Multimedia"
+
+[getPdfInfo.summary.overview]
+untitled = "un document fără titlu"
+unknown = "Autor necunoscut"
+text = "Acesta este un PDF de {{pages}} pagini, intitulat {{title}}, creat de {{author}} (versiune PDF {{version}})."
+
+[getPdfInfo.error]
+partial = "Unele fișiere nu au putut fi procesate."
+unexpected = "Eroare neașteptată în timpul extragerii."
+
+[getPdfInfo.status]
+complete = "Extragere finalizată"
 
 [extractPage]
 tags = "extrage"
@@ -3070,6 +3315,7 @@ title = "Metoda de redactare"
 mode = "Mod"
 automatic = "Automat"
 automaticDesc = "Redactează text pe baza termenilor de căutare"
+automaticDisabledTooltip = "Selectați fișiere în managerul de fișiere pentru a redacta mai multe fișiere deodată"
 manual = "Manual"
 manualDesc = "Faceți clic și trageți pentru a redacta zone specifice"
 manualComingSoon = "Redactarea manuală va fi disponibilă în curând"
@@ -3140,8 +3386,35 @@ text = "Potrivește doar cuvinte complete, nu potriviri parțiale. „John” nu
 title = "Convertește în PDF-imagine"
 text = "Convertește PDF-ul într-un PDF bazat pe imagine după redactare. Acest lucru asigură că textul din spatele casetelor de redactare este complet eliminat și nerecuperabil."
 
+[redact.tooltip.manual.header]
+title = "Controale de redactare manuală"
+
+[redact.tooltip.manual.markText]
+title = "Instrument „Marcare text”"
+text = "Selectați textul direct în PDF pentru a-l marca pentru redactare. Faceți clic și trageți pentru a evidenția textul pe care doriți să-l redactați."
+
+[redact.tooltip.manual.markArea]
+title = "Instrument „Marcare zonă”"
+text = "Desenați zone dreptunghiulare în PDF pentru a marca regiuni de redactat. Util pentru redactarea imaginilor, semnăturilor sau formelor neregulate."
+
+[redact.tooltip.manual.apply]
+title = "Aplică redactările"
+text = "După ce marcați conținutul, faceți clic pe „Aplică” pentru a redacta permanent toate zonele marcate. Numărul în așteptare indică câte redactări sunt gata de aplicat."
+bullet1 = "Marcați câte zone aveți nevoie înainte de aplicare"
+bullet2 = "Toate redactările în așteptare sunt aplicate simultan"
+bullet3 = "Redactările nu pot fi anulate după aplicare"
+
 [redact.manual]
+title = "Instrumente de redactare"
+instructions = "Selectați text sau desenați zone în PDF pentru a marca conținut de redactat."
+markText = "Marchează text"
+markArea = "Marchează zonă"
+pendingLabel = "În așteptare:"
+applyWarning = "⚠️ Aplicare permanentă, nu poate fi anulată, iar datele dedesubt vor fi șterse"
+apply = "Aplică"
+noMarks = "Nicio marcă de redactare. Folosiți instrumentele de mai sus pentru a marca conținutul de redactat."
 header = "Redactare manuală"
+controlsTitle = "Controale de redactare manuală"
 textBasedRedaction = "Redactare bazată pe text"
 pageBasedRedaction = "Redactare pe pagină"
 convertPDFToImageLabel = "Convertește PDF în PDF-imagine (utilizat pentru a elimina textul din spatele casetei)"
@@ -3257,6 +3530,19 @@ placeholder = "Introdu numărul de diviziuni orizontale"
 label = "Diviziuni Verticale"
 placeholder = "Introdu numărul de diviziuni verticale"
 
+[split-by-sections.splitMode]
+label = "Mod de împărțire"
+description = "Alegeți cum să împărțiți paginile"
+splitAll = "Împarte toate paginile"
+splitAllExceptFirst = "Împarte toate în afară de prima"
+splitAllExceptLast = "Împarte toate în afară de ultima"
+splitAllExceptFirstAndLast = "Împarte toate în afară de prima și ultima"
+custom = "Pagini personalizate"
+
+[split-by-sections.customPages]
+label = "Numere de pagini personalizate"
+placeholder = "ex. 2,4,6"
+
 [AddStampRequest]
 tags = "Ștampilă, Adaugă imagine, centrează imagine, Filigran, PDF, Încorporează, Personalizează"
 header = "Ștampilează PDF"
@@ -3281,6 +3567,44 @@ imageSize = "Dimensiunea imaginii"
 margin = "Margine"
 positionAndFormatting = "Poziție și formatare"
 quickPosition = "Selectați o poziție pe pagină pentru a plasa ștampila."
+preview = "Preview:"
+useTemplate = "Use Template"
+selectTemplate = "Select a template..."
+stampTextDescription = "Use dynamic variables below. Use @@ for literal @. Use \\n for new lines."
+dynamicVariables = "Dynamic Variables"
+clickToExpand = "Click to expand"
+variablesHelp = "Click on any variable to insert it into your stamp text. Use @@ for literal @."
+dateTimeVars = "Date & Time"
+dateDesc = "Current date"
+timeDesc = "Current time"
+datetimeDesc = "Date and time combined"
+customDateDesc = "Custom format"
+yearMonthDayDesc = "Individual date parts"
+pageVars = "Page Information"
+pageNumberDesc = "Current page number"
+totalPagesDesc = "Total number of pages"
+fileVars = "File Information"
+filenameDesc = "Filename without extension"
+filenameFullDesc = "Filename with extension"
+metadataVars = "Document Metadata"
+metadataDesc = "From PDF document properties"
+otherVars = "Other"
+uuidDesc = "Short unique identifier (8 chars)"
+examples = "Examples"
+multiLine = "multi-line"
+
+[AddStampRequest.template]
+pageNumberFooter = "Page Number Footer"
+dateHeader = "Date Header"
+europeanDate = "European Date"
+timestamp = "Timestamp"
+draftWatermark = "Draft Watermark"
+custom = "Custom"
+page-numbers = "Page Numbers"
+draft = "Draft Watermark"
+doc-info = "Document Info"
+legal-footer = "Legal Footer"
+european-date = "European Date (DD/MM/YYYY)"
 
 [AddStampRequest.error]
 failed = "A apărut o eroare la adăugarea ștampilei în PDF."
@@ -3503,6 +3827,13 @@ passwordChangedSuccess = "Parola a fost schimbată cu succes! Autentificați-vă
 credentialsUpdated = "Datele de autentificare au fost actualizate. Vă rugăm să vă autentificați din nou."
 defaultCredentials = "Date de autentificare implicite"
 changePasswordWarning = "Vă rugăm să vă schimbați parola după prima autentificare"
+mfaRequired = "Este necesar codul de autentificare cu doi factori"
+mfaCode = "Cod de autentificare"
+enterMfaCode = "Introduceți codul din 6 cifre"
+mfaPromptTitle = "Autentificare cu doi factori"
+mfaPromptBody = "Introduceți codul de autentificare din aplicația de autentificare pentru a continua."
+verifyingMfa = "Se verifică..."
+verifyMfa = "Verificați codul"
 
 [login.slides.overview]
 alt = "Prezentare generală Stirling PDF"
@@ -3618,6 +3949,19 @@ filesize = "Dimensiune Fișier"
 [compress.grayscale]
 label = "Aplicare scală de gri pentru compresie"
 
+[compress.linearize]
+label = "Linearizează PDF pentru vizualizare web rapidă"
+
+[compress.lineArt]
+label = "Convertește imaginile în line art"
+description = "Folosește ImageMagick pentru a reduce paginile la alb-negru cu contrast ridicat pentru o reducere maximă a dimensiunii."
+unavailable = "ImageMagick nu este instalat sau activat pe acest server"
+detailLevel = "Nivel de detaliu"
+edgeEmphasis = "Accentuare muchii"
+edgeLow = "Ușoară"
+edgeMedium = "Echilibrată"
+edgeHigh = "Puternică"
+
 [compress.tooltip.header]
 title = "Prezentare generală a setărilor de comprimare"
 
@@ -3635,6 +3979,10 @@ bullet2 = "Valorile mai mari reduc dimensiunea fișierului"
 title = "Nuanțe de gri"
 text = "Selectați această opțiune pentru a converti toate imaginile în alb-negru, ceea ce poate reduce semnificativ dimensiunea fișierului, în special pentru PDF-uri scanate sau documente bogate în imagini."
 
+[compress.tooltip.lineArt]
+title = "Line Art"
+text = "Convertește paginile în alb-negru cu contrast ridicat folosind ImageMagick. Folosiți nivelul de detaliu pentru a controla cât conținut devine negru și accentuarea muchiilor pentru a controla cât de agresiv sunt detectate muchiile."
+
 [compress.error]
 failed = "A apărut o eroare la comprimarea PDF-ului."
 
@@ -3646,6 +3994,11 @@ failed = "A apărut o eroare la comprimarea PDF-ului."
 [compress.selectText.1]
 _value = "Setări de comprimare"
 1 = "1-3 comprimare PDF,</br> 4-6 comprimare ușoară a imaginilor,</br> 7-9 comprimare intensă a imaginilor Va reduce semnificativ calitatea imaginilor"
+
+[compress.compressionLevel]
+range1to3 = "Valorile mai mici păstrează calitatea, dar duc la fișiere mai mari"
+range4to6 = "Compresie medie cu o reducere moderată a calității"
+range7to9 = "Valorile mai mari reduc semnificativ dimensiunea fișierului, dar pot reduce claritatea imaginilor"
 
 [decrypt]
 passwordPrompt = "Acest fișier este protejat cu parolă. Introduceți parola:"
@@ -3886,23 +4239,98 @@ deleteSelected = "Ștergeți paginile selectate"
 closePdf = "Închide PDF"
 exportAll = "Exportați PDF"
 downloadSelected = "Descărcați fișierele selectate"
-downloadAll = "Descărcați tot"
-saveAll = "Salvează tot"
+annotations = "Anotări"
+exportSelected = "Exportați paginile selectate"
+saveChanges = "Salvați modificările"
 toggleTheme = "Comutați tema"
-toggleBookmarks = "Comută semnele de carte"
 language = "Limbă"
+toggleAnnotations = "Comutați vizibilitatea adnotărilor"
 search = "Căutați în PDF"
 panMode = "Mod panoramare"
+applyRedactionsFirst = "Aplicați mai întâi redactările"
 rotateLeft = "Rotiți la stânga"
 rotateRight = "Rotiți la dreapta"
 toggleSidebar = "Comutați bara laterală"
-exportSelected = "Exportați paginile selectate"
-toggleAnnotations = "Comutați vizibilitatea adnotărilor"
-annotationMode = "Comutați modul de adnotare"
+toggleBookmarks = "Comută semnele de carte"
 print = "Imprimați PDF"
 draw = "Desenați"
+redact = "Redactează"
+exitRedaction = "Ieși din modul Redactare"
 save = "Salvați"
-saveChanges = "Salvați modificările"
+downloadAll = "Descărcați tot"
+saveAll = "Salvează tot"
+
+[textAlign]
+left = "Stânga"
+center = "Centru"
+right = "Dreapta"
+
+[annotation]
+title = "Anotare"
+desc = "Folosiți evidențierea, stiloul, textul și notele. Modificările rămân active — nu este necesară aplatizarea."
+highlight = "Evidențiere"
+pen = "Stilou"
+text = "Casetă de text"
+note = "Notă"
+rectangle = "Dreptunghi"
+ellipse = "Elipsă"
+select = "Selectează"
+exit = "Ieși din modul Anotare"
+strokeWidth = "Lățime"
+opacity = "Opacitate"
+strokeOpacity = "Opacitate contur"
+fillOpacity = "Opacitate umplere"
+fontSize = "Mărime font"
+chooseColor = "Alege culoarea"
+color = "Culoare"
+strokeColor = "Culoare contur"
+fillColor = "Culoare umplere"
+underline = "Subliniere"
+strikeout = "Tăiere"
+squiggly = "Ondulat"
+inkHighlighter = "Evidențiator liber"
+freehandHighlighter = "Evidențiator liber"
+square = "Pătrat"
+circle = "Cerc"
+polygon = "Poligon"
+line = "Linie"
+stamp = "Adaugă imagine"
+textMarkup = "Marcaj text"
+drawing = "Desen"
+shapes = "Forme"
+notesStamps = "Note și ștampile"
+settings = "Setări"
+borderOn = "Chenar: Activ"
+borderOff = "Chenar: Inactiv"
+editInk = "Editează stiloul"
+editLine = "Editează linia"
+editNote = "Editează nota"
+editText = "Editează caseta de text"
+editTextMarkup = "Editează marcajul textului"
+editSelected = "Editează anotarea"
+editSquare = "Editează pătratul"
+editCircle = "Editează cercul"
+editPolygon = "Editează poligonul"
+unsupportedType = "Acest tip de anotare nu este pe deplin suportat pentru editare."
+textAlignment = "Aliniere text"
+noteIcon = "Pictogramă notă"
+imagePreview = "Previzualizare"
+contents = "Text"
+backgroundColor = "Culoare fundal"
+clearBackground = "Elimină fundalul"
+noBackground = "Fără fundal"
+stampSettings = "Setări ștampilă"
+savingCopy = "Se pregătește descărcarea..."
+saveFailed = "Nu s-a putut salva copia"
+saveReady = "Descărcare pregătită"
+selectAndMove = "Selectează și editează"
+editSelectDescription = "Faceți clic pe o anotare existentă pentru a-i edita culoarea, opacitatea, textul sau dimensiunea."
+editStampHint = "Pentru a schimba imaginea, ștergeți această ștampilă și adăugați una nouă."
+editSwitchToSelect = "Comutați la „Selectează și editează” pentru a edita această anotare."
+undo = "Anulează"
+redo = "Refă"
+applyChanges = "Aplică modificările"
+saveChanges = "Salvează modificările"
 
 [search]
 title = "Căutați în PDF"
@@ -3953,12 +4381,20 @@ settings = "Setări"
 adminSettings = "Setări admin"
 allTools = "All Tools"
 reader = "Cititor"
+tours = "Tururi"
+showMeAround = "Ghidează-mă"
+
+[quickAccess.toursTooltip]
+admin = "Vizionați ghidurile aici: turul instrumentelor, turul noului layout V2 și turul de administrare."
+user = "Vizionați ghidurile aici: turul instrumentelor și turul noului layout V2."
 
 [quickAccess.helpMenu]
 toolsTour = "Turul instrumentelor"
 toolsTourDesc = "Aflați ce pot face instrumentele"
 adminTour = "Turul de administrare"
 adminTourDesc = "Explorați setările și funcțiile de administrare"
+whatsNewTour = "Vezi noutățile din V2"
+whatsNewTourDesc = "Explorați layout-ul actualizat"
 
 [admin]
 error = "Eroare"
@@ -3977,6 +4413,8 @@ fetchError = "Nu s-au putut încărca setările"
 saveError = "Nu s-au putut salva setările"
 saved = "Setările au fost salvate cu succes"
 saveSuccess = "Setările au fost salvate cu succes"
+success = "Setări salvate cu succes"
+error = "Nu s-au putut salva setările"
 save = "Salvați modificările"
 discard = "Renunță"
 restartRequired = "Este necesară repornirea"
@@ -3996,6 +4434,10 @@ hint = "Aveți modificări nesalvate"
 title = "Este necesar modul de autentificare"
 message = "Modul de autentificare trebuie activat pentru a modifica setările de administrator. Setați SECURITY_ENABLELOGIN=true în mediul dvs. sau security.enableLogin: true în settings.yml, apoi reporniți serverul."
 readOnly = "Setările de mai jos afișează valori de exemplu pentru referință. Activați modul de autentificare pentru a vedea și edita configurația reală."
+
+[admin.settings.enterpriseRequired]
+title = "Necesită licență Enterprise"
+message = "Este necesară o licență Enterprise pentru a accesa {{featureName}}. Vizualizați date demonstrative pentru referință."
 
 [admin.settings.restart]
 title = "Este necesară repornirea"
@@ -4081,9 +4523,17 @@ description = "Configurați căi personalizate ale sistemului de fișiere pentru
 [admin.settings.general.customPaths.pipeline]
 label = "Directoare pipeline"
 
+[admin.settings.general.customPaths.pipeline.pipelineDir]
+label = "Pipeline Directory"
+description = "Base directory for pipeline resources (leave empty for default: /pipeline)"
+
 [admin.settings.general.customPaths.pipeline.watchedFoldersDir]
 label = "Directorul dosarelor monitorizate"
 description = "Directorul în care pipeline-ul monitorizează PDF-urile primite (lăsați gol pentru implicit: /pipeline/watchedFolders)"
+
+[admin.settings.general.customPaths.pipeline.watchedFoldersDirs]
+label = "Watched Folders Directories"
+description = "Directories where pipeline monitors for incoming PDFs (one per line or comma-separated; leave empty for default: /pipeline/watchedFolders)"
 
 [admin.settings.general.customPaths.pipeline.finishedFoldersDir]
 label = "Directorul dosarelor finalizate"
@@ -4099,6 +4549,13 @@ description = "Calea către executabilul WeasyPrint pentru conversia HTML în PD
 [admin.settings.general.customPaths.operations.unoconvert]
 label = "Executabil Unoconvert"
 description = "Calea către LibreOffice unoconvert pentru conversia documentelor (lăsați gol pentru implicit: /opt/venv/bin/unoconvert)"
+
+[admin.settings.general.frontendUrl]
+label = "URL frontend"
+description = "URL de bază pentru frontend (ex.: https://pdf.example.com). Folosit pentru linkurile de invitație prin e-mail și încărcările cu cod QR de pe mobil. Lăsați gol pentru a utiliza URL-ul backend."
+
+[admin.settings.badge]
+clickToUpgrade = "Faceți clic pentru a vedea detaliile planului"
 
 [admin.settings.security]
 title = "Securitate"
@@ -4128,6 +4585,13 @@ description = "Numărul maxim de încercări eșuate înainte de blocarea contul
 [admin.settings.security.loginResetTimeMinutes]
 label = "Timp resetare autentificare (minute)"
 description = "Timpul înainte de resetarea încercărilor eșuate"
+
+[admin.settings.security.xFrameOptions]
+label = "X-Frame-Options"
+description = "Controls whether the application can be embedded in iframes"
+deny = "Deny (Prevents all framing)"
+sameorigin = "Same Origin (Allow framing from same domain)"
+disabled = "Disabled (No X-Frame-Options header)"
 
 [admin.settings.security.csrfDisabled]
 label = "Dezactivează protecția CSRF"
@@ -4236,6 +4700,19 @@ connect = "Conectează"
 disconnect = "Deconectează"
 disconnected = "Furnizor deconectat cu succes"
 disconnectError = "Nu s-a putut deconecta furnizorul"
+mobileScannerConvertToPdf = "Convertește imaginile în PDF"
+mobileScannerConvertToPdfDesc = "Convertește automat imaginile încărcate în format PDF. Dacă este dezactivat, imaginile vor fi păstrate ca atare."
+mobileScannerImageResolution = "Rezoluția imaginii"
+mobileScannerImageResolutionDesc = "Rezoluția imaginilor încărcate. „Redusă” redimensionează imaginile la maximum 1200px pentru a reduce dimensiunea fișierului."
+imageResolutionFull = "Completă (Dimensiune originală)"
+imageResolutionReduced = "Redusă (Max 1200px)"
+mobileScannerPageFormat = "Format pagină"
+mobileScannerPageFormatDesc = "Dimensiunea paginii PDF pentru imaginile convertite. „Păstrează” folosește dimensiunile originale ale imaginii."
+pageFormatKeep = "Păstrează (Dimensiuni originale)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "Întinde pentru a se potrivi"
+mobileScannerStretchToFitDesc = "Întinde imaginile pentru a umple întreaga pagină. Dacă este dezactivat, imaginile sunt centrate cu păstrarea proporțiilor."
 
 [admin.settings.connections.ssoAutoLogin]
 label = "Autentificare automată SSO"
@@ -4304,10 +4781,168 @@ description = "Creează automat conturi de utilizator la prima autentificare SAM
 label = "Blochează înregistrarea"
 description = "Previne înregistrarea de noi utilizatori prin SAML2"
 
+[admin.settings.connections.mobileScanner]
+label = "Încărcare de pe telefon mobil"
+enable = "Activează încărcarea prin cod QR"
+description = "Permite utilizatorilor să încarce fișiere de pe dispozitive mobile scanând un cod QR"
+note = "Notă: Necesită configurarea URL-ului frontend. "
+link = "Configurați în Setările sistemului"
+mobileScannerConvertToPdf = "Convertește imaginile în PDF"
+mobileScannerConvertToPdfDesc = "Convertește automat imaginile încărcate în format PDF. Dacă este dezactivat, imaginile vor fi păstrate ca atare."
+mobileScannerImageResolution = "Rezoluția imaginii"
+mobileScannerImageResolutionDesc = "Rezoluția imaginilor încărcate. „Redusă” redimensionează imaginile la maximum 1200px pentru a reduce dimensiunea fișierului."
+imageResolutionFull = "Completă (Dimensiune originală)"
+imageResolutionReduced = "Redusă (Max 1200px)"
+mobileScannerPageFormat = "Format pagină"
+mobileScannerPageFormatDesc = "Dimensiunea paginii PDF pentru imaginile convertite. „Păstrează” folosește dimensiunile originale ale imaginii."
+pageFormatKeep = "Păstrează (Dimensiuni originale)"
+pageFormatA4 = "A4 (210×297mm)"
+pageFormatLetter = "Letter (8.5×11in)"
+mobileScannerStretchToFit = "Întinde pentru a se potrivi"
+mobileScannerStretchToFitDesc = "Întinde imaginile pentru a umple întreaga pagină. Dacă este dezactivat, imaginile sunt centrate cu păstrarea proporțiilor."
+
+[admin.settings.telegram]
+title = "Bot Telegram"
+description = "Configurați conectivitatea botului Telegram, controalele de acces și comportamentul mesajelor de feedback."
+
+[admin.settings.telegram.enabled]
+label = "Activează botul Telegram"
+description = "Permite utilizatorilor să interacționeze cu Stirling PDF prin botul Telegram configurat."
+
+[admin.settings.telegram.botUsername]
+label = "Nume de utilizator bot"
+description = "Numele de utilizator public al botului Telegram."
+
+[admin.settings.telegram.botToken]
+label = "Token bot"
+description = "Token API furnizat de BotFather pentru botul dvs. Telegram."
+
+[admin.settings.telegram.pipelineInboxFolder]
+label = "Folder Inbox"
+description = "Folder în directorul pipeline unde sunt stocate fișierele primite din Telegram."
+
+[admin.settings.telegram.customFolderSuffix]
+label = "Folosește sufix personalizat pentru folder"
+description = "Adaugă ID-ul conversației la folderele fișierelor primite pentru a izola încărcările per chat."
+
+[admin.settings.telegram.accessControl]
+title = "Control acces"
+description = "Restrângeți ce utilizatori sau canale pot interacționa cu botul."
+
+[admin.settings.telegram.enableAllowUserIDs]
+label = "Permite ID-uri specifice de utilizator"
+description = "Când este activat, doar ID-urile de utilizator listate pot folosi botul."
+
+[admin.settings.telegram.allowUserIDs]
+label = "ID-uri de utilizator permise"
+description = "Introduceți ID-urile de utilizator Telegram permise să interacționeze cu botul."
+placeholder = "Adăugați un ID utilizator și apăsați Enter"
+
+[admin.settings.telegram.enableAllowChannelIDs]
+label = "Permite ID-uri specifice de canal"
+description = "Când este activat, doar ID-urile de canal listate pot folosi botul."
+
+[admin.settings.telegram.allowChannelIDs]
+label = "ID-uri de canal permise"
+description = "Introduceți ID-urile de canal Telegram permise să interacționeze cu botul."
+placeholder = "Adăugați un ID canal și apăsați Enter"
+
+[admin.settings.telegram.processing]
+title = "Procesare"
+description = "Controlați intervalele de interogare și timpii de expirare ai procesării pentru încărcările din Telegram."
+
+[admin.settings.telegram.processingTimeoutSeconds]
+label = "Timeout procesare (secunde)"
+description = "Timpul maxim de așteptare pentru o sarcină de procesare înainte de raportarea unei erori."
+
+[admin.settings.telegram.pollingIntervalMillis]
+label = "Interval de interogare (ms)"
+description = "Intervalul dintre verificările pentru noi actualizări Telegram."
+
+[admin.settings.telegram.feedback]
+title = "Mesaje de feedback"
+description = "Alegeți când botul ar trebui să trimită feedback utilizatorilor și canalelor."
+
+[admin.settings.telegram.feedback.general.enabled]
+label = "Activează feedback-ul"
+description = "Controlați dacă botul trimite sau nu mesaje de feedback."
+
+[admin.settings.telegram.feedback.channel]
+title = "Reguli de feedback pentru canale"
+
+[admin.settings.telegram.feedback.channel.noValidDocument]
+label = "Afișează „No valid document” (Canal)"
+description = "Suprimă răspunsul „no valid document” pentru încărcările în canale."
+
+[admin.settings.telegram.feedback.channel.errorProcessing]
+label = "Afișează erorile de procesare (Canal)"
+description = "Trimite mesaje de eroare de procesare către canale."
+
+[admin.settings.telegram.feedback.channel.errorMessage]
+label = "Afișează mesajele de eroare (Canal)"
+description = "Afișează mesaje de eroare detaliate pentru canale."
+
+[admin.settings.telegram.feedback.user]
+title = "Reguli de feedback pentru utilizatori"
+
+[admin.settings.telegram.feedback.user.noValidDocument]
+label = "Afișează „No valid document” (Utilizator)"
+description = "Suprimă răspunsul „no valid document” pentru încărcările utilizatorilor."
+
+[admin.settings.telegram.feedback.user.errorProcessing]
+label = "Afișează erorile de procesare (Utilizator)"
+description = "Trimite mesaje de eroare de procesare către utilizatori."
+
+[admin.settings.telegram.feedback.user.errorMessage]
+label = "Afișează mesajele de eroare (Utilizator)"
+description = "Afișează mesaje de eroare detaliate pentru utilizatori."
+
 [admin.settings.database]
 title = "Bază de date"
 description = "Configurați setări personalizate de conectare la baza de date pentru implementări enterprise."
 configuration = "Configurare bază de date"
+backupTitle = "Backup-uri și restaurare"
+backupDescription = "Gestionează backup-urile H2 direct din consola de administrare."
+loadError = "Nu s-au putut încărca backup-urile bazei de date"
+backupCreated = "Backup creat cu succes"
+backupFailed = "Crearea backup-ului a eșuat"
+deleteTitle = "Șterge backup"
+deleteConfirm = "Ștergeți acest backup? Această acțiune nu poate fi anulată."
+deleteSuccess = "Backup șters"
+deleteFailed = "Ștergerea backup-ului a eșuat"
+deleteConfirmAction = "Șterge backup"
+downloadFailed = "Descărcarea backup-ului a eșuat"
+version = "Versiune H2"
+embedded = "H2 încorporat"
+external = "Bază de date externă"
+h2Only = "Backup-urile sunt disponibile doar pentru baza de date H2 încorporată."
+h2Hint = "Setați tipul bazei de date la H2 și dezactivați baza de date personalizată pentru a activa backup-ul și restaurarea."
+manageBackups = "Gestionează backup-urile"
+refresh = "Reîmprospătează"
+createBackup = "Creează backup"
+uploadTitle = "Încărcare și import"
+chooseFile = "Alegeți un fișier de backup .sql"
+importFromUpload = "Importă încărcarea"
+confirmImportTitle = "Confirmă importul bazei de date"
+overwriteWarning = "Atenție: aceasta va suprascrie baza de date curentă."
+overwriteWarningBody = "Toate datele existente vor fi înlocuite de backup-ul încărcat. Această acțiune nu poate fi anulată."
+confirmCodeLabel = "Introduceți codul de confirmare pentru a continua"
+enterCode = "Introduceți codul afișat mai sus"
+confirmImport = "Confirmă importul"
+codeMismatch = "Codul de confirmare nu corespunde"
+codeMismatchBody = "Introduceți codul exact așa cum este afișat pentru a continua."
+selectFile = "Selectați un fișier .sql pentru import"
+importSuccess = "Backup importat cu succes"
+importFailed = "Importul backup-ului a eșuat"
+noBackups = "Încă nu s-au găsit backup-uri."
+unavailable = "Lista de backup-uri nu este disponibilă pentru configurația curentă a bazei de date."
+fileName = "Fișier"
+created = "Creat"
+size = "Dimensiune"
+actions = "Acțiuni"
+download = "Descarcă"
+import = "Importă"
+delete = "Șterge"
 
 [admin.settings.database.enableCustom]
 label = "Activează bază de date personalizată"
@@ -4385,6 +5020,26 @@ description = "DPI maxim pentru procesarea imaginilor (0 = nelimitat)"
 [admin.settings.advanced.tessdataDir]
 label = "Director Tessdata"
 description = "Calea către directorul tessdata pentru fișierele de limbă OCR"
+downloadMissingTitle = "Nicio limbă selectată"
+downloadMissingBody = "Vă rugăm să selectați cel puțin o limbă pentru descărcare."
+downloadSuccessTitle = "Limbi descărcate"
+downloadSuccessBody = "Limbile tessdata selectate au fost salvate."
+downloadErrorTitle = "Descărcare eșuată"
+loadingLanguages = "Se încarcă limbile tessdata instalate..."
+installedLanguages = "Limbi tessdata instalate"
+noLanguages = "Nu s-au găsit limbi tessdata în directorul configurat."
+downloadLabel = "Descarcă limbi tessdata suplimentare"
+downloadPlaceholder = "Selectați limbile"
+downloadNothingFound = "Nu s-au găsit limbi suplimentare"
+permissionNotice = "Calea tessdata nu are permisiuni de scriere. Descărcările vor fi deschise în browser; salvați manual fișierele .traineddata în folderul tessdata."
+manualLinks = "Descărcări manuale: faceți clic pe linkuri și plasați fișierele în folderul tessdata."
+downloadButton = "Descarcă limbile selectate"
+downloadInvalidTitle = "Selecție invalidă"
+downloadInvalidBody = "Unele limbi selectate nu sunt disponibile pentru descărcare. Reîmprospătați și alegeți din listă."
+downloadErrorNetwork = "Descărcarea a eșuat din cauza unei erori de rețea. Verificați conexiunea și încercați din nou."
+downloadErrorServer = "Serverul a întâmpinat o eroare la descărcarea limbilor tessdata. Încercați din nou mai târziu."
+downloadErrorPermission = "Directorul tessdata nu are permisiuni de scriere: {{message}}. Alegeți un director cu drept de scriere (de ex., în folderul de date al aplicației) sau ajustați permisiunile."
+downloadErrorGeneric = "Descărcarea a eșuat: {{message}}. Încercați din nou mai târziu."
 
 [admin.settings.advanced.disableSanitize]
 label = "Dezactivează sanitizarea HTML"
@@ -4484,6 +5139,10 @@ description = "Permite administratorilor să invite utilizatori prin e-mail cu p
 [admin.settings.mail.frontendUrl]
 label = "URL frontend"
 description = "URL de bază pentru frontend (de ex. https://pdf.example.com). Folosit pentru generarea linkurilor de invitație în e-mailuri. Lăsați gol pentru a folosi URL-ul backend."
+
+[admin.settings.mail.frontendUrlNote]
+note = "Notă: Necesită configurarea URL-ului frontend. "
+link = "Configurați în Setările sistemului"
 
 [admin.settings.legal]
 title = "Documente legale"
@@ -4669,6 +5328,9 @@ googleDriveShort = "Drive"
 myFiles = "Fișierele mele"
 noRecentFiles = "Nu s-au găsit fișiere recente"
 googleDriveNotAvailable = "Integrarea cu Google Drive nu este disponibilă"
+mobileUpload = "Încărcare de pe mobil"
+mobileShort = "Mobil"
+mobileUploadNotAvailable = "Încărcarea de pe mobil nu este activată"
 downloadSelected = "Descărcați selecția"
 saveSelected = "Salvează selecția"
 openFiles = "Deschideți fișiere"
@@ -4881,6 +5543,7 @@ desc = "Construiți fluxuri de lucru în mai mulți pași, înlănțuind acțiun
 invalidStep = "Pas nevalid"
 reviewTitle = "Rezultatele automatizării"
 copyToSaved = "Copiați în Salvate"
+exportForFolderScanning = "Exportă pentru scanarea folderelor"
 
 [automate.files]
 placeholder = "Selectați fișiere de procesat cu această automatizare"
@@ -4902,6 +5565,7 @@ createTitle = "Creați automatizare"
 editTitle = "Editați automatizarea"
 intro = "Automatizările rulează instrumentele secvențial. Pentru a începe, adăugați instrumente în ordinea în care doriți să ruleze."
 save = "Salvați automatizarea"
+exportForFolderScanning = "Exportă pentru scanarea folderelor"
 
 [automate.creation.name]
 label = "Numele automatizării"
@@ -4984,6 +5648,7 @@ loading = "Se încarcă..."
 back = "Înapoi"
 continue = "Continuă"
 error = "Eroare"
+save = "Salvează"
 
 [config.overview]
 title = "Configurarea aplicației"
@@ -5045,6 +5710,15 @@ warning = "⚠️ Avertisment: Această acțiune va genera chei API noi și va f
 impact = "Orice aplicații sau servicii care folosesc în prezent aceste chei vor înceta să funcționeze până le actualizați cu noile chei."
 confirmPrompt = "Sigur doriți să continuați?"
 confirmCta = "Reîmprospătați cheile"
+
+[config.apiKeys.alert]
+apiKeyErrorTitle = "Eroare cheie API"
+failedToCreateApiKey = "Nu s-a putut crea cheia API."
+failedToRetrieveApiKey = "Nu s-a putut obține cheia API din răspuns."
+failedToFetchApiKey = "Nu s-a putut prelua cheia API."
+apiKeyRefreshed = "Cheie API reîmprospătată"
+apiKeyRefreshedBody = "Cheia API a fost reîmprospătată cu succes."
+failedToRefreshApiKey = "Nu s-a putut reîmprospăta cheia API."
 
 [AddAttachmentsRequest]
 attachments = "Selectați atașamente"
@@ -5150,6 +5824,16 @@ finish = "Finalizați"
 startTour = "Porniți turul"
 startTourDescription = "Faceți un tur ghidat al funcțiilor esențiale Stirling PDF"
 
+[onboarding.whatsNew]
+quickAccess = "Începeți din bara <strong>Acces rapid</strong> pentru a comuta între Reader, Automate, fișierele dvs. și toate tururile."
+leftPanel = "Panoul din stânga <strong>Instrumente</strong> listează tot ce puteți face. Navigați prin categorii sau căutați pentru a găsi rapid un instrument."
+fileUpload = "Folosiți butonul <strong>Fișiere</strong> pentru a încărca sau a alege un PDF recent. Vom încărca un exemplu pentru a vedea spațiul de lucru."
+rightRail = "Bara <strong>din dreapta</strong> conține acțiuni rapide pentru a selecta fișiere, a schimba tema sau limba și a descărca rezultatele."
+topBar = "Bara de sus vă permite să comutați între <strong>Vizualizator</strong>, <strong>Editor de pagini</strong> și <strong>Fișiere active</strong>."
+pageEditorView = "Comutați la Editorul de pagini pentru a reordona, roti sau șterge pagini."
+activeFilesView = "Folosiți Fișiere active pentru a vedea tot ce aveți deschis și a alege la ce să lucrați."
+wrapUp = "Acestea sunt noutățile din V2. Deschideți oricând meniul <strong>Tururi</strong> pentru a relua acesta, turul Instrumente sau turul Admin."
+
 [onboarding.welcomeModal]
 title = "Bun venit la Stirling PDF!"
 description = "Doriți să faceți un tur rapid de 1 minut pentru a afla funcțiile esențiale și cum să începeți?"
@@ -5169,6 +5853,10 @@ skipForNow = "Sari peste deocamdată"
 download = "Descarcă →"
 showMeAround = "Arată-mi"
 skipTheTour = "Sari peste tur"
+
+[onboarding.tourOverview]
+title = "Prezentarea turului"
+body = "Stirling PDF V2 vine cu zeci de instrumente și un layout reîmprospătat. Faceți un tur rapid pentru a vedea ce s-a schimbat și unde găsiți funcțiile de care aveți nevoie."
 
 [onboarding.serverLicense]
 skip = "Sari peste deocamdată"
@@ -5252,9 +5940,11 @@ username = "Nume de utilizator (email)"
 usernamePlaceholder = "user@example.com"
 password = "Parolă"
 passwordPlaceholder = "Introduceți parola"
+passwordRequired = "Parola este obligatorie"
 role = "Rol"
 team = "Echipă (opțional)"
 teamPlaceholder = "Selectați o echipă"
+authType = "Tip de autentificare"
 forcePasswordChange = "Forțează schimbarea parolei la prima autentificare"
 cancel = "Anulați"
 submit = "Adăugați membru"
@@ -5262,6 +5952,13 @@ usernameRequired = "Numele de utilizator și parola sunt obligatorii"
 passwordTooShort = "Parola trebuie să aibă cel puțin 6 caractere"
 success = "Utilizator creat cu succes"
 error = "Crearea utilizatorului a eșuat"
+forceMFA = "Impuneți configurarea MFA la următoarea autentificare"
+
+[workspace.people.authType]
+password = "Parolă"
+oauth = "OAuth2"
+saml = "SAML2"
+ssoDescription = "Utilizatorul se va autentifica prin furnizorul SSO"
 
 [workspace.people.editMember]
 title = "Editați membrul"
@@ -5281,6 +5978,31 @@ error = "Actualizarea stării utilizatorului a eșuat"
 [workspace.people.delete]
 success = "Utilizator șters cu succes"
 error = "Ștergerea utilizatorului a eșuat"
+
+[workspace.people.changePassword]
+action = "Schimbă parola"
+title = "Schimbă parola"
+subtitle = "Actualizați parola pentru"
+newPassword = "Parolă nouă"
+confirmPassword = "Confirmă parola"
+placeholder = "Introduceți o parolă nouă"
+confirmPlaceholder = "Reintroduceți parola nouă"
+passwordRequired = "Introduceți o parolă nouă"
+passwordMismatch = "Parolele nu coincid"
+generateRandom = "Generează o parolă sigură"
+generatedPreview = "Parolă generată:"
+copyTooltip = "Copiază în clipboard"
+copiedToClipboard = "Parola a fost copiată în clipboard"
+copyFailed = "Copierea parolei a eșuat"
+sendEmail = "Trimite un email utilizatorului despre această modificare"
+includePassword = "Include parola nouă în email"
+forcePasswordChange = "Forțează utilizatorul să schimbe parola la următoarea autentificare"
+emailUnavailable = "Emailul acestui utilizator nu este o adresă de email validă. Notificările sunt dezactivate."
+smtpDisabled = "Notificările prin email necesită activarea SMTP în setări."
+notifyOnly = "Se va trimite un email fără parolă, informând utilizatorul că un administrator a schimbat-o."
+submit = "Actualizează parola"
+success = "Parola a fost actualizată cu succes"
+error = "Actualizarea parolei a eșuat"
 
 [workspace.people.emailInvite]
 tab = "Invitație prin email"
@@ -5339,6 +6061,11 @@ fromLicense = "din licență"
 slotsAvailable = "{{count}} loc(uri) de utilizator disponibile"
 noSlotsAvailable = "Niciun loc disponibil"
 currentUsage = "În prezent se folosesc {{current}} din {{max}} licențe de utilizator"
+
+[workspace.people.mfa]
+adminDisableSuccess = "MFA a fost dezactivată cu succes pentru utilizator"
+adminDisableError = "Dezactivarea MFA pentru utilizator a eșuat"
+disableByAdmin = "Dezactivați MFA"
 
 [workspace.teams]
 title = "Echipe"
@@ -5425,7 +6152,7 @@ submit = "Schimbă echipa"
 currency = "Monedă"
 popular = "Popular"
 current = "Plan curent"
-upgrade = "Actualizează"
+upgrade = "Upgrade"
 contact = "Contactează-ne"
 customPricing = "Personalizat"
 showComparison = "Compară toate funcțiile"
@@ -5458,6 +6185,28 @@ contactSales = "Contactați vânzări"
 contactToUpgrade = "Contactați-ne pentru a face upgrade sau a personaliza planul"
 maxUsers = "Număr maxim de utilizatori"
 upTo = "Până la"
+getLicense = "Obține licență pentru server"
+upgradeToEnterprise = "Upgrade la Enterprise"
+selectPeriod = "Selectați perioada de facturare"
+monthlyBilling = "Facturare lunară"
+yearlyBilling = "Facturare anuală"
+checkoutOpened = "Checkout deschis"
+checkoutInstructions = "Finalizați achiziția în fila Stripe. După plată, reveniți aici și reîmprospătați pagina pentru a vă activa licența. Veți primi, de asemenea, un e-mail cu cheia de licență."
+activateLicense = "Activați licența"
+
+[plan.static.licenseActivation]
+checkoutOpened = "Checkout deschis într-o filă nouă"
+instructions = "Finalizați achiziția în fila Stripe. După finalizarea plății, veți primi un e-mail cu cheia de licență."
+enterKey = "Introduceți mai jos cheia de licență pentru a vă activa planul:"
+keyDescription = "Lipiți cheia de licență din e-mail"
+activate = "Activează licența"
+doLater = "Voi face asta mai târziu"
+success = "Licență activată!"
+successMessage = "Licența a fost activată cu succes. Puteți închide această fereastră."
+
+[plan.static.billingPortal]
+title = "Este necesară verificarea e-mailului"
+message = "Va trebui să vă verificați adresa de e-mail în portalul de facturare Stripe. Verificați e-mailul pentru un link de autentificare."
 
 [plan.period]
 month = "lună"
@@ -5661,6 +6410,8 @@ notAvailable = "Sistem de audit indisponibil"
 notAvailableMessage = "Sistemul de audit nu este configurat sau nu este disponibil."
 disabled = "Jurnalizarea de audit este dezactivată"
 disabledMessage = "Activați jurnalizarea de audit în configurația aplicației pentru a urmări evenimentele sistemului."
+enterpriseRequired = "Este necesară licența Enterprise"
+enterpriseRequiredMessage = "Sistemul de auditare a jurnalelor este o funcție Enterprise. Faceți upgrade la o licență Enterprise pentru a accesa jurnalele de audit și analizele."
 
 [audit.error]
 title = "Eroare la încărcarea sistemului de audit"
@@ -5758,6 +6509,7 @@ endpoint = "Endpoint"
 visits = "Vizite"
 percentage = "Procentaj"
 noData = "Nu sunt date disponibile"
+unknownEndpoint = "Endpoint necunoscut"
 
 [backendHealth]
 checking = "Se verifică starea backend-ului..."
@@ -5815,11 +6567,13 @@ subtitle = "Autentifică-te cu contul tău Stirling"
 [setup.selfhosted]
 title = "Autentifică-te pe server"
 subtitle = "Introdu acreditările serverului tău"
+link = "sau conectați-vă la un cont self-hosted"
 
 [setup.server]
 title = "Conectează-te la server"
 subtitle = "Introdu URL-ul serverului tău self-hosted"
 testing = "Se testează conexiunea..."
+useLast = "Last used server: {{serverUrl}}"
 
 [setup.server.type]
 saas = "Stirling PDF SaaS"
@@ -5831,8 +6585,17 @@ description = "Introdu URL-ul complet al serverului tău Stirling PDF găzduit l
 
 [setup.server.error]
 emptyUrl = "Te rugăm să introduci un URL de server"
+invalidUrl = "Format URL invalid. Introduceți un URL valid, de exemplu https://your-server.com"
 unreachable = "Nu s-a putut conecta la server"
 testFailed = "Testul de conexiune a eșuat"
+configFetch = "Nu s-a putut prelua configurația serverului. Verificați URL-ul și încercați din nou."
+
+[setup.server.error.securityDisabled]
+title = "Autentificarea nu este activată"
+body = "Acest server nu are autentificarea activată. Pentru a vă conecta la acest server, trebuie să activați autentificarea:"
+step1 = "Setați DOCKER_ENABLE_SECURITY=true în mediul dvs."
+step2 = "Sau setați security.enableLogin=true în settings.yml"
+step3 = "Reporniți serverul"
 
 [setup.login]
 title = "Autentificare"
@@ -5841,6 +6604,7 @@ connectingTo = "Conectare la:"
 submit = "Autentificare"
 signInWith = "Autentifică-te cu"
 oauthPending = "Se deschide browserul pentru autentificare..."
+sso = "Single Sign-On"
 orContinueWith = "Sau continuă cu email"
 serverRequirement = "Notă: Serverul trebuie să aibă autentificarea activată."
 showInstructions = "Cum se activează?"
@@ -5905,6 +6669,9 @@ earlyAccess = "Acces timpuriu"
 reset = "Resetați modificările"
 downloadJson = "Descărcați JSON"
 generatePdf = "Generați PDF"
+saveChanges = "Salvează modificările"
+applyChanges = "Aplică modificările"
+downloadCopy = "Descarcă o copie"
 
 [pdfTextEditor.options.autoScaleText]
 title = "Scalare automată a textului pentru a se potrivi în casete"
@@ -5922,6 +6689,24 @@ descriptionInline = "Sfat: Țineți apăsat Ctrl (Cmd) sau Shift pentru a select
 [pdfTextEditor.options.forceSingleElement]
 title = "Blocați textul editat într-un singur element PDF"
 description = "Când este activată, editorul exportă fiecare casetă de text editată ca un singur element de text PDF pentru a evita suprapunerea glifelor sau amestecul de fonturi."
+
+[pdfTextEditor.options.advanced]
+title = "Setări avansate"
+
+[pdfTextEditor.tooltip.header]
+title = "Limitări ale previzualizării"
+
+[pdfTextEditor.tooltip.textFocus]
+title = "Focalizare pe text și imagine"
+text = "Acest spațiu de lucru se concentrează pe editarea textului și repoziționarea imaginilor încorporate. Elementele grafice complexe ale paginii, widgeturile de formular și grafica stratificată sunt păstrate pentru export, dar nu sunt pe deplin editabile aici."
+
+[pdfTextEditor.tooltip.previewVariance]
+title = "Variații în previzualizare"
+text = "Unele elemente vizuale (cum ar fi chenarul tabelelor, formele sau aspectul anotațiilor) pot să nu fie afișate exact în previzualizare. PDF-ul exportat păstrează comenzile de desen originale ori de câte ori este posibil."
+
+[pdfTextEditor.tooltip.alpha]
+title = "Vizualizator Alpha"
+text = "Acest vizualizator alpha este încă în dezvoltare — anumite fonturi, culori, efecte de transparență și detalii de layout pot varia ușor. Verificați încă o dată PDF-ul generat înainte de a-l partaja."
 
 [pdfTextEditor.manual]
 mergeTooltip = "Unește casetele selectate"
@@ -5942,6 +6727,8 @@ alpha = "Acest vizualizator alpha este încă în dezvoltare — anumite fonturi
 [pdfTextEditor.empty]
 title = "Niciun document încărcat"
 subtitle = "Încărcați un fișier PDF sau JSON pentru a începe editarea conținutului text."
+dropzone = "Glisați și fixați aici un fișier PDF sau JSON, sau faceți clic pentru a răsfoi"
+dropzoneWithFiles = "Selectați un fișier din fila Fișiere sau glisați și fixați aici un fișier PDF sau JSON, sau faceți clic pentru a răsfoi"
 
 [pdfTextEditor.welcomeBanner]
 title = "Bine ați venit la Editor text PDF (Acces timpuriu)"
@@ -6042,3 +6829,58 @@ title = "Rezultate adăugare text"
 
 [addText.error]
 failed = "A apărut o eroare la adăugarea textului în PDF."
+
+[mobileUpload]
+title = "Încărcare de pe mobil"
+description = "Scanați pentru a încărca fotografii. Imaginile se convertesc automat în PDF."
+descriptionNoConvert = "Scanați pentru a încărca fotografii de pe dispozitivul mobil."
+error = "Eroare de conexiune"
+pollingError = "Eroare la verificarea fișierelor"
+sessionId = "ID sesiune"
+sessionCreateError = "Nu s-a putut crea sesiunea"
+expiryWarning = "Sesiunea expiră în curând"
+expiryWarningMessage = "Acest cod QR va expira în {{seconds}} secunde. Un nou cod va fi generat automat."
+filesReceived = "S-au primit {{count}} fișier(e)"
+connected = "Dispozitiv mobil conectat"
+instructions = "Scanați cu camera telefonului. Imaginile se convertesc automat în PDF."
+instructionsNoConvert = "Scanați cu camera telefonului pentru a încărca fișiere."
+
+[mobileScanner]
+title = "Scanner mobil"
+noSession = "Sesiune invalidă"
+noSessionMessage = "Scanați un cod QR valid pentru a accesa această pagină."
+validating = "Se validează sesiunea..."
+sessionInvalid = "Eroare de sesiune"
+sessionExpired = "Această sesiune a expirat. Reîmprospătați și încercați din nou."
+sessionNotFound = "Sesiunea nu a fost găsită. Reîmprospătați și încercați din nou."
+sessionValidationError = "Nu s-a putut verifica sesiunea. Încercați din nou."
+uploadSuccess = "Încărcare reușită!"
+uploadSuccessMessage = "Imaginile au fost transferate."
+httpsRequired = "Accesul la cameră necesită HTTPS sau localhost. Folosiți HTTPS sau accesați prin localhost."
+uploadFailed = "Încărcarea a eșuat. Încercați din nou."
+uploading = "Se încarcă..."
+connected = "Conectat"
+connecting = "Se conectează..."
+chooseMethod = "Alegeți metoda de încărcare"
+chooseMethodDescription = "Selectați cum doriți să scanați și să încărcați documente"
+camera = "Cameră"
+cameraDescription = "Scanați documente folosind camera dispozitivului, cu detectare automată a marginilor"
+fileUpload = "Încărcare fișier"
+fileDescription = "Încărcați fotografii sau documente existente de pe dispozitiv"
+cameraAccessDenied = "Acces la cameră refuzat. Activați accesul la cameră."
+back = "Înapoi"
+settings = "Setări"
+edgeDetection = "Detectare margini"
+flashlight = "Lanternă"
+flash = "Flash"
+processing = "Se procesează..."
+capture = "Capturați fotografie"
+selectFilesPrompt = "Selectați fișiere de încărcat"
+selectImage = "Selectați imagine"
+preview = "Previzualizare"
+retake = "Refaceți"
+addToBatch = "Adăugați la lot"
+upload = "Încărcați"
+batchImages = "Lot"
+clearBatch = "Goliți"
+uploadAll = "Încărcați tot"

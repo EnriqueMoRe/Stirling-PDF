@@ -171,6 +171,12 @@ export function ServerExperienceProvider({ children }: { children: ReactNode }) 
     if (!config) {
       return;
     }
+    if (!config.appVersion) {
+      return;
+    }
+    if (loginEnabled && !isAuthenticated) {
+      return;
+    }
 
     const shouldUseAdminData = (config.enableLogin ?? true) && config.isAdmin;
     // Use WAU estimate for no-login scenarios OR for login non-admin users
@@ -249,7 +255,7 @@ export function ServerExperienceProvider({ children }: { children: ReactNode }) 
   }, [fetchUserCounts]);
 
   const hasPaidLicense = useMemo(() => {
-    return config?.license === 'PRO' || config?.license === 'ENTERPRISE';
+    return config?.license === 'SERVER' || config?.license === 'PRO' || config?.license === 'ENTERPRISE';
   }, [config?.license]);
 
   const licenseKeyValid = useMemo(() => {
@@ -353,4 +359,3 @@ export function useServerExperienceContext() {
   }
   return context;
 }
-

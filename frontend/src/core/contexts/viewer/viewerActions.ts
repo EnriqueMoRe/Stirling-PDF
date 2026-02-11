@@ -8,7 +8,7 @@ import {
 import { PdfBookmarkObject } from '@embedpdf/models';
 
 export interface ScrollActions {
-  scrollToPage: (page: number) => void;
+  scrollToPage: (page: number, behavior?: 'smooth' | 'instant') => void;
   scrollToFirstPage: () => void;
   scrollToPreviousPage: () => void;
   scrollToNextPage: () => void;
@@ -52,6 +52,7 @@ export interface SearchActions {
   next: () => void;
   previous: () => void;
   clear: () => void;
+  goToResult: (index: number) => void;
 }
 
 export interface ExportActions {
@@ -96,35 +97,66 @@ export function createViewerActions({
   triggerImmediateZoomUpdate,
 }: ViewerActionDependencies): ViewerActionsBundle {
   const scrollActions: ScrollActions = {
-    scrollToPage: (page: number) => {
+    scrollToPage: (page: number, behavior?: 'smooth' | 'instant') => {
       const api = registry.current.scroll?.api;
       if (api?.scrollToPage) {
-        api.scrollToPage({ pageNumber: page });
+        try {
+          api.scrollToPage({ pageNumber: page, behavior: behavior || 'smooth' });
+        } catch (error) {
+          // Silently handle "Strategy not found" errors that occur during document transitions
+          if (process.env.NODE_ENV === 'development') {
+            console.warn('[ScrollActions] scrollToPage failed (document may be transitioning):', error);
+          }
+        }
       }
     },
     scrollToFirstPage: () => {
       const api = registry.current.scroll?.api;
       if (api?.scrollToPage) {
-        api.scrollToPage({ pageNumber: 1 });
+        try {
+          api.scrollToPage({ pageNumber: 1 });
+        } catch (error) {
+          if (process.env.NODE_ENV === 'development') {
+            console.warn('[ScrollActions] scrollToFirstPage failed:', error);
+          }
+        }
       }
     },
     scrollToPreviousPage: () => {
       const api = registry.current.scroll?.api;
       if (api?.scrollToPreviousPage) {
-        api.scrollToPreviousPage();
+        try {
+          api.scrollToPreviousPage();
+        } catch (error) {
+          if (process.env.NODE_ENV === 'development') {
+            console.warn('[ScrollActions] scrollToPreviousPage failed:', error);
+          }
+        }
       }
     },
     scrollToNextPage: () => {
       const api = registry.current.scroll?.api;
       if (api?.scrollToNextPage) {
-        api.scrollToNextPage();
+        try {
+          api.scrollToNextPage();
+        } catch (error) {
+          if (process.env.NODE_ENV === 'development') {
+            console.warn('[ScrollActions] scrollToNextPage failed:', error);
+          }
+        }
       }
     },
     scrollToLastPage: () => {
       const api = registry.current.scroll?.api;
       const state = getScrollState();
       if (api?.scrollToPage && state.totalPages > 0) {
-        api.scrollToPage({ pageNumber: state.totalPages });
+        try {
+          api.scrollToPage({ pageNumber: state.totalPages });
+        } catch (error) {
+          if (process.env.NODE_ENV === 'development') {
+            console.warn('[ScrollActions] scrollToLastPage failed:', error);
+          }
+        }
       }
     },
   };
@@ -285,6 +317,12 @@ export function createViewerActions({
       const api = registry.current.search?.api;
       if (api?.clear) {
         api.clear();
+      }
+    },
+    goToResult: (index: number) => {
+      const api = registry.current.search?.api;
+      if (api?.goToResult) {
+        api.goToResult(index);
       }
     },
   };

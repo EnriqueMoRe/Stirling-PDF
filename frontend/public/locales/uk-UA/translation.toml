@@ -1,8 +1,11 @@
 unsavedChanges = "У вас є незбережені зміни у вашому PDF."
+pendingRedactionsTitle = "Незастосовані зачорнення"
+pendingRedactions = "У вас є незастосовані зачорнення, які буде втрачено."
 areYouSure = "Ви впевнені, що хочете вийти?"
 unsavedChangesTitle = "Незбережені зміни"
 keepWorking = "Продовжити роботу"
 discardChanges = "Відхилити й вийти"
+discardRedactions = "Скасувати й вийти"
 applyAndContinue = "Зберегти й вийти"
 exportAndContinue = "Експортувати й продовжити"
 cancel = "Скасувати"
@@ -216,6 +219,8 @@ pagesAndStarting = "Сторінки та початковий номер"
 positionAndPages = "Позиція та сторінки"
 preview = "Вибір позиції"
 previewDisclaimer = "Попередній перегляд орієнтовний. Підсумковий результат може відрізнятися через метрики шрифтів PDF."
+zeroPad = "Zero‑pad Width (Bates Stamping)"
+zeroPadTooltip = "Zero‑pad (Bates Stamp) page numbers to this width (e.g., 3 ⇒ 001). Set 0 to disable."
 
 [addPageNumbers.selectText]
 1 = "Виберіть PDF-файл:"
@@ -303,6 +308,7 @@ selectOperation = "Вибрати операцію"
 addOperationButton = "Додати операцію"
 pipelineHeader = "Конвеєр:"
 saveButton = "Завантажити"
+saveForFolderScanning = "Зберегти для сканування папок"
 validateButton = "Перевірити"
 
 [enterpriseEdition]
@@ -340,6 +346,10 @@ advance = "Додаткове"
 edit = "Перегляд та Редагування"
 popular = "Популярне"
 
+[footer]
+discord = "Discord"
+issues = "GitHub"
+
 [settings.preferences]
 title = "Параметри"
 
@@ -360,6 +370,7 @@ advanced = "Додатково"
 title = "Безпека та автентифікація"
 security = "Безпека"
 connections = "Підключення"
+telegram = "Telegram"
 
 [settings.licensingAnalytics]
 title = "Ліцензування та аналітика"
@@ -430,10 +441,38 @@ fullscreen = "Повноекранний"
 [settings.general.updates]
 title = "Оновлення ПЗ"
 description = "Перевіряйте оновлення та переглядайте інформацію про версію"
-currentVersion = "Поточна версія"
+currentBackendVersion = "Current Backend Version"
+currentFrontendVersion = "Current Frontend Version"
+versionMismatch = "Warning: A mismatch has been detected between the client version and the AppConfig version. Using different versions can lead to compatibility issues, errors, and security risks. Please ensure that server and client are using the same version."
 latestVersion = "Остання версія"
 checkForUpdates = "Перевірити оновлення"
 viewDetails = "Переглянути деталі"
+serverNeedsUpdate = "Сервер має бути оновлений адміністратором"
+
+[settings.general.versionInfo]
+title = "Відомості про версію"
+description = "Деталі версій Desktop і сервера"
+desktop = "Версія Desktop"
+server = "Версія сервера"
+
+[settings.security]
+title = "Безпека"
+description = "Оновіть свій пароль, щоб убезпечити обліковий запис."
+
+[settings.security.password]
+subtitle = "Змініть пароль. Після оновлення вас буде виведено із системи."
+required = "Усі поля обов’язкові."
+mismatch = "Нові паролі не збігаються."
+error = "Не вдалося оновити пароль. Перевірте поточний пароль і спробуйте ще раз."
+success = "Пароль успішно оновлено. Увійдіть знову."
+ssoDisabled = "Зміни пароля керуються вашим постачальником ідентифікації."
+current = "Поточний пароль"
+currentPlaceholder = "Введіть поточний пароль"
+new = "Новий пароль"
+newPlaceholder = "Введіть новий пароль"
+confirm = "Підтвердження нового пароля"
+confirmPlaceholder = "Повторно введіть новий пароль"
+update = "Оновити пароль"
 
 [settings.hotkeys]
 title = "Комбінації клавіш"
@@ -488,11 +527,16 @@ low = "Низький"
 title = "Змінити облікові дані"
 header = "Оновіть дані вашого облікового запису"
 changePassword = "Ви використовуєте заводські облікові дані для входу. Будь ласка, введіть новий пароль"
+ssoManaged = "Вашим обліковим записом керує ваш постачальник ідентифікації."
 newUsername = "Нове ім'я користувача"
 oldPassword = "Поточний пароль"
 newPassword = "Новий пароль"
 confirmNewPassword = "Підтвердіть новий пароль"
 submit = "Надіслати зміни"
+credsUpdated = "Обліковий запис оновлено"
+description = "Зміни збережено. Будь ласка, увійдіть знову."
+error = "Не вдалося змінити ім’я користувача. Перевірте пароль і спробуйте ще раз."
+changeUsername = "Оновіть ім’я користувача. Після оновлення вас буде виведено із системи."
 
 [account]
 title = "Налаштування акаунта"
@@ -500,6 +544,8 @@ accountSettings = "Налаштування акаунта"
 adminSettings = "Налаштування адміністратора - Перегляд і додавання користувачів"
 userControlSettings = "Налаштування контролю користувача"
 changeUsername = "Змінити ім'я користувача"
+changeUsernameDescription = "Оновіть ім’я користувача. Після оновлення вас буде виведено із системи."
+newUsernamePlaceholder = "Введіть нове ім’я користувача"
 newUsername = "Нове ім'я користувача"
 password = "Підтвердження пароля"
 oldPassword = "Старий пароль"
@@ -514,6 +560,30 @@ property = "Властивість"
 webBrowserSettings = "Налаштування веб-браузера"
 syncToBrowser = "Синхронізувати обліковий запис -> Браузер"
 syncToAccount = "Синхронізувати обліковий запис <- Браузер"
+
+[account.mfa]
+title = "Двофакторна автентифікація"
+setupFailed = "Не вдалося розпочати налаштування двофакторної автентифікації. Спробуйте ще раз."
+codeRequired = "Введіть код автентифікації, щоб продовжити."
+enabled = "Двофакторну автентифікацію увімкнено."
+enableFailed = "Не вдалося увімкнути двофакторну автентифікацію. Перевірте код і спробуйте ще раз."
+disabled = "Двофакторну автентифікацію вимкнено."
+disableFailed = "Не вдалося вимкнути двофакторну автентифікацію. Перевірте код і спробуйте ще раз."
+description = "Додайте додатковий рівень безпеки до свого облікового запису."
+enableButton = "Увімкнути двофакторну автентифікацію"
+disableButton = "Вимкнути двофакторну автентифікацію"
+setupTitle = "Налаштування двофакторної автентифікації"
+setupDescription = "Скануйте QR-код у своєму додатку-автентифікаторі, потім введіть 6-значний код для підтвердження."
+manualKey = "Ключ для ручного налаштування"
+secretWarning = "Зберігайте цей ключ у таємниці. Будь-хто, хто матиме доступ, зможе генерувати дійсні коди автентифікації."
+codePlaceholder = "Введіть 6-значний код"
+confirmEnable = "Увімкнути"
+disableTitle = "Вимкнути двофакторну автентифікацію"
+disableDescription = "Введіть дійсний код автентифікації, щоб вимкнути двофакторну автентифікацію."
+codeLabel = "Код автентифікації"
+confirmDisable = "Вимкнути"
+ssoDescription = "Для облікових записів із єдиним входом двофакторною автентифікацією керує ваш постачальник ідентичності."
+ssoManaged = "Налаштуйте MFA через свого постачальника ідентичності."
 
 [adminUserSettings]
 title = "Налаштування контролю користувача"
@@ -708,6 +778,11 @@ tags = "підпис,автограф"
 title = "Підпис"
 desc = "Додає підпис до PDF за допомогою малюнка, тексту або зображення"
 
+[home.annotate]
+tags = "анотація,підсвічування,малювання"
+title = "Анотувати"
+desc = "Підсвічуйте, малюйте, додавайте нотатки та фігури у переглядачі"
+
 [home.flatten]
 tags = "спростити,прибрати,інтерактивність"
 title = "Знеактивування"
@@ -879,6 +954,7 @@ title = "Автоподіл за розміром/стор."
 desc = "Розділяє один PDF на кілька документів на основі розміру, кількості сторінок або кількості документів"
 
 [home.replaceColor]
+tags = "replace color,invert color,color replacement,swap colors,change color,invert,negative,color swap,find and replace color,convert color,color change"
 title = "Замінити й інвертувати колір"
 desc = "Замінювати або інвертувати кольори в PDF-документах"
 
@@ -893,18 +969,22 @@ title = "Автоматичне сканування папок"
 desc = "Посилання на посібник із автоматичного сканування папок"
 
 [home.devSsoGuide]
+tags = "SSO,single sign-on,authentication,SAML,OAuth,OIDC,login,enterprise,identity provider,IdP"
 title = "Посібник з SSO"
 desc = "Посилання на посібник з SSO"
 
 [home.devAirgapped]
+tags = "air-gapped,offline,isolated,no internet,disconnected,secure,network isolation,standalone"
 title = "Ізольоване розгортання"
 desc = "Посилання на посібник з налаштування ізольованого середовища"
 
 [home.addPassword]
+tags = "encrypt,password,lock,secure,protect,security,encryption,safeguard,confidential,private,restrict access"
 title = "Додати пароль"
 desc = "Зашифруйте документ PDF паролем."
 
 [home.changePermissions]
+tags = "permissions,restrictions,rights,access control,allow,deny,printing,copying,editing,modify permissions,security settings,user rights"
 title = "Змінити дозволи"
 desc = "Змінити обмеження та дозволи документа"
 
@@ -914,12 +994,14 @@ title = "Автоматизація"
 desc = "Створюйте багатокрокові робочі процеси, поєднуючи дії з PDF. Ідеально для повторюваних завдань."
 
 [home.overlay-pdfs]
+tags = "overlay,combine,merge,layer,superimpose,overlay PDF,layer PDFs,combine PDFs,stack,overlay pages,background,foreground,composite"
 desc = "Накладення одного PDF поверх іншого PDF"
 title = "Накладення PDF"
 
 [home.pdfTextEditor]
+tags = "edit text,modify text,change text,edit content,update text,rewrite,correct,amend,redline,revise,text editor,content editor"
 title = "Редактор тексту PDF"
-desc = "Редагуйте наявний текст і зображення у PDF"
+desc = "Переглядайте й редагуйте JSON-експорти Stirling PDF з груповим редагуванням тексту та повторною генерацією PDF"
 
 [home.addText]
 tags = "текст,анотація,мітка"
@@ -930,6 +1012,7 @@ desc = "Додавайте свій текст будь-де в PDF"
 addFiles = "Додати файли"
 uploadFromComputer = "Завантажити з комп’ютера"
 openFromComputer = "Відкрити з комп’ютера"
+mobileUpload = "Завантажити з мобільного"
 
 [viewPdf]
 tags = "перегляд,читання,анотації,текст,зображення"
@@ -1217,7 +1300,12 @@ downloadHtml = "Завантажити проміжний файл HTML замі
 pdfaOptions = "Параметри PDF/A"
 outputFormat = "Вихідний формат"
 pdfaNote = "PDF/A-1b більш сумісний, PDF/A-2b підтримує більше функцій."
+pdfaFormat = "Формат PDF/A"
 pdfaDigitalSignatureWarning = "Цей PDF документ має цифровий підпис. Цей підпис буде видалений у наступному кроці."
+strictMode = "Strict Mode"
+strictModeDesc = "Error if conversion is not perfect (uses VeraPDF verification)"
+pdfxDigitalSignatureWarning = "PDF містить цифровий підпис. Його буде видалено на наступному кроці."
+pdfxDescription = "PDF/X — це підмножина PDF за стандартом ISO для надійного друку та обміну графікою."
 fileFormat = "Формат файлу"
 wordDoc = "Документ Word"
 wordDocExt = "Документ Word (.docx)"
@@ -1245,6 +1333,37 @@ cbzOptions = "Параметри CBZ у PDF"
 optimizeForEbook = "Оптимізувати PDF для рідерів електронних книг (використовує Ghostscript)"
 cbzOutputOptions = "Параметри PDF у CBZ"
 cbzDpi = "DPI для рендерингу зображень"
+cbrOptions = "Параметри CBR"
+cbrOutputOptions = "Параметри перетворення PDF у CBR"
+cbrDpi = "DPI для рендерингу зображень"
+svgPdfOptions = "SVG to PDF Options"
+combineSvgs = "Combine SVGs into single PDF"
+combineSvgsDescription = "Combine all SVG files into one PDF with multiple pages, or create separate PDFs for each SVG"
+svgVectorNote = "SVG files are rendered as vector graphics for crisp output at any resolution. Dimensions from the SVG determine the PDF page size."
+
+[convert.ebookOptions]
+ebookOptions = "Параметри перетворення електронної книги у PDF"
+ebookOptionsDesc = "Параметри перетворення електронних книг у PDF"
+embedAllFonts = "Вбудувати всі шрифти"
+embedAllFontsDesc = "Вбудувати всі шрифти з електронної книги до створеного PDF"
+includeTableOfContents = "Додати зміст"
+includeTableOfContentsDesc = "Додати згенерований зміст до підсумкового PDF"
+includePageNumbers = "Додати номери сторінок"
+includePageNumbersDesc = "Додати номери сторінок до створеного PDF"
+optimizeForEbookPdf = "Оптимізувати для рідерів"
+optimizeForEbookPdfDesc = "Оптимізувати PDF для читання електронних книг (менший розмір файла, краще відтворення на eInk-пристроях)"
+
+[convert.epubOptions]
+epubOptions = "Параметри перетворення PDF у eBook"
+epubOptionsDesc = "Параметри перетворення PDF у EPUB/AZW3"
+detectChapters = "Виявляти розділи"
+detectChaptersDesc = "Виявляти заголовки, схожі на розділи, і вставляти розриви сторінок EPUB"
+targetDevice = "Цільовий пристрій"
+targetDeviceDesc = "Виберіть профіль виводу, оптимізований для пристрою читання"
+outputFormat = "Формат виводу"
+outputFormatDesc = "Виберіть формат виводу для електронної книги"
+tabletPhone = "Планшет/Телефон (із зображеннями)"
+kindleEink = "Kindle e-Ink (оптимізовано для тексту)"
 
 [imageToPdf]
 tags = "конвертація,зображення,jpg,картинка,фото"
@@ -1322,6 +1441,7 @@ applySignatures = "Застосувати зображення"
 name = "Зображення"
 placeholder = "Завантажте зображення"
 label = "Файл зображення"
+hint = "Supports PNG, JPEG, GIF, BMP, TIFF, and SVG files. SVG files will be converted to PNG for embedding."
 
 [addImage.steps]
 configure = "Налаштувати зображення"
@@ -1361,6 +1481,11 @@ header = "Add attachments"
 add = "Додати вкладення"
 remove = "Видалити вкладення"
 embed = "Вбудувати вкладення"
+convertToPdfA3b = "Перетворити в PDF/A-3b"
+convertToPdfA3bDescription = "Створює архівний PDF із вбудованими вкладеннями"
+convertToPdfA3bTooltip = "PDF/A-3b — архівний формат для довгострокового зберігання. Дозволяє вбудовувати довільні формати файлів як вкладення. Перетворення потребує Ghostscript і може тривати довше для великих файлів."
+convertToPdfA3bTooltipHeader = "Про перетворення PDF/A-3b"
+convertToPdfA3bTooltipTitle = "Що це робить"
 submit = "Add attachments"
 
 [watermark]
@@ -2113,6 +2238,16 @@ tip = "Наразі не працює для кількох вхідних фа�
 outputFormat = "Вихідний формат"
 pdfWithDigitalSignature = "Цей PDF документ має цифровий підпис. Цей підпис буде видалений у наступному кроці."
 
+[pdfToPDFX]
+tags = "друк,стандарт,конвертація,виробництво,додрукарська підготовка,архів"
+title = "PDF у PDF/X"
+header = "PDF у PDF/X"
+credit = "Ця служба використовує Ghostscript для конвертації в PDF/X"
+submit = "Конвертувати"
+tip = "Наразі не працює для кількох вхідних файлів одночасно"
+outputFormat = "Вихідний формат"
+pdfWithDigitalSignature = "PDF містить цифровий підпис. Його буде видалено на наступному кроці."
+
 [PDFToWord]
 tags = "doc,docx,odt,word,перетворення,формат,перетворення,офіс,microsoft,docfile"
 title = "PDF в Word"
@@ -2306,6 +2441,10 @@ saved = "Збережені"
 label = "Завантажити зображення підпису"
 placeholder = "Виберіть файл зображення"
 hint = "Завантажте зображення підпису у форматі PNG або JPG"
+removeBackground = "Прибрати білий фон (зробити прозорим)"
+processing = "Обробка зображення..."
+backgroundRemovalFailedTitle = "Не вдалося прибрати фон"
+backgroundRemovalFailedMessage = "Не вдалося прибрати фон із зображення. Використано оригінальне зображення."
 
 [sign.instructions]
 title = "Як додати підпис"
@@ -2350,6 +2489,11 @@ note = "Сплющення видаляє інтерактивні елемен�
 [flatten.options.flattenOnlyForms]
 label = "Згладити тільки форми"
 desc = "Сплющувати лише поля форм, залишивши інші інтерактивні елементи без змін"
+
+[flatten.renderDpi]
+label = "DPI рендерингу (необов’язково, рекомендовано 150 DPI)"
+help = "Залиште порожнім, щоб використовувати стандарт системи. Вищий DPI підвищує чіткість, але збільшує час обробки та розмір файла."
+placeholder = "напр., 150"
 
 [flatten.results]
 title = "Результати сплющення"
@@ -2502,6 +2646,7 @@ label = "Оригінальний PDF"
 
 [compare.edited]
 label = "Відредагований PDF"
+placeholder = "Select the edited PDF"
 
 [compare.swap]
 confirmTitle = "Повторити порівняння?"
@@ -2925,6 +3070,7 @@ header = "Обрізати PDF-файл"
 submit = "Надіслати"
 noFileSelected = "Виберіть PDF, щоб почати обрізання"
 reset = "Скинути до повного PDF"
+autoCrop = "Автообрізання білих полів"
 
 [crop.preview]
 title = "Вибір області обрізки"
@@ -3036,6 +3182,105 @@ title = "Отримати інформацію в PDF"
 header = "Отримати інформацію в PDF"
 submit = "Отримати інформацію"
 downloadJson = "Завантажити JSON"
+processing = "Вилучення інформації..."
+results = "Результати"
+noResults = "Запустіть інструмент, щоб сформувати звіт."
+downloads = "Завантаження"
+noneDetected = "Нічого не виявлено"
+indexTitle = "Покажчик"
+
+[getPdfInfo.report]
+entryLabel = "Повне зведення інформації"
+shortTitle = "Інформація про PDF"
+
+[getPdfInfo.sections]
+metadata = "Метадані"
+formFields = "Поля форми"
+basicInfo = "Базова інформація"
+documentInfo = "Інформація про документ"
+compliance = "Відповідність"
+encryption = "Шифрування"
+permissions = "Дозволи"
+other = "Інше"
+perPageInfo = "Інформація по сторінках"
+tableOfContents = "Зміст"
+
+[getPdfInfo.compliance]
+notDetected = "Не виявлено"
+passed = "Пройдено"
+failed = "Не пройдено"
+compliant = "Відповідає"
+nonCompliant = "Не відповідає"
+none = "Не виявлено стандартів"
+passedCount = "пройдено"
+failedCount = "не пройдено"
+noVerification = "Перевірку не виконано"
+noVerificationDesc = "Відповідність стандартам PDF для цього документа не перевірялася."
+
+[getPdfInfo.other]
+attachments = "Вкладення"
+embeddedFiles = "Вбудовані файли"
+javaScript = "JavaScript"
+layers = "Шари"
+structureTree = "StructureTree"
+xmp = "XMPMetadata"
+
+[getPdfInfo.perPage]
+size = "Розмір"
+annotations = "Анотації"
+images = "Зображення"
+links = "Посилання"
+fonts = "Шрифти"
+xobjects = "Кількість XObject"
+multimedia = "Мультимедіа"
+
+[getPdfInfo.summary]
+pages = "Сторінки"
+fileSize = "Розмір файлу"
+pdfVersion = "Версія PDF"
+language = "Мова"
+title = "Зведення PDF"
+author = "Автор"
+created = "Створено"
+modified = "Змінено"
+permsAll = "Усі дозволи надано"
+permsRestricted = "{{count}} обмежень"
+permsMixed = "Деякі дозволи обмежено"
+hasCompliance = "Відповідає стандартам відповідності"
+noCompliance = "Немає стандартів відповідності"
+compliancePassed = "Відповідає {{standards}}"
+complianceChecked = "Стандарти перевірено ({{failed}} не пройдено)"
+basic = "Основна інформація"
+documentInfo = "Інформація про документ"
+securityTitle = "Стан безпеки"
+technical = "Технічна інформація"
+overviewTitle = "Огляд PDF"
+
+[getPdfInfo.summary.security]
+encrypted = "PDF зашифровано — встановлено захист паролем"
+unencrypted = "PDF не зашифровано — немає захисту паролем"
+
+[getPdfInfo.summary.tech]
+images = "Зображення"
+fonts = "Шрифти"
+formFields = "Поля форми"
+embeddedFiles = "Вбудовані файли"
+javaScript = "JavaScript"
+layers = "Шари"
+bookmarks = "Закладки"
+multimedia = "Мультимедіа"
+
+[getPdfInfo.summary.overview]
+untitled = "документ без назви"
+unknown = "Невідомий автор"
+text = "Це PDF на {{pages}} сторінок під назвою {{title}}, створений {{author}} (версія PDF {{version}})."
+
+[getPdfInfo.error]
+partial = "Деякі файли не вдалося обробити."
+unexpected = "Неочікувана помилка під час вилучення."
+
+[getPdfInfo.status]
+complete = "Вилучення завершено"
 
 [extractPage]
 tags = "екстракт"
@@ -3070,6 +3315,7 @@ title = "Метод приховування"
 mode = "Режим"
 automatic = "Автоматичний"
 automaticDesc = "Приховувати текст за пошуковими термінами"
+automaticDisabledTooltip = "Виберіть файли у менеджері файлів, щоб за раз зачищати кілька файлів"
 manual = "Ручний"
 manualDesc = "Клацніть і тягніть, щоб приховати конкретні області"
 manualComingSoon = "Ручне приховування скоро з’явиться"
@@ -3140,8 +3386,35 @@ text = "Збігаються лише повні слова, не частков
 title = "Перетворити на PDF-Image"
 text = "Перетворює PDF на PDF на основі зображень після приховування. Це гарантує, що текст під прямокутниками приховування повністю видалено і його неможливо відновити."
 
+[redact.tooltip.manual.header]
+title = "Ручні інструменти зачорнення"
+
+[redact.tooltip.manual.markText]
+title = "Інструмент «Позначити текст»"
+text = "Виділіть текст безпосередньо в PDF, щоб позначити його для зачорнення. Клацніть і перетягніть, щоб виділити конкретний текст, який потрібно зачорнити."
+
+[redact.tooltip.manual.markArea]
+title = "Інструмент «Позначити область»"
+text = "Намалюйте прямокутні області в PDF, щоб позначити регіони для зачорнення. Корисно для зображень, підписів або нерегулярних форм."
+
+[redact.tooltip.manual.apply]
+title = "Застосувати зачорнення"
+text = "Після позначення вмісту натисніть «Застосувати», щоб назавжди зачорнити всі позначені області. Лічильник в очікуванні показує, скільки зачорнень готові до застосування."
+bullet1 = "Позначте стільки областей, скільки потрібно, перш ніж застосовувати"
+bullet2 = "Усі очікувані зачорнення застосовуються одночасно"
+bullet3 = "Після застосування скасувати зачорнення неможливо"
+
 [redact.manual]
+title = "Інструменти зачорнення"
+instructions = "Виділяйте текст або малюйте області на PDF, щоб позначити вміст для зачорнення."
+markText = "Позначити текст"
+markArea = "Позначити область"
+pendingLabel = "В очікуванні:"
+applyWarning = "⚠️ Застосовується назавжди, скасувати неможливо, а приховані дані буде видалено"
+apply = "Застосувати"
+noMarks = "Немає позначок зачорнення. Використайте інструменти вище, щоб позначити вміст для зачорнення."
 header = "Ручне приховування"
+controlsTitle = "Ручні інструменти зачорнення"
 textBasedRedaction = "Приховування на основі тексту"
 pageBasedRedaction = "Приховування на рівні сторінки"
 convertPDFToImageLabel = "Перетворити PDF на PDF-Image (щоб видалити текст за прямокутником)"
@@ -3257,6 +3530,19 @@ placeholder = "Введіть кількість горизонтальних р
 label = "Вертикальні розділи"
 placeholder = "Введіть кількість вертикальних розділів"
 
+[split-by-sections.splitMode]
+label = "Режим поділу"
+description = "Виберіть спосіб поділу сторінок"
+splitAll = "Розділити всі сторінки"
+splitAllExceptFirst = "Розділити всі, крім першої"
+splitAllExceptLast = "Розділити всі, крім останньої"
+splitAllExceptFirstAndLast = "Розділити всі, крім першої та останньої"
+custom = "Вибрані сторінки"
+
+[split-by-sections.customPages]
+label = "Користувацькі номери сторінок"
+placeholder = "напр., 2,4,6"
+
 [AddStampRequest]
 tags = "штамп,додати зображення,центральне зображення,водяний знак,pdf,вставити,налаштувати"
 header = "Поставити печатку на PDF"
@@ -3281,6 +3567,44 @@ imageSize = "Розмір зображення"
 margin = "Поле"
 positionAndFormatting = "Позиція та форматування"
 quickPosition = "Виберіть позицію на сторінці для розміщення штампа."
+preview = "Preview:"
+useTemplate = "Use Template"
+selectTemplate = "Select a template..."
+stampTextDescription = "Use dynamic variables below. Use @@ for literal @. Use \\n for new lines."
+dynamicVariables = "Dynamic Variables"
+clickToExpand = "Click to expand"
+variablesHelp = "Click on any variable to insert it into your stamp text. Use @@ for literal @."
+dateTimeVars = "Date & Time"
+dateDesc = "Current date"
+timeDesc = "Current time"
+datetimeDesc = "Date and time combined"
+customDateDesc = "Custom format"
+yearMonthDayDesc = "Individual date parts"
+pageVars = "Page Information"
+pageNumberDesc = "Current page number"
+totalPagesDesc = "Total number of pages"
+fileVars = "File Information"
+filenameDesc = "Filename without extension"
+filenameFullDesc = "Filename with extension"
+metadataVars = "Document Metadata"
+metadataDesc = "From PDF document properties"
+otherVars = "Other"
+uuidDesc = "Short unique identifier (8 chars)"
+examples = "Examples"
+multiLine = "multi-line"
+
+[AddStampRequest.template]
+pageNumberFooter = "Page Number Footer"
+dateHeader = "Date Header"
+europeanDate = "European Date"
+timestamp = "Timestamp"
+draftWatermark = "Draft Watermark"
+custom = "Custom"
+page-numbers = "Page Numbers"
+draft = "Draft Watermark"
+doc-info = "Document Info"
+legal-footer = "Legal Footer"
+european-date = "European Date (DD/MM/YYYY)"
 
 [AddStampRequest.error]
 failed = "Під час додавання штампа до PDF сталася помилка."
@@ -3503,6 +3827,13 @@ passwordChangedSuccess = "Пароль успішно змінено! Увійд
 credentialsUpdated = "Ваші облікові дані оновлено. Будь ласка, увійдіть знову."
 defaultCredentials = "Типові облікові дані для входу"
 changePasswordWarning = "Будь ласка, змініть пароль після першого входу"
+mfaRequired = "Потрібен код двофакторної автентифікації"
+mfaCode = "Код автентифікації"
+enterMfaCode = "Введіть 6-значний код"
+mfaPromptTitle = "Двофакторна автентифікація"
+mfaPromptBody = "Введіть код автентифікації з вашого додатка-автентифікатора, щоб продовжити."
+verifyingMfa = "Перевірка..."
+verifyMfa = "Перевірити код"
 
 [login.slides.overview]
 alt = "Огляд Stirling PDF"
@@ -3618,6 +3949,19 @@ filesize = "Розмір файлу"
 [compress.grayscale]
 label = "Застосувати відтінки сірого для стиснення"
 
+[compress.linearize]
+label = "Лінеаризувати PDF для швидкого перегляду в інтернеті"
+
+[compress.lineArt]
+label = "Перетворити зображення у лінійне"
+description = "Використовує ImageMagick, щоб звести сторінки до контрастного чорно-білого для максимальної економії розміру."
+unavailable = "ImageMagick не встановлено або не ввімкнено на цьому сервері"
+detailLevel = "Рівень деталізації"
+edgeEmphasis = "Підсилення країв"
+edgeLow = "М’яке"
+edgeMedium = "Збалансоване"
+edgeHigh = "Сильне"
+
 [compress.tooltip.header]
 title = "Огляд налаштувань стиснення"
 
@@ -3635,6 +3979,10 @@ bullet2 = "Вищі значення зменшують розмір файлу"
 title = "Відтінки сірого"
 text = "Увімкніть цю опцію, щоб перетворити всі зображення в чорно-білі, що може суттєво зменшити розмір файлу, особливо для відсканованих PDF або документів із великою кількістю зображень."
 
+[compress.tooltip.lineArt]
+title = "Лінійне зображення"
+text = "Перетворюйте сторінки на висококонтрастні чорно-білі за допомогою ImageMagick. Рівень деталізації визначає, скільки вмісту стане чорним, а підсилення країв — наскільки активно виявляються контури."
+
 [compress.error]
 failed = "Під час стиснення PDF сталася помилка."
 
@@ -3646,6 +3994,11 @@ failed = "Під час стиснення PDF сталася помилка."
 [compress.selectText.1]
 _value = "Параметри стиснення"
 1 = "1-3 стиснення PDF,</br> 4-6 невелике стиснення зображень,</br> 7-9 посилене стиснення зображень (різко знизить якість зображень)"
+
+[compress.compressionLevel]
+range1to3 = "Нижчі значення зберігають якість, але збільшують розмір файла"
+range4to6 = "Середня компресія з помірним зниженням якості"
+range7to9 = "Вищі значення значно зменшують розмір файла, але можуть погіршити чіткість зображень"
 
 [decrypt]
 passwordPrompt = "Цей файл захищений паролем. Будь ласка, введіть пароль:"
@@ -3886,22 +4239,97 @@ deleteSelected = "Видалити вибрані сторінки"
 closePdf = "Закрити PDF"
 exportAll = "Експорт PDF"
 downloadSelected = "Завантажити вибрані файли"
-downloadAll = "Завантажити все"
-saveAll = "Зберегти все"
+annotations = "Анотації"
+exportSelected = "Експорт вибраних сторінок"
+saveChanges = "Зберегти зміни"
 toggleTheme = "Перемкнути тему"
-toggleBookmarks = "Перемкнути закладки"
 language = "Мова"
+toggleAnnotations = "Перемкнути видимість анотацій"
 search = "Пошук у PDF"
 panMode = "Режим переміщення"
+applyRedactionsFirst = "Спочатку застосуйте зачорнення"
 rotateLeft = "Повернути ліворуч"
 rotateRight = "Повернути праворуч"
 toggleSidebar = "Перемкнути бічну панель"
-exportSelected = "Експорт вибраних сторінок"
-toggleAnnotations = "Перемкнути видимість анотацій"
-annotationMode = "Перемкнути режим анотацій"
+toggleBookmarks = "Перемкнути закладки"
 print = "Надрукувати PDF"
 draw = "Малювати"
+redact = "Зачорнити"
+exitRedaction = "Вийти з режиму зачорнення"
 save = "Зберегти"
+downloadAll = "Завантажити все"
+saveAll = "Зберегти все"
+
+[textAlign]
+left = "Ліворуч"
+center = "По центру"
+right = "Праворуч"
+
+[annotation]
+title = "Анотувати"
+desc = "Використовуйте підсвічування, перо, текст і нотатки. Зміни залишаються «живими» — без потреби сплющення."
+highlight = "Підсвічування"
+pen = "Перо"
+text = "Текстове поле"
+note = "Нотатка"
+rectangle = "Прямокутник"
+ellipse = "Еліпс"
+select = "Вибір"
+exit = "Вийти з режиму анотацій"
+strokeWidth = "Товщина"
+opacity = "Непрозорість"
+strokeOpacity = "Непрозорість обведення"
+fillOpacity = "Непрозорість заливки"
+fontSize = "Розмір шрифту"
+chooseColor = "Вибрати колір"
+color = "Колір"
+strokeColor = "Колір обведення"
+fillColor = "Колір заливки"
+underline = "Підкреслення"
+strikeout = "Закреслення"
+squiggly = "Хвилясте підкреслення"
+inkHighlighter = "Маркер від руки"
+freehandHighlighter = "Маркер від руки"
+square = "Квадрат"
+circle = "Коло"
+polygon = "Багатокутник"
+line = "Лінія"
+stamp = "Додати зображення"
+textMarkup = "Розмітка тексту"
+drawing = "Малювання"
+shapes = "Фігури"
+notesStamps = "Нотатки та штампи"
+settings = "Налаштування"
+borderOn = "Рамка: увімкнено"
+borderOff = "Рамка: вимкнено"
+editInk = "Редагувати перо"
+editLine = "Редагувати лінію"
+editNote = "Редагувати нотатку"
+editText = "Редагувати текстове поле"
+editTextMarkup = "Редагувати розмітку тексту"
+editSelected = "Редагувати анотацію"
+editSquare = "Редагувати квадрат"
+editCircle = "Редагувати коло"
+editPolygon = "Редагувати багатокутник"
+unsupportedType = "Цей тип анотації не повністю підтримується для редагування."
+textAlignment = "Вирівнювання тексту"
+noteIcon = "Піктограма нотатки"
+imagePreview = "Попередній перегляд"
+contents = "Текст"
+backgroundColor = "Колір фону"
+clearBackground = "Прибрати фон"
+noBackground = "Без фону"
+stampSettings = "Налаштування штампа"
+savingCopy = "Підготовка завантаження..."
+saveFailed = "Не вдалося зберегти копію"
+saveReady = "Готово до завантаження"
+selectAndMove = "Вибрати та редагувати"
+editSelectDescription = "Клацніть наявну анотацію, щоб змінити її колір, непрозорість, текст або розмір."
+editStampHint = "Щоб змінити зображення, видаліть цей штамп і додайте новий."
+editSwitchToSelect = "Перемкніться на «Вибір і редагування», щоб редагувати цю анотацію."
+undo = "Скасувати"
+redo = "Повернути"
+applyChanges = "Застосувати зміни"
 saveChanges = "Зберегти зміни"
 
 [search]
@@ -3953,12 +4381,20 @@ settings = "Налашт."
 adminSettings = "Налашт. адміна"
 allTools = "All Tools"
 reader = "Перегляд"
+tours = "Тури"
+showMeAround = "Проведіть екскурсію"
+
+[quickAccess.toursTooltip]
+admin = "Перегляньте тут проходження: тур інструментами, тур нового макета V2 та тур для адміністратора."
+user = "Перегляньте тут проходження: тур інструментами та тур нового макета V2."
 
 [quickAccess.helpMenu]
 toolsTour = "Огляд інструментів"
 toolsTourDesc = "Дізнайтеся, що вміють інструменти"
 adminTour = "Огляд адміністратора"
 adminTourDesc = "Ознайомтеся з адміністраторськими налаштуваннями та функціями"
+whatsNewTour = "Дізнайтесь, що нового у V2"
+whatsNewTourDesc = "Екскурсія оновленим макетом"
 
 [admin]
 error = "Помилка"
@@ -3977,6 +4413,8 @@ fetchError = "Не вдалося завантажити налаштуванн�
 saveError = "Не вдалося зберегти налаштування"
 saved = "Налаштування успішно збережено"
 saveSuccess = "Налаштування успішно збережено"
+success = "Налаштування успішно збережено"
+error = "Не вдалося зберегти налаштування"
 save = "Зберегти зміни"
 discard = "Відхилити"
 restartRequired = "Потрібне перезавантаження"
@@ -3996,6 +4434,10 @@ hint = "Є незбережені зміни"
 title = "Потрібен режим входу"
 message = "Щоб змінювати адмінські налаштування, має бути ввімкнено режим входу. Встановіть SECURITY_ENABLELOGIN=true у середовищі або security.enableLogin: true у settings.yml, потім перезапустіть сервер."
 readOnly = "Наведені нижче параметри показують прикладові значення. Увімкніть режим входу, щоб переглядати й редагувати фактичну конфігурацію."
+
+[admin.settings.enterpriseRequired]
+title = "Потрібна ліцензія Enterprise"
+message = "Для доступу до {{featureName}} потрібна ліцензія Enterprise. Ви переглядаєте демонстраційні дані для довідки."
 
 [admin.settings.restart]
 title = "Потрібне перезавантаження"
@@ -4081,9 +4523,17 @@ description = "Налаштуйте користувацькі шляхи фай
 [admin.settings.general.customPaths.pipeline]
 label = "Каталоги конвеєра"
 
+[admin.settings.general.customPaths.pipeline.pipelineDir]
+label = "Pipeline Directory"
+description = "Base directory for pipeline resources (leave empty for default: /pipeline)"
+
 [admin.settings.general.customPaths.pipeline.watchedFoldersDir]
 label = "Каталог відстежуваних папок"
 description = "Каталог, де конвеєр відстежує вхідні PDF (залиште порожнім для типового: /pipeline/watchedFolders)"
+
+[admin.settings.general.customPaths.pipeline.watchedFoldersDirs]
+label = "Watched Folders Directories"
+description = "Directories where pipeline monitors for incoming PDFs (one per line or comma-separated; leave empty for default: /pipeline/watchedFolders)"
 
 [admin.settings.general.customPaths.pipeline.finishedFoldersDir]
 label = "Каталог завершених папок"
@@ -4099,6 +4549,13 @@ description = "Шлях до виконуваного файлу WeasyPrint дл
 [admin.settings.general.customPaths.operations.unoconvert]
 label = "Виконуваний файл Unoconvert"
 description = "Шлях до LibreOffice unoconvert для конвертації документів (залиште порожнім для типового: /opt/venv/bin/unoconvert)"
+
+[admin.settings.general.frontendUrl]
+label = "URL фронтенду"
+description = "Базовий URL для фронтенду (напр., https://pdf.example.com). Використовується для посилань у листах-запрошеннях і мобільних завантажень через QR-код. Залиште порожнім, щоб використовувати URL бекенду."
+
+[admin.settings.badge]
+clickToUpgrade = "Клацніть, щоб переглянути деталі плану"
 
 [admin.settings.security]
 title = "Безпека"
@@ -4128,6 +4585,13 @@ description = "Максимальна кількість невдалих спр
 [admin.settings.security.loginResetTimeMinutes]
 label = "Час скидання спроб (хвилини)"
 description = "Час, після якого лічильник невдалих спроб входу скидається"
+
+[admin.settings.security.xFrameOptions]
+label = "X-Frame-Options"
+description = "Controls whether the application can be embedded in iframes"
+deny = "Deny (Prevents all framing)"
+sameorigin = "Same Origin (Allow framing from same domain)"
+disabled = "Disabled (No X-Frame-Options header)"
 
 [admin.settings.security.csrfDisabled]
 label = "Вимкнути захист CSRF"
@@ -4176,7 +4640,7 @@ description = "Відстежувати дії користувачів і си�
 
 [admin.settings.security.audit.level]
 label = "Рівень аудиту"
-description = "0=ВИМКНЕНО, 1=БАЗОВИЙ, 2=СТАНДАРТ, 3=ДОКЛАДНИЙ"
+description = "0=OFF, 1=BASIC, 2=STANDARD, 3=VERBOSE"
 
 [admin.settings.security.audit.retentionDays]
 label = "Зберігання аудиту (дні)"
@@ -4236,6 +4700,19 @@ connect = "Підключити"
 disconnect = "Від’єднати"
 disconnected = "Провайдера успішно від’єднано"
 disconnectError = "Не вдалося від’єднати провайдера"
+mobileScannerConvertToPdf = "Перетворювати зображення в PDF"
+mobileScannerConvertToPdfDesc = "Автоматично перетворювати завантажені зображення у формат PDF. Якщо вимкнено, зображення залишаться без змін."
+mobileScannerImageResolution = "Роздільна здатність зображення"
+mobileScannerImageResolutionDesc = "Роздільна здатність завантажених зображень. «Зменшена» масштабує зображення до максимум 1200 пікселів для зменшення розміру файла."
+imageResolutionFull = "Повна (оригінальний розмір)"
+imageResolutionReduced = "Зменшена (макс. 1200 пікселів)"
+mobileScannerPageFormat = "Формат сторінки"
+mobileScannerPageFormatDesc = "Розмір сторінки PDF для перетворених зображень. «Зберегти» використовує оригінальні розміри зображення."
+pageFormatKeep = "Зберегти (оригінальні розміри)"
+pageFormatA4 = "A4 (210×297мм)"
+pageFormatLetter = "Letter (8.5×11дюйм)"
+mobileScannerStretchToFit = "Розтягнути під сторінку"
+mobileScannerStretchToFitDesc = "Розтягувати зображення на всю сторінку. Якщо вимкнено, зображення центруються зі збереженням пропорцій."
 
 [admin.settings.connections.ssoAutoLogin]
 label = "SSO авто-вхід"
@@ -4304,10 +4781,168 @@ description = "Автоматично створювати облікові за
 label = "Заблокувати реєстрацію"
 description = "Заборонити реєстрацію нових користувачів через SAML2"
 
+[admin.settings.connections.mobileScanner]
+label = "Завантаження з телефона"
+enable = "Увімкнути завантаження за QR-кодом"
+description = "Дозволити користувачам завантажувати файли з мобільних пристроїв, скануючи QR-код"
+note = "Примітка: Потрібно налаштувати Frontend URL. "
+link = "Налаштувати в системних параметрах"
+mobileScannerConvertToPdf = "Перетворювати зображення в PDF"
+mobileScannerConvertToPdfDesc = "Автоматично перетворювати завантажені зображення у формат PDF. Якщо вимкнено, зображення залишаться без змін."
+mobileScannerImageResolution = "Роздільна здатність зображення"
+mobileScannerImageResolutionDesc = "Роздільна здатність завантажених зображень. «Зменшена» масштабує зображення до максимум 1200 пікселів для зменшення розміру файла."
+imageResolutionFull = "Повна (оригінальний розмір)"
+imageResolutionReduced = "Зменшена (макс. 1200 пікселів)"
+mobileScannerPageFormat = "Формат сторінки"
+mobileScannerPageFormatDesc = "Розмір сторінки PDF для перетворених зображень. «Зберегти» використовує оригінальні розміри зображення."
+pageFormatKeep = "Зберегти (оригінальні розміри)"
+pageFormatA4 = "A4 (210×297мм)"
+pageFormatLetter = "Letter (8.5×11дюйм)"
+mobileScannerStretchToFit = "Розтягнути під сторінку"
+mobileScannerStretchToFitDesc = "Розтягувати зображення на всю сторінку. Якщо вимкнено, зображення центруються зі збереженням пропорцій."
+
+[admin.settings.telegram]
+title = "Telegram Bot"
+description = "Налаштуйте підключення бота Telegram, контроль доступу та поведінку зворотного зв’язку."
+
+[admin.settings.telegram.enabled]
+label = "Увімкнути бота Telegram"
+description = "Дозволити користувачам взаємодіяти зі Stirling PDF через налаштованого бота Telegram."
+
+[admin.settings.telegram.botUsername]
+label = "Ім’я користувача бота"
+description = "Публічне ім’я користувача вашого бота Telegram."
+
+[admin.settings.telegram.botToken]
+label = "Токен бота"
+description = "API-токен від BotFather для вашого бота Telegram."
+
+[admin.settings.telegram.pipelineInboxFolder]
+label = "Вхідна тека"
+description = "Тека в каталозі pipeline, де зберігаються вхідні файли з Telegram."
+
+[admin.settings.telegram.customFolderSuffix]
+label = "Використовувати власний суфікс теки"
+description = "Додавати ID чату до вхідних тек файлів, щоб ізолювати завантаження для кожного чату."
+
+[admin.settings.telegram.accessControl]
+title = "Керування доступом"
+description = "Обмежте, які користувачі або канали можуть взаємодіяти з ботом."
+
+[admin.settings.telegram.enableAllowUserIDs]
+label = "Дозволити конкретні ID користувачів"
+description = "Якщо ввімкнено, бот доступний лише для перелічених ID користувачів."
+
+[admin.settings.telegram.allowUserIDs]
+label = "Дозволені ID користувачів"
+description = "Введіть ID користувачів Telegram, які можуть взаємодіяти з ботом."
+placeholder = "Додайте ID користувача і натисніть Enter"
+
+[admin.settings.telegram.enableAllowChannelIDs]
+label = "Дозволити конкретні ID каналів"
+description = "Якщо ввімкнено, бот доступний лише для перелічених ID каналів."
+
+[admin.settings.telegram.allowChannelIDs]
+label = "Дозволені ID каналів"
+description = "Введіть ID каналів Telegram, які можуть взаємодіяти з ботом."
+placeholder = "Додайте ID каналу і натисніть Enter"
+
+[admin.settings.telegram.processing]
+title = "Обробка"
+description = "Керуйте інтервалами опитування та тайм-аутами обробки для завантажень Telegram."
+
+[admin.settings.telegram.processingTimeoutSeconds]
+label = "Тайм-аут обробки (секунди)"
+description = "Максимальний час очікування на завдання обробки перед повідомленням про помилку."
+
+[admin.settings.telegram.pollingIntervalMillis]
+label = "Інтервал опитування (мс)"
+description = "Інтервал між перевірками нових оновлень Telegram."
+
+[admin.settings.telegram.feedback]
+title = "Повідомлення зворотного зв’язку"
+description = "Виберіть, коли бот має надсилати відгуки користувачам і каналам."
+
+[admin.settings.telegram.feedback.general.enabled]
+label = "Увімкнути зворотний зв’язок"
+description = "Керувати тим, чи взагалі бот надсилає повідомлення зворотного зв’язку."
+
+[admin.settings.telegram.feedback.channel]
+title = "Правила для каналів"
+
+[admin.settings.telegram.feedback.channel.noValidDocument]
+label = "Показувати «Немає дійсного документа» (Канал)"
+description = "Приховувати відповідь «Немає дійсного документа» для завантажень у каналах."
+
+[admin.settings.telegram.feedback.channel.errorProcessing]
+label = "Показувати помилки обробки (Канал)"
+description = "Надсилати повідомлення про помилки обробки до каналів."
+
+[admin.settings.telegram.feedback.channel.errorMessage]
+label = "Показувати повідомлення про помилки (Канал)"
+description = "Показувати докладні повідомлення про помилки для каналів."
+
+[admin.settings.telegram.feedback.user]
+title = "Правила для користувачів"
+
+[admin.settings.telegram.feedback.user.noValidDocument]
+label = "Показувати «Немає дійсного документа» (Користувач)"
+description = "Приховувати відповідь «Немає дійсного документа» для завантажень від користувачів."
+
+[admin.settings.telegram.feedback.user.errorProcessing]
+label = "Показувати помилки обробки (Користувач)"
+description = "Надсилати повідомлення про помилки обробки користувачам."
+
+[admin.settings.telegram.feedback.user.errorMessage]
+label = "Показувати повідомлення про помилки (Користувач)"
+description = "Показувати докладні повідомлення про помилки для користувачів."
+
 [admin.settings.database]
 title = "База даних"
 description = "Налаштуйте користувацькі параметри підключення бази даних для корпоративних розгортань."
 configuration = "Конфігурація бази даних"
+backupTitle = "Резервні копії та відновлення"
+backupDescription = "Керуйте резервними копіями H2 безпосередньо з консолі адміністратора."
+loadError = "Не вдалося завантажити резервні копії бази даних"
+backupCreated = "Резервну копію успішно створено"
+backupFailed = "Не вдалося створити резервну копію"
+deleteTitle = "Видалити резервну копію"
+deleteConfirm = "Видалити цю резервну копію? Цю дію неможливо скасувати."
+deleteSuccess = "Резервну копію видалено"
+deleteFailed = "Не вдалося видалити резервну копію"
+deleteConfirmAction = "Видалити резервну копію"
+downloadFailed = "Не вдалося завантажити резервну копію"
+version = "Версія H2"
+embedded = "Вбудована база даних H2"
+external = "Зовнішня база даних"
+h2Only = "Резервні копії доступні лише для вбудованої бази даних H2."
+h2Hint = "Щоб увімкнути резервне копіювання та відновлення, установіть тип бази даних H2 і вимкніть користувацьку базу даних."
+manageBackups = "Керувати резервними копіями"
+refresh = "Оновити"
+createBackup = "Створити резервну копію"
+uploadTitle = "Передати та імпортувати"
+chooseFile = "Виберіть файл резервної копії .sql"
+importFromUpload = "Імпортувати передане"
+confirmImportTitle = "Підтвердження імпорту бази даних"
+overwriteWarning = "Попередження: Це перезапише поточну базу даних."
+overwriteWarningBody = "Усі наявні дані буде замінено переданою резервною копією. Цю дію неможливо скасувати."
+confirmCodeLabel = "Введіть код підтвердження, щоб продовжити"
+enterCode = "Введіть код, показаний вище"
+confirmImport = "Підтвердити імпорт"
+codeMismatch = "Код підтвердження не збігається"
+codeMismatchBody = "Щоб продовжити, введіть код точно так, як показано."
+selectFile = "Виберіть файл .sql для імпорту"
+importSuccess = "Резервну копію успішно імпортовано"
+importFailed = "Не вдалося імпортувати резервну копію"
+noBackups = "Поки що не знайдено резервних копій."
+unavailable = "Список резервних копій недоступний для поточної конфігурації бази даних."
+fileName = "Файл"
+created = "Створено"
+size = "Розмір"
+actions = "Дії"
+download = "Завантажити"
+import = "Імпортувати"
+delete = "Видалити"
 
 [admin.settings.database.enableCustom]
 label = "Увімкнути користувацьку БД"
@@ -4385,6 +5020,26 @@ description = "Максимальний DPI для обробки зображе
 [admin.settings.advanced.tessdataDir]
 label = "Каталог tessdata"
 description = "Шлях до каталогу tessdata для мовних файлів OCR"
+downloadMissingTitle = "Мову не обрано"
+downloadMissingBody = "Будь ласка, виберіть принаймні одну мову для завантаження."
+downloadSuccessTitle = "Мови завантажено"
+downloadSuccessBody = "Вибрані мови tessdata збережено."
+downloadErrorTitle = "Не вдалося завантажити"
+loadingLanguages = "Завантаження встановлених мов tessdata..."
+installedLanguages = "Встановлені мови tessdata"
+noLanguages = "У налаштованому каталозі не знайдено мов tessdata."
+downloadLabel = "Завантажити додаткові мови tessdata"
+downloadPlaceholder = "Виберіть мови"
+downloadNothingFound = "Додаткових мов не знайдено"
+permissionNotice = "Шлях до tessdata недоступний для запису. Завантаження буде відкрито в браузері; будь ласка, збережіть файли .traineddata вручну до папки tessdata."
+manualLinks = "Ручні завантаження: натисніть посилання та розмістіть файли в папці tessdata."
+downloadButton = "Завантажити вибрані мови"
+downloadInvalidTitle = "Недійсний вибір"
+downloadInvalidBody = "Деякі вибрані мови недоступні для завантаження. Будь ласка, оновіть і виберіть зі списку."
+downloadErrorNetwork = "Не вдалося завантажити через помилку мережі. Перевірте з’єднання та спробуйте ще раз."
+downloadErrorServer = "Під час завантаження мов tessdata сталася помилка сервера. Спробуйте пізніше."
+downloadErrorPermission = "Каталог tessdata недоступний для запису: {{message}}. Виберіть каталог із правами запису (наприклад, у папці даних застосунку) або змініть дозволи."
+downloadErrorGeneric = "Не вдалося завантажити: {{message}}. Спробуйте пізніше."
 
 [admin.settings.advanced.disableSanitize]
 label = "Вимкнути санітизацію HTML"
@@ -4430,7 +5085,7 @@ description = "Чи очищати ширший системний тимчас�
 label = "Обмеження виконавця процесів"
 description = "Налаштуйте ліміти сеансів і тайм-аути для кожного виконавця процесів"
 libreOffice = "LibreOffice"
-pdfToHtml = "PDF у HTML"
+pdfToHtml = "PDF to HTML"
 qpdf = "QPDF"
 tesseract = "Tesseract OCR"
 pythonOpenCv = "Python OpenCV"
@@ -4484,6 +5139,10 @@ description = "Дозволити адміністраторам запрошу�
 [admin.settings.mail.frontendUrl]
 label = "URL фронтенду"
 description = "Базовий URL для фронтенду (наприклад, https://pdf.example.com). Використовується для генерації посилань-запрошень в email. Залиште порожнім, щоб використовувати URL бекенду."
+
+[admin.settings.mail.frontendUrlNote]
+note = "Примітка: Потрібно налаштувати Frontend URL. "
+link = "Налаштувати в системних параметрах"
 
 [admin.settings.legal]
 title = "Юридичні документи"
@@ -4669,6 +5328,9 @@ googleDriveShort = "Drive"
 myFiles = "Мої файли"
 noRecentFiles = "Недавніх файлів не знайдено"
 googleDriveNotAvailable = "Інтеграція з Google Drive недоступна"
+mobileUpload = "Мобільне завантаження"
+mobileShort = "Мобільні"
+mobileUploadNotAvailable = "Мобільне завантаження не ввімкнено"
 downloadSelected = "Завантажити вибрані"
 saveSelected = "Зберегти вибране"
 openFiles = "Відкрити файли"
@@ -4881,6 +5543,7 @@ desc = "Створюйте багатокрокові процеси, поєдн
 invalidStep = "Некоректний крок"
 reviewTitle = "Результати автоматизації"
 copyToSaved = "Копіювати до збережених"
+exportForFolderScanning = "Експорт для сканування папок"
 
 [automate.files]
 placeholder = "Виберіть файли для обробки цією автоматизацією"
@@ -4902,6 +5565,7 @@ createTitle = "Створити автоматизацію"
 editTitle = "Редагувати автоматизацію"
 intro = "Автоматизації запускають інструменти послідовно. Щоб почати, додайте інструменти в порядку їх виконання."
 save = "Зберегти автоматизацію"
+exportForFolderScanning = "Експорт для сканування папок"
 
 [automate.creation.name]
 label = "Назва автоматизації"
@@ -4984,6 +5648,7 @@ loading = "Завантаження..."
 back = "Назад"
 continue = "Продовжити"
 error = "Помилка"
+save = "Зберегти"
 
 [config.overview]
 title = "Конфігурація застосунку"
@@ -5045,6 +5710,15 @@ warning = "⚠️ Warning: Ця дія згенерує нові ключі API 
 impact = "Будь-які застосунки або сервіси, що наразі використовують ці ключі, припинять роботу, доки ви не оновите їх новими ключами."
 confirmPrompt = "Ви впевнені, що хочете продовжити?"
 confirmCta = "Оновити ключі"
+
+[config.apiKeys.alert]
+apiKeyErrorTitle = "Помилка ключа API"
+failedToCreateApiKey = "Не вдалося створити ключ API."
+failedToRetrieveApiKey = "Не вдалося отримати ключ API з відповіді."
+failedToFetchApiKey = "Не вдалося отримати ключ API."
+apiKeyRefreshed = "Ключ API оновлено"
+apiKeyRefreshedBody = "Ваш ключ API успішно оновлено."
+failedToRefreshApiKey = "Не вдалося оновити ключ API."
 
 [AddAttachmentsRequest]
 attachments = "Виберіть вкладення"
@@ -5150,6 +5824,16 @@ finish = "Готово"
 startTour = "Почати тур"
 startTourDescription = "Пройдіть покрокову екскурсію ключовими можливостями Stirling PDF"
 
+[onboarding.whatsNew]
+quickAccess = "Почніть із панелі <strong>Швидкий доступ</strong>, щоб переходити між Читачем, Автоматизацією, вашими файлами та всіма турами."
+leftPanel = "Ліва панель <strong>Інструменти</strong> містить усе, що можна зробити. Переглядайте категорії або шукайте, щоб швидко знайти інструмент."
+fileUpload = "Скористайтеся кнопкою <strong>Файли</strong>, щоб завантажити або вибрати нещодавній PDF. Ми завантажимо зразок, щоб ви побачили робочий простір."
+rightRail = "<strong>Права панель</strong> містить швидкі дії: вибір файлів, зміну теми чи мови та завантаження результатів."
+topBar = "Верхня панель дозволяє перемикатися між <strong>Переглядачем</strong>, <strong>Редактором сторінок</strong> та <strong>Активними файлами</strong>."
+pageEditorView = "Перейдіть до Редактора сторінок, щоб змінювати порядок, обертати чи видаляти сторінки."
+activeFilesView = "Використовуйте Активні файли, щоб бачити все відкрите й обирати, над чим працювати."
+wrapUp = "Ось що нового у V2. Відкривайте меню <strong>Тури</strong> будь-коли, щоб переглянути це знову, тур інструментами або тур для адміністратора."
+
 [onboarding.welcomeModal]
 title = "Ласкаво просимо до Stirling PDF!"
 description = "Бажаєте пройти коротку 1‑хвилинну екскурсію, щоб дізнатися про ключові можливості та як почати?"
@@ -5169,6 +5853,10 @@ skipForNow = "Пропустити зараз"
 download = "Завантажити →"
 showMeAround = "Проведіть екскурсію"
 skipTheTour = "Пропустити тур"
+
+[onboarding.tourOverview]
+title = "Огляд туру"
+body = "Stirling PDF V2 постачається з десятками інструментів і оновленим макетом. Здійсніть короткий тур, щоб побачити зміни та знайти потрібні функції."
 
 [onboarding.serverLicense]
 skip = "Пропустити зараз"
@@ -5252,9 +5940,11 @@ username = "Ім’я користувача (електронна адреса)
 usernamePlaceholder = "user@example.com"
 password = "Пароль"
 passwordPlaceholder = "Введіть пароль"
+passwordRequired = "Пароль обов’язковий"
 role = "Роль"
 team = "Команда (необов’язково)"
 teamPlaceholder = "Виберіть команду"
+authType = "Тип автентифікації"
 forcePasswordChange = "Примусово змінити пароль під час першого входу"
 cancel = "Скасувати"
 submit = "Додати учасника"
@@ -5262,6 +5952,13 @@ usernameRequired = "Потрібні ім’я користувача та па�
 passwordTooShort = "Пароль має містити щонайменше 6 символів"
 success = "Користувача успішно створено"
 error = "Не вдалося створити користувача"
+forceMFA = "Примусове налаштування MFA під час наступного входу"
+
+[workspace.people.authType]
+password = "Пароль"
+oauth = "OAuth2"
+saml = "SAML2"
+ssoDescription = "Користувач проходитиме автентифікацію через постачальника SSO"
 
 [workspace.people.editMember]
 title = "Редагувати учасника"
@@ -5281,6 +5978,31 @@ error = "Не вдалося оновити статус користувача"
 [workspace.people.delete]
 success = "Користувача успішно видалено"
 error = "Не вдалося видалити користувача"
+
+[workspace.people.changePassword]
+action = "Змінити пароль"
+title = "Змінити пароль"
+subtitle = "Оновити пароль для"
+newPassword = "Новий пароль"
+confirmPassword = "Підтвердження пароля"
+placeholder = "Введіть новий пароль"
+confirmPlaceholder = "Повторно введіть новий пароль"
+passwordRequired = "Будь ласка, введіть новий пароль"
+passwordMismatch = "Паролі не збігаються"
+generateRandom = "Згенерувати надійний пароль"
+generatedPreview = "Згенерований пароль:"
+copyTooltip = "Копіювати в буфер обміну"
+copiedToClipboard = "Пароль скопійовано в буфер обміну"
+copyFailed = "Не вдалося скопіювати пароль"
+sendEmail = "Надіслати користувачу електронний лист про цю зміну"
+includePassword = "Додати новий пароль до листа"
+forcePasswordChange = "Примусити користувача змінити пароль під час наступного входу"
+emailUnavailable = "Електронна адреса цього користувача недійсна. Сповіщення вимкнено."
+smtpDisabled = "Для сповіщень електронною поштою потрібно ввімкнути SMTP у налаштуваннях."
+notifyOnly = "Буде надіслано лист без пароля, щоб повідомити користувача, що адміністратор його змінив."
+submit = "Оновити пароль"
+success = "Пароль успішно оновлено"
+error = "Не вдалося оновити пароль"
 
 [workspace.people.emailInvite]
 tab = "Запрошення електронною поштою"
@@ -5326,7 +6048,7 @@ submit = "Згенерувати посилання-запрошення"
 
 [workspace.people.inviteMode]
 username = "Ім’я користувача"
-email = "Електронна пошта"
+email = "Email"
 link = "Посилання"
 emailDisabled = "Запрошення електронною поштою потребують налаштування SMTP і mail.enableInvites=true в налаштуваннях"
 
@@ -5339,6 +6061,11 @@ fromLicense = "з ліцензії"
 slotsAvailable = "Доступно {{count}} місце(ць) користувача"
 noSlotsAvailable = "Немає доступних місць"
 currentUsage = "Зараз використано {{current}} із {{max}} ліцензій користувача"
+
+[workspace.people.mfa]
+adminDisableSuccess = "MFA успішно вимкнено для користувача"
+adminDisableError = "Не вдалося вимкнути MFA для користувача"
+disableByAdmin = "Вимкнути MFA"
 
 [workspace.teams]
 title = "Команди"
@@ -5458,6 +6185,28 @@ contactSales = "Зв’язатися з відділом продажу"
 contactToUpgrade = "Зв’яжіться з нами, щоб оновити або налаштувати свій план"
 maxUsers = "Максимум користувачів"
 upTo = "До"
+getLicense = "Отримати серверну ліцензію"
+upgradeToEnterprise = "Оновити до Enterprise"
+selectPeriod = "Виберіть період оплати"
+monthlyBilling = "Місячна оплата"
+yearlyBilling = "Річна оплата"
+checkoutOpened = "Оформлення відкрито"
+checkoutInstructions = "Завершіть покупку на вкладці Stripe. Після оплати поверніться сюди та оновіть сторінку, щоб активувати ліцензію. Ви також отримаєте лист із ліцензійним ключем."
+activateLicense = "Активуйте свою ліцензію"
+
+[plan.static.licenseActivation]
+checkoutOpened = "Оформлення відкрито в новій вкладці"
+instructions = "Завершіть покупку на вкладці Stripe. Після оплати ви отримаєте лист із ліцензійним ключем."
+enterKey = "Введіть свій ліцензійний ключ нижче, щоб активувати план:"
+keyDescription = "Вставте ліцензійний ключ із листа"
+activate = "Активувати ліцензію"
+doLater = "Зроблю це пізніше"
+success = "Ліцензію активовано!"
+successMessage = "Вашу ліцензію успішно активовано. Тепер можете закрити це вікно."
+
+[plan.static.billingPortal]
+title = "Потрібна верифікація електронної пошти"
+message = "Вам потрібно підтвердити адресу електронної пошти у білінг-порталі Stripe. Перевірте пошту для посилання на вхід."
 
 [plan.period]
 month = "місяць"
@@ -5661,6 +6410,8 @@ notAvailable = "Система аудиту недоступна"
 notAvailableMessage = "Система аудиту не налаштована або недоступна."
 disabled = "Ведення журналу аудиту вимкнено"
 disabledMessage = "Увімкніть ведення журналу аудиту в конфігурації застосунку, щоб відстежувати події системи."
+enterpriseRequired = "Потрібна ліцензія Enterprise"
+enterpriseRequiredMessage = "Система журналювання аудиту — функція рівня Enterprise. Оновіть до ліцензії Enterprise, щоб мати доступ до журналів аудиту та аналітики."
 
 [audit.error]
 title = "Помилка завантаження системи аудиту"
@@ -5758,6 +6509,7 @@ endpoint = "Кінцева точка"
 visits = "Відвідування"
 percentage = "Відсоток"
 noData = "Дані відсутні"
+unknownEndpoint = "Невідома кінцева точка"
 
 [backendHealth]
 checking = "Перевірка стану бекенду..."
@@ -5815,11 +6567,13 @@ subtitle = "Увійдіть через обліковий запис Stirling"
 [setup.selfhosted]
 title = "Увійдіть на сервер"
 subtitle = "Введіть облікові дані сервера"
+link = "або підключіться до самохостингового облікового запису"
 
 [setup.server]
 title = "Під’єднатися до сервера"
 subtitle = "Введіть URL свого самохостингового сервера"
 testing = "Перевірка підключення..."
+useLast = "Last used server: {{serverUrl}}"
 
 [setup.server.type]
 saas = "Stirling PDF SaaS"
@@ -5831,8 +6585,17 @@ description = "Введіть повну URL-адресу вашого само�
 
 [setup.server.error]
 emptyUrl = "Введіть URL сервера"
+invalidUrl = "Неправильний формат URL. Введіть коректний URL на зразок https://your-server.com"
 unreachable = "Не вдалося під’єднатися до сервера"
 testFailed = "Тест підключення не вдався"
+configFetch = "Не вдалося отримати конфігурацію сервера. Перевірте URL і спробуйте ще раз."
+
+[setup.server.error.securityDisabled]
+title = "Вхід не ввімкнено"
+body = "На цьому сервері не ввімкнено вхід. Щоб підключитися до цього сервера, потрібно ввімкнути автентифікацію:"
+step1 = "Встановіть DOCKER_ENABLE_SECURITY=true у вашому середовищі"
+step2 = "Або встановіть security.enableLogin=true у settings.yml"
+step3 = "Перезапустіть сервер"
 
 [setup.login]
 title = "Вхід"
@@ -5841,6 +6604,7 @@ connectingTo = "Підключення до:"
 submit = "Увійти"
 signInWith = "Увійти через"
 oauthPending = "Відкриваємо браузер для автентифікації..."
+sso = "Єдиний вхід"
 orContinueWith = "Або продовжити через email"
 serverRequirement = "Примітка: на сервері має бути увімкнено вхід."
 showInstructions = "Як увімкнути?"
@@ -5855,7 +6619,7 @@ label = "Ім’я користувача"
 placeholder = "Введіть ім’я користувача"
 
 [setup.login.email]
-label = "Електронна пошта"
+label = "Email"
 placeholder = "Введіть свій email"
 
 [setup.login.password]
@@ -5905,6 +6669,9 @@ earlyAccess = "Ранній доступ"
 reset = "Скинути зміни"
 downloadJson = "Завантажити JSON"
 generatePdf = "Згенерувати PDF"
+saveChanges = "Зберегти зміни"
+applyChanges = "Застосувати зміни"
+downloadCopy = "Завантажити копію"
 
 [pdfTextEditor.options.autoScaleText]
 title = "Автопідгін тексту під рамки"
@@ -5922,6 +6689,24 @@ descriptionInline = "Порада: утримуйте Ctrl (Cmd) або Shift д
 [pdfTextEditor.options.forceSingleElement]
 title = "Фіксувати відредагований текст в одному елементі PDF"
 description = "Якщо ввімкнено, редактор експортує кожен відредагований текстовий блок як один елемент тексту PDF, щоб уникнути перекриття гліфів чи змішаних шрифтів."
+
+[pdfTextEditor.options.advanced]
+title = "Розширені налаштування"
+
+[pdfTextEditor.tooltip.header]
+title = "Обмеження попереднього перегляду"
+
+[pdfTextEditor.tooltip.textFocus]
+title = "Фокус на тексті та зображеннях"
+text = "Це робоче середовище зосереджене на редагуванні тексту та переміщенні вбудованих зображень. Складні графічні елементи сторінок, віджети форм і багатошарова графіка зберігаються для експорту, але тут повністю не редагуються."
+
+[pdfTextEditor.tooltip.previewVariance]
+title = "Відмінності попереднього перегляду"
+text = "Деякі візуальні елементи (як-от межі таблиць, фігури або вигляд анотацій) можуть відображатися в попередньому перегляді неточно. Експортований PDF за можливості зберігає оригінальні команди малювання."
+
+[pdfTextEditor.tooltip.alpha]
+title = "Альфа-версія переглядача"
+text = "Ця альфа-версія переглядача ще розвивається — деякі шрифти, кольори, ефекти прозорості та деталі верстки можуть трохи відрізнятися. Будь ласка, перевіряйте згенерований PDF перед поширенням."
 
 [pdfTextEditor.manual]
 mergeTooltip = "Об’єднати вибрані блоки"
@@ -5942,6 +6727,8 @@ alpha = "Цей альфа-переглядач ще розвивається �
 [pdfTextEditor.empty]
 title = "Документ не завантажено"
 subtitle = "Завантажте файл PDF або JSON, щоб почати редагувати текстовий вміст."
+dropzone = "Перетягніть і відпустіть файл PDF або JSON сюди, або натисніть, щоб вибрати"
+dropzoneWithFiles = "Виберіть файл на вкладці Файли або перетягніть і відпустіть файл PDF чи JSON сюди, або натисніть, щоб вибрати"
 
 [pdfTextEditor.welcomeBanner]
 title = "Вітаємо у Редакторі тексту PDF (ранній доступ)"
@@ -6042,3 +6829,58 @@ title = "Результати додавання тексту"
 
 [addText.error]
 failed = "Під час додавання тексту до PDF сталася помилка."
+
+[mobileUpload]
+title = "Завантажити з мобільного"
+description = "Скануйте для завантаження фото. Зображення автоматично конвертуються в PDF."
+descriptionNoConvert = "Скануйте для завантаження фото зі свого мобільного пристрою."
+error = "Помилка з’єднання"
+pollingError = "Помилка перевірки файлів"
+sessionId = "ID сеансу"
+sessionCreateError = "Не вдалося створити сеанс"
+expiryWarning = "Сеанс скоро завершиться"
+expiryWarningMessage = "Цей QR-код завершить дію через {{seconds}} с. Новий код буде згенеровано автоматично."
+filesReceived = "Отримано {{count}} файл(и)"
+connected = "Мобільний пристрій підключено"
+instructions = "Скануйте камерою телефона. Зображення автоматично конвертуються в PDF."
+instructionsNoConvert = "Скануйте камерою телефона, щоб завантажити файли."
+
+[mobileScanner]
+title = "Мобільний сканер"
+noSession = "Недійсний сеанс"
+noSessionMessage = "Будь ласка, відскануйте дійсний QR-код, щоб отримати доступ до цієї сторінки."
+validating = "Перевірка сеансу..."
+sessionInvalid = "Помилка сеансу"
+sessionExpired = "Термін дії цього сеансу минув. Оновіть сторінку й спробуйте ще раз."
+sessionNotFound = "Сеанс не знайдено. Оновіть сторінку й спробуйте ще раз."
+sessionValidationError = "Не вдалося підтвердити сеанс. Спробуйте ще раз."
+uploadSuccess = "Завантаження успішне!"
+uploadSuccessMessage = "Ваші зображення передано."
+httpsRequired = "Доступ до камери потребує HTTPS або localhost. Будь ласка, використовуйте HTTPS або зайдіть через localhost."
+uploadFailed = "Не вдалося завантажити. Спробуйте ще раз."
+uploading = "Завантаження..."
+connected = "Підключено"
+connecting = "Підключення..."
+chooseMethod = "Виберіть спосіб завантаження"
+chooseMethodDescription = "Виберіть, як ви хочете сканувати та завантажувати документи"
+camera = "Камера"
+cameraDescription = "Скануйте документи камерою пристрою з автоматичним визначенням країв"
+fileUpload = "Завантаження файлів"
+fileDescription = "Завантажуйте наявні фото або документи зі свого пристрою"
+cameraAccessDenied = "Доступ до камери заборонено. Дозвольте доступ до камери."
+back = "Назад"
+settings = "Налаштування"
+edgeDetection = "Виявлення країв"
+flashlight = "Ліхтарик"
+flash = "Спалах"
+processing = "Обробка..."
+capture = "Зробити фото"
+selectFilesPrompt = "Виберіть файли для завантаження"
+selectImage = "Вибрати зображення"
+preview = "Попередній перегляд"
+retake = "Перезняти"
+addToBatch = "Додати до пакета"
+upload = "Завантажити"
+batchImages = "Пакет"
+clearBatch = "Очистити"
+uploadAll = "Завантажити все"
