@@ -5,7 +5,8 @@
 FROM gradle:8.14-jdk21@sha256:051d9a116793bdc5175a3f97a545718b750489eee85a7da20913c8a53f722a72 AS build
 
 # Install Node.js and npm for frontend build
-RUN apt-get update && apt-get install -y \
+RUN sed -i 's|http://archive.ubuntu.com|https://archive.ubuntu.com|g; s|http://security.ubuntu.com|https://security.ubuntu.com|g' /etc/apt/sources.list.d/ubuntu.sources \
+    && apt-get update && apt-get install -y \
     curl \
     && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs \
@@ -45,6 +46,16 @@ ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8
 
 ENV TESS_BASE_PATH=/usr/share/tesseract-ocr/5/tessdata
+
+# Switch apt sources to HTTPS for environments where port 80 is blocked.
+# Bootstrap ca-certificates with TLS peer verification disabled; this is safe because
+# apt independently verifies all metadata and packages via GPG signatures
+# (Signed-By in debian.sources). After ca-certificates is installed, subsequent
+# apt operations use full HTTPS certificate verification.
+RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources \
+    && apt-get -o Acquire::https::Verify-Peer=false update \
+    && apt-get -o Acquire::https::Verify-Peer=false install -y --no-install-recommends ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install core runtime dependencies + tools required by Stirling-PDF features + extra fonts for fat version
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -87,7 +98,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN set -eux; \
     . /etc/os-release; \
-    echo "deb http://deb.debian.org/debian ${VERSION_CODENAME}-backports main" > /etc/apt/sources.list.d/backports.list; \
+    echo "deb https://deb.debian.org/debian ${VERSION_CODENAME}-backports main" > /etc/apt/sources.list.d/backports.list; \
     apt-get update; \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends -t ${VERSION_CODENAME}-backports \
         libreoffice libreoffice-java-common; \
