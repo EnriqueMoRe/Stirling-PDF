@@ -3,6 +3,7 @@ services:
     build:
       context: ../..
       dockerfile: docker/backend/Dockerfile
+      network: host  # Use host network during build for reliable internet access
     container_name: stirling-pdf-backend
     restart: unless-stopped
     healthcheck:
@@ -36,6 +37,7 @@ services:
     build:
       context: ../..
       dockerfile: docker/frontend/Dockerfile
+      network: host  # Use host network during build for reliable internet access
     container_name: stirling-pdf-frontend
     restart: unless-stopped
     ports:

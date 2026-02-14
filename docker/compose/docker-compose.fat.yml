@@ -3,6 +3,7 @@ services:
     build:
       context: ../..
       dockerfile: docker/backend/Dockerfile.fat
+      network: host  # Use host network during build for reliable internet access
     container_name: stirling-pdf-backend-fat
     restart: unless-stopped
     deploy:
@@ -41,6 +42,7 @@ services:
     build:
       context: ../..
       dockerfile: docker/frontend/Dockerfile
+      network: host  # Use host network during build for reliable internet access
     container_name: stirling-pdf-frontend-fat
     restart: unless-stopped
     ports:

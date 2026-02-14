@@ -38,6 +38,16 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 ENV TESS_BASE_PATH=/usr/share/tesseract-ocr/5/tessdata
 
+# Switch apt sources to HTTPS for environments where port 80 is blocked.
+# Bootstrap ca-certificates with TLS peer verification disabled; this is safe because
+# apt independently verifies all metadata and packages via GPG signatures
+# (Signed-By in debian.sources). After ca-certificates is installed, subsequent
+# apt operations use full HTTPS certificate verification.
+RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' /etc/apt/sources.list.d/debian.sources \
+    && apt-get -o Acquire::https::Verify-Peer=false update \
+    && apt-get -o Acquire::https::Verify-Peer=false install -y --no-install-recommends ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install core runtime dependencies + tools required by Stirling-PDF features
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates tzdata tini bash fontconfig \
