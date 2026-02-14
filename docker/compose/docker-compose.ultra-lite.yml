@@ -3,7 +3,7 @@ services:
     build:
       context: ../..
       dockerfile: docker/backend/Dockerfile.ultra-lite
-      # network: host  # Uncomment if Docker build cannot reach the internet (e.g. apk/pip failures)
+      network: host  # Use host network during build for reliable internet access
     container_name: stirling-pdf-backend-ultra-lite
     restart: unless-stopped
     deploy:
@@ -39,7 +39,7 @@ services:
     build:
       context: ../..
       dockerfile: docker/frontend/Dockerfile
-      # network: host  # Uncomment if Docker build cannot reach the internet (e.g. npm ci failures)
+      network: host  # Use host network during build for reliable internet access
     container_name: stirling-pdf-frontend-ultra-lite
     restart: unless-stopped
     ports:

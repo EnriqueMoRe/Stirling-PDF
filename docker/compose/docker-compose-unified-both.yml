@@ -7,7 +7,7 @@ services:
     build:
       context: ../..
       dockerfile: docker/Dockerfile.unified
-      # network: host  # Uncomment if Docker build cannot reach the internet (e.g. apt-get/pip failures)
+      network: host  # Use host network during build for reliable internet access
     ports:
       - "8080:8080"
     volumes:
